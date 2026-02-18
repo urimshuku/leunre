@@ -47,12 +47,14 @@ const PhilosophySection = () => (
             transition={{ delay: i * 0.15 }}
             className="text-center relative"
           >
-            <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-primary mx-auto mb-4 md:mb-5 lg:mb-6 flex items-center justify-center shadow-lg">
-              <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
+            <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-4 md:mb-5 lg:mb-6">
+              <div className="w-full h-full rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10">
+                <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
+              </div>
+              {i < steps.length - 1 && (
+                <div className="hidden md:block absolute top-1/2 left-full w-[calc(((100vw-4rem)/3-4rem))] lg:w-[calc(((min(64rem,100vw)-4rem)/3-5rem))] -translate-y-1/2 border-t-2 border-dashed border-gold/30" />
+              )}
             </div>
-            {i < steps.length - 1 && (
-              <div className="hidden md:block absolute top-8 lg:top-10 left-[60%] w-[80%] border-t-2 border-dashed border-gold/30" />
-            )}
             <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{step.label}</h3>
             <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
           </motion.div>
