@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => (
   <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-hero-gradient">
@@ -41,13 +42,13 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <a
-            href="#courses"
+          <Link
+            to="/courses"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:brightness-110 transition-all"
           >
             Explore Courses
             <ArrowRight size={18} />
-          </a>
+          </Link>
           <a
             href="#services"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md border border-primary-foreground/25 text-primary-foreground font-semibold text-base hover:bg-primary-foreground/10 transition-all"
