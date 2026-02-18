@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, MessageCircle, Users2, Compass } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const courses = [
   {
@@ -46,9 +47,9 @@ const FeaturedCourses = () => (
             Transformative programs designed to shift perspective and build lasting capability.
           </p>
         </div>
-        <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-forest-light transition-colors">
+        <Link to="/courses" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-forest-light transition-colors">
           View All Courses <ArrowRight size={16} />
-        </a>
+        </Link>
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
