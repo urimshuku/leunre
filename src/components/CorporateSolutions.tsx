@@ -25,7 +25,7 @@ const solutions = [
 ];
 
 const CorporateSolutions = () => (
-  <section id="services" className="py-24 lg:py-32 bg-hero-gradient">
+  <section id="services" className="py-24 lg:py-32 bg-philosophy">
     <div className="container mx-auto px-4 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -34,10 +34,10 @@ const CorporateSolutions = () => (
         className="text-center mb-16"
       >
         <div className="gold-divider mx-auto mb-6" />
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
           Corporate Solutions
         </h2>
-        <p className="text-primary-foreground/70 text-lg max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           Enterprise-grade programs designed to transform your organization from the inside out.
         </p>
       </motion.div>
@@ -50,13 +50,13 @@ const CorporateSolutions = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12 }}
-            className="p-8 rounded-xl bg-primary-foreground/5 border border-primary-foreground/10 backdrop-blur-sm hover:bg-primary-foreground/10 transition-all duration-300"
+            className="p-8 rounded-xl bg-card border border-border hover:shadow-lg hover:border-gold/30 transition-all duration-300"
           >
-            <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center mb-6">
-              <item.icon className="w-6 h-6 text-gold" />
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+              <item.icon className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-xl font-heading font-bold text-primary-foreground mb-3">{item.title}</h3>
-            <p className="text-primary-foreground/65 leading-relaxed text-sm mb-5">{item.description}</p>
+            <h3 className="text-xl font-heading font-bold text-foreground mb-3">{item.title}</h3>
+            <p className="text-muted-foreground leading-relaxed text-sm mb-5">{item.description}</p>
             <a href="#contact" className="inline-flex items-center gap-1 text-sm font-semibold text-gold hover:text-gold-light transition-colors">
               Learn More <ArrowRight size={14} />
             </a>
