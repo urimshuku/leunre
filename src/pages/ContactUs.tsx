@@ -1,0 +1,254 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Mail, MapPin, Phone, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { z } from "zod";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { useToast } from "@/hooks/use-toast";
+
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Please enter a valid email address").max(255),
+  inquiryType: z.string().min(1, "Please select an inquiry type"),
+  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be less than 2000 characters"),
+});
+
+type ContactForm = z.infer<typeof contactSchema>;
+
+const inquiryTypes = [
+  { value: "courses", label: "Courses" },
+  { value: "corporate", label: "Corporate Solutions" },
+  { value: "retreats", label: "Retreats" },
+  { value: "product", label: "Product (Growth Cards)" },
+  { value: "other", label: "Other" },
+];
+
+const socials = [
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Twitter, label: "Twitter", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Youtube, label: "YouTube", href: "#" },
+];
+
+const ContactUs = () => {
+  const { toast } = useToast();
+  const [form, setForm] = useState<ContactForm>({ name: "", email: "", inquiryType: "", message: "" });
+  const [errors, setErrors] = useState<Partial<Record<keyof ContactForm, string>>>({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof ContactForm]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = contactSchema.safeParse(form);
+    if (!result.success) {
+      const fieldErrors: Partial<Record<keyof ContactForm, string>> = {};
+      result.error.errors.forEach((err) => {
+        const key = err.path[0] as keyof ContactForm;
+        if (!fieldErrors[key]) fieldErrors[key] = err.message;
+      });
+      setErrors(fieldErrors);
+      return;
+    }
+    setErrors({});
+    setSubmitted(true);
+    toast({ title: "Message sent!", description: "We'll get back to you shortly." });
+  };
+
+  return (
+    <>
+      <Navbar />
+      <main>
+        {/* Hero */}
+        <section className="bg-hero-gradient pt-32 pb-20">
+          <div className="container mx-auto px-4 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-2xl"
+            >
+              <div className="gold-divider mb-6" />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
+                Contact Us
+              </h1>
+              <p className="text-lg text-primary-foreground/75 leading-relaxed">
+                Have a question, partnership idea, or ready to get started? We'd love to hear from you.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+              {/* Form */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="lg:col-span-3"
+              >
+                {submitted ? (
+                  <div className="bg-card rounded-xl border border-border p-12 text-center">
+                    <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                      <Mail className="w-8 h-8 text-primary" />
+                    </div>
+                    <h2 className="text-2xl font-heading font-bold text-foreground mb-4">Thank You!</h2>
+                    <p className="text-muted-foreground mb-8">Your message has been received. We'll be in touch shortly.</p>
+                    <button
+                      onClick={() => { setSubmitted(false); setForm({ name: "", email: "", inquiryType: "", message: "" }); }}
+                      className="text-sm font-semibold text-primary hover:text-forest-light transition-colors"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
+                        Full Name
+                      </label>
+                      <input
+                        id="name"
+                        name="name"
+                        type="text"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Your full name"
+                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
+                      />
+                      {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                        Email Address
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="you@example.com"
+                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
+                      />
+                      {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
+                    </div>
+
+                    <div>
+                      <label htmlFor="inquiryType" className="block text-sm font-semibold text-foreground mb-2">
+                        Inquiry Type
+                      </label>
+                      <select
+                        id="inquiryType"
+                        name="inquiryType"
+                        value={form.inquiryType}
+                        onChange={handleChange}
+                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border-destructive" : "border-border"}`}
+                      >
+                        <option value="" disabled>Select an inquiry type</option>
+                        {inquiryTypes.map((type) => (
+                          <option key={type.value} value={type.value}>{type.label}</option>
+                        ))}
+                      </select>
+                      {errors.inquiryType && <p className="text-xs text-destructive mt-1">{errors.inquiryType}</p>}
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-2">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={5}
+                        value={form.message}
+                        onChange={handleChange}
+                        placeholder="Tell us how we can help..."
+                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring resize-none ${errors.message ? "border-destructive" : "border-border"}`}
+                      />
+                      {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:brightness-110 transition-all"
+                    >
+                      Send Message <ArrowRight size={18} />
+                    </button>
+                  </form>
+                )}
+              </motion.div>
+
+              {/* Sidebar */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="lg:col-span-2 space-y-8"
+              >
+                {/* Contact Info */}
+                <div className="bg-card rounded-xl border border-border p-8">
+                  <h3 className="text-lg font-heading font-bold text-foreground mb-6">Get in Touch</h3>
+                  <div className="space-y-5">
+                    <div className="flex items-start gap-3">
+                      <Mail size={18} className="text-gold mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Email</p>
+                        <p className="text-sm text-muted-foreground">hello@leunre.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Phone size={18} className="text-gold mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Phone</p>
+                        <p className="text-sm text-muted-foreground">+1 (555) 000-0000</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MapPin size={18} className="text-gold mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Location</p>
+                        <p className="text-sm text-muted-foreground">Available globally — remote & in-person</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social */}
+                <div className="bg-card rounded-xl border border-border p-8">
+                  <h3 className="text-lg font-heading font-bold text-foreground mb-6">Follow Us</h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {socials.map((s) => (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border hover:border-gold/30 hover:shadow-sm transition-all text-sm font-medium text-foreground"
+                      >
+                        <s.icon size={18} className="text-primary" />
+                        {s.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default ContactUs;
