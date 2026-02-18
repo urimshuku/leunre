@@ -40,12 +40,14 @@ const CourseDetail = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <Link
-                to="/courses"
-                className="inline-flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-gold transition-colors mb-8 block"
-              >
-                <ArrowLeft size={16} /> All Courses
-              </Link>
+              <div className="mb-8">
+                <Link
+                  to="/courses"
+                  className="inline-flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                >
+                  <ArrowLeft size={16} /> All Courses
+                </Link>
+              </div>
               <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gold mb-4">
                 {course.tag}
               </span>
