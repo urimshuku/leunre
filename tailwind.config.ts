@@ -64,6 +64,7 @@ export default {
           light: "hsl(var(--forest-light))",
         },
         cream: "hsl(var(--cream))",
+        philosophy: "hsl(var(--philosophy-bg))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
