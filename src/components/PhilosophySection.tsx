@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Lightbulb, RotateCcw, Sparkles } from "lucide-react";
+import { Lightbulb, RotateCcw, RefreshCw } from "lucide-react";
 
 const steps = [
   {
@@ -13,7 +13,7 @@ const steps = [
     description: "Let go of outdated beliefs, biases, and mental models that no longer serve your growth or potential.",
   },
   {
-    icon: Sparkles,
+    icon: RefreshCw,
     label: "Relearn",
     description: "Rebuild your thinking with clarity, purpose, and deeper awareness — becoming who you were meant to be.",
   },
