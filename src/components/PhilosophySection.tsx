@@ -51,7 +51,7 @@ const PhilosophySection = () => (
               <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
             </div>
             {i < steps.length - 1 && (
-              <div className="hidden md:block absolute top-10 left-[60%] w-[80%] border-t-2 border-dashed border-gold/30" />
+              <div className="hidden md:block absolute top-8 lg:top-10 left-[60%] w-[80%] border-t-2 border-dashed border-gold/30" />
             )}
             <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{step.label}</h3>
             <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
