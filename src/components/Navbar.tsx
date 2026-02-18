@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -17,9 +18,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/90 backdrop-blur-lg border-b border-primary-foreground/10">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <a href="#" className="font-heading text-2xl font-bold tracking-tight text-primary-foreground">
+        <Link to="/" className="font-heading text-2xl font-bold tracking-tight text-primary-foreground">
           LEUNRE
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-8">
