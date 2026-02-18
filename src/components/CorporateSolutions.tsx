@@ -50,14 +50,14 @@ const CorporateSolutions = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12 }}
-            className="p-8 rounded-xl bg-card border border-border hover:shadow-lg hover:border-gold/30 transition-all duration-300"
+            className="p-8 rounded-xl bg-card border border-border hover:shadow-lg hover:border-gold/30 transition-all duration-300 flex flex-col"
           >
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
               <item.icon className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-xl font-heading font-bold text-foreground mb-3">{item.title}</h3>
-            <p className="text-muted-foreground leading-relaxed text-sm mb-5">{item.description}</p>
-            <a href="#contact" className="inline-flex items-center gap-1 text-sm font-semibold text-gold hover:text-gold-light transition-colors">
+            <p className="text-muted-foreground leading-relaxed text-sm mb-5 flex-1">{item.description}</p>
+            <a href="#contact" className="inline-flex items-center gap-1 text-sm font-semibold text-gold hover:text-gold-light transition-colors mt-auto">
               Learn More <ArrowRight size={14} />
             </a>
           </motion.div>
