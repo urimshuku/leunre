@@ -1,19 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import heroPeople from "@/assets/hero-people.jpg";
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-    {/* Background image with fade towards text */}
-    <div className="absolute inset-0 z-0">
-      <img
-        src={heroPeople}
-        alt=""
-        className="w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
-    </div>
+  <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-hero-gradient">
     <div className="container relative z-10 mx-auto px-4 lg:px-8 py-32">
       <div className="max-w-3xl">
         <motion.div
