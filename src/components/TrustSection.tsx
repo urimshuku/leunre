@@ -5,7 +5,7 @@ const logos = [
 ];
 
 const TrustSection = () => (
-  <section className="py-16 bg-card border-b border-border">
+  <section className="py-16 bg-background border-b border-border">
     <div className="container mx-auto px-4 lg:px-8">
       <motion.p
         initial={{ opacity: 0 }}
