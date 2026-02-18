@@ -3,16 +3,16 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import heroPeople from "@/assets/hero-people.jpg";
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-hero-gradient">
-    {/* Subtle background image */}
+  <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+    {/* Background image with fade towards text */}
     <div className="absolute inset-0 z-0">
       <img
         src={heroPeople}
         alt=""
-        className="w-full h-full object-cover opacity-[0.08]"
+        className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-primary/80 to-primary" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
     </div>
     <div className="container relative z-10 mx-auto px-4 lg:px-8 py-32">
       <div className="max-w-3xl">
