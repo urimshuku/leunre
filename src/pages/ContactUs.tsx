@@ -66,7 +66,7 @@ const ContactUs = () => {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-hero-gradient pt-32 pb-20">
+        <section className="bg-hero-gradient pt-20 pb-12 md:pt-32 md:pb-20">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -74,11 +74,11 @@ const ContactUs = () => {
               transition={{ duration: 0.6 }}
               className="max-w-2xl"
             >
-              <div className="gold-divider mb-6" />
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
+              <div className="gold-divider mb-4 md:mb-6" />
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-4 md:mb-6">
                 Contact Us
               </h1>
-              <p className="text-lg text-primary-foreground/75 leading-relaxed">
+              <p className="text-base md:text-lg text-primary-foreground/75 leading-relaxed">
                 Have a question, partnership idea, or ready to get started? We'd love to hear from you.
               </p>
             </motion.div>
@@ -86,9 +86,9 @@ const ContactUs = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-24 bg-background">
+        <section className="py-14 md:py-24 bg-background">
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-16">
               {/* Form */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -97,23 +97,23 @@ const ContactUs = () => {
                 className="lg:col-span-3"
               >
                 {submitted ? (
-                  <div className="bg-card rounded-xl border border-border p-12 text-center">
-                    <div className="w-16 h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                      <Mail className="w-8 h-8 text-primary" />
+                  <div className="bg-card rounded-xl border border-border p-8 md:p-12 text-center">
+                    <div className="w-12 h-12 md:w-16 md:h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6">
+                      <Mail className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                     </div>
-                    <h2 className="text-2xl font-heading font-bold text-foreground mb-4">Thank You!</h2>
-                    <p className="text-muted-foreground mb-8">Your message has been received. We'll be in touch shortly.</p>
+                    <h2 className="text-xl md:text-2xl font-heading font-bold text-foreground mb-3 md:mb-4">Thank You!</h2>
+                    <p className="text-muted-foreground mb-6 md:mb-8 text-sm md:text-base">Your message has been received. We'll be in touch shortly.</p>
                     <button
                       onClick={() => { setSubmitted(false); setForm({ name: "", email: "", inquiryType: "", message: "" }); }}
-                      className="text-sm font-semibold text-primary hover:text-forest-light transition-colors"
+                      className="text-xs md:text-sm font-semibold text-primary hover:text-forest-light transition-colors"
                     >
                       Send another message
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                  <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6" noValidate>
                     <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
+                      <label htmlFor="name" className="block text-xs md:text-sm font-semibold text-foreground mb-1.5 md:mb-2">
                         Full Name
                       </label>
                       <input
@@ -123,13 +123,13 @@ const ContactUs = () => {
                         value={form.name}
                         onChange={handleChange}
                         placeholder="Your full name"
-                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
+                        className={`w-full px-3 py-2.5 md:px-4 md:py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-xs md:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
                       />
                       {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                      <label htmlFor="email" className="block text-xs md:text-sm font-semibold text-foreground mb-1.5 md:mb-2">
                         Email Address
                       </label>
                       <input
@@ -139,13 +139,13 @@ const ContactUs = () => {
                         value={form.email}
                         onChange={handleChange}
                         placeholder="you@example.com"
-                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
+                        className={`w-full px-3 py-2.5 md:px-4 md:py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-xs md:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
                       />
                       {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
                     </div>
 
                     <div>
-                      <label htmlFor="inquiryType" className="block text-sm font-semibold text-foreground mb-2">
+                      <label htmlFor="inquiryType" className="block text-xs md:text-sm font-semibold text-foreground mb-1.5 md:mb-2">
                         Inquiry Type
                       </label>
                       <select
@@ -153,7 +153,7 @@ const ContactUs = () => {
                         name="inquiryType"
                         value={form.inquiryType}
                         onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border-destructive" : "border-border"}`}
+                        className={`w-full px-3 py-2.5 md:px-4 md:py-3 rounded-md border bg-card text-foreground text-xs md:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border-destructive" : "border-border"}`}
                       >
                         <option value="" disabled>Select an inquiry type</option>
                         {inquiryTypes.map((type) => (
@@ -164,7 +164,7 @@ const ContactUs = () => {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-2">
+                      <label htmlFor="message" className="block text-xs md:text-sm font-semibold text-foreground mb-1.5 md:mb-2">
                         Message
                       </label>
                       <textarea
@@ -174,16 +174,16 @@ const ContactUs = () => {
                         value={form.message}
                         onChange={handleChange}
                         placeholder="Tell us how we can help..."
-                        className={`w-full px-4 py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring resize-none ${errors.message ? "border-destructive" : "border-border"}`}
+                        className={`w-full px-3 py-2.5 md:px-4 md:py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-xs md:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring resize-none ${errors.message ? "border-destructive" : "border-border"}`}
                       />
                       {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
                     </div>
 
                     <button
                       type="submit"
-                      className="inline-flex items-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:brightness-110 transition-all"
+                      className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-base hover:brightness-110 transition-all"
                     >
-                      Send Message <ArrowRight size={18} />
+                      Send Message <ArrowRight size={16} />
                     </button>
                   </form>
                 )}
@@ -195,47 +195,47 @@ const ContactUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="lg:col-span-2 space-y-8"
+                className="lg:col-span-2 space-y-4 md:space-y-8"
               >
                 {/* Contact Info */}
-                <div className="bg-card rounded-xl border border-border p-8">
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-6">Get in Touch</h3>
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-3">
-                      <Mail size={18} className="text-gold mt-0.5 shrink-0" />
+                <div className="bg-card rounded-xl border border-border p-5 md:p-8">
+                  <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-4 md:mb-6">Get in Touch</h3>
+                  <div className="space-y-3 md:space-y-5">
+                    <div className="flex items-start gap-2 md:gap-3">
+                      <Mail size={16} className="text-gold mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-sm font-medium text-foreground">Email</p>
-                        <p className="text-sm text-muted-foreground">hello@leunre.com</p>
+                        <p className="text-xs md:text-sm font-medium text-foreground">Email</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">hello@leunre.com</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Phone size={18} className="text-gold mt-0.5 shrink-0" />
+                    <div className="flex items-start gap-2 md:gap-3">
+                      <Phone size={16} className="text-gold mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-sm font-medium text-foreground">Phone</p>
-                        <p className="text-sm text-muted-foreground">+1 (555) 000-0000</p>
+                        <p className="text-xs md:text-sm font-medium text-foreground">Phone</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">+1 (555) 000-0000</p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <MapPin size={18} className="text-gold mt-0.5 shrink-0" />
+                    <div className="flex items-start gap-2 md:gap-3">
+                      <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
                       <div>
-                        <p className="text-sm font-medium text-foreground">Location</p>
-                        <p className="text-sm text-muted-foreground">Available globally — remote & in-person</p>
+                        <p className="text-xs md:text-sm font-medium text-foreground">Location</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">Available globally — remote & in-person</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Social */}
-                <div className="bg-card rounded-xl border border-border p-8">
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-6">Follow Us</h3>
-                  <div className="grid grid-cols-2 gap-3">
+                <div className="bg-card rounded-xl border border-border p-5 md:p-8">
+                  <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-4 md:mb-6">Follow Us</h3>
+                  <div className="grid grid-cols-2 gap-2 md:gap-3">
                     {socials.map((s) => (
                       <a
                         key={s.label}
                         href={s.href}
-                        className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border hover:border-gold/30 hover:shadow-sm transition-all text-sm font-medium text-foreground"
+                        className="flex items-center gap-2 md:gap-3 px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-border hover:border-gold/30 hover:shadow-sm transition-all text-xs md:text-sm font-medium text-foreground"
                       >
-                        <s.icon size={18} className="text-primary" />
+                        <s.icon size={16} className="text-primary" />
                         {s.label}
                       </a>
                     ))}
