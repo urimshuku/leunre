@@ -1,0 +1,36 @@
+import { motion } from "framer-motion";
+
+const logos = [
+  "Accenture", "Deloitte", "McKinsey", "Google", "Unilever", "Siemens"
+];
+
+const TrustSection = () => (
+  <section className="py-16 bg-card border-b border-border">
+    <div className="container mx-auto px-4 lg:px-8">
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest mb-10"
+      >
+        Trusted by leading organizations worldwide
+      </motion.p>
+      <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14">
+        {logos.map((name, i) => (
+          <motion.div
+            key={name}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.08 }}
+            className="text-xl md:text-2xl font-heading font-bold text-muted-foreground/40 select-none"
+          >
+            {name}
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default TrustSection;
