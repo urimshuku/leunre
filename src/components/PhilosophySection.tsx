@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Lightbulb, RotateCcw, RefreshCw } from "lucide-react";
+import { RotateCw, RotateCcw, RefreshCw } from "lucide-react";
 
 const steps = [
   {
-    icon: Lightbulb,
+    icon: RotateCw,
     label: "Learn",
     description: "Acquire new knowledge, frameworks, and perspectives that expand your understanding of yourself and the world.",
   },
