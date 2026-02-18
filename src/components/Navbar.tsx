@@ -61,12 +61,12 @@ const Navbar = () => {
             className="lg:hidden bg-primary border-b border-primary-foreground/10 overflow-hidden"
           >
             <div className="flex flex-col gap-0.5 p-3">
-              {navLinks.map((link) => (
+              {navLinks.filter(l => l.label !== "Contact Us").map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="px-3 py-2.5 rounded-md text-xs font-medium text-primary-foreground/70 hover:bg-primary-foreground/10 transition-colors"
+                  className="px-3 py-2.5 rounded-md text-sm font-medium text-primary-foreground/70 hover:bg-primary-foreground/10 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
               <a
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-1.5 px-4 py-2.5 rounded-md bg-gold text-accent-foreground text-xs font-semibold text-center"
+                className="mt-1.5 px-4 py-2.5 rounded-md bg-gold text-accent-foreground text-sm font-semibold text-center"
               >
                 Contact Us
               </a>
