@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, MessageCircle, Users2, Compass } from "lucide-react";
+import courseEmotional from "@/assets/course-emotional.jpg";
+import courseCommunication from "@/assets/course-communication.jpg";
+import coursePeople from "@/assets/course-people.jpg";
+import courseLeadership from "@/assets/course-leadership.jpg";
 
 const courses = [
   {
@@ -7,24 +11,28 @@ const courses = [
     title: "Emotional Intelligence",
     description: "Master self-awareness, empathy, and emotional regulation to lead with authenticity and resilience.",
     tag: "Most Popular",
+    image: courseEmotional,
   },
   {
     icon: MessageCircle,
     title: "Communication Mastery",
     description: "Transform how you connect, influence, and build trust through powerful communication frameworks.",
     tag: "Essential",
+    image: courseCommunication,
   },
   {
     icon: Users2,
     title: "People Management",
     description: "Develop the skills to inspire, coach, and empower high-performing teams in any organization.",
     tag: "Leadership",
+    image: coursePeople,
   },
   {
     icon: Compass,
     title: "Conscious Leadership",
     description: "Lead with purpose, clarity, and integrity — creating impact that extends beyond the bottom line.",
     tag: "Advanced",
+    image: courseLeadership,
   },
 ];
 
