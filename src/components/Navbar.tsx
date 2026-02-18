@@ -17,8 +17,8 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/90 backdrop-blur-lg border-b border-primary-foreground/10">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <Link to="/" className="font-heading text-2xl font-bold tracking-tight text-primary-foreground">
+      <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-4 lg:px-8">
+        <Link to="/" className="font-heading text-xl md:text-2xl font-bold tracking-tight text-primary-foreground">
           LEUNRE
         </Link>
 
@@ -47,7 +47,7 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -60,13 +60,13 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-primary border-b border-primary-foreground/10 overflow-hidden"
           >
-            <div className="flex flex-col gap-1 p-4">
+            <div className="flex flex-col gap-0.5 p-3">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="px-4 py-3 rounded-md text-sm font-medium text-primary-foreground/70 hover:bg-primary-foreground/10 transition-colors"
+                  className="px-3 py-2.5 rounded-md text-xs font-medium text-primary-foreground/70 hover:bg-primary-foreground/10 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
               <a
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 px-5 py-3 rounded-md bg-gold text-accent-foreground text-sm font-semibold text-center"
+                className="mt-1.5 px-4 py-2.5 rounded-md bg-gold text-accent-foreground text-xs font-semibold text-center"
               >
                 Contact Us
               </a>
