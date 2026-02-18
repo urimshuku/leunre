@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Building2, Presentation, Flame, ArrowRight } from "lucide-react";
+import { Building2, Presentation, Flame, Mountain, ArrowRight } from "lucide-react";
 
 const solutions = [
   {
@@ -16,6 +16,11 @@ const solutions = [
     icon: Flame,
     title: "Experiential Training",
     description: "Immersive learning experiences that go beyond the classroom. Through real-world scenarios and reflective practices, teams build lasting behavioral change.",
+  },
+  {
+    icon: Mountain,
+    title: "Retreats",
+    description: "Immersive experiential learning retreats that create lasting shifts in perspective and leadership.",
   },
 ];
 
@@ -37,7 +42,7 @@ const CorporateSolutions = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {solutions.map((item, i) => (
           <motion.div
             key={item.title}

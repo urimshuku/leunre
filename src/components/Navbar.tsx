@@ -23,7 +23,7 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
+          {navLinks.filter(l => l.label !== "Contact Us").map((link) => (
             <a
               key={link.label}
               href={link.href}
@@ -36,7 +36,7 @@ const Navbar = () => {
             href="#contact"
             className="ml-2 px-5 py-2 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-forest-light transition-colors"
           >
-            Get Started
+            Contact Us
           </a>
         </div>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
                 onClick={() => setOpen(false)}
                 className="mt-2 px-5 py-3 rounded-md bg-primary text-primary-foreground text-sm font-semibold text-center"
               >
-                Get Started
+                Contact Us
               </a>
             </div>
           </motion.div>

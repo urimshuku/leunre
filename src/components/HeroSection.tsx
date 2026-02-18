@@ -1,15 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-    {/* Background image */}
-    <div className="absolute inset-0">
-      <img src={heroBg} alt="" className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-hero-gradient/80" />
-    </div>
-
+  <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-hero-gradient">
     <div className="container relative z-10 mx-auto px-4 lg:px-8 py-32">
       <div className="max-w-3xl">
         <motion.div
