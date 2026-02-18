@@ -44,7 +44,7 @@ const HeroSection = () => (
         >
           <Link
             to="/courses"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:brightness-110 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:bg-transparent hover:border hover:border-gold hover:text-gold transition-all border border-transparent"
           >
             Explore Courses
             <ArrowRight size={18} />
