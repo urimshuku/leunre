@@ -79,7 +79,7 @@ const Services = () => (
     <Navbar />
     <main>
       {/* Hero */}
-      <section className="bg-hero-gradient pt-32 pb-20">
+      <section className="bg-hero-gradient pt-20 pb-12 md:pt-32 md:pb-20">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -87,11 +87,11 @@ const Services = () => (
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <div className="gold-divider mb-6" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
+            <div className="gold-divider mb-4 md:mb-6" />
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-4 md:mb-6">
               Our Services
             </h1>
-            <p className="text-lg text-primary-foreground/75 leading-relaxed">
+            <p className="text-base md:text-lg text-primary-foreground/75 leading-relaxed">
               Tailored solutions for organizations ready to invest in their people, culture, and leadership capacity.
             </p>
           </motion.div>
@@ -102,30 +102,30 @@ const Services = () => (
       {services.map((service, i) => (
         <section
           key={service.title}
-          className={`py-24 ${i % 2 === 0 ? "bg-background" : "bg-muted"}`}
+          className={`py-14 md:py-24 ${i % 2 === 0 ? "bg-background" : "bg-muted"}`}
         >
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-start">
               {/* Left — Info */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-6">
+                  <service.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-4 md:mb-6">
                   {service.title}
                 </h2>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                <p className="text-muted-foreground text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
                   {service.description}
                 </p>
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:brightness-110 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-base hover:brightness-110 transition-all"
                 >
-                  Book a Consultation <ArrowRight size={18} />
+                  Book a Consultation <ArrowRight size={16} />
                 </a>
               </motion.div>
 
@@ -135,16 +135,16 @@ const Services = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="space-y-8"
+                className="space-y-4 md:space-y-8"
               >
                 {/* Ideal Audience */}
-                <div className="bg-card rounded-xl border border-border p-8">
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-5">
+                <div className="bg-card rounded-xl border border-border p-5 md:p-8">
+                  <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-3 md:mb-5">
                     Ideal For
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 md:space-y-3">
                     {service.audience.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <li key={item} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-muted-foreground">
                         <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
                         {item}
                       </li>
@@ -153,13 +153,13 @@ const Services = () => (
                 </div>
 
                 {/* Expected Outcomes */}
-                <div className="bg-card rounded-xl border border-border p-8">
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-5">
+                <div className="bg-card rounded-xl border border-border p-5 md:p-8">
+                  <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-3 md:mb-5">
                     Expected Outcomes
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 md:space-y-3">
                     {service.outcomes.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                      <li key={item} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-muted-foreground">
                         <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
                         {item}
                       </li>
