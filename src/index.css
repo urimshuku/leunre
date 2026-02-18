@@ -15,24 +15,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 150 30% 12%;
 
-    --primary: 157 46% 17%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 152 45% 18%;
+    --primary-foreground: 40 20% 97%;
 
-    --secondary: 141 12% 51%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 40 25% 93%;
+    --secondary-foreground: 150 30% 12%;
 
-    --muted: 25 75% 90%;
-    --muted-foreground: 157 20% 35%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 150 10% 45%;
 
-    --accent: 24 83% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 55% 55%;
+    --accent-foreground: 150 30% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 40 15% 88%;
     --input: 40 15% 88%;
-    --ring: 157 46% 17%;
+    --ring: 152 45% 18%;
 
     --radius: 0.5rem;
 
@@ -46,13 +46,13 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --warm: 25 75% 95%;
-    --warm-foreground: 157 46% 17%;
-    --gold: 24 83% 45%;
-    --gold-light: 37 52% 56%;
-    --forest: 157 46% 17%;
-    --forest-light: 141 12% 51%;
-    --cream: 25 75% 93%;
+    --warm: 35 30% 95%;
+    --warm-foreground: 150 30% 12%;
+    --gold: 38 55% 55%;
+    --gold-light: 38 45% 75%;
+    --forest: 152 45% 18%;
+    --forest-light: 150 30% 35%;
+    --cream: 40 30% 96%;
   }
 
   .dark {

@@ -36,7 +36,7 @@ const Navbar = () => {
             href="#contact"
             className="ml-2 px-5 py-2 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-forest-light transition-colors"
           >
-            Contact Us
+            Get Started
           </a>
         </div>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
                 onClick={() => setOpen(false)}
                 className="mt-2 px-5 py-3 rounded-md bg-primary text-primary-foreground text-sm font-semibold text-center"
               >
-                Contact Us
+                Get Started
               </a>
             </div>
           </motion.div>
