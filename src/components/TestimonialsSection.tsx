@@ -20,24 +20,24 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-24 lg:py-32 bg-section-alt">
+  <section className="py-14 md:py-24 lg:py-32 bg-section-alt">
     <div className="container mx-auto px-4 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-10 md:mb-16"
       >
-        <div className="gold-divider mx-auto mb-6" />
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
+        <div className="gold-divider mx-auto mb-4 md:mb-6" />
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3 md:mb-4">
           What People Say
         </h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto">
           Hear from leaders and organizations who have experienced the LEUNRE transformation.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
         {testimonials.map((item, i) => (
           <motion.div
             key={item.name}
@@ -45,13 +45,13 @@ const TestimonialsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.12 }}
-            className="bg-card rounded-xl p-8 border border-border shadow-sm"
+            className="bg-card rounded-xl p-5 md:p-8 border border-border shadow-sm"
           >
-            <Quote className="w-8 h-8 text-gold/50 mb-4" />
-            <p className="text-foreground leading-relaxed mb-6 italic">"{item.quote}"</p>
+            <Quote className="w-6 h-6 md:w-8 md:h-8 text-gold/50 mb-3 md:mb-4" />
+            <p className="text-foreground leading-relaxed mb-4 md:mb-6 italic text-sm md:text-base">"{item.quote}"</p>
             <div>
-              <p className="font-heading font-bold text-foreground">{item.name}</p>
-              <p className="text-sm text-muted-foreground">{item.role}</p>
+              <p className="font-heading font-bold text-foreground text-sm md:text-base">{item.name}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">{item.role}</p>
             </div>
           </motion.div>
         ))}
