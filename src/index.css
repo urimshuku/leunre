@@ -15,17 +15,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 150 30% 12%;
 
-    --primary: 152 45% 18%;
-    --primary-foreground: 40 20% 97%;
+    --primary: 153 45% 17%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 25% 93%;
-    --secondary-foreground: 150 30% 12%;
+    --secondary: 150 12% 52%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 40 15% 94%;
     --muted-foreground: 150 10% 45%;
 
-    --accent: 38 55% 55%;
-    --accent-foreground: 150 30% 12%;
+    --accent: 22 82% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -46,13 +46,13 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --warm: 35 30% 95%;
-    --warm-foreground: 150 30% 12%;
-    --gold: 38 55% 55%;
-    --gold-light: 38 45% 75%;
-    --forest: 152 45% 18%;
-    --forest-light: 150 30% 35%;
-    --cream: 40 30% 96%;
+    --warm: 24 69% 90%;
+    --warm-foreground: 153 45% 17%;
+    --gold: 22 82% 45%;
+    --gold-light: 22 70% 55%;
+    --forest: 153 45% 17%;
+    --forest-light: 150 12% 52%;
+    --cream: 24 69% 90%;
   }
 
   .dark {

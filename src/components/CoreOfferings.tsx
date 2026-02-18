@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { BookOpen, Users, Mountain, ShoppingBag } from "lucide-react";
+import { BookOpen, Users, ShoppingBag } from "lucide-react";
 
 const offerings = [
   {
@@ -11,11 +11,6 @@ const offerings = [
     icon: Users,
     title: "Services",
     description: "Corporate workshops and consulting that drive organizational transformation and culture change.",
-  },
-  {
-    icon: Mountain,
-    title: "Retreats",
-    description: "Immersive experiential learning retreats that create lasting shifts in perspective and leadership.",
   },
   {
     icon: ShoppingBag,
@@ -42,7 +37,7 @@ const CoreOfferings = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {offerings.map((item, i) => (
           <motion.div
             key={item.title}
