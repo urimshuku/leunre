@@ -27,7 +27,7 @@ const CTASection = () => (
           </a>
           <a
             href="#courses"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md border border-border text-foreground font-semibold text-base hover:bg-muted transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md border border-border text-foreground font-semibold text-base hover:border-primary hover:text-primary transition-all"
           >
             Browse Courses
           </a>
