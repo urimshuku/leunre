@@ -7,15 +7,15 @@
 @layer base {
   :root {
     --background: 34.3 28.0% 95.1%;
-    --foreground: 153 45% 17%;
+    --foreground: 158 46% 24%;
 
     --card: 0 0% 100%;
-    --card-foreground: 153 45% 17%;
+    --card-foreground: 158 46% 24%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 153 45% 17%;
+    --popover-foreground: 158 46% 24%;
 
-    --primary: 153 45% 17%;
+    --primary: 158 46% 24%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 34 44% 68%;
@@ -32,7 +32,7 @@
 
     --border: 36 15% 88%;
     --input: 36 15% 88%;
-    --ring: 153 45% 17%;
+    --ring: 158 46% 24%;
 
     --radius: 0.5rem;
 
@@ -47,10 +47,10 @@
 
     /* Custom tokens */
     --warm: 36 27% 95%;
-    --warm-foreground: 153 45% 17%;
+    --warm-foreground: 158 46% 24%;
     --gold: 24 67% 45%;
     --gold-light: 24 55% 55%;
-    --forest: 153 45% 17%;
+    --forest: 158 46% 24%;
     --forest-light: 150 12% 52%;
     --cream: 36 27% 95%;
     --philosophy-bg: 30 14% 92%;
