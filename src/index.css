@@ -9,7 +9,7 @@
     --background: 39 23% 91%;
     --foreground: 158 46% 24%;
 
-    --card: 0 0% 100%;
+    --card: 39 20% 96%;
     --card-foreground: 158 46% 24%;
 
     --popover: 0 0% 100%;
@@ -24,7 +24,7 @@
     --muted: 39 23% 91%;
     --muted-foreground: 153 42% 32%;
 
-    --accent: 24 67% 45%;
+    --accent: 43 74% 49%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -48,8 +48,8 @@
     /* Custom tokens */
     --warm: 39 23% 91%;
     --warm-foreground: 158 46% 24%;
-    --gold: 24 67% 45%;
-    --gold-light: 24 82% 56%;
+    --gold: 43 74% 49%;
+    --gold-light: 43 74% 60%;
     --forest: 158 46% 24%;
     --forest-light: 153 42% 32%;
     --cream: 39 23% 91%;
@@ -61,7 +61,7 @@
   .dark {
     --background: 150 30% 6%;
     --foreground: 40 20% 97%;
-    --card: 150 25% 10%;
+    --card: 150 20% 12%;
     --card-foreground: 40 20% 97%;
     --popover: 150 25% 10%;
     --popover-foreground: 40 20% 97%;
@@ -71,7 +71,7 @@
     --secondary-foreground: 40 20% 97%;
     --muted: 150 15% 15%;
     --muted-foreground: 40 10% 65%;
-    --accent: 38 45% 45%;
+    --accent: 43 74% 49%;
     --accent-foreground: 40 20% 97%;
     --border: 150 15% 20%;
     --input: 150 15% 20%;
