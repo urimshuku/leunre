@@ -81,23 +81,24 @@ const ServiceDetail = () => {
                 <p className="text-muted-foreground leading-relaxed text-lg">{service.overview}</p>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bg-card rounded-xl border border-border p-8"
-              >
-                <h3 className="text-lg font-heading font-bold text-foreground mb-5">Ideal For</h3>
-                <ul className="space-y-3">
-                  {service.audience.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                      <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+              <div className="bg-card rounded-xl border border-border p-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <h3 className="text-lg font-heading font-bold text-foreground mb-5">Ideal For</h3>
+                  <ul className="space-y-3">
+                    {service.audience.map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
