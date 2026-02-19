@@ -1,8 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { CheckCircle2 } from "lucide-react";
+import PageLayout from "@/components/shared/PageLayout";
+import DetailHero from "@/components/shared/DetailHero";
+import ContentSection from "@/components/shared/ContentSection";
+import BottomCTA from "@/components/shared/BottomCTA";
 import { getServiceBySlug } from "@/data/services";
 
 const ServiceDetail = () => {
@@ -11,198 +13,143 @@ const ServiceDetail = () => {
 
   if (!service) {
     return (
-      <>
-        <Navbar />
-        <main className="min-h-screen flex items-center justify-center bg-background pt-16">
+      <PageLayout>
+        <div className="min-h-screen flex items-center justify-center bg-background pt-16">
           <div className="text-center">
             <h1 className="text-2xl font-heading font-bold text-foreground mb-4">Service Not Found</h1>
             <Link to="/services" className="text-primary hover:text-forest-light transition-colors font-semibold">
               ← Back to Services
             </Link>
           </div>
-        </main>
-        <Footer />
-      </>
+        </div>
+      </PageLayout>
     );
   }
 
   return (
-    <>
-      <Navbar />
-      <main>
-        {/* Hero */}
-        <section className="bg-hero-gradient pt-32 pb-20">
-          <div className="container mx-auto px-4 lg:px-8">
+    <PageLayout>
+      <DetailHero
+        backTo="/services"
+        backLabel="All Services"
+        tag={service.tag}
+        title={service.title}
+        description={service.description}
+      >
+        <a
+          href="/contact"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:brightness-110 transition-all"
+        >
+          Book a Consultation
+        </a>
+      </DetailHero>
+
+      {/* Overview + Who It's For */}
+      <ContentSection>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2"
+          >
+            <div className="gold-divider mb-6" />
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Overview</h2>
+            <p className="text-muted-foreground leading-relaxed text-lg">{service.overview}</p>
+          </motion.div>
+
+          <div className="bg-card rounded-xl border border-border p-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl"
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
             >
-              <div className="mb-8">
-                <Link
-                  to="/services"
-                  className="inline-flex items-center gap-2 text-sm text-primary-foreground/60 hover:text-gold transition-colors"
-                >
-                  <ArrowLeft size={16} /> All Services
-                </Link>
-              </div>
-              <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gold mb-4">
-                {service.tag}
-              </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
-                {service.title}
-              </h1>
-              <p className="text-lg text-primary-foreground/75 leading-relaxed mb-8">
-                {service.description}
-              </p>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-gold text-accent-foreground font-semibold text-base hover:brightness-110 transition-all"
-              >
-                Book a Consultation
-              </a>
+              <h3 className="text-lg font-heading font-bold text-foreground mb-5">Ideal For</h3>
+              <ul className="space-y-3">
+                {service.audience.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           </div>
-        </section>
+        </div>
+      </ContentSection>
 
-        {/* Overview + Who It's For */}
-        <section className="py-20 bg-background border-b border-border section-shadow">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+      {/* Outcomes */}
+      <ContentSection variant="muted">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="gold-divider mb-6" />
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-10">Expected Outcomes</h2>
+        </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {service.outcomes.map((outcome, i) => (
+            <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl border border-border p-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="lg:col-span-2"
+                transition={{ delay: i * 0.1 }}
+                className="flex items-start gap-4 w-full"
               >
-                <div className="gold-divider mb-6" />
-                <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Overview</h2>
-                <p className="text-muted-foreground leading-relaxed text-lg">{service.overview}</p>
+                <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
+                  <CheckCircle2 size={18} className="text-gold" />
+                </div>
+                <p className="text-foreground font-medium">{outcome}</p>
               </motion.div>
+            </div>
+          ))}
+        </div>
+      </ContentSection>
 
-              <div className="bg-card rounded-xl border border-border p-8">
+      {/* Our Approach */}
+      <ContentSection>
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="gold-divider mb-6" />
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-10">Our Approach</h2>
+          </motion.div>
+          <div className="space-y-6">
+            {service.approach.map((step, i) => (
+              <div key={step.title} className="bg-card rounded-xl border border-border p-6 md:p-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-5"
                 >
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-5">Ideal For</h3>
-                  <ul className="space-y-3">
-                    {service.audience.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                        <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-sm font-bold text-primary">{i + 1}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-heading font-bold text-foreground mb-2">{step.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                  </div>
                 </motion.div>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </ContentSection>
 
-        {/* Outcomes */}
-        <section className="py-20 bg-muted border-b border-border section-shadow">
-          <div className="container mx-auto px-4 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="gold-divider mb-6" />
-              <h2 className="text-3xl font-heading font-bold text-foreground mb-10">Expected Outcomes</h2>
-            </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {service.outcomes.map((outcome, i) => (
-                <div
-                  key={outcome}
-                  className="flex items-start gap-4 bg-card rounded-xl border border-border p-6"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-4 w-full"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                      <CheckCircle2 size={18} className="text-gold" />
-                    </div>
-                    <p className="text-foreground font-medium">{outcome}</p>
-                  </motion.div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Our Approach */}
-        <section className="py-20 bg-background border-b border-border section-shadow">
-          <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="gold-divider mb-6" />
-              <h2 className="text-3xl font-heading font-bold text-foreground mb-10">Our Approach</h2>
-            </motion.div>
-            <div className="space-y-6">
-              {service.approach.map((step, i) => (
-                <div
-                  key={step.title}
-                  className="bg-card rounded-xl border border-border p-6 md:p-8"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    className="flex items-start gap-5"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <span className="text-sm font-bold text-primary">{i + 1}</span>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-heading font-bold text-foreground mb-2">{step.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{step.description}</p>
-                    </div>
-                  </motion.div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-14 md:py-16 lg:py-20 bg-background border-b border-border section-shadow">
-          <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="max-w-xl mx-auto"
-            >
-              <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">
-                Ready to Get Started?
-              </h2>
-              <p className="text-muted-foreground mb-6 md:mb-7 lg:mb-8 leading-relaxed text-sm md:text-sm lg:text-base">
-                Let's discuss how {service.title.toLowerCase()} can create lasting impact for your organization.
-              </p>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
-              >
-                Book a Consultation
-              </a>
-            </motion.div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+      <BottomCTA
+        title="Ready to Get Started?"
+        subtitle={`Let's discuss how ${service.title.toLowerCase()} can create lasting impact for your organization.`}
+        buttonText="Book a Consultation"
+        buttonHref="/contact"
+      />
+    </PageLayout>
   );
 };
 
