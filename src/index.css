@@ -119,6 +119,6 @@
   }
 
   .section-shadow {
-    box-shadow: 0 8px 20px -4px hsl(var(--foreground) / 0.2);
+    box-shadow: 0 8px 30px -4px hsl(var(--foreground) / 0.15);
   }
 }
