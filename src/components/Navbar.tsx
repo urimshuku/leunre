@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Courses", href: "/courses" },
+  { label: "Programs", href: "/programs" },
   { label: "Services", href: "/services" },
-  { label: "Products", href: "/products" },
-  { label: "Blog", href: "/blog" },
-  { label: "About Us", href: "/about" },
+  { label: "Tools", href: "/tools" },
+  { label: "Insights", href: "/insights" },
+  { label: "About", href: "/about" },
   { label: "Contact Us", href: "/contact" },
 ];
 

@@ -1,9 +1,9 @@
 import { Mail } from "lucide-react";
 
 const footerLinks = {
-  Company: ["About Us", "Our Team", "Careers", "Press"],
-  Programs: ["Courses", "Workshops", "Retreats", "Coaching"],
-  Resources: ["Blog", "Case Studies", "Research", "FAQ"],
+  Company: ["About", "Our Team", "Careers", "Press"],
+  Programs: ["Programs", "Workshops", "Retreats", "Coaching"],
+  Resources: ["Insights", "Case Studies", "Research", "FAQ"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
 };
 

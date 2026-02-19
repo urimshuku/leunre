@@ -55,7 +55,7 @@ const posts = [
     author: "LEUNRE Editorial",
     date: "Jan 14, 2026",
     readTime: "4 min read",
-    category: "Products",
+    category: "Tools",
     slug: "growth-cards-tangible-tools",
   },
   {
@@ -80,7 +80,7 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Leadership", "Growth", "Wellbeing", "Teams", "Products", "Mindset"];
+const categories = ["All", "Leadership", "Growth", "Wellbeing", "Teams", "Tools", "Mindset"];
 
 const Blog = () => (
   <PageLayout>
@@ -113,7 +113,7 @@ const Blog = () => (
           <span className="flex items-center gap-1.5"><Clock size={14} /> {featuredPost.readTime}</span>
         </div>
         <Link
-          to={`/blog/${featuredPost.slug}`}
+          to={`/insights/${featuredPost.slug}`}
           className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
         >
           Read Article <ArrowRight size={16} />
@@ -163,7 +163,7 @@ const Blog = () => (
               <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
             </div>
             <Link
-              to={`/blog/${post.slug}`}
+              to={`/insights/${post.slug}`}
               className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-primary hover:text-accent transition-colors"
             >
               Read More <ArrowRight size={14} />

@@ -17,10 +17,10 @@ const contactSchema = z.object({
 type ContactForm = z.infer<typeof contactSchema>;
 
 const inquiryTypes = [
-  { value: "courses", label: "Courses" },
+  { value: "programs", label: "Programs" },
   { value: "corporate", label: "Corporate Solutions" },
   { value: "retreats", label: "Retreats" },
-  { value: "product", label: "Product (Growth Cards)" },
+  { value: "tools", label: "Tools (Growth Cards)" },
   { value: "other", label: "Other" },
 ];
 

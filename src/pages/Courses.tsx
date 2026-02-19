@@ -9,7 +9,7 @@ import { courses } from "@/data/courses";
 const Courses = () => (
   <PageLayout>
     <PageHero
-      title="Our Courses"
+      title="Our Programs"
       subtitle="Transformative programs designed to shift perspective, build lasting capability, and unlock human potential."
     />
 
@@ -63,7 +63,7 @@ const Courses = () => (
               </div>
 
               <Link
-                to={`/courses/${course.slug}`}
+                to={`/programs/${course.slug}`}
                 className="inline-flex items-center gap-2 text-xs md:text-[0.8rem] lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors"
               >
                 Learn More <ArrowRight size={14} />

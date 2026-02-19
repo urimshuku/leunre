@@ -23,7 +23,7 @@ const philosophySteps = [
 const AboutUs = () => (
   <PageLayout>
     <PageHero
-      title="About LEUNRE"
+      title="About"
       subtitle="A movement dedicated to transforming how people think, perceive, and grow."
     />
 
@@ -47,7 +47,7 @@ const AboutUs = () => (
               We started as a conversation between practitioners, coaches, and leaders who saw the same pattern everywhere — talented people held back not by lack of skill, but by outdated mental models, unexamined assumptions, and fear of change.
             </p>
             <p>
-              So we built LEUNRE — <span className="text-foreground font-semibold">Learn. Unlearn. Relearn.</span> — as a movement for those who refuse to stay still. Through immersive courses, experiential training, retreats, and tools like our Growth Cards, we help individuals and organizations develop the clarity, courage, and capability to thrive.
+              So we built LEUNRE — <span className="text-foreground font-semibold">Learn. Unlearn. Relearn.</span> — as a movement for those who refuse to stay still. Through immersive programs, experiential training, retreats, and tools like our Growth Cards, we help individuals and organizations develop the clarity, courage, and capability to thrive.
             </p>
           </div>
         </motion.div>
@@ -161,7 +161,7 @@ const AboutUs = () => (
       />
       <div className="max-w-2xl mx-auto text-center">
         <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-8 md:mb-9 lg:mb-10">
-          Whether you join us through a course, a retreat, a deck of Growth Cards, or a partnership — you become part of something bigger.
+          Whether you join us through a program, a retreat, a deck of Growth Cards, or a partnership — you become part of something bigger.
         </p>
         <a
           href="/contact"
