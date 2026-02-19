@@ -20,9 +20,8 @@ const steps = [
 ];
 
 const PhilosophySection = () => (
-  <section id="philosophy" className="py-6 md:py-8 lg:py-12">
+  <section id="philosophy" className="py-14 md:py-20 lg:py-32 bg-philosophy">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <div className="section-card">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +59,6 @@ const PhilosophySection = () => (
             <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
           </motion.div>
         ))}
-      </div>
       </div>
     </div>
   </section>
