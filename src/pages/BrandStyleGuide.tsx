@@ -14,7 +14,7 @@ const colors = [
 ];
 
 const typography = [
-  { name: "Heading", family: "Space Grotesk", weights: "300–700", usage: "All headings (h1–h6)" },
+  { name: "Heading", family: "Clash Display", weights: "200–700", usage: "All headings (h1–h6)" },
   { name: "Body", family: "Inter", weights: "300–800", usage: "Body text, paragraphs, UI elements" },
 ];
 
