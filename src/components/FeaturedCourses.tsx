@@ -62,7 +62,7 @@ const FeaturedCourses = () => (
             key={course.title}
             className="group bg-card rounded-xl border border-border overflow-hidden hover:shadow-xl hover:border-gold/30 transition-all duration-300"
           >
-            <div className="h-1.5 md:h-1.5 lg:h-2 bg-burgundy group-hover:bg-teal transition-colors" />
+            <div className="h-1.5 md:h-1.5 lg:h-2 bg-primary group-hover:bg-gold transition-colors" />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

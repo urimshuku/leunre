@@ -68,10 +68,6 @@ export default {
           DEFAULT: "hsl(var(--teal))",
           light: "hsl(var(--teal-light))",
         },
-        burgundy: {
-          DEFAULT: "hsl(var(--burgundy))",
-          light: "hsl(var(--burgundy-light))",
-        },
         philosophy: "hsl(var(--philosophy-bg))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
