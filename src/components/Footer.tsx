@@ -8,7 +8,7 @@ const footerLinks = {
 };
 
 const Footer = () => (
-  <footer className="bg-primary text-primary-foreground pt-10 md:pt-12 lg:pt-16 pb-6 md:pb-7 lg:pb-8">
+  <footer className="bg-primary text-primary-foreground pt-10 md:pt-12 lg:pt-16 pb-6 md:pb-7 lg:pb-8" style={{ boxShadow: '0 -8px 40px -4px hsl(0 0% 0% / 0.15)' }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-8 md:mb-10 lg:mb-14">
         {/* Brand */}
