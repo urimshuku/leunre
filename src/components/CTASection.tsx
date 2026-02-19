@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => (
   <section id="contact" className="py-14 md:py-20 lg:py-32 bg-philosophy">
@@ -18,19 +19,19 @@ const CTASection = () => (
           Whether you're an individual seeking growth or an organization ready for transformation, we're here to guide the journey.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-3.5 lg:gap-4">
-          <a
-            href="#"
+          <Link
+            to="/contact"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-primary text-primary-foreground font-semibold text-sm md:text-sm lg:text-base hover:bg-forest-light transition-colors"
           >
             Contact Us
             <ArrowRight size={16} />
-          </a>
-          <a
-            href="#courses"
+          </Link>
+          <Link
+            to="/courses"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border border-muted-foreground/30 text-foreground font-semibold text-sm md:text-sm lg:text-base hover:border-primary hover:text-primary transition-all"
           >
             Browse Courses
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>
