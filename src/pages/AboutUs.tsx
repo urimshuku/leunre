@@ -106,7 +106,7 @@ const AboutUs = () => (
       </section>
 
       {/* Philosophy */}
-      <section className="py-14 md:py-18 lg:py-24 bg-muted">
+      <section className="py-14 md:py-18 lg:py-24 bg-philosophy">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +183,7 @@ const AboutUs = () => (
       </section>
 
       {/* Values */}
-      <section className="py-14 md:py-18 lg:py-24 bg-muted">
+      <section className="py-14 md:py-18 lg:py-24 bg-philosophy">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
