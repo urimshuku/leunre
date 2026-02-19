@@ -20,8 +20,9 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-14 md:py-20 lg:py-32 bg-muted">
+  <section className="py-6 md:py-8 lg:py-12">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
+      <div className="section-card">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -58,6 +59,7 @@ const TestimonialsSection = () => (
             </motion.div>
           </div>
         ))}
+      </div>
       </div>
     </div>
   </section>
