@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 34.3 28.0% 95.1%;
+    --background: 39 23% 91%;
     --foreground: 158 46% 24%;
 
     --card: 0 0% 100%;
@@ -21,7 +21,7 @@
     --secondary: 34 44% 68%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 36 20% 92%;
+    --muted: 39 23% 91%;
     --muted-foreground: 153 42% 32%;
 
     --accent: 24 67% 45%;
@@ -46,14 +46,14 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --warm: 34.3 28.0% 95.1%;
+    --warm: 39 23% 91%;
     --warm-foreground: 158 46% 24%;
     --gold: 24 67% 45%;
     --gold-light: 24 82% 56%;
     --forest: 158 46% 24%;
     --forest-light: 153 42% 32%;
-    --cream: 34.3 28.0% 95.1%;
-    --philosophy-bg: 34.3 28.0% 95.1%;
+    --cream: 39 23% 91%;
+    --philosophy-bg: 39 23% 91%;
     --teal: 185 37% 48%;
     --teal-light: 185 42% 58%;
   }
