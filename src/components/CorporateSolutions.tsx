@@ -7,25 +7,25 @@ const solutions = [
     icon: Building2,
     title: "Organizational Development",
     description: "Strategic support for companies undergoing cultural or structural transformation. We partner with leadership to build adaptive, human-centered organizations.",
-    link: "/services#organizational-development",
+    link: "/services/organizational-development",
   },
   {
     icon: Presentation,
     title: "Corporate Workshops",
     description: "High-impact, facilitator-led workshops tailored to your team's needs — from communication skills to leadership development and team alignment.",
-    link: "/services#workshops",
+    link: "/services/workshops",
   },
   {
     icon: Flame,
     title: "Experiential Training",
     description: "Immersive learning experiences that go beyond the classroom. Through real-world scenarios and reflective practices, teams build lasting behavioral change.",
-    link: "/services#experiential-training",
+    link: "/services/experiential-training",
   },
   {
     icon: Mountain,
     title: "Retreats",
     description: "Immersive experiential learning retreats that create lasting shifts in perspective and leadership.",
-    link: "/services#retreats",
+    link: "/services/retreats",
   },
 ];
 
