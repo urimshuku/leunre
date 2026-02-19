@@ -30,7 +30,7 @@ const Courses = () => (
       </section>
 
       {/* Course Grid */}
-      <section className="py-14 md:py-18 lg:py-24 bg-background">
+      <section className="py-14 md:py-18 lg:py-24 bg-background border-b border-border section-shadow">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
             {courses.map((course, i) => (

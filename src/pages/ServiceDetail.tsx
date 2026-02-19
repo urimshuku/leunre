@@ -67,7 +67,7 @@ const ServiceDetail = () => {
         </section>
 
         {/* Overview + Who It's For */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-background border-b border-border section-shadow">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
               <motion.div
@@ -104,7 +104,7 @@ const ServiceDetail = () => {
         </section>
 
         {/* Outcomes */}
-        <section className="py-20 bg-muted">
+        <section className="py-20 bg-muted border-b border-border section-shadow">
           <div className="container mx-auto px-4 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -139,7 +139,7 @@ const ServiceDetail = () => {
         </section>
 
         {/* Our Approach */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-background border-b border-border section-shadow">
           <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
