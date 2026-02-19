@@ -117,4 +117,8 @@
     background: hsl(var(--teal));
     border-radius: 2px;
   }
+
+  .section-shadow {
+    box-shadow: 0 4px 6px -4px hsl(var(--foreground) / 0.06);
+  }
 }
