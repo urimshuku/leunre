@@ -1,8 +1,8 @@
 const colors = [
   { name: "Primary / Forest", token: "--primary", hsl: "153 45% 17%", hex: "#184131", usage: "Headings, buttons, hero background" },
   { name: "Forest Light", token: "--forest-light", hsl: "150 12% 52%", hex: "#73937E", usage: "Secondary text, hover states" },
-  { name: "Gold / Accent", token: "--accent", hsl: "30 56% 52%", hex: "#CD8B3E", usage: "Accent highlights, dividers, CTAs" },
-  { name: "Gold Light", token: "--gold-light", hsl: "30 48% 62%", hex: "#C49E6A", usage: "Subtle gold accents" },
+  { name: "Terracotta / Accent", token: "--accent", hsl: "13 46% 57%", hex: "#c7765a", usage: "Accent highlights, dividers, CTAs" },
+  { name: "Terracotta Light", token: "--gold-light", hsl: "13 38% 67%", hex: "#C49580", usage: "Subtle warm accents" },
   { name: "Background", token: "--background", hsl: "34.3 28% 95.1%", hex: "#F6F3EF", usage: "Main site background" },
   { name: "Warm / Cream", token: "--warm", hsl: "36 27% 95%", hex: "#F6F3EE", usage: "Section alt backgrounds" },
   { name: "Philosophy BG", token: "--philosophy-bg", hsl: "30 14% 92%", hex: "#EFEBE7", usage: "Philosophy, Corporate, CTA sections" },
