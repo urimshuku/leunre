@@ -27,12 +27,13 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/courses/:slug" element={<CourseDetail />} />
+          <Route path="/programs" element={<Courses />} />
+          <Route path="/programs/:slug" element={<CourseDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/tools" element={<Products />} />
+          <Route path="/insights" element={<Blog />} />
+          <Route path="/insights/:slug" element={<Blog />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/brand-guide" element={<BrandStyleGuide />} />

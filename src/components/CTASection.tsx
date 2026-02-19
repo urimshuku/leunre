@@ -27,10 +27,10 @@ const CTASection = () => (
             <ArrowRight size={16} />
           </Link>
           <Link
-            to="/courses"
+            to="/programs"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border border-muted-foreground/30 text-foreground font-semibold text-sm md:text-sm lg:text-base hover:bg-foreground/10 transition-all"
           >
-            Browse Courses
+            Browse Programs
           </Link>
         </div>
       </motion.div>

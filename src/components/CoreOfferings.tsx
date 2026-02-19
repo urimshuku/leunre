@@ -4,7 +4,7 @@ import { BookOpen, Users, ShoppingBag } from "lucide-react";
 const offerings = [
   {
     icon: BookOpen,
-    title: "Courses",
+    title: "Programs",
     description: "Structured learning programs designed to develop critical thinking and emotional intelligence.",
   },
   {
@@ -14,7 +14,7 @@ const offerings = [
   },
   {
     icon: ShoppingBag,
-    title: "Products",
+    title: "Tools",
     description: "Curated tools and resources that support continuous personal and professional development.",
   },
 ];

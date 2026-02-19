@@ -48,7 +48,7 @@ const features = [
 const Products = () => (
   <PageLayout>
     <PageHero
-      title="Our Products"
+      title="Our Tools"
       subtitle="Tools designed to extend the learning journey beyond the classroom."
     />
 
@@ -76,7 +76,7 @@ const Products = () => (
           viewport={{ once: true }}
         >
           <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-semibold uppercase tracking-wider text-gold mb-3 md:mb-3.5 lg:mb-4">
-            Flagship Product
+            Flagship Tool
           </span>
           <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">
             Growth Cards

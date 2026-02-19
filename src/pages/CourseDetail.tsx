@@ -17,9 +17,9 @@ const CourseDetail = () => {
       <PageLayout>
         <div className="min-h-screen flex items-center justify-center bg-background pt-16">
           <div className="text-center">
-            <h1 className="text-2xl font-heading font-bold text-foreground mb-4">Course Not Found</h1>
-            <Link to="/courses" className="text-primary hover:text-forest-light transition-colors font-semibold">
-              ← Back to Courses
+            <h1 className="text-2xl font-heading font-bold text-foreground mb-4">Program Not Found</h1>
+            <Link to="/programs" className="text-primary hover:text-forest-light transition-colors font-semibold">
+              ← Back to Programs
             </Link>
           </div>
         </div>
@@ -30,8 +30,8 @@ const CourseDetail = () => {
   return (
     <PageLayout>
       <DetailHero
-        backTo="/courses"
-        backLabel="All Courses"
+        backTo="/programs"
+        backLabel="All Programs"
         tag={course.tag}
         title={course.title}
         description={course.description}

@@ -34,7 +34,7 @@ const courses = [
 ];
 
 const FeaturedCourses = () => (
-  <section id="courses" className="py-14 md:py-20 lg:py-32 bg-muted border-b border-border section-shadow">
+  <section id="programs" className="py-14 md:py-20 lg:py-32 bg-muted border-b border-border section-shadow">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -45,14 +45,14 @@ const FeaturedCourses = () => (
         <div>
           <div className="gold-divider mb-4 md:mb-5 lg:mb-6" />
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">
-            Featured Courses
+            Featured Programs
           </h2>
           <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-xl">
             Transformative programs designed to shift perspective and build lasting capability.
           </p>
         </div>
-        <Link to="/courses" className="inline-flex items-center gap-2 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
-          View All Courses <ArrowRight size={14} />
+        <Link to="/programs" className="inline-flex items-center gap-2 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
+          View All Programs <ArrowRight size={14} />
         </Link>
       </motion.div>
 
@@ -78,7 +78,7 @@ const FeaturedCourses = () => (
               </div>
               <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">{course.title}</h3>
               <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground leading-relaxed mb-3 md:mb-3.5 lg:mb-4">{course.description}</p>
-              <Link to={`/courses/${course.slug}`} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
+              <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
                 Learn More <ArrowRight size={12} />
               </Link>
             </motion.div>
