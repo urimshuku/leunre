@@ -5,7 +5,7 @@ const colors = [
   { name: "Orange Light", token: "--gold-light", hsl: "24 82% 56%", hex: "#ec7c32", usage: "Subtle warm accents" },
   { name: "Background", token: "--background", hsl: "34.3 28% 95.1%", hex: "#F6F3EF", usage: "Main site background" },
   { name: "Warm / Cream", token: "--warm", hsl: "36 27% 95%", hex: "#F6F3EE", usage: "Section alt backgrounds" },
-  { name: "Philosophy BG", token: "--philosophy-bg", hsl: "28 85% 96%", hex: "#fcf4ed", usage: "Philosophy, Corporate, CTA sections" },
+  { name: "Philosophy BG", token: "--philosophy-bg", hsl: "30 14% 92%", hex: "#EFEBE7", usage: "Philosophy, Corporate, CTA sections" },
   { name: "Card", token: "--card", hsl: "0 0% 100%", hex: "#FFFFFF", usage: "Cards, popovers" },
   { name: "Muted", token: "--muted", hsl: "36 20% 92%", hex: "#EDE9E2", usage: "Muted backgrounds" },
   { name: "Muted Foreground", token: "--muted-foreground", hsl: "153 42% 32%", hex: "#2C775A", usage: "Secondary/helper text" },
@@ -75,7 +75,7 @@ const BrandStyleGuide = () => (
         <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#F6F3EF" }}>
           <span className="font-heading font-bold text-lg" style={{ color: "#215944" }}>Forest on Background</span>
         </div>
-        <div className="rounded-lg p-6 flex items-center justify-center border" style={{ background: "#fcf4ed", borderColor: "#E4DFD8" }}>
+        <div className="rounded-lg p-6 flex items-center justify-center border" style={{ background: "#EFEBE7", borderColor: "#E4DFD8" }}>
           <span className="font-heading font-bold text-lg" style={{ color: "#215944" }}>Forest on Philosophy BG</span>
         </div>
       </div>
