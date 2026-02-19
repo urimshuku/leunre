@@ -14,7 +14,7 @@ const colors = [
 ];
 
 const typography = [
-  { name: "Heading", family: "Satoshi", weights: "300–900", usage: "All headings (h1–h6)" },
+  { name: "Heading", family: "Helvetica Neue", weights: "300–900", usage: "All headings (h1–h6)" },
   { name: "Body", family: "Inter", weights: "300–800", usage: "Body text, paragraphs, UI elements" },
 ];
 
