@@ -67,7 +67,7 @@ const Products = () => (
       </section>
 
       {/* Product Showcase */}
-      <section className="py-14 md:py-18 lg:py-24 bg-background">
+      <section className="py-14 md:py-18 lg:py-24 bg-background border-b border-border section-shadow">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
             {/* Visual Placeholder */}
@@ -126,7 +126,7 @@ const Products = () => (
       </section>
 
       {/* Benefits */}
-      <section className="py-14 md:py-18 lg:py-24 bg-muted">
+      <section className="py-14 md:py-18 lg:py-24 bg-muted border-b border-border section-shadow">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -161,7 +161,7 @@ const Products = () => (
       </section>
 
       {/* Use Cases */}
-      <section className="py-14 md:py-18 lg:py-24 bg-background">
+      <section className="py-14 md:py-18 lg:py-24 bg-background border-b border-border section-shadow">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

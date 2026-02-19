@@ -36,7 +36,7 @@ const Services = () => (
         <section
           key={service.title}
           id={service.slug}
-          className={`py-14 md:py-18 lg:py-24 ${i % 2 === 0 ? "bg-background" : "bg-muted"}`}
+          className={`py-14 md:py-18 lg:py-24 border-b border-border section-shadow ${i % 2 === 0 ? "bg-background" : "bg-muted"}`}
         >
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-start">

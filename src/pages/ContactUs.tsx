@@ -86,7 +86,7 @@ const ContactUs = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-14 md:py-18 lg:py-24 bg-background">
+        <section className="py-14 md:py-18 lg:py-24 bg-background border-b border-border section-shadow">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-16">
               {/* Form */}
