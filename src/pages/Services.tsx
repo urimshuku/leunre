@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 const services = [
   {
     icon: Building2,
+    id: "organizational-development",
     title: "Organizational Development Support",
     description:
       "We partner with organizations to diagnose systemic challenges, align leadership, and design people strategies that drive sustainable growth. Our consultants work alongside your team to build internal capacity — from culture transformation to change management.",
@@ -23,6 +24,7 @@ const services = [
   },
   {
     icon: Mountain,
+    id: "retreats",
     title: "Retreats",
     description:
       "Our curated retreats combine immersive learning with purposeful reflection. Designed for leadership teams and high-potential cohorts, each retreat is tailored to foster deeper connection, strategic clarity, and renewed energy.",
@@ -40,6 +42,7 @@ const services = [
   },
   {
     icon: Sparkles,
+    id: "experiential-training",
     title: "Experiential Training",
     description:
       "Learning by doing. Our experiential training programs go beyond lectures and slides — using simulations, role-play, real-world scenarios, and reflective practice to embed lasting behavioral change.",
@@ -57,6 +60,7 @@ const services = [
   },
   {
     icon: Users,
+    id: "workshops",
     title: "Workshops",
     description:
       "Focused, facilitated sessions designed to tackle specific challenges — from communication breakdowns to team dynamics. Our workshops are interactive, insight-driven, and tailored to your organization's context.",
@@ -102,6 +106,7 @@ const Services = () => (
       {services.map((service, i) => (
         <section
           key={service.title}
+          id={service.id}
           className={`py-14 md:py-18 lg:py-24 ${i % 2 === 0 ? "bg-background" : "bg-muted"}`}
         >
           <div className="container mx-auto px-4 md:px-6 lg:px-8">

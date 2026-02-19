@@ -1,26 +1,31 @@
 import { motion } from "framer-motion";
 import { Building2, Presentation, Flame, Mountain, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const solutions = [
   {
     icon: Building2,
     title: "Organizational Development",
     description: "Strategic support for companies undergoing cultural or structural transformation. We partner with leadership to build adaptive, human-centered organizations.",
+    link: "/services#organizational-development",
   },
   {
     icon: Presentation,
     title: "Corporate Workshops",
     description: "High-impact, facilitator-led workshops tailored to your team's needs — from communication skills to leadership development and team alignment.",
+    link: "/services#workshops",
   },
   {
     icon: Flame,
     title: "Experiential Training",
     description: "Immersive learning experiences that go beyond the classroom. Through real-world scenarios and reflective practices, teams build lasting behavioral change.",
+    link: "/services#experiential-training",
   },
   {
     icon: Mountain,
     title: "Retreats",
     description: "Immersive experiential learning retreats that create lasting shifts in perspective and leadership.",
+    link: "/services#retreats",
   },
 ];
 
@@ -60,9 +65,9 @@ const CorporateSolutions = () => (
               </div>
               <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{item.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm mb-4 md:mb-4.5 lg:mb-5 flex-1">{item.description}</p>
-              <a href="#contact" className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-gold hover:text-gold-light transition-colors mt-auto">
+              <Link to={item.link} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-gold hover:text-gold-light transition-colors mt-auto">
                 Learn More <ArrowRight size={12} />
-              </a>
+              </Link>
             </motion.div>
           </div>
         ))}
