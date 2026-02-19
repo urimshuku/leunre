@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Satoshi"', 'system-ui', 'sans-serif'],
+        heading: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
         body: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       colors: {
