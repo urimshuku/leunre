@@ -46,14 +46,14 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --warm: 36 27% 95%;
+    --warm: 24 90% 89%;
     --warm-foreground: 158 46% 24%;
     --gold: 24 67% 45%;
     --gold-light: 24 82% 56%;
     --forest: 158 46% 24%;
     --forest-light: 153 42% 32%;
-    --cream: 36 27% 95%;
-    --philosophy-bg: 30 14% 92%;
+    --cream: 24 90% 89%;
+    --philosophy-bg: 27 90% 96%;
   }
 
   .dark {
