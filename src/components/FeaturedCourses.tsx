@@ -8,24 +8,28 @@ const courses = [
     title: "Emotional Intelligence",
     description: "Master self-awareness, empathy, and emotional regulation to lead with authenticity and resilience.",
     tag: "Most Popular",
+    slug: "emotional-intelligence",
   },
   {
     icon: MessageCircle,
     title: "Communication Mastery",
     description: "Transform how you connect, influence, and build trust through powerful communication frameworks.",
     tag: "Essential",
+    slug: "communication-mastery",
   },
   {
     icon: Users2,
     title: "People Management",
     description: "Develop the skills to inspire, coach, and empower high-performing teams in any organization.",
     tag: "Leadership",
+    slug: "people-management",
   },
   {
     icon: Compass,
     title: "Conscious Leadership",
     description: "Lead with purpose, clarity, and integrity — creating impact that extends beyond the bottom line.",
     tag: "Advanced",
+    slug: "conscious-leadership",
   },
 ];
 
@@ -74,9 +78,9 @@ const FeaturedCourses = () => (
               </div>
               <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">{course.title}</h3>
               <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground leading-relaxed mb-3 md:mb-3.5 lg:mb-4">{course.description}</p>
-              <a href="#" className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
+              <Link to={`/courses/${course.slug}`} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
                 Learn More <ArrowRight size={12} />
-              </a>
+              </Link>
             </motion.div>
           </div>
         ))}
