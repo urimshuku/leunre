@@ -14,8 +14,8 @@ const colors = [
 ];
 
 const typography = [
-  { name: "Heading", family: "Inter", weights: "400–800", usage: "All headings (h1–h6)" },
-  { name: "Body", family: "Plus Jakarta Sans", weights: "300–800", usage: "Body text, paragraphs, UI elements" },
+  { name: "Heading", family: "Playfair Display", weights: "400–900", usage: "All headings (h1–h6)" },
+  { name: "Body", family: "Inter", weights: "300–800", usage: "Body text, paragraphs, UI elements" },
 ];
 
 const BrandStyleGuide = () => (
