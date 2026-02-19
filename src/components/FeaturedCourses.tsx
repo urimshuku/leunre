@@ -54,16 +54,18 @@ const FeaturedCourses = () => (
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
         {courses.map((course, i) => (
-          <motion.div
+          <div
             key={course.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
             className="group bg-card rounded-xl border border-border overflow-hidden hover:shadow-xl hover:border-gold/30 transition-all duration-300"
           >
             <div className="h-1.5 md:h-1.5 lg:h-2 bg-primary group-hover:bg-gold transition-colors" />
-            <div className="p-4 md:p-5 lg:p-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="p-4 md:p-5 lg:p-6"
+            >
               <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-semibold uppercase tracking-wider text-gold mb-3 md:mb-3.5 lg:mb-4">
                 {course.tag}
               </span>
@@ -75,8 +77,8 @@ const FeaturedCourses = () => (
               <a href="#" className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
                 Learn More <ArrowRight size={12} />
               </a>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         ))}
       </div>
     </div>

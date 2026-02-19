@@ -123,19 +123,23 @@ const CourseDetail = () => {
             </motion.div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {course.outcomes.map((outcome, i) => (
-                <motion.div
+              <div
                   key={outcome}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
                   className="flex items-start gap-4 bg-card rounded-xl border border-border p-6"
                 >
-                  <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                    <CheckCircle2 size={18} className="text-gold" />
-                  </div>
-                  <p className="text-foreground font-medium">{outcome}</p>
-                </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start gap-4 w-full"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
+                      <CheckCircle2 size={18} className="text-gold" />
+                    </div>
+                    <p className="text-foreground font-medium">{outcome}</p>
+                  </motion.div>
+                </div>
               ))}
             </div>
           </div>

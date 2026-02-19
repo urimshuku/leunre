@@ -34,16 +34,18 @@ const Courses = () => (
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
             {courses.map((course, i) => (
-              <motion.div
+              <div
                 key={course.slug}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="group bg-card rounded-xl border border-border overflow-hidden hover:shadow-xl hover:border-gold/30 transition-all duration-300"
               >
                 <div className="h-1.5 md:h-1.5 lg:h-2 bg-primary group-hover:bg-gold transition-colors" />
-                <div className="p-5 md:p-6 lg:p-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="p-5 md:p-6 lg:p-8"
+                >
                   <div className="flex items-start justify-between mb-4 md:mb-5 lg:mb-6">
                     <div>
                       <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-semibold uppercase tracking-wider text-gold mb-2 md:mb-2.5 lg:mb-3">
@@ -85,8 +87,8 @@ const Courses = () => (
                   >
                     Learn More <ArrowRight size={14} />
                   </Link>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             ))}
           </div>
         </div>
