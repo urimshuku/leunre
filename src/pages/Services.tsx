@@ -1,82 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, Mountain, Sparkles, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { services } from "@/data/services";
 
-const services = [
-  {
-    icon: Building2,
-    id: "organizational-development",
-    title: "Organizational Development Support",
-    description:
-      "We partner with organizations to diagnose systemic challenges, align leadership, and design people strategies that drive sustainable growth. Our consultants work alongside your team to build internal capacity — from culture transformation to change management.",
-    audience: [
-      "HR and People Operations teams",
-      "C-suite and executive leadership",
-      "Organizations undergoing transformation or scaling",
-    ],
-    outcomes: [
-      "A clear organizational development roadmap",
-      "Improved leadership alignment and decision-making",
-      "Stronger culture and employee engagement",
-      "Sustainable frameworks for change management",
-    ],
-  },
-  {
-    icon: Mountain,
-    id: "retreats",
-    title: "Retreats",
-    description:
-      "Our curated retreats combine immersive learning with purposeful reflection. Designed for leadership teams and high-potential cohorts, each retreat is tailored to foster deeper connection, strategic clarity, and renewed energy.",
-    audience: [
-      "Leadership teams seeking alignment",
-      "High-potential talent cohorts",
-      "Boards and executive committees",
-    ],
-    outcomes: [
-      "Strengthened team cohesion and trust",
-      "Strategic clarity on key priorities",
-      "Renewed energy and shared purpose",
-      "Actionable commitments carried back to the workplace",
-    ],
-  },
-  {
-    icon: Sparkles,
-    id: "experiential-training",
-    title: "Experiential Training",
-    description:
-      "Learning by doing. Our experiential training programs go beyond lectures and slides — using simulations, role-play, real-world scenarios, and reflective practice to embed lasting behavioral change.",
-    audience: [
-      "Teams needing practical skill-building",
-      "Organizations prioritizing behavioral change",
-      "L&D departments seeking high-impact programs",
-    ],
-    outcomes: [
-      "Immediate application of new skills on the job",
-      "Higher retention through hands-on learning",
-      "Measurable behavior shifts in participants",
-      "Engaging, memorable learning experiences",
-    ],
-  },
-  {
-    icon: Users,
-    id: "workshops",
-    title: "Workshops",
-    description:
-      "Focused, facilitated sessions designed to tackle specific challenges — from communication breakdowns to team dynamics. Our workshops are interactive, insight-driven, and tailored to your organization's context.",
-    audience: [
-      "Intact teams addressing specific challenges",
-      "Cross-functional groups building collaboration",
-      "Managers and individual contributors alike",
-    ],
-    outcomes: [
-      "Practical tools and frameworks to apply immediately",
-      "Shared language and understanding across the team",
-      "Clarity on next steps and accountability",
-      "Energized, motivated participants",
-    ],
-  },
-];
+
 
 const Services = () => (
   <>
@@ -106,7 +35,7 @@ const Services = () => (
       {services.map((service, i) => (
         <section
           key={service.title}
-          id={service.id}
+          id={service.slug}
           className={`py-14 md:py-18 lg:py-24 ${i % 2 === 0 ? "bg-background" : "bg-muted"}`}
         >
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
@@ -126,12 +55,12 @@ const Services = () => (
                 <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-7 lg:mb-8">
                   {service.description}
                 </p>
-                <a
-                  href="#contact"
+                <Link
+                  to={`/services/${service.slug}`}
                   className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
                 >
-                  Book a Consultation <ArrowRight size={16} />
-                </a>
+                  Learn More <ArrowRight size={16} />
+                </Link>
               </motion.div>
 
               {/* Right — Audience + Outcomes */}
