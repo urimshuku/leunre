@@ -1,5 +1,5 @@
 const colors = [
-  { name: "Primary / Forest", token: "--primary", hsl: "153 45% 17%", hex: "#184131", usage: "Headings, buttons, hero background" },
+  { name: "Primary / Forest", token: "--primary", hsl: "158 46% 24%", hex: "#215944", usage: "Headings, buttons, hero background" },
   { name: "Forest Light", token: "--forest-light", hsl: "150 12% 52%", hex: "#73937E", usage: "Secondary text, hover states" },
   { name: "Orange / Accent", token: "--accent", hsl: "24 67% 45%", hex: "#d16014", usage: "Accent highlights, dividers, CTAs" },
   { name: "Orange Light", token: "--gold-light", hsl: "24 55% 55%", hex: "#D4864A", usage: "Subtle warm accents" },
@@ -21,23 +21,23 @@ const typography = [
 const BrandStyleGuide = () => (
   <div className="min-h-screen bg-white p-8 md:p-12 lg:p-16 max-w-4xl mx-auto print:p-6">
     {/* Header */}
-    <div className="mb-12 border-b-2 border-[#184131] pb-8">
-      <h1 className="text-4xl md:text-5xl font-heading font-bold" style={{ color: "#184131" }}>
+    <div className="mb-12 border-b-2 border-[#215944] pb-8">
+      <h1 className="text-4xl md:text-5xl font-heading font-bold" style={{ color: "#215944" }}>
         LEUNRE
       </h1>
       <p className="text-lg mt-2" style={{ color: "#73937E" }}>Brand Style Guide</p>
-      <div className="mt-4 w-16 h-1 rounded" style={{ background: "#CD8B3E" }} />
+      <div className="mt-4 w-16 h-1 rounded" style={{ background: "#d16014" }} />
     </div>
 
     {/* Color Palette */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#184131" }}>Color Palette</h2>
+      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#215944" }}>Color Palette</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {colors.map((c) => (
           <div key={c.token} className="border rounded-lg overflow-hidden" style={{ borderColor: "#E4DFD8" }}>
             <div className="h-20 w-full" style={{ background: c.hex }} />
             <div className="p-3">
-              <p className="font-heading font-bold text-sm" style={{ color: "#184131" }}>{c.name}</p>
+              <p className="font-heading font-bold text-sm" style={{ color: "#215944" }}>{c.name}</p>
               <p className="text-xs font-mono mt-1" style={{ color: "#657B6F" }}>{c.hex}</p>
               <p className="text-xs font-mono" style={{ color: "#657B6F" }}>HSL: {c.hsl}</p>
               <p className="text-xs mt-1.5" style={{ color: "#73937E" }}>{c.usage}</p>
@@ -49,12 +49,12 @@ const BrandStyleGuide = () => (
 
     {/* Typography */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#184131" }}>Typography</h2>
+      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#215944" }}>Typography</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {typography.map((t) => (
           <div key={t.name} className="border rounded-lg p-5" style={{ borderColor: "#E4DFD8" }}>
-            <p className="text-3xl font-heading font-bold mb-2" style={{ color: "#184131", fontFamily: t.family }}>Aa</p>
-            <p className="font-heading font-bold text-sm" style={{ color: "#184131" }}>{t.family}</p>
+            <p className="text-3xl font-heading font-bold mb-2" style={{ color: "#215944", fontFamily: t.family }}>Aa</p>
+            <p className="font-heading font-bold text-sm" style={{ color: "#215944" }}>{t.family}</p>
             <p className="text-xs mt-1" style={{ color: "#657B6F" }}>Weights: {t.weights}</p>
             <p className="text-xs" style={{ color: "#73937E" }}>{t.usage}</p>
           </div>
@@ -64,19 +64,19 @@ const BrandStyleGuide = () => (
 
     {/* Primary Combinations */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#184131" }}>Key Combinations</h2>
+      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#215944" }}>Key Combinations</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#184131" }}>
+        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#215944" }}>
           <span className="font-heading font-bold text-lg" style={{ color: "#FFFFFF" }}>Primary on Forest</span>
         </div>
-        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#184131" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#CD8B3E" }}>Gold on Forest</span>
+        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#215944" }}>
+          <span className="font-heading font-bold text-lg" style={{ color: "#d16014" }}>Gold on Forest</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#F6F3EF" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#184131" }}>Forest on Background</span>
+          <span className="font-heading font-bold text-lg" style={{ color: "#215944" }}>Forest on Background</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center border" style={{ background: "#EFEBE7", borderColor: "#E4DFD8" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#184131" }}>Forest on Philosophy BG</span>
+          <span className="font-heading font-bold text-lg" style={{ color: "#215944" }}>Forest on Philosophy BG</span>
         </div>
       </div>
     </section>
