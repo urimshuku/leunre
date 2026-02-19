@@ -117,4 +117,25 @@
     background: hsl(var(--teal));
     border-radius: 2px;
   }
+
+  .section-card {
+    background: hsl(var(--card));
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 16px -4px hsl(var(--foreground) / 0.06), 0 1px 4px -2px hsl(var(--foreground) / 0.04);
+    padding: 2.5rem 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-card {
+      padding: 3rem 2.5rem;
+      border-radius: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-card {
+      padding: 4rem 3.5rem;
+      border-radius: 2.5rem;
+    }
+  }
 }
