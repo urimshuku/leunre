@@ -1,12 +1,12 @@
 const colors = [
   { name: "Primary / Forest", token: "--primary", hsl: "158 46% 24%", hex: "#215944", usage: "Headings, buttons, hero background" },
   { name: "Forest Light", token: "--forest-light", hsl: "153 42% 32%", hex: "#2C775A", usage: "Secondary text, hover states" },
-  { name: "Orange / Accent", token: "--accent", hsl: "24 67% 45%", hex: "#d16014", usage: "Accent highlights, dividers, CTAs" },
-  { name: "Orange Light", token: "--gold-light", hsl: "24 82% 56%", hex: "#ec7c32", usage: "Subtle warm accents" },
+  { name: "Gold / Accent", token: "--accent", hsl: "43 74% 49%", hex: "#DAA520", usage: "Accent highlights, dividers, CTAs" },
+  { name: "Gold Light", token: "--gold-light", hsl: "43 74% 60%", hex: "#E4BA4E", usage: "Subtle warm accents" },
   { name: "Background", token: "--background", hsl: "34.3 28% 95.1%", hex: "#F6F3EF", usage: "Main site background" },
   { name: "Warm / Cream", token: "--warm", hsl: "34.3 28% 95.1%", hex: "#F6F3EF", usage: "Section alt backgrounds" },
   { name: "Philosophy BG", token: "--philosophy-bg", hsl: "34.3 28% 95.1%", hex: "#F6F3EF", usage: "Philosophy, Corporate, CTA sections" },
-  { name: "Card", token: "--card", hsl: "0 0% 100%", hex: "#FFFFFF", usage: "Cards, popovers" },
+  { name: "Card", token: "--card", hsl: "39 20% 96%", hex: "#F7F5F1", usage: "Cards, popovers" },
   { name: "Muted", token: "--muted", hsl: "36 20% 92%", hex: "#EDE9E2", usage: "Muted backgrounds" },
   { name: "Muted Foreground", token: "--muted-foreground", hsl: "153 42% 32%", hex: "#2C775A", usage: "Secondary/helper text" },
   { name: "Border", token: "--border", hsl: "36 15% 88%", hex: "#E4DFD8", usage: "Borders, dividers" },
@@ -26,7 +26,7 @@ const BrandStyleGuide = () => (
         LEUNRE
       </h1>
       <p className="text-lg mt-2" style={{ color: "#2C775A" }}>Brand Style Guide</p>
-      <div className="mt-4 w-16 h-1 rounded" style={{ background: "#d16014" }} />
+      <div className="mt-4 w-16 h-1 rounded" style={{ background: "#DAA520" }} />
     </div>
 
     {/* Color Palette */}
@@ -70,7 +70,7 @@ const BrandStyleGuide = () => (
           <span className="font-heading font-bold text-lg" style={{ color: "#FFFFFF" }}>Primary on Forest</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#215944" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#d16014" }}>Gold on Forest</span>
+          <span className="font-heading font-bold text-lg" style={{ color: "#DAA520" }}>Gold on Forest</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#F6F3EF" }}>
           <span className="font-heading font-bold text-lg" style={{ color: "#215944" }}>Forest on Background</span>

@@ -62,7 +62,7 @@ const AboutUs = () => (
         centered
         className="mb-10 md:mb-12 lg:mb-16"
       />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7 lg:gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
         {philosophySteps.map((step, i) => (
           <motion.div
             key={step.label}
@@ -70,13 +70,18 @@ const AboutUs = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15 }}
-            className="text-center"
+            className="text-center relative"
           >
-            <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-card border border-border flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
-              <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-primary" />
+            <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-4 md:mb-5 lg:mb-6">
+              <div className="w-full h-full rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10">
+                <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
+              </div>
+              {i < philosophySteps.length - 1 && (
+                <div className="hidden md:block absolute top-1/2 left-full w-[calc(((100vw-4rem)/3-4rem))] lg:w-[calc(((min(64rem,100vw)-4rem)/3-5rem))] -translate-y-1/2 border-t-2 border-dashed border-gold/30" />
+              )}
             </div>
-            <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{step.label}</h3>
-            <p className="text-muted-foreground text-xs md:text-[0.8rem] lg:text-sm leading-relaxed">{step.description}</p>
+            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{step.label}</h3>
+            <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
           </motion.div>
         ))}
       </div>
@@ -147,32 +152,25 @@ const AboutUs = () => (
     </ContentSection>
 
     {/* Movement Positioning */}
-    <section className="py-14 md:py-18 lg:py-24 bg-hero-gradient">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-2xl mx-auto"
+    <ContentSection variant="muted">
+      <SectionHeader
+        title="More Than a Company. A Movement."
+        subtitle="LEUNRE isn't just about training — it's about shifting how the world approaches growth. We're building a community of leaders, thinkers, and doers who believe that the willingness to evolve is the greatest strength of all."
+        centered
+        className="mb-6 md:mb-8 lg:mb-10"
+      />
+      <div className="max-w-2xl mx-auto text-center">
+        <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-8 md:mb-9 lg:mb-10">
+          Whether you join us through a course, a retreat, a deck of Growth Cards, or a partnership — you become part of something bigger.
+        </p>
+        <a
+          href="/contact"
+          className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
         >
-          <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-primary-foreground mb-4 md:mb-5 lg:mb-6">
-            More Than a Company.<br />A Movement.
-          </h2>
-          <p className="text-primary-foreground/70 text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-5 lg:mb-6">
-            LEUNRE isn't just about training — it's about shifting how the world approaches growth. We're building a community of leaders, thinkers, and doers who believe that the willingness to evolve is the greatest strength of all.
-          </p>
-          <p className="text-primary-foreground/70 text-sm md:text-base lg:text-lg leading-relaxed mb-8 md:mb-9 lg:mb-10">
-            Whether you join us through a course, a retreat, a deck of Growth Cards, or a partnership — you become part of something bigger.
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
-          >
-            Join the Movement <ArrowRight size={16} />
-          </a>
-        </motion.div>
+          Join the Movement <ArrowRight size={16} />
+        </a>
       </div>
-    </section>
+    </ContentSection>
   </PageLayout>
 );
 
