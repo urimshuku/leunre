@@ -15,7 +15,8 @@ const Footer = () => (
         <div className="col-span-2 md:col-span-3 lg:col-span-2">
           <h3 className="font-heading text-xl md:text-[1.35rem] lg:text-2xl font-bold mb-3 md:mb-3.5 lg:mb-4">LEUNRE</h3>
           <p className="text-primary-foreground/65 text-xs md:text-[0.8rem] lg:text-sm leading-relaxed mb-4 md:mb-5 lg:mb-6 max-w-xs">
-            Learn. Unlearn. Relearn. A movement dedicated to unlocking human potential through transformative learning experiences.
+            Learn. Unlearn. Relearn.<br />
+            A movement dedicated to unlocking human potential through transformative learning experiences.
           </p>
           {/* Newsletter */}
           <div className="flex gap-2">
