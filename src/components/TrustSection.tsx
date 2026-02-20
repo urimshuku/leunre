@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const metrics = [
-  { value: "10,000+", label: "Learners Transformed" },
-  { value: "200+", label: "Corporate Partners" },
-  { value: "35+", label: "Countries Reached" },
-  { value: "98%", label: "Satisfaction Rate" },
-  { value: "500+", label: "Workshops Delivered" },
+  { value: "35+", label: "Countries" },
+  { value: "1,500+", label: "Professionals Impacted" },
+  { value: "50+", label: "Workshops & Trainings" },
+  { value: "20+", label: "Company Partners" },
+  { value: "4", label: "Leadership Programs" },
 ];
 
 const TrustSection = () => (
@@ -17,7 +17,7 @@ const TrustSection = () => (
         viewport={{ once: true }}
       >
         <div className="flex animate-marquee whitespace-nowrap">
-          {[...metrics, ...metrics, ...metrics].map((item, i) => (
+          {[...metrics, ...metrics, ...metrics, ...metrics, ...metrics, ...metrics].map((item, i) => (
             <div
               key={i}
               className="inline-flex items-center gap-3 mx-8 md:mx-12 lg:mx-16"
@@ -28,7 +28,6 @@ const TrustSection = () => (
               <span className="text-xs md:text-sm lg:text-base text-muted-foreground font-medium uppercase tracking-wider">
                 {item.label}
               </span>
-              <span className="w-1.5 h-1.5 rounded-full bg-teal ml-4" />
             </div>
           ))}
         </div>
