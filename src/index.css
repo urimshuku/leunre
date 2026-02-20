@@ -24,7 +24,7 @@
     --muted: 39 23% 91%;
     --muted-foreground: 153 42% 32%;
 
-    --accent: 43 74% 49%;
+    --accent: 42 73% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -48,14 +48,14 @@
     /* Custom tokens */
     --warm: 39 23% 91%;
     --warm-foreground: 158 46% 24%;
-    --gold: 43 74% 49%;
-    --gold-light: 43 74% 60%;
+    --gold: 42 73% 48%;
+    --gold-light: 42 73% 59%;
     --forest: 158 46% 24%;
     --forest-light: 153 42% 32%;
     --cream: 39 23% 91%;
     --philosophy-bg: 39 23% 91%;
-    --teal: 185 37% 48%;
-    --teal-light: 185 42% 58%;
+    --teal: 18 80% 45%;
+    --teal-light: 18 80% 55%;
   }
 
   .dark {
@@ -71,7 +71,7 @@
     --secondary-foreground: 40 20% 97%;
     --muted: 150 15% 15%;
     --muted-foreground: 40 10% 65%;
-    --accent: 43 74% 49%;
+    --accent: 42 73% 48%;
     --accent-foreground: 40 20% 97%;
     --border: 150 15% 20%;
     --input: 150 15% 20%;

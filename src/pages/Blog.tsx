@@ -80,12 +80,10 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Leadership", "Growth", "Wellbeing", "Teams", "Tools", "Mindset"];
-
 const Blog = () => (
   <PageLayout>
     <PageHero
-      title="The LEUNRE Journal"
+      title="The LEUNRE Insights"
       subtitle="Insights, frameworks, and stories on learning, unlearning, and the courage to grow."
     />
 
@@ -121,24 +119,9 @@ const Blog = () => (
       </motion.div>
     </ContentSection>
 
-    {/* Categories */}
+    {/* Posts Grid */}
     <ContentSection variant="muted">
-      <div className="flex flex-wrap gap-2 md:gap-3 mb-10 md:mb-12 lg:mb-14">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={`px-4 py-2 rounded-md text-xs md:text-sm font-medium border transition-all ${
-              cat === "All"
-                ? "bg-primary text-primary-foreground border-primary"
-                : "bg-card text-foreground border-border hover:border-primary/30"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* Posts Grid */}
+      <SectionHeader title="Latest Articles" className="mb-8 md:mb-10 lg:mb-12" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
         {posts.map((post, i) => (
           <motion.div

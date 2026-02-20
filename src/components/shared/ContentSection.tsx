@@ -10,7 +10,7 @@ interface ContentSectionProps {
 const ContentSection = ({ children, variant = "default", className = "", id }: ContentSectionProps) => (
   <section
     id={id}
-    className={`py-14 md:py-18 lg:py-24 border-b border-border section-shadow ${
+    className={`py-20 md:py-28 lg:py-36 border-b border-border section-shadow ${
       variant === "muted" ? "bg-muted" : "bg-background"
     } ${className}`}
   >
