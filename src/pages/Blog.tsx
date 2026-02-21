@@ -49,9 +49,9 @@ const posts = [
     slug: "culture-continuous-evolution",
   },
   {
-    title: "The Growth Cards: How Tangible Tools Spark Intangible Change",
+    title: "The Action Cards: How Tangible Tools Spark Intangible Change",
     excerpt:
-      "Discover the philosophy behind our Growth Cards and how a simple deck can become a powerful catalyst for reflection and transformation.",
+      "Discover the philosophy behind our Action Cards and how a simple deck can become a powerful catalyst for reflection and transformation.",
     author: "LEUNRE Editorial",
     date: "Jan 14, 2026",
     readTime: "4 min read",

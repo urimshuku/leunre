@@ -19,9 +19,11 @@ const SectionHeader = ({ title, subtitle, centered = false, className = "" }: Se
       {title}
     </h2>
     {subtitle && (
-      <p className={`text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed ${centered ? "max-w-2xl mx-auto" : ""}`}>
-        {subtitle}
-      </p>
+      <div className={`text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed ${centered ? "max-w-2xl mx-auto" : ""}`}>
+        {subtitle.split('\n').filter(Boolean).map((line, i) => (
+          <p key={i} className={i > 0 ? "mt-3" : ""}>{line}</p>
+        ))}
+      </div>
     )}
   </motion.div>
 );
