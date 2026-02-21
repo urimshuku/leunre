@@ -6,25 +6,21 @@ const HeroSection = () => (
   <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-hero-gradient">
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <div className="max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 md:px-3.5 md:py-1.5 lg:px-4 lg:py-2 rounded-full border border-gold/30 bg-primary/20 backdrop-blur-sm mb-6 md:mb-7 lg:mb-8"
-        >
-          <span className="w-1.5 h-1.5 md:w-1.5 md:h-1.5 lg:w-2 lg:h-2 rounded-full bg-gold animate-pulse" />
-          <span className="text-xs md:text-xs lg:text-sm font-medium text-gold-light">Learn · Unlearn · Relearn</span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] text-primary-foreground mb-4 md:mb-5 lg:mb-6"
+          className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] mb-4 md:mb-5 lg:mb-6"
         >
-          Unlock the Full
+          <span style={{ color: '#d29d33' }}>Learn,</span>
           <br />
-          <span className="text-gold">Potential</span> Within
+          <span style={{ color: '#d29d33' }}>Unlearn,</span>
+          <br />
+          <span style={{ color: '#d29d33' }}>Relearn,</span>
+          <br />
+          <span className="text-primary-foreground">Unlocking Human Potential.</span>
+          <br />
+          <span className="text-primary-foreground">Inspiring Transformation</span>
         </motion.h1>
 
         <motion.p

@@ -20,7 +20,7 @@ const inquiryTypes = [
   { value: "programs", label: "Programs" },
   { value: "corporate", label: "Corporate Solutions" },
   { value: "retreats", label: "Retreats" },
-  { value: "tools", label: "Tools (Growth Cards)" },
+  { value: "tools", label: "Tools (Action Cards)" },
   { value: "other", label: "Other" },
 ];
 
@@ -65,7 +65,7 @@ const ContactUs = () => {
   return (
     <PageLayout>
       <PageHero
-        title="Contact Us"
+        title="Contact"
         subtitle="We would love to hear from you — whether you're exploring collaboration, training, or simply resonating with our mission."
       />
 

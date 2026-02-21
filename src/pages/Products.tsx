@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, User, Users, Sparkles, Lightbulb, MessageCircle, Target } from "lucide-react";
+import { ArrowRight, CheckCircle2, User, Users, Lightbulb, MessageCircle, Target, Layers, BookOpen, Calendar } from "lucide-react";
 import PageLayout from "@/components/shared/PageLayout";
 import PageHero from "@/components/shared/PageHero";
 import ContentSection from "@/components/shared/ContentSection";
@@ -39,7 +39,7 @@ const useCases = [
 ];
 
 const features = [
-  { icon: Sparkles, label: "52 Curated Cards" },
+  { icon: Layers, label: "52 Curated Cards" },
   { icon: Lightbulb, label: "Evidence-Informed Prompts" },
   { icon: MessageCircle, label: "Conversation Starters" },
   { icon: Target, label: "Goal-Oriented Exercises" },
@@ -63,9 +63,9 @@ const Products = () => (
         >
           <div className="text-center p-8 md:p-10 lg:p-12">
             <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-4 md:mb-5 lg:mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <Sparkles className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-primary" />
+              <Layers className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-primary" />
             </div>
-            <p className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1 md:mb-1.5 lg:mb-2">Growth Cards</p>
+            <p className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1 md:mb-1.5 lg:mb-2">Action Cards</p>
             <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">Product image coming soon</p>
           </div>
         </motion.div>
@@ -79,7 +79,7 @@ const Products = () => (
             Flagship Tool
           </span>
           <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">
-            Growth Cards
+            Action Cards
           </h2>
           <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-7 lg:mb-8">
             A beautifully crafted deck of prompt cards designed to spark self-reflection, deepen conversations, and accelerate personal and professional growth. Each card draws from behavioral science and real-world leadership practices to help you learn, unlearn, and relearn — one card at a time.
@@ -109,7 +109,7 @@ const Products = () => (
     {/* Benefits */}
     <ContentSection variant="muted">
       <SectionHeader
-        title="Why Growth Cards?"
+        title="Why Action Cards?"
         subtitle="More than just a card deck — it's a tool for transformation."
         className="mb-8 md:mb-10 lg:mb-12"
       />
@@ -133,7 +133,7 @@ const Products = () => (
     {/* Use Cases */}
     <ContentSection>
       <SectionHeader
-        title="How to Use Growth Cards"
+        title="How to Use Action Cards"
         subtitle="Versatile enough for solo practice and powerful enough for team settings."
         centered
         className="mb-10 md:mb-12 lg:mb-16"
@@ -178,10 +178,13 @@ const Products = () => (
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8"
+          className="relative bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 overflow-hidden"
         >
+          <div className="absolute inset-0 bg-white/30 z-10 rounded-xl flex items-center justify-center">
+            <span className="text-sm font-heading font-bold text-foreground/70 uppercase tracking-wider">Coming Soon</span>
+          </div>
           <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
-            <Lightbulb className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
+            <BookOpen className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
           </div>
           <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Self-Reflection Notebooks</h3>
           <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm">To pause and realign — guided journaling tools designed to help you reconnect with your purpose and track your growth journey.</p>
@@ -192,10 +195,13 @@ const Products = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8"
+          className="relative bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 overflow-hidden"
         >
+          <div className="absolute inset-0 bg-white/30 z-10 rounded-xl flex items-center justify-center">
+            <span className="text-sm font-heading font-bold text-foreground/70 uppercase tracking-wider">Coming Soon</span>
+          </div>
           <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
-            <Target className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
+            <Calendar className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
           </div>
           <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Interactive Calendars</h3>
           <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm">To integrate growth into everyday rhythm — structured calendars that weave learning and reflection into your daily routine.</p>
@@ -205,7 +211,7 @@ const Products = () => (
 
     <BottomCTA
       title="Ready to Grow?"
-      subtitle="Get your Growth Cards today and start your journey of transformation."
+      subtitle="Get your Action Cards today and start your journey of transformation."
       buttonText="Purchase Now"
       buttonHref="#"
     />

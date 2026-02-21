@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Tools", href: "/tools" },
   { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-8">
-          {navLinks.filter(l => l.label !== "Contact Us").map((link) => (
+          {navLinks.filter(l => l.label !== "Contact").map((link) => (
             <a
               key={link.label}
               href={link.href}
@@ -38,7 +38,7 @@ const Navbar = () => {
             href="/contact"
             className="ml-2 px-5 py-2 rounded-md bg-gold text-accent-foreground text-sm font-semibold hover:brightness-110 transition-all"
           >
-            Contact Us
+            Contact
           </a>
         </div>
 
@@ -62,7 +62,7 @@ const Navbar = () => {
             className="lg:hidden bg-primary border-b border-primary-foreground/10 overflow-hidden"
           >
             <div className="flex flex-col gap-0.5 p-3 md:p-4">
-              {navLinks.filter(l => l.label !== "Contact Us").map((link) => (
+              {navLinks.filter(l => l.label !== "Contact").map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
@@ -77,7 +77,7 @@ const Navbar = () => {
                 onClick={() => setOpen(false)}
                 className="mt-1.5 md:mt-2 px-4 py-2.5 md:py-3 rounded-md bg-gold text-accent-foreground text-sm md:text-[0.9rem] font-semibold text-center"
               >
-                Contact Us
+                Contact
               </a>
             </div>
           </motion.div>

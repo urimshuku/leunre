@@ -55,7 +55,7 @@ const AboutUs = () => (
     <ContentSection variant="muted">
       <SectionHeader
         title="The LEUNRE Philosophy"
-        subtitle="LEUNRE stands for Learning, Unlearning, and Relearning. It embodies the natural rhythm of growth: expanding awareness, releasing what no longer serves, and integrating what leads us forward. At the heart of LEUNRE is the belief that genuine transformation happens through this continuous cycle. Through this process, individuals and organizations develop adaptability, creativity, and depth. LEUNRE is dedicated to guiding this journey of conscious transformation, where personal insight and professional growth come together to create meaningful and lasting change."
+        subtitle={"LEUNRE stands for Learning, Unlearning, and Relearning. It embodies the natural rhythm of growth: expanding awareness, releasing what no longer serves, and integrating what leads us forward.\n\nAt the heart of LEUNRE is the belief that genuine transformation happens through this continuous cycle.\n\nThrough this process, individuals and organizations develop adaptability, creativity, and depth."}
         centered
         className="mb-10 md:mb-12 lg:mb-16"
       />
@@ -98,7 +98,7 @@ const AboutUs = () => (
           </div>
           <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">Our Mission</h3>
           <p className="text-muted-foreground leading-relaxed text-sm md:text-sm lg:text-base">
-            LEUNRE is dedicated to unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
+            To unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
           </p>
         </motion.div>
 
@@ -114,7 +114,7 @@ const AboutUs = () => (
           </div>
           <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">Our Vision</h3>
           <p className="text-muted-foreground leading-relaxed text-sm md:text-sm lg:text-base">
-            A world where growth is a way of life — where people and organizations embrace change, lead with empathy, and create impact that extends far beyond the bottom line.
+            A world where personal insight and professional growth come together to create meaningful and lasting change.
           </p>
         </motion.div>
       </div>
@@ -124,7 +124,7 @@ const AboutUs = () => (
     <ContentSection variant="muted">
       <SectionHeader
         title="Our Approach"
-        subtitle="We believe that systems are living, and people are the pulse within them. Our approach honors the balance between structure and awareness — between measurable outcomes and meaningful impact. Our work is guided by three principles:"
+        subtitle={"We believe that systems are living, and people are the pulse within them.\n\nOur approach honors the balance between structure and awareness — between measurable outcomes and meaningful impact.\n\nOur work is guided by three principles."}
         centered
         className="mb-10 md:mb-12 lg:mb-16"
       />
