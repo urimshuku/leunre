@@ -165,6 +165,44 @@ const Products = () => (
       </div>
     </ContentSection>
 
+    {/* Additional Tools */}
+    <ContentSection variant="muted">
+      <SectionHeader
+        title="More Tools Coming Soon"
+        subtitle="Expanding our toolkit to support your growth journey at every step."
+        centered
+        className="mb-10 md:mb-12 lg:mb-16"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8"
+        >
+          <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
+            <Lightbulb className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
+          </div>
+          <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Self-Reflection Notebooks</h3>
+          <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm">To pause and realign — guided journaling tools designed to help you reconnect with your purpose and track your growth journey.</p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8"
+        >
+          <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
+            <Target className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
+          </div>
+          <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Interactive Calendars</h3>
+          <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm">To integrate growth into everyday rhythm — structured calendars that weave learning and reflection into your daily routine.</p>
+        </motion.div>
+      </div>
+    </ContentSection>
+
     <BottomCTA
       title="Ready to Grow?"
       subtitle="Get your Growth Cards today and start your journey of transformation."

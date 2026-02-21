@@ -66,7 +66,7 @@ const ContactUs = () => {
     <PageLayout>
       <PageHero
         title="Contact Us"
-        subtitle="Have a question, partnership idea, or ready to get started? We'd love to hear from you."
+        subtitle="We would love to hear from you — whether you're exploring collaboration, training, or simply resonating with our mission."
       />
 
       <ContentSection>

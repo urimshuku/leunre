@@ -6,18 +6,15 @@ import ContentSection from "@/components/shared/ContentSection";
 import SectionHeader from "@/components/shared/SectionHeader";
 
 const values = [
-  { icon: Heart, title: "Empathy First", description: "We lead with compassion and seek to understand before being understood." },
-  { icon: Compass, title: "Purposeful Growth", description: "Every program, product, and partnership is designed with intentional impact in mind." },
-  { icon: Flame, title: "Courage to Unlearn", description: "We challenge assumptions — our own and others' — to make space for what's next." },
-  { icon: Shield, title: "Integrity Always", description: "We operate with transparency, honesty, and a deep commitment to doing what's right." },
-  { icon: RefreshCw, title: "Continuous Evolution", description: "We practice what we teach — constantly learning, adapting, and growing." },
-  { icon: Eye, title: "Radical Clarity", description: "We cut through noise to deliver insights and experiences that truly matter." },
+  { icon: Eye, title: "Clarity", description: "Seeing what truly matters." },
+  { icon: Heart, title: "Connection", description: "Fostering alignment among people and systems." },
+  { icon: RefreshCw, title: "Conscious Growth", description: "Evolving in alignment with life as a whole." },
 ];
 
 const philosophySteps = [
-  { icon: RotateCw, label: "Learn", description: "Acquire new knowledge, frameworks, and perspectives that expand your understanding." },
-  { icon: RotateCcw, label: "Unlearn", description: "Challenge outdated beliefs and mental models that no longer serve your growth." },
-  { icon: RefreshCw, label: "Relearn", description: "Rebuild with fresh insight, integrating wisdom into how you lead, communicate, and live." },
+  { icon: RotateCw, label: "Learn", description: "Allows us to grow and gain new understanding." },
+  { icon: RotateCcw, label: "Unlearn", description: "Helps us let go of outdated beliefs and patterns that limit us." },
+  { icon: RefreshCw, label: "Relearn", description: "Opens the space to integrate new perspectives and evolve with clarity." },
 ];
 
 const AboutUs = () => (
@@ -41,13 +38,13 @@ const AboutUs = () => (
           </h2>
           <div className="space-y-4 md:space-y-5 lg:space-y-6 text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed">
             <p>
-              LEUNRE was born from a simple but powerful conviction: the way we've been taught to learn is no longer enough. In a world that shifts faster than our habits can keep up, the real competitive advantage isn't what you know — it's how willing you are to let go of what you know and rebuild.
+              After more than a decade in the corporate world, designing systems and structures for growth, one realization became clear: the most sustainable system is the one that supports human and planetary evolution together.
             </p>
             <p>
-              We started as a conversation between practitioners, coaches, and leaders who saw the same pattern everywhere — talented people held back not by lack of skill, but by outdated mental models, unexamined assumptions, and fear of change.
+              When people grow with awareness, organizations flourish. When organizations act with integrity, societies transform. When systems operate in alignment with life, harmony becomes possible.
             </p>
             <p>
-              So we built LEUNRE — <span className="text-foreground font-semibold">Learn. Unlearn. Relearn.</span> — as a movement for those who refuse to stay still. Through immersive programs, experiential training, retreats, and tools like our Growth Cards, we help individuals and organizations develop the clarity, courage, and capability to thrive.
+              LEUNRE was created to bring this vision to life: bridging structure with purpose, process with people, and learning with transformation.
             </p>
           </div>
         </motion.div>
@@ -58,7 +55,7 @@ const AboutUs = () => (
     <ContentSection variant="muted">
       <SectionHeader
         title="The LEUNRE Philosophy"
-        subtitle="Growth isn't linear — it's a cycle. Our philosophy is built on three interconnected stages that drive lasting transformation."
+        subtitle="LEUNRE stands for Learning, Unlearning, and Relearning. It embodies the natural rhythm of growth: expanding awareness, releasing what no longer serves, and integrating what leads us forward. At the heart of LEUNRE is the belief that genuine transformation happens through this continuous cycle. Through this process, individuals and organizations develop adaptability, creativity, and depth. LEUNRE is dedicated to guiding this journey of conscious transformation, where personal insight and professional growth come together to create meaningful and lasting change."
         centered
         className="mb-10 md:mb-12 lg:mb-16"
       />
@@ -101,7 +98,7 @@ const AboutUs = () => (
           </div>
           <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">Our Mission</h3>
           <p className="text-muted-foreground leading-relaxed text-sm md:text-sm lg:text-base">
-            To empower individuals and organizations to continuously evolve — by learning with curiosity, unlearning with courage, and relearning with clarity. We exist to build the human capabilities that drive meaningful change.
+            LEUNRE is dedicated to unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
           </p>
         </motion.div>
 
@@ -126,12 +123,12 @@ const AboutUs = () => (
     {/* Values */}
     <ContentSection variant="muted">
       <SectionHeader
-        title="What We Stand For"
-        subtitle="Our values aren't just words on a wall — they're the principles that guide every decision, interaction, and program we create."
+        title="Our Approach"
+        subtitle="We believe that systems are living, and people are the pulse within them. Our approach honors the balance between structure and awareness — between measurable outcomes and meaningful impact. Our work is guided by three principles:"
         centered
         className="mb-10 md:mb-12 lg:mb-16"
       />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-5 lg:gap-6 max-w-5xl mx-auto">
         {values.map((value, i) => (
           <motion.div
             key={value.title}
@@ -155,13 +152,16 @@ const AboutUs = () => (
     <ContentSection variant="muted">
       <SectionHeader
         title="More Than a Company. A Movement."
-        subtitle="LEUNRE isn't just about training — it's about shifting how the world approaches growth. We're building a community of leaders, thinkers, and doers who believe that the willingness to evolve is the greatest strength of all."
+        subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."
         centered
         className="mb-6 md:mb-8 lg:mb-10"
       />
       <div className="max-w-2xl mx-auto text-center">
+        <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-5 lg:mb-6">
+          Whether you're an individual seeking clarity or an organization striving for purposeful impact, your growth contributes to something greater.
+        </p>
         <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-8 md:mb-9 lg:mb-10">
-          Whether you join us through a program, a retreat, a deck of Growth Cards, or a partnership — you become part of something bigger.
+          Together, we can build a world where learning transforms lives, and alignment guides change.
         </p>
         <a
           href="/contact"
