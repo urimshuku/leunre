@@ -15,7 +15,7 @@ const SectionHeader = ({ title, subtitle, centered = false, className = "" }: Se
     className={`${centered ? "text-center" : ""} ${className}`}
   >
     <div className={`gold-divider mb-4 md:mb-5 lg:mb-6 ${centered ? "mx-auto" : ""}`} />
-    <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">
+    <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4 whitespace-pre-line">
       {title}
     </h2>
     {subtitle && (

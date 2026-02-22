@@ -1,6 +1,6 @@
 const colors = [
-  { name: "Primary / Forest", token: "--primary", hsl: "158 46% 24%", hex: "#215944", usage: "Headings, buttons, hero background" },
-  { name: "Forest Light", token: "--forest-light", hsl: "153 42% 32%", hex: "#2C775A", usage: "Secondary text, hover states" },
+  { name: "Primary / Burnt Orange", token: "--primary", hsl: "24 83% 40%", hex: "#BB5511", usage: "Headings, buttons, hero background" },
+  { name: "Burnt Orange Light", token: "--forest-light", hsl: "24 83% 45%", hex: "#D16014", usage: "Secondary text, hover states" },
   { name: "Gold / Accent", token: "--accent", hsl: "42 73% 48%", hex: "#d5a220", usage: "Accent highlights, dividers, CTAs" },
   { name: "Gold Light", token: "--gold-light", hsl: "42 73% 59%", hex: "#e4ba4e", usage: "Subtle warm accents" },
   { name: "Background", token: "--background", hsl: "34.3 28% 95.1%", hex: "#F6F3EF", usage: "Main site background" },
@@ -8,7 +8,7 @@ const colors = [
   { name: "Philosophy BG", token: "--philosophy-bg", hsl: "34.3 28% 95.1%", hex: "#F6F3EF", usage: "Philosophy, Corporate, CTA sections" },
   { name: "Card", token: "--card", hsl: "39 20% 96%", hex: "#F7F5F1", usage: "Cards, popovers" },
   { name: "Muted", token: "--muted", hsl: "36 20% 92%", hex: "#EDE9E2", usage: "Muted backgrounds" },
-  { name: "Muted Foreground", token: "--muted-foreground", hsl: "153 42% 32%", hex: "#2C775A", usage: "Secondary/helper text" },
+  { name: "Muted Foreground", token: "--muted-foreground", hsl: "24 83% 45%", hex: "#D16014", usage: "Secondary/helper text" },
   { name: "Border", token: "--border", hsl: "36 15% 88%", hex: "#E4DFD8", usage: "Borders, dividers" },
   { name: "Destructive", token: "--destructive", hsl: "0 84.2% 60.2%", hex: "#EC4343", usage: "Error states" },
 ];
@@ -21,26 +21,26 @@ const typography = [
 const BrandStyleGuide = () => (
   <div className="min-h-screen bg-white p-8 md:p-12 lg:p-16 max-w-4xl mx-auto print:p-6">
     {/* Header */}
-    <div className="mb-12 border-b-2 border-[#215944] pb-8">
-      <h1 className="text-4xl md:text-5xl font-heading font-bold" style={{ color: "#215944" }}>
+    <div className="mb-12 border-b-2 border-[#BB5511] pb-8">
+      <h1 className="text-4xl md:text-5xl font-heading font-bold" style={{ color: "#BB5511" }}>
         LEUNRE
       </h1>
-      <p className="text-lg mt-2" style={{ color: "#2C775A" }}>Brand Style Guide</p>
+      <p className="text-lg mt-2" style={{ color: "#D16014" }}>Brand Style Guide</p>
       <div className="mt-4 w-16 h-1 rounded" style={{ background: "#d5a220" }} />
     </div>
 
     {/* Color Palette */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#215944" }}>Color Palette</h2>
+      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#BB5511" }}>Color Palette</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {colors.map((c) => (
           <div key={c.token} className="border rounded-lg overflow-hidden" style={{ borderColor: "#E4DFD8" }}>
             <div className="h-20 w-full" style={{ background: c.hex }} />
             <div className="p-3">
-              <p className="font-heading font-bold text-sm" style={{ color: "#215944" }}>{c.name}</p>
-              <p className="text-xs font-mono mt-1" style={{ color: "#2C775A" }}>{c.hex}</p>
-              <p className="text-xs font-mono" style={{ color: "#2C775A" }}>HSL: {c.hsl}</p>
-              <p className="text-xs mt-1.5" style={{ color: "#2C775A" }}>{c.usage}</p>
+              <p className="font-heading font-bold text-sm" style={{ color: "#BB5511" }}>{c.name}</p>
+              <p className="text-xs font-mono mt-1" style={{ color: "#D16014" }}>{c.hex}</p>
+              <p className="text-xs font-mono" style={{ color: "#D16014" }}>HSL: {c.hsl}</p>
+              <p className="text-xs mt-1.5" style={{ color: "#D16014" }}>{c.usage}</p>
             </div>
           </div>
         ))}
@@ -49,14 +49,14 @@ const BrandStyleGuide = () => (
 
     {/* Typography */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#215944" }}>Typography</h2>
+      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#BB5511" }}>Typography</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {typography.map((t) => (
           <div key={t.name} className="border rounded-lg p-5" style={{ borderColor: "#E4DFD8" }}>
-            <p className="text-3xl font-heading font-bold mb-2" style={{ color: "#215944", fontFamily: t.family }}>Aa</p>
-            <p className="font-heading font-bold text-sm" style={{ color: "#215944" }}>{t.family}</p>
-            <p className="text-xs mt-1" style={{ color: "#2C775A" }}>Weights: {t.weights}</p>
-            <p className="text-xs" style={{ color: "#2C775A" }}>{t.usage}</p>
+            <p className="text-3xl font-heading font-bold mb-2" style={{ color: "#BB5511", fontFamily: t.family }}>Aa</p>
+            <p className="font-heading font-bold text-sm" style={{ color: "#BB5511" }}>{t.family}</p>
+            <p className="text-xs mt-1" style={{ color: "#D16014" }}>Weights: {t.weights}</p>
+            <p className="text-xs" style={{ color: "#D16014" }}>{t.usage}</p>
           </div>
         ))}
       </div>
@@ -64,25 +64,25 @@ const BrandStyleGuide = () => (
 
     {/* Primary Combinations */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#215944" }}>Key Combinations</h2>
+      <h2 className="text-2xl font-heading font-bold mb-6" style={{ color: "#BB5511" }}>Key Combinations</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#215944" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#FFFFFF" }}>Primary on Forest</span>
+        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#BB5511" }}>
+          <span className="font-heading font-bold text-lg" style={{ color: "#FFFFFF" }}>White on Primary</span>
         </div>
-        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#215944" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#d5a220" }}>Gold on Forest</span>
+        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#BB5511" }}>
+          <span className="font-heading font-bold text-lg" style={{ color: "#d5a220" }}>Gold on Primary</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#F6F3EF" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#215944" }}>Forest on Background</span>
+          <span className="font-heading font-bold text-lg" style={{ color: "#BB5511" }}>Primary on Background</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center border" style={{ background: "#EFEBE7", borderColor: "#E4DFD8" }}>
-          <span className="font-heading font-bold text-lg" style={{ color: "#215944" }}>Forest on Philosophy BG</span>
+          <span className="font-heading font-bold text-lg" style={{ color: "#BB5511" }}>Primary on Muted</span>
         </div>
       </div>
     </section>
 
     <footer className="text-center pt-8 border-t" style={{ borderColor: "#E4DFD8" }}>
-      <p className="text-xs" style={{ color: "#2C775A" }}>LEUNRE Brand Style Guide · Learn · Unlearn · Relearn</p>
+      <p className="text-xs" style={{ color: "#D16014" }}>LEUNRE Brand Style Guide · Learn · Unlearn · Relearn</p>
     </footer>
   </div>
 );

@@ -49,7 +49,7 @@ const Products = () => (
   <PageLayout>
     <PageHero
       title="Our Tools"
-      subtitle="Tools designed to extend the learning journey beyond the classroom."
+      subtitle="Transformation continues in daily life. Our products are created to keep growth alive — blending reflection, play, and purposeful action."
     />
 
     {/* Product Showcase */}
@@ -59,7 +59,7 @@ const Products = () => (
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="aspect-square rounded-2xl bg-muted border border-border flex items-center justify-center"
+          className="aspect-square rounded-2xl bg-muted border-2 border-border flex items-center justify-center"
         >
           <div className="text-center p-8 md:p-10 lg:p-12">
             <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-4 md:mb-5 lg:mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
@@ -180,9 +180,7 @@ const Products = () => (
           viewport={{ once: true }}
           className="relative bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-white/30 z-10 rounded-xl flex items-center justify-center">
-            <span className="text-sm font-heading font-bold text-foreground/70 uppercase tracking-wider">Coming Soon</span>
-          </div>
+          <div className="absolute inset-0 bg-white/40 z-10 rounded-xl" />
           <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
             <BookOpen className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
           </div>
@@ -197,9 +195,7 @@ const Products = () => (
           transition={{ delay: 0.1 }}
           className="relative bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-white/30 z-10 rounded-xl flex items-center justify-center">
-            <span className="text-sm font-heading font-bold text-foreground/70 uppercase tracking-wider">Coming Soon</span>
-          </div>
+          <div className="absolute inset-0 bg-white/40 z-10 rounded-xl" />
           <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
             <Calendar className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
           </div>

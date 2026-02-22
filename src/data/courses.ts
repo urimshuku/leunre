@@ -17,7 +17,7 @@ export const courses: Course[] = [
   {
     slug: "emotional-intelligence",
     icon: Heart,
-    title: "Emotional Intelligence",
+    title: "Emotional Intelligence & Self Awareness",
     tag: "Most Popular",
     duration: "8 Weeks",
     description:
@@ -46,7 +46,7 @@ export const courses: Course[] = [
   {
     slug: "communication-mastery",
     icon: MessageCircle,
-    title: "Communication Mastery",
+    title: "Communication & Collaboration",
     tag: "Essential",
     duration: "6 Weeks",
     description:
@@ -75,7 +75,7 @@ export const courses: Course[] = [
   {
     slug: "people-management",
     icon: Users2,
-    title: "People Management",
+    title: "Conscious Leadership & People Management",
     tag: "Leadership",
     duration: "10 Weeks",
     description:
@@ -105,7 +105,7 @@ export const courses: Course[] = [
   {
     slug: "conscious-leadership",
     icon: Compass,
-    title: "Conscious Leadership",
+    title: "Team Harmony & Organizational Well-being",
     tag: "Advanced",
     duration: "12 Weeks",
     description:
