@@ -136,9 +136,9 @@ const AboutUs = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8"
+            className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 text-center"
           >
-            <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 md:mb-3.5 lg:mb-4">
+            <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 md:mb-3.5 lg:mb-4 mx-auto">
               <value.icon className="w-4 h-4 md:w-4.5 md:h-4.5 lg:w-5 lg:h-5 text-primary" />
             </div>
             <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">{value.title}</h3>
@@ -151,7 +151,7 @@ const AboutUs = () => (
     {/* Movement Positioning */}
     <ContentSection variant="muted">
       <SectionHeader
-        title="More Than a Company. A Movement."
+        title={"More Than a Company.\nA Movement."}
         subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."
         centered
         className="mb-6 md:mb-8 lg:mb-10"

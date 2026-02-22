@@ -5,17 +5,17 @@ const steps = [
   {
     icon: RotateCw,
     label: "Learn",
-    description: "Acquire new knowledge, frameworks, and perspectives that expand your understanding of yourself and the world.",
+    description: "Allows us to grow and gain new understanding.",
   },
   {
     icon: RotateCcw,
     label: "Unlearn",
-    description: "Let go of outdated beliefs, biases, and mental models that no longer serve your growth or potential.",
+    description: "Helps us let go of outdated beliefs and patterns that limit us.",
   },
   {
     icon: RefreshCw,
     label: "Relearn",
-    description: "Rebuild your thinking with clarity, purpose, and deeper awareness — becoming who you were meant to be.",
+    description: "Opens the space to integrate new perspectives and evolve with clarity.",
   },
 ];
 

@@ -12,16 +12,21 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] mb-4 md:mb-5 lg:mb-6"
         >
-          <span style={{ color: '#d29d33' }}>Learn,</span>
+          <span style={{ color: '#d29d33' }}>Learn.</span>
           <br />
-          <span style={{ color: '#d29d33' }}>Unlearn,</span>
+          <span style={{ color: '#d29d33' }}>Unlearn.</span>
           <br />
-          <span style={{ color: '#d29d33' }}>Relearn,</span>
-          <br />
-          <span className="text-primary-foreground">Unlocking Human Potential.</span>
-          <br />
-          <span className="text-primary-foreground">Inspiring Transformation</span>
+          <span style={{ color: '#d29d33' }}>Relearn.</span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="text-base md:text-lg lg:text-xl text-primary-foreground font-bold max-w-xl mb-4 md:mb-5 lg:mb-6 leading-relaxed"
+        >
+          Unlocking Human Potential. Inspiring Transformation.
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -29,7 +34,7 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-base md:text-lg lg:text-xl text-primary-foreground/75 max-w-xl mb-8 md:mb-9 lg:mb-10 leading-relaxed"
         >
-          LEUNRE is a movement dedicated to transforming how people think, perceive, and grow — through courses, workshops, and experiential learning.
+          LEUNRE is a movement unlocking human potential by inspiring new ways of thinking, fostering clarity, and helping individuals and organizations thrive.
         </motion.p>
 
         <motion.div

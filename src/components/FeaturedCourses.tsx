@@ -5,29 +5,29 @@ import { Link } from "react-router-dom";
 const courses = [
   {
     icon: Heart,
-    title: "Emotional Intelligence",
-    description: "Master self-awareness, empathy, and emotional regulation to lead with authenticity and resilience.",
+    title: "Emotional Intelligence\n& Self Awareness",
+    description: "Cultivate deep self-awareness, empathy, and emotional clarity to navigate life and leadership with authenticity.",
     tag: "Most Popular",
     slug: "emotional-intelligence",
   },
   {
     icon: MessageCircle,
-    title: "Communication Mastery",
-    description: "Transform how you connect, influence, and build trust through powerful communication frameworks.",
+    title: "Communication\n& Collaboration",
+    description: "Build trust, resolve conflict, and foster meaningful connection through conscious communication practices.",
     tag: "Essential",
     slug: "communication-mastery",
   },
   {
     icon: Users2,
-    title: "People Management",
-    description: "Develop the skills to inspire, coach, and empower high-performing teams in any organization.",
+    title: "Conscious Leadership &\nPeople Management",
+    description: "Lead with purpose and presence while developing the skills to inspire, coach, and grow high-performing teams.",
     tag: "Leadership",
     slug: "people-management",
   },
   {
     icon: Compass,
-    title: "Conscious Leadership",
-    description: "Lead with purpose, clarity, and integrity — creating impact that extends beyond the bottom line.",
+    title: "Team Harmony &\nOrganizational Well-being",
+    description: "Create cultures of trust, alignment, and well-being where teams and organizations thrive together.",
     tag: "Advanced",
     slug: "conscious-leadership",
   },
@@ -48,7 +48,7 @@ const FeaturedCourses = () => (
             Featured Programs
           </h2>
           <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-xl">
-            Transformative programs designed to shift perspective and build lasting capability.
+            Growth happens through experience. Our trainings and workshops invite active participation — blending knowledge, practice, and reflection.
           </p>
         </div>
         <Link to="/programs" className="inline-flex items-center gap-2 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
@@ -76,7 +76,7 @@ const FeaturedCourses = () => (
               <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 md:mb-3.5 lg:mb-4">
                 <course.icon className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 text-primary" />
               </div>
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">{course.title}</h3>
+              <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1.5 md:mb-1.5 lg:mb-2 whitespace-pre-line">{course.title}</h3>
               <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground leading-relaxed mb-3 md:mb-3.5 lg:mb-4">{course.description}</p>
               <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors">
                 Learn More <ArrowRight size={12} />

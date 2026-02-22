@@ -10,7 +10,7 @@ const Courses = () => (
   <PageLayout>
     <PageHero
       title="Our Programs"
-      subtitle="Transformative programs designed to shift perspective, build lasting capability, and unlock human potential."
+      subtitle="Growth happens through experience. Our trainings and workshops invite active participation — blending knowledge, practice, and reflection."
     />
 
     <ContentSection>
