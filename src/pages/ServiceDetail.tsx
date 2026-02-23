@@ -5,7 +5,7 @@ import PageLayout from "@/components/shared/PageLayout";
 import DetailHero from "@/components/shared/DetailHero";
 import ContentSection from "@/components/shared/ContentSection";
 import BottomCTA from "@/components/shared/BottomCTA";
-import { getServiceBySlug } from "@/data/services";
+import { getServiceBySlug, retreatTypes } from "@/data/services";
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -78,8 +78,37 @@ const ServiceDetail = () => {
         </div>
       </ContentSection>
 
+      {/* Retreat Types - only for retreats */}
+      {slug === "retreats" && (
+        <ContentSection variant="muted">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="gold-divider mb-6" />
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-10">Types of Retreats</h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+            {retreatTypes.map((type, i) => (
+              <motion.div
+                key={type.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-card rounded-xl border border-border p-6 md:p-8"
+              >
+                <h3 className="text-lg font-heading font-bold text-foreground mb-3">{type.title}</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">{type.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </ContentSection>
+      )}
+
       {/* Outcomes */}
-      <ContentSection variant="muted">
+      <ContentSection variant={slug === "retreats" ? "default" : "muted"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -109,7 +138,7 @@ const ServiceDetail = () => {
       </ContentSection>
 
       {/* Our Approach */}
-      <ContentSection>
+      <ContentSection variant={slug === "retreats" ? "muted" : "default"}>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

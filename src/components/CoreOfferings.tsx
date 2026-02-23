@@ -10,7 +10,7 @@ const offerings = [
   {
     icon: Users,
     title: "Services",
-    description: "Corporate workshops and consulting that drive organizational transformation and culture change.",
+    description: "Organizational development support and immersive retreats that drive transformation and culture change.",
   },
   {
     icon: ShoppingBag,

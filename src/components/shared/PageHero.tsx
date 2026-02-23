@@ -18,7 +18,7 @@ const PageHero = ({ title, subtitle }: PageHeroProps) => (
         <h1 className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold text-primary-foreground mb-4 md:mb-5 lg:mb-6">
           {title}
         </h1>
-        <p className="text-base md:text-base lg:text-lg text-primary-foreground/75 leading-relaxed">
+        <p className="text-base md:text-base lg:text-lg text-primary-foreground/75 leading-relaxed whitespace-pre-line">
           {subtitle}
         </p>
       </motion.div>

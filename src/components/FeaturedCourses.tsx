@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 const courses = [
   {
     icon: Heart,
-    title: "Emotional Intelligence\n& Self Awareness",
+    title: "Emotional Intelligence &\nSelf Awareness",
     description: "Cultivate deep self-awareness, empathy, and emotional clarity to navigate life and leadership with authenticity.",
     tag: "Most Popular",
     slug: "emotional-intelligence",
   },
   {
     icon: MessageCircle,
-    title: "Communication\n& Collaboration",
+    title: "Communication &\nCollaboration",
     description: "Build trust, resolve conflict, and foster meaningful connection through conscious communication practices.",
     tag: "Essential",
     slug: "communication-mastery",

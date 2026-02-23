@@ -12,11 +12,11 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] mb-4 md:mb-5 lg:mb-6"
         >
-          <span style={{ color: '#d29d33' }}>Learn.</span>
+          <span className="text-primary-foreground">Learn.</span>
           <br />
-          <span style={{ color: '#d29d33' }}>Unlearn.</span>
+          <span className="text-primary-foreground">Unlearn.</span>
           <br />
-          <span style={{ color: '#d29d33' }}>Relearn.</span>
+          <span className="text-primary-foreground">Relearn.</span>
         </motion.h1>
 
         <motion.p

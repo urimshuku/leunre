@@ -37,7 +37,7 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6">
           {title}
         </h1>
-        <p className="text-lg text-primary-foreground/75 leading-relaxed mb-8">
+        <p className="text-lg text-primary-foreground/75 leading-relaxed mb-8 whitespace-pre-line">
           {description}
         </p>
         {children}
