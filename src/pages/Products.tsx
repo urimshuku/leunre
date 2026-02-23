@@ -59,7 +59,8 @@ const Products = () => (
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="aspect-square rounded-2xl bg-muted border-2 border-border/80 flex items-center justify-center"
+          className="aspect-square rounded-2xl bg-muted flex items-center justify-center"
+          style={{ border: "1px solid #D4CEC6" }}
         >
           <div className="text-center p-8 md:p-10 lg:p-12">
             <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-4 md:mb-5 lg:mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">

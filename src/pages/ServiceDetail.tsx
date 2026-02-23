@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, User, Building2 } from "lucide-react";
 import PageLayout from "@/components/shared/PageLayout";
 import DetailHero from "@/components/shared/DetailHero";
 import ContentSection from "@/components/shared/ContentSection";
@@ -99,6 +99,9 @@ const ServiceDetail = () => {
                 transition={{ delay: i * 0.1 }}
                 className="bg-card rounded-xl border border-border p-6 md:p-8"
               >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  {i === 0 ? <User className="w-5 h-5 text-primary" /> : <Building2 className="w-5 h-5 text-primary" />}
+                </div>
                 <h3 className="text-lg font-heading font-bold text-foreground mb-3">{type.title}</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm">{type.description}</p>
               </motion.div>
