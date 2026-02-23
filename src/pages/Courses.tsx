@@ -10,7 +10,7 @@ const Courses = () => (
   <PageLayout>
     <PageHero
       title="Our Programs"
-      subtitle="Growth happens through experience. Our trainings and workshops invite active participation — blending knowledge, practice, and reflection."
+      subtitle={"Growth happens through experience.\nOur trainings and workshops invite active participation — blending knowledge, practice, and reflection."}
     />
 
     <ContentSection>

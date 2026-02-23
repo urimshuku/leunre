@@ -32,7 +32,7 @@ const Services = () => (
             <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">
               {service.title}
             </h2>
-            <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-7 lg:mb-8">
+            <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-7 lg:mb-8 whitespace-pre-line">
               {service.description}
             </p>
             <Link

@@ -1,30 +1,18 @@
 import { motion } from "framer-motion";
-import { Building2, Presentation, Flame, Mountain, ArrowRight } from "lucide-react";
+import { Building2, Mountain, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const solutions = [
   {
     icon: Building2,
     title: "Organizational Development",
-    description: "Strategic support for companies undergoing cultural or structural transformation. We partner with leadership to build adaptive, human-centered organizations.",
+    description: "We support organizations in creating cultures where people feel connected, valued, and inspired. Our work combines strategic systems thinking with human-centered insight.",
     link: "/services/organizational-development",
-  },
-  {
-    icon: Presentation,
-    title: "Corporate Workshops",
-    description: "High-impact, facilitator-led workshops tailored to your team's needs — from communication skills to leadership development and team alignment.",
-    link: "/services/workshops",
-  },
-  {
-    icon: Flame,
-    title: "Experiential Training",
-    description: "Immersive learning experiences that go beyond the classroom. Through real-world scenarios and reflective practices, teams build lasting behavioral change.",
-    link: "/services/experiential-training",
   },
   {
     icon: Mountain,
     title: "Retreats",
-    description: "Immersive experiential learning retreats that create lasting shifts in perspective and leadership.",
+    description: "Immersive experiences for individuals and organizations — spaces to pause, reset, and realign with purpose.",
     link: "/services/retreats",
   },
 ];
@@ -47,7 +35,7 @@ const CorporateSolutions = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
         {solutions.map((item, i) => (
           <div
             key={item.title}
@@ -65,7 +53,7 @@ const CorporateSolutions = () => (
               </div>
               <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{item.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm mb-4 md:mb-4.5 lg:mb-5 flex-1">{item.description}</p>
-              <Link to={item.link} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-gold hover:text-gold-light transition-colors mt-auto">
+              <Link to={item.link} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors mt-auto">
                 Learn More <ArrowRight size={12} />
               </Link>
             </motion.div>
