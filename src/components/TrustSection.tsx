@@ -9,8 +9,8 @@ const metrics = [
 const TrustSection = () => (
   <section className="py-10 md:py-12 lg:py-14 bg-background overflow-hidden relative w-full"
     style={{
-      borderTop: "1px solid #D4CEC6",
-      borderBottom: "1px solid #D4CEC6",
+      borderTop: "1px solid #d29d33",
+      borderBottom: "1px solid #d29d33",
       maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
       WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
     }}

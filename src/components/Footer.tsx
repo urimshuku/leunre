@@ -53,7 +53,7 @@ const Footer = () => (
         ))}
       </div>
 
-      <div className="border-t border-primary-foreground/15 pt-6 md:pt-7 lg:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-3 lg:gap-4">
+      <div className="border-t border-[#d29d33]/40 pt-6 md:pt-7 lg:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-3 lg:gap-4">
         <p className="text-[10px] md:text-[11px] lg:text-xs text-primary-foreground/45">
           © 2026 LEUNRE. All rights reserved.
         </p>
