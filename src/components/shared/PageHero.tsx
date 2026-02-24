@@ -7,10 +7,17 @@ interface PageHeroProps {
 
 const PageHero = ({ title, subtitle }: PageHeroProps) => (
   <section
-    className="pt-20 pb-12 md:pt-24 md:pb-14 lg:pt-32 lg:pb-20"
-    style={{ background: "#edeae3", borderBottom: "1px solid #D4CEC6" }}
+    className="relative pt-20 pb-12 md:pt-24 md:pb-14 lg:pt-32 lg:pb-20"
+    style={{ background: "#edeae3", borderBottom: "1px solid #d29d33" }}
   >
-    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+    {/* Subtle warm overlay that fades out at the bottom */}
+    <div
+      className="absolute inset-0 pointer-events-none"
+      style={{
+        background: "linear-gradient(to bottom, hsla(36, 30%, 78%, 0.18) 0%, hsla(36, 30%, 78%, 0.06) 60%, transparent 100%)",
+      }}
+    />
+    <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
