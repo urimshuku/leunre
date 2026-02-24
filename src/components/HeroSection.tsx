@@ -1,16 +1,9 @@
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => (
   <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden" style={{ background: "#edeae3" }}>
-    {/* Subtle warm overlay that fades out at the bottom */}
-    <div
-      className="absolute inset-0 pointer-events-none"
-      style={{
-        background: "linear-gradient(to bottom, hsla(36, 30%, 78%, 0.18) 0%, hsla(36, 30%, 78%, 0.06) 60%, transparent 100%)",
-      }}
-    />
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <div className="max-w-3xl">
         <motion.h1
@@ -52,16 +45,16 @@ const HeroSection = () => (
         >
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
-            style={{ borderColor: "#33302e", color: "#33302e", backgroundColor: "rgba(51,48,46,0.05)" }}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
+            style={{ backgroundColor: "#b7551f", color: "#ffffff" }}
           >
             Explore Programs
-            <ChevronRight size={16} />
+            <ArrowRight size={16} />
           </Link>
           <Link
             to="/about"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
-            style={{ borderColor: "#33302e", color: "#33302e", backgroundColor: "rgba(51,48,46,0.05)" }}
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-semibold text-sm md:text-sm lg:text-base hover:opacity-80 transition-all"
+            style={{ borderColor: "#33302e", color: "#33302e" }}
           >
             Work With Us
             <ChevronRight size={16} />
