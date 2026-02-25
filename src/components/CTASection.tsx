@@ -28,7 +28,8 @@ const CTASection = () => (
           </Link>
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border border-muted-foreground/30 text-foreground font-semibold text-sm md:text-sm lg:text-base hover:bg-foreground/10 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
+            style={{ borderColor: "#33302e", color: "#33302e", backgroundColor: "rgba(51,48,46,0.05)" }}
           >
             Browse Programs
           </Link>

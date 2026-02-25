@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-image.jpg";
+
 
 const HeroSection = () => (
-  <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden" style={{ background: "#edeae3" }}>
+  <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden" style={{ background: "linear-gradient(to bottom, rgba(184,103,45,0.05) 0%, rgba(184,103,45,0) 100%), #edeae3" }}>
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
-        <div className="max-w-3xl">
+      <div className="max-w-3xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,22 +63,7 @@ const HeroSection = () => (
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="hidden lg:block"
-        >
-          <div className="rounded-xl overflow-hidden border border-[#D4CEC6]">
-            <img
-              src={heroImage}
-              alt="Inspiring human potential"
-              className="w-full h-auto object-cover aspect-[4/5]"
-            />
-          </div>
-        </motion.div>
       </div>
-    </div>
   </section>
 );
 
