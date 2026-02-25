@@ -16,8 +16,7 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
   <section
     className="pt-20 pb-12 md:pt-24 md:pb-14 lg:pt-32 lg:pb-20"
     style={{
-      background: "linear-gradient(to bottom, rgba(184,103,45,0.19) 0%, rgba(184,103,45,0) 65%), #edeae3",
-      borderBottom: "1px solid #D4CEC6",
+      backgroundColor: "#f3f1ec",
     }}
   >
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
