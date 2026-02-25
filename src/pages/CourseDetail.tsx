@@ -37,7 +37,7 @@ const CourseDetail = () => {
         description={course.description}
       >
         <div className="flex flex-wrap items-center gap-6">
-          <div className="flex items-center gap-2 text-primary-foreground/60">
+          <div className="flex items-center gap-2" style={{ color: "#b7551f" }}>
             <Clock size={18} />
             <span className="text-sm font-medium">{course.duration}</span>
           </div>
