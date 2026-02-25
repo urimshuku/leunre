@@ -8,7 +8,10 @@ interface PageHeroProps {
 const PageHero = ({ title, subtitle }: PageHeroProps) => (
   <section
     className="pt-20 pb-12 md:pt-24 md:pb-14 lg:pt-32 lg:pb-20"
-    style={{ background: "#edeae3", borderBottom: "1px solid #D4CEC6" }}
+    style={{
+      background: "linear-gradient(to bottom, rgba(184,103,45,0.05) 0%, rgba(184,103,45,0) 100%), #edeae3",
+      borderBottom: "1px solid #D4CEC6",
+    }}
   >
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
