@@ -81,7 +81,7 @@ const ServiceDetail = () => {
 
       {/* Retreat Types - only for retreats */}
       {slug === "retreats" && (
-        <ContentSection variant="muted">
+        <ContentSection>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
