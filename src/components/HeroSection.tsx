@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const HeroSection = () => (
-  <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden" style={{ backgroundColor: "#f3f1ec" }}>
+  <section className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden" style={{ backgroundColor: "#edeae3" }}>
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <div className="max-w-3xl">
           <motion.h1
