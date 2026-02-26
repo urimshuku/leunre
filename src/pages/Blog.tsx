@@ -120,7 +120,7 @@ const Blog = () => (
     </ContentSection>
 
     {/* Posts Grid */}
-    <ContentSection variant="muted">
+    <ContentSection>
       <SectionHeader title="Latest Articles" className="mb-8 md:mb-10 lg:mb-12" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
         {posts.map((post, i) => (

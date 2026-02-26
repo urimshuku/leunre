@@ -112,7 +112,7 @@ const ServiceDetail = () => {
       )}
 
       {/* Outcomes */}
-      <ContentSection variant={slug === "retreats" ? "default" : "muted"}>
+      <ContentSection>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ const ServiceDetail = () => {
       </ContentSection>
 
       {/* Our Approach */}
-      <ContentSection variant={slug === "retreats" ? "muted" : "default"}>
+      <ContentSection>
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
