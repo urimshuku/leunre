@@ -108,7 +108,7 @@ const Products = () => (
     </ContentSection>
 
     {/* Benefits */}
-    <ContentSection variant="muted">
+    <ContentSection>
       <SectionHeader
         title="Why Action Cards?"
         subtitle="More than just a card deck — it's a tool for transformation."
@@ -167,7 +167,7 @@ const Products = () => (
     </ContentSection>
 
     {/* Additional Tools */}
-    <ContentSection variant="muted">
+    <ContentSection>
       <SectionHeader
         title="More Tools Coming Soon"
         subtitle="Expanding our toolkit to support your growth journey at every step."

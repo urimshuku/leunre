@@ -52,7 +52,7 @@ const AboutUs = () => (
     </ContentSection>
 
     {/* Philosophy */}
-    <ContentSection variant="muted">
+    <ContentSection>
       <SectionHeader
         title="The LEUNRE Philosophy"
         subtitle={"LEUNRE stands for Learning, Unlearning, and Relearning. It embodies the natural rhythm of growth: expanding awareness, releasing what no longer serves, and integrating what leads us forward.\n\nAt the heart of LEUNRE is the belief that genuine transformation happens through this continuous cycle.\n\nThrough this process, individuals and organizations develop adaptability, creativity, and depth."}
@@ -121,7 +121,7 @@ const AboutUs = () => (
     </ContentSection>
 
     {/* Values */}
-    <ContentSection variant="muted">
+    <ContentSection>
       <SectionHeader
         title="Our Approach"
         subtitle={"We believe that systems are living, and people are the pulse within them.\n\nOur approach honors the balance between structure and awareness — between measurable outcomes and meaningful impact.\n\nOur work is guided by three principles."}
@@ -149,7 +149,7 @@ const AboutUs = () => (
     </ContentSection>
 
     {/* Movement Positioning */}
-    <ContentSection variant="muted">
+    <ContentSection>
       <SectionHeader
         title={"More Than a Company.\nA Movement."}
         subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."
