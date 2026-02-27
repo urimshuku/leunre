@@ -79,7 +79,7 @@ const ContactUs = () => {
             className="lg:col-span-3"
           >
             {submitted ? (
-              <div className="bg-card rounded-xl border border-border p-8 md:p-10 lg:p-12 text-center">
+              <div className="bg-card rounded-xl p-8 md:p-10 lg:p-12 text-center card-elevated">
                 <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
                   <Mail className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary" />
                 </div>
@@ -179,7 +179,7 @@ const ContactUs = () => {
             transition={{ delay: 0.1 }}
             className="lg:col-span-2 space-y-4 md:space-y-6 lg:space-y-8"
           >
-            <div className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8">
+            <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
               <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">Get in Touch</h3>
               <div className="space-y-3 md:space-y-4 lg:space-y-5">
                 <div className="flex items-start gap-2 md:gap-2.5 lg:gap-3">
@@ -206,7 +206,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8">
+            <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
               <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">Follow Us</h3>
               <div className="grid grid-cols-2 gap-2 md:gap-2.5 lg:gap-3">
                 {socials.map((s) => (

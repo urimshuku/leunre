@@ -58,7 +58,7 @@ const ServiceDetail = () => {
             <p className="text-muted-foreground leading-relaxed text-lg">{service.overview}</p>
           </motion.div>
 
-          <div className="bg-card rounded-xl border border-border p-8">
+          <div className="bg-card rounded-xl p-8 card-elevated card-elevated-hover transition-all duration-300">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ const ServiceDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-card rounded-xl border border-border p-6 md:p-8 text-center"
+                className="bg-card rounded-xl p-6 md:p-8 text-center card-elevated card-elevated-hover transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mx-auto">
                   {i === 0 ? <User className="w-5 h-5 text-primary" /> : <Building2 className="w-5 h-5 text-primary" />}
@@ -123,7 +123,7 @@ const ServiceDetail = () => {
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {service.outcomes.map((outcome, i) => (
-            <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl border border-border p-6">
+            <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl p-6 card-elevated card-elevated-hover transition-all duration-300">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ const ServiceDetail = () => {
           </motion.div>
           <div className="space-y-6">
             {service.approach.map((step, i) => (
-              <div key={step.title} className="bg-card rounded-xl border border-border p-6 md:p-8">
+              <div key={step.title} className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

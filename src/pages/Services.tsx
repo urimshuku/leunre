@@ -51,7 +51,7 @@ const Services = () => (
             transition={{ delay: 0.1 }}
             className="space-y-4 md:space-y-6 lg:space-y-8"
           >
-            <div className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8">
+            <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
               <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
                 Ideal For
               </h3>
@@ -65,7 +65,7 @@ const Services = () => (
               </ul>
             </div>
 
-            <div className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8">
+            <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
               <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
                 Expected Outcomes
               </h3>

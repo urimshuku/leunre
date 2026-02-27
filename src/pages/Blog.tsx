@@ -94,7 +94,7 @@ const Blog = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="bg-card rounded-xl border border-border p-6 md:p-8 lg:p-10"
+        className="bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300"
       >
         <span className="inline-block text-xs font-semibold uppercase tracking-wider text-accent mb-3 md:mb-4">
           {featuredPost.category}
@@ -130,7 +130,7 @@ const Blog = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 flex flex-col"
+            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
           >
             <span className="inline-block text-[10px] md:text-xs font-semibold uppercase tracking-wider text-accent mb-3">
               {post.category}
