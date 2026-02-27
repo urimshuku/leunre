@@ -98,9 +98,9 @@ const ServiceDetail = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-card rounded-xl p-6 md:p-8 text-center card-elevated card-elevated-hover transition-all duration-300"
+                className="group bg-card rounded-xl p-6 md:p-8 text-center card-elevated card-elevated-hover transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mx-auto">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
                   {i === 0 ? <User className="w-5 h-5 text-primary" /> : <Building2 className="w-5 h-5 text-primary" />}
                 </div>
                 <h3 className="text-lg font-heading font-bold text-foreground mb-3">{type.title}</h3>

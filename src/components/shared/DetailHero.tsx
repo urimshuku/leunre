@@ -14,7 +14,7 @@ interface DetailHeroProps {
 
 const DetailHero = ({ backTo, backLabel, tag, title, description, children }: DetailHeroProps) => (
   <section
-    className="pt-20 pb-12 md:pt-24 md:pb-14 lg:pt-32 lg:pb-20"
+    className="pt-20 pb-12 md:pt-24 md:pb-14 lg:pt-32 lg:pb-20 hero-bottom-shadow"
     style={{
       backgroundColor: "#edeae3",
     }}

@@ -147,9 +147,9 @@ const Products = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300"
+            className="group bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300"
           >
-            <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
+            <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
               <useCase.icon className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
             </div>
             <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">{useCase.title}</h3>
@@ -182,7 +182,7 @@ const Products = () => (
           className="relative bg-card rounded-xl p-5 md:p-6 lg:p-8 overflow-hidden card-elevated"
         >
           <div className="absolute inset-0 bg-white/40 z-10 rounded-xl" />
-          <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
+          <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
             <BookOpen className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
           </div>
           <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Self-Reflection Notebooks</h3>
@@ -197,7 +197,7 @@ const Products = () => (
           className="relative bg-card rounded-xl p-5 md:p-6 lg:p-8 overflow-hidden card-elevated"
         >
           <div className="absolute inset-0 bg-white/40 z-10 rounded-xl" />
-          <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
+          <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
             <Calendar className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
           </div>
           <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Interactive Calendars</h3>
