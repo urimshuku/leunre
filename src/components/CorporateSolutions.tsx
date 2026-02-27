@@ -39,7 +39,7 @@ const CorporateSolutions = () => (
         {solutions.map((item, i) => (
           <div
             key={item.title}
-            className="p-5 md:p-6 lg:p-8 rounded-xl bg-card border border-border hover:shadow-lg hover:border-gold/30 transition-all duration-300 flex flex-col"
+            className="p-5 md:p-6 lg:p-8 rounded-xl bg-card card-elevated card-elevated-hover transition-all duration-300 flex flex-col"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}

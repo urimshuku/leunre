@@ -147,7 +147,7 @@ const Products = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8"
+            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300"
           >
             <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
               <useCase.icon className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
@@ -179,7 +179,7 @@ const Products = () => (
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 overflow-hidden"
+          className="relative bg-card rounded-xl p-5 md:p-6 lg:p-8 overflow-hidden card-elevated"
         >
           <div className="absolute inset-0 bg-white/40 z-10 rounded-xl" />
           <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
@@ -194,7 +194,7 @@ const Products = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="relative bg-card rounded-xl border border-border p-5 md:p-6 lg:p-8 overflow-hidden"
+          className="relative bg-card rounded-xl p-5 md:p-6 lg:p-8 overflow-hidden card-elevated"
         >
           <div className="absolute inset-0 bg-white/40 z-10 rounded-xl" />
           <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">

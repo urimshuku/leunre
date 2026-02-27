@@ -70,7 +70,7 @@ const CourseDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-card rounded-xl border border-border p-8"
+            className="bg-card rounded-xl p-8 card-elevated card-elevated-hover transition-all duration-300"
           >
             <h3 className="text-lg font-heading font-bold text-foreground mb-5">Who It's For</h3>
             <ul className="space-y-3">
@@ -97,7 +97,7 @@ const CourseDetail = () => {
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {course.outcomes.map((outcome, i) => (
-            <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl border border-border p-6">
+            <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl p-6 card-elevated card-elevated-hover transition-all duration-300">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +131,7 @@ const CourseDetail = () => {
               <AccordionItem
                 key={mod.module}
                 value={`module-${i}`}
-                className="bg-card rounded-xl border border-border px-6 overflow-hidden"
+                className="bg-card rounded-xl px-6 overflow-hidden card-elevated"
               >
                 <AccordionTrigger className="text-foreground font-heading font-semibold hover:no-underline">
                   {mod.module}

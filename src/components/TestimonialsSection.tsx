@@ -41,7 +41,7 @@ const TestimonialsSection = () => (
         {testimonials.map((item, i) => (
           <div
             key={item.name}
-            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 border border-border shadow-sm"
+            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
