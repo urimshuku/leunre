@@ -28,8 +28,9 @@ const AboutUs = () => (
     <ContentSection>
       <div className="max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+           initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           viewport={{ once: true }}
         >
           <div className="gold-divider mb-4 md:mb-5 lg:mb-6" />
@@ -162,6 +163,12 @@ const AboutUs = () => (
         className="mb-6 md:mb-8 lg:mb-10"
       />
       <div className="max-w-2xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
+          viewport={{ once: true }}
+        >
         <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-4 md:mb-5 lg:mb-6">
           Whether you're an individual seeking clarity or an organization striving for purposeful impact, your growth contributes to something greater.
         </p>
@@ -174,6 +181,7 @@ const AboutUs = () => (
         >
           Join the Movement <ArrowRight size={16} />
         </a>
+        </motion.div>
       </div>
     </ContentSection>
   </PageLayout>
