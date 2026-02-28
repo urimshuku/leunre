@@ -65,23 +65,24 @@ const CourseDetail = () => {
             <p className="text-muted-foreground leading-relaxed text-lg">{course.overview}</p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="bg-card rounded-xl p-8 card-elevated card-elevated-hover transition-all duration-300"
-          >
-            <h3 className="text-lg font-heading font-bold text-foreground mb-5">Who It's For</h3>
-            <ul className="space-y-3">
-              {course.whoItsFor.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                  <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          <div className="bg-card rounded-xl p-8 card-elevated card-elevated-hover transition-all duration-300">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <h3 className="text-lg font-heading font-bold text-foreground mb-5">Who It's For</h3>
+              <ul className="space-y-3">
+                {course.whoItsFor.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
         </div>
       </ContentSection>
 

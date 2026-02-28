@@ -90,33 +90,34 @@ const Blog = () => (
     {/* Featured Post */}
     <ContentSection>
       <SectionHeader title="Featured" className="mb-8 md:mb-10 lg:mb-12" />
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300"
-      >
-        <span className="inline-block text-xs font-semibold uppercase tracking-wider text-accent mb-3 md:mb-4">
-          {featuredPost.category}
-        </span>
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
-          {featuredPost.title}
-        </h2>
-        <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-5 md:mb-6 lg:mb-8 max-w-3xl">
-          {featuredPost.excerpt}
-        </p>
-        <div className="flex flex-wrap items-center gap-4 md:gap-5 text-xs md:text-sm text-muted-foreground mb-5 md:mb-6">
-          <span className="flex items-center gap-1.5"><User size={14} /> {featuredPost.author}</span>
-          <span className="flex items-center gap-1.5"><Calendar size={14} /> {featuredPost.date}</span>
-          <span className="flex items-center gap-1.5"><Clock size={14} /> {featuredPost.readTime}</span>
-        </div>
-        <Link
-          to={`/insights/${featuredPost.slug}`}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+      <div className="bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
-          Read Article <ArrowRight size={16} />
-        </Link>
-      </motion.div>
+          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-accent mb-3 md:mb-4">
+            {featuredPost.category}
+          </span>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
+            {featuredPost.title}
+          </h2>
+          <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-5 md:mb-6 lg:mb-8 max-w-3xl">
+            {featuredPost.excerpt}
+          </p>
+          <div className="flex flex-wrap items-center gap-4 md:gap-5 text-xs md:text-sm text-muted-foreground mb-5 md:mb-6">
+            <span className="flex items-center gap-1.5"><User size={14} /> {featuredPost.author}</span>
+            <span className="flex items-center gap-1.5"><Calendar size={14} /> {featuredPost.date}</span>
+            <span className="flex items-center gap-1.5"><Clock size={14} /> {featuredPost.readTime}</span>
+          </div>
+          <Link
+            to={`/insights/${featuredPost.slug}`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+          >
+            Read Article <ArrowRight size={16} />
+          </Link>
+        </motion.div>
+      </div>
     </ContentSection>
 
     {/* Posts Grid */}
@@ -124,34 +125,38 @@ const Blog = () => (
       <SectionHeader title="Latest Articles" className="mb-8 md:mb-10 lg:mb-12" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
         {posts.map((post, i) => (
-          <motion.div
+          <div
             key={post.slug}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
             className="bg-card rounded-xl p-5 md:p-6 lg:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
           >
-            <span className="inline-block text-[10px] md:text-xs font-semibold uppercase tracking-wider text-accent mb-3">
-              {post.category}
-            </span>
-            <h3 className="text-base md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-3">
-              {post.title}
-            </h3>
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
-              {post.excerpt}
-            </p>
-            <div className="flex items-center gap-3 text-[10px] md:text-xs text-muted-foreground mb-4">
-              <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
-              <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
-            </div>
-            <Link
-              to={`/insights/${post.slug}`}
-              className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-primary hover:text-accent transition-colors"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="flex flex-col flex-1"
             >
-              Read More <ArrowRight size={14} />
-            </Link>
-          </motion.div>
+              <span className="inline-block text-[10px] md:text-xs font-semibold uppercase tracking-wider text-accent mb-3">
+                {post.category}
+              </span>
+              <h3 className="text-base md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-3">
+                {post.title}
+              </h3>
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+                {post.excerpt}
+              </p>
+              <div className="flex items-center gap-3 text-[10px] md:text-xs text-muted-foreground mb-4">
+                <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
+                <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
+              </div>
+              <Link
+                to={`/insights/${post.slug}`}
+                className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-primary hover:text-accent transition-colors"
+              >
+                Read More <ArrowRight size={14} />
+              </Link>
+            </motion.div>
+          </div>
         ))}
       </div>
     </ContentSection>
