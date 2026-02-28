@@ -52,31 +52,45 @@ const Services = () => (
             className="space-y-4 md:space-y-6 lg:space-y-8"
           >
             <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
-                Ideal For
-              </h3>
-              <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
-                {service.audience.map((item) => (
-                  <li key={item} className="flex items-start gap-2 md:gap-2.5 lg:gap-3 text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+              >
+                <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
+                  Ideal For
+                </h3>
+                <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
+                  {service.audience.map((item) => (
+                    <li key={item} className="flex items-start gap-2 md:gap-2.5 lg:gap-3 text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
 
             <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
-                Expected Outcomes
-              </h3>
-              <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
-                {service.outcomes.map((item) => (
-                  <li key={item} className="flex items-start gap-2 md:gap-2.5 lg:gap-3 text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
+                  Expected Outcomes
+                </h3>
+                <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
+                  {service.outcomes.map((item) => (
+                    <li key={item} className="flex items-start gap-2 md:gap-2.5 lg:gap-3 text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
           </motion.div>
         </div>
