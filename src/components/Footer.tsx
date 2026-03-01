@@ -2,7 +2,6 @@ import { Mail } from "lucide-react";
 
 const footerLinks = {
   Company: ["About", "Our Team", "Careers", "Press"],
-  Programs: ["Programs", "Retreats"],
   Resources: ["Insights", "Case Studies", "Research", "FAQ"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
 };
@@ -58,7 +57,7 @@ const Footer = () => (
           © 2026 LEUNRE. All rights reserved.
         </p>
         <div className="flex gap-4 md:gap-5 lg:gap-6">
-          {["LinkedIn", "Twitter", "Instagram", "YouTube"].map((social) => (
+          {["LinkedIn"].map((social) => (
             <a key={social} href="#" className="text-[10px] md:text-[11px] lg:text-xs text-primary-foreground/45 hover:text-gold transition-colors">
               {social}
             </a>

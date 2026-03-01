@@ -160,6 +160,68 @@ const Blog = () => (
         ))}
       </div>
     </ContentSection>
+
+    {/* Case Studies */}
+    <ContentSection variant="muted">
+      <SectionHeader title="Case Studies" className="mb-8 md:mb-10 lg:mb-12" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+        {[
+          {
+            title: "Transforming Leadership Culture at a Fortune 500",
+            description: "How a global enterprise redefined its leadership approach through structured unlearning, resulting in 40% improved team engagement scores.",
+            industry: "Enterprise",
+            result: "40% engagement increase",
+          },
+          {
+            title: "From Burnout to Breakthrough: A Tech Startup's Journey",
+            description: "A fast-growing startup used LEUNRE's framework to rebuild team dynamics and reduce turnover by 60% in under a year.",
+            industry: "Technology",
+            result: "60% reduced turnover",
+          },
+          {
+            title: "Reinventing Professional Development in Education",
+            description: "A university system partnered with LEUNRE to redesign faculty development, leading to measurably higher student satisfaction.",
+            industry: "Education",
+            result: "28% satisfaction boost",
+          },
+          {
+            title: "Building Resilient Teams in Healthcare",
+            description: "A healthcare network adopted the Relearn Framework to support frontline workers, dramatically improving retention and morale.",
+            industry: "Healthcare",
+            result: "35% improved retention",
+          },
+        ].map((cs, i) => (
+          <div
+            key={i}
+            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="flex flex-col flex-1"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <span className="inline-block text-[10px] md:text-xs font-semibold uppercase tracking-wider text-accent">
+                  {cs.industry}
+                </span>
+                <span className="text-[10px] md:text-xs text-muted-foreground">•</span>
+                <span className="inline-block text-[10px] md:text-xs font-semibold text-primary">
+                  {cs.result}
+                </span>
+              </div>
+              <h3 className="text-base md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-3">
+                {cs.title}
+              </h3>
+              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1">
+                {cs.description}
+              </p>
+            </motion.div>
+          </div>
+        ))}
+      </div>
+    </ContentSection>
   </PageLayout>
 );
 
