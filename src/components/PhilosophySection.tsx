@@ -19,7 +19,12 @@ const steps = [
   },
 ];
 
-const PhilosophySection = () => (
+const iconRotations = [360, -360, 360];
+
+const PhilosophySection = () => {
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  return (
   <section id="philosophy" className="py-20 md:py-28 lg:py-36 bg-background border-b border-border/50 section-shadow">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
@@ -48,9 +53,15 @@ const PhilosophySection = () => (
             className="text-center relative"
           >
             <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-4 md:mb-5 lg:mb-6">
-              <div className="w-full h-full rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10">
+              <motion.div
+                className="w-full h-full rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10"
+                initial={{ rotate: 0 }}
+                whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
+              >
                 <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
-              </div>
+              </motion.div>
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-1/2 left-full w-[calc(((100vw-4rem)/3-4rem))] lg:w-[calc(((min(64rem,100vw)-4rem)/3-5rem))] -translate-y-1/2 border-t-2 border-dashed border-gold/30" />
               )}
@@ -63,5 +74,6 @@ const PhilosophySection = () => (
     </div>
   </section>
 );
+};
 
 export default PhilosophySection;
