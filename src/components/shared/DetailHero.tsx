@@ -21,9 +21,9 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
   >
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, x: -60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         className="max-w-2xl"
       >
         <div className="mb-6">

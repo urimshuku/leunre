@@ -11,8 +11,9 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
   <section className="py-20 md:py-28 lg:py-36 bg-background border-b border-border/50 section-shadow">
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         viewport={{ once: true }}
         className="max-w-xl mx-auto"
       >
