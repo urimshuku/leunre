@@ -162,7 +162,8 @@ const Blog = () => (
     </ContentSection>
 
     {/* Case Studies */}
-    <ContentSection variant="muted">
+    <section className="py-20 md:py-28 lg:py-36 border-b border-border/50 section-shadow" style={{ backgroundColor: '#f2f0ed' }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <SectionHeader title="Case Studies" className="mb-8 md:mb-10 lg:mb-12" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
         {[
@@ -221,7 +222,8 @@ const Blog = () => (
           </div>
         ))}
       </div>
-    </ContentSection>
+      </div>
+    </section>
   </PageLayout>
 );
 

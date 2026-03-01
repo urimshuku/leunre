@@ -34,8 +34,10 @@ const Footer = () => (
         </div>
 
         {/* Link columns */}
+        {/* Spacer to push link columns right */}
+        <div className="hidden lg:block" />
         {Object.entries(footerLinks).map(([title, links]) => (
-          <div key={title}>
+          <div key={title} className="text-right">
             <h4 className="font-heading font-bold text-[10px] md:text-xs lg:text-sm uppercase tracking-wider mb-3 md:mb-3.5 lg:mb-4 text-primary-foreground/80">
               {title}
             </h4>
