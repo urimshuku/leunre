@@ -8,9 +8,9 @@ const HeroSection = () => (
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <div className="max-w-3xl">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0, 0, 0.2, 1] }}
             className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] mb-4 md:mb-5 lg:mb-6"
           >
             <span style={{ color: "#b7551f" }}>Learn.</span>
@@ -21,27 +21,27 @@ const HeroSection = () => (
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0, 0, 0.2, 1] }}
             className="text-base md:text-lg lg:text-xl font-bold max-w-xl mb-4 md:mb-5 lg:mb-6 leading-relaxed" style={{ color: "#b7551f" }}
           >
             Unlocking Human Potential. Inspiring Transformation.
           </motion.p>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0, 0, 0.2, 1] }}
             className="text-base md:text-lg lg:text-xl max-w-xl mb-8 md:mb-9 lg:mb-10 leading-relaxed" style={{ color: "#b7551f" }}
           >
             LEUNRE is a movement unlocking human potential by inspiring new ways of thinking, fostering clarity, and helping individuals and organizations thrive.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0, 0, 0.2, 1] }}
             className="flex flex-col sm:flex-row gap-3 md:gap-3.5 lg:gap-4"
           >
             <Link
