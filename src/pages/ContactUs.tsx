@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MapPin, Phone, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone, Linkedin, ChevronDown } from "lucide-react";
 import { z } from "zod";
 import PageLayout from "@/components/shared/PageLayout";
 import PageHero from "@/components/shared/PageHero";
 import ContentSection from "@/components/shared/ContentSection";
+import SectionHeader from "@/components/shared/SectionHeader";
 import { useToast } from "@/hooks/use-toast";
 
 const contactSchema = z.object({
@@ -26,10 +27,27 @@ const inquiryTypes = [
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
 ];
+
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="bg-card rounded-xl card-elevated transition-all duration-300 overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-5 py-4 md:px-6 md:py-5 lg:px-8 lg:py-6 text-left"
+      >
+        <span className="text-sm md:text-base font-heading font-semibold text-foreground pr-4">{question}</span>
+        <ChevronDown size={18} className={`text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="px-5 pb-4 md:px-6 md:pb-5 lg:px-8 lg:pb-6 -mt-1">
+          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const ContactUs = () => {
   const { toast } = useToast();
@@ -222,6 +240,22 @@ const ContactUs = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </ContentSection>
+
+      {/* FAQ Section */}
+      <ContentSection variant="muted">
+        <SectionHeader title="Frequently Asked Questions" className="mb-8 md:mb-10 lg:mb-12" />
+        <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
+          {[
+            { q: "What types of organizations do you work with?", a: "We work with organizations of all sizes — from startups to global enterprises — across industries. Our programs are tailored to meet each team's unique challenges and goals." },
+            { q: "How long are your programs typically?", a: "Program length varies based on your needs. Workshops can be as short as a half-day, while comprehensive development programs may span several weeks or months." },
+            { q: "Do you offer virtual or remote programs?", a: "Yes! We offer both in-person and virtual programs. Our remote workshops are designed to be just as engaging and impactful as our on-site experiences." },
+            { q: "How do I know which program is right for me?", a: "We recommend starting with a conversation. Reach out through the form above, and we'll help you identify the best fit based on your goals and context." },
+            { q: "What makes LEUNRE different from other learning providers?", a: "Our approach centers on unlearning — helping you let go of outdated mental models before building new ones. This creates deeper, more lasting transformation." },
+          ].map((faq, i) => (
+            <FAQItem key={i} question={faq.q} answer={faq.a} />
+          ))}
         </div>
       </ContentSection>
     </PageLayout>
