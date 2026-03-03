@@ -41,7 +41,7 @@ const TestimonialsSection = () => (
         {testimonials.map((item, i) => (
           <div
             key={item.name}
-            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300"
+            className="group bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const TestimonialsSection = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
             >
-              <Quote className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-gold/50 mb-3 md:mb-3.5 lg:mb-4" />
+              <Quote className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-gold/50 group-hover:text-gold transition-colors duration-300 mb-3 md:mb-3.5 lg:mb-4" />
               <p className="text-foreground leading-relaxed mb-4 md:mb-5 lg:mb-6 italic text-sm md:text-[0.9rem] lg:text-base">"{item.quote}"</p>
               <div>
                 <p className="font-heading font-bold text-foreground text-sm md:text-[0.9rem] lg:text-base">{item.name}</p>
