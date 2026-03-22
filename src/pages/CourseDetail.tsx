@@ -37,14 +37,14 @@ const CourseDetail = () => {
         description={course.description}
       >
         <div className="flex flex-wrap items-center gap-6">
-          <div className="flex items-center gap-2" style={{ color: "#b7551f" }}>
+          <div className="flex items-center gap-2" style={{ color: "#A64B1A" }}>
             <Clock size={18} />
             <span className="text-sm font-medium">{course.duration}</span>
           </div>
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-semibold text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
-            style={{ backgroundColor: "#b7551f", color: "#ffffff" }}
+            style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
           >
             Enroll / Inquire
           </a>

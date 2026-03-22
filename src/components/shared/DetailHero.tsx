@@ -30,7 +30,7 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
           <Link
             to={backTo}
             className="inline-flex items-center gap-2 text-sm hover:opacity-70 transition-opacity"
-            style={{ color: "#b7551f" }}
+            style={{ color: "#A64B1A" }}
           >
             <ArrowLeft size={16} /> {backLabel}
           </Link>
@@ -43,13 +43,13 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
         <div className="gold-divider mb-4 md:mb-5 lg:mb-6" />
         <h1
           className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold mb-4 md:mb-5 lg:mb-6"
-          style={{ color: "#b7551f" }}
+          style={{ color: "#A64B1A" }}
         >
           {title}
         </h1>
         <p
           className="text-base md:text-base lg:text-lg leading-relaxed whitespace-pre-line mb-6"
-          style={{ color: "#b7551f" }}
+          style={{ color: "#A64B1A" }}
         >
           {description}
         </p>

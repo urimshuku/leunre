@@ -38,7 +38,7 @@ const ServiceDetail = () => {
         <a
           href="/contact"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-semibold text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
-          style={{ backgroundColor: "#b7551f", color: "#ffffff" }}
+          style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
         >
           Book a Consultation
         </a>

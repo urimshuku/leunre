@@ -13,18 +13,18 @@ const HeroSection = () => (
             transition={{ duration: 0.7, delay: 0.1, ease: [0, 0, 0.2, 1] }}
             className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] mb-4 md:mb-5 lg:mb-6"
           >
-            <span style={{ color: "#b7551f" }}>Learn.</span>
+            <span style={{ color: "#A64B1A" }}>Learn.</span>
             <br />
-            <span style={{ color: "#b7551f" }}>Unlearn.</span>
+            <span style={{ color: "#A64B1A" }}>Unlearn.</span>
             <br />
-            <span style={{ color: "#b7551f" }}>Relearn.</span>
+            <span style={{ color: "#A64B1A" }}>Relearn.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0, 0, 0.2, 1] }}
-            className="text-base md:text-lg lg:text-xl font-bold max-w-xl mb-4 md:mb-5 lg:mb-6 leading-relaxed" style={{ color: "#b7551f" }}
+            className="text-base md:text-lg lg:text-xl font-bold max-w-xl mb-4 md:mb-5 lg:mb-6 leading-relaxed" style={{ color: "#A64B1A" }}
           >
             Unlocking Human Potential. Inspiring Transformation.
           </motion.p>
@@ -33,7 +33,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0, 0, 0.2, 1] }}
-            className="text-base md:text-lg lg:text-xl max-w-xl mb-8 md:mb-9 lg:mb-10 leading-relaxed" style={{ color: "#b7551f" }}
+            className="text-base md:text-lg lg:text-xl max-w-xl mb-8 md:mb-9 lg:mb-10 leading-relaxed" style={{ color: "#A64B1A" }}
           >
             LEUNRE is a movement unlocking human potential by inspiring new ways of thinking, fostering clarity, and helping individuals and organizations thrive.
           </motion.p>
@@ -47,7 +47,7 @@ const HeroSection = () => (
             <Link
               to="/programs"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
-              style={{ backgroundColor: "#b7551f", color: "#ffffff" }}
+              style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
             >
               Explore Programs
               <ArrowRight size={16} />
@@ -55,7 +55,7 @@ const HeroSection = () => (
             <Link
               to="/about"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
-              style={{ borderColor: "#33302e", color: "#33302e", backgroundColor: "rgba(51,48,46,0.05)" }}
+              style={{ borderColor: "#5C3A2E", color: "#5C3A2E", backgroundColor: "rgba(92,58,46,0.05)" }}
             >
               Work With Us
               <ChevronRight size={16} />
