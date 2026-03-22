@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&family=Inter:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 36 18% 94%;
-    --foreground: 20 5% 19%;
+    --background: 36 26% 96%;
+    --foreground: 16 33% 27%;
 
-    --card: 39 20% 96%;
-    --card-foreground: 0 0% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 16 33% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 17%;
+    --popover-foreground: 16 33% 27%;
 
-    --primary: 24 83% 40%;
+    --primary: 21 73% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 34 44% 68%;
+    --secondary: 30 32% 93%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 39 23% 91%;
-    --muted-foreground: 20 5% 19%;
+    --muted: 30 19% 88%;
+    --muted-foreground: 24 40% 39%;
 
-    --accent: 42 73% 48%;
+    --accent: 43 56% 51%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 3 67% 54%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 36 15% 92%;
     --input: 36 15% 88%;
-    --ring: 24 83% 40%;
+    --ring: 21 73% 38%;
 
     --radius: 0.5rem;
 
@@ -46,18 +46,14 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --warm: 39 23% 91%;
-    --warm-foreground: 24 83% 40%;
-    --gold: 42 73% 48%;
-    --gold-light: 42 73% 59%;
-    --forest: 24 83% 40%;
-    --forest-light: 24 83% 45%;
-    --cream: 39 23% 91%;
-    --philosophy-bg: 39 23% 91%;
-    --teal: 18 80% 45%;
-    --teal-light: 18 80% 55%;
-    --cream: 39 23% 91%;
-    --philosophy-bg: 39 23% 91%;
+    --warm: 30 32% 93%;
+    --warm-foreground: 21 73% 38%;
+    --gold: 43 56% 51%;
+    --gold-light: 44 69% 69%;
+    --forest: 21 73% 38%;
+    --forest-light: 24 65% 48%;
+    --cream: 30 32% 93%;
+    --philosophy-bg: 30 32% 93%;
     --teal: 18 80% 45%;
     --teal-light: 18 80% 55%;
   }
@@ -69,17 +65,17 @@
     --card-foreground: 40 20% 97%;
     --popover: 24 25% 10%;
     --popover-foreground: 40 20% 97%;
-    --primary: 24 83% 55%;
+    --primary: 21 73% 50%;
     --primary-foreground: 24 30% 6%;
     --secondary: 24 20% 15%;
     --secondary-foreground: 40 20% 97%;
     --muted: 24 15% 15%;
     --muted-foreground: 40 10% 65%;
-    --accent: 42 73% 48%;
+    --accent: 43 56% 51%;
     --accent-foreground: 40 20% 97%;
     --border: 24 15% 20%;
     --input: 24 15% 20%;
-    --ring: 24 83% 55%;
+    --ring: 21 73% 50%;
   }
 }
 
@@ -90,10 +86,13 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+    color: #5C3A2E;
+    letter-spacing: -0.005em;
   }
 }
 
