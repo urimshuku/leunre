@@ -30,7 +30,7 @@ const Courses = () => (
             >
               <div className="flex items-start justify-between mb-4 md:mb-5 lg:mb-6">
                 <div>
-                  <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-semibold uppercase tracking-wider text-gold mb-2 md:mb-2.5 lg:mb-3">
+                  <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-medium uppercase tracking-wider text-gold mb-2 md:mb-2.5 lg:mb-3">
                     {course.tag}
                   </span>
                   <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -43,7 +43,7 @@ const Courses = () => (
                 </div>
               </div>
 
-              <h2 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">
+              <h2 className="text-lg md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-2.5 lg:mb-3">
                 {course.title}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-sm md:text-sm lg:text-sm mb-4 md:mb-5 lg:mb-6">
@@ -51,7 +51,7 @@ const Courses = () => (
               </p>
 
               <div className="mb-4 md:mb-5 lg:mb-6">
-                <h3 className="text-xs md:text-xs lg:text-sm font-semibold text-foreground mb-2 md:mb-2.5 lg:mb-3">Key Outcomes</h3>
+                <h3 className="text-xs md:text-xs lg:text-sm font-medium text-foreground mb-2 md:mb-2.5 lg:mb-3">Key Outcomes</h3>
                 <ul className="space-y-1.5 md:space-y-1.5 lg:space-y-2">
                   {course.outcomes.map((outcome) => (
                     <li key={outcome} className="flex items-start gap-2 text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ const Courses = () => (
 
               <Link
                 to={`/programs/${course.slug}`}
-                className="inline-flex items-center gap-2 text-xs md:text-[0.8rem] lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors"
+                className="inline-flex items-center gap-2 text-xs md:text-[0.8rem] lg:text-sm font-medium text-primary hover:text-forest-light transition-colors"
               >
                 Learn More <ArrowRight size={14} />
               </Link>

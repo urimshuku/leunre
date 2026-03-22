@@ -27,7 +27,7 @@ const CorporateSolutions = () => (
         className="text-center mb-10 md:mb-12 lg:mb-16"
       >
         <div className="gold-divider mx-auto mb-4 md:mb-5 lg:mb-6" />
-        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">
+        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">
           Corporate Solutions
         </h2>
         <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
@@ -51,9 +51,9 @@ const CorporateSolutions = () => (
               <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
                 <item.icon className="w-5 h-5 md:w-5 md:h-5 lg:w-6 lg:h-6 text-primary" />
               </div>
-              <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{item.title}</h3>
+              <h3 className="text-lg md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-2.5 lg:mb-3">{item.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm mb-4 md:mb-4.5 lg:mb-5 flex-1">{item.description}</p>
-              <Link to={item.link} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors mt-auto">
+              <Link to={item.link} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-medium text-primary hover:text-forest-light transition-colors mt-auto">
                 Learn More <ArrowRight size={12} />
               </Link>
             </motion.div>

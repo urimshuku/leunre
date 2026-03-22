@@ -22,7 +22,7 @@ const TrustSection = () => (
             key={i}
             className="inline-flex items-center gap-3 mx-8 md:mx-12 lg:mx-16 shrink-0"
           >
-            <span className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-foreground">
+            <span className="text-xl md:text-2xl lg:text-3xl font-heading font-normal text-foreground">
               {item.value}
             </span>
             <span className="text-xs md:text-sm lg:text-base text-muted-foreground font-medium uppercase tracking-wider whitespace-nowrap">

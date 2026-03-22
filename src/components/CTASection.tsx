@@ -13,7 +13,7 @@ const CTASection = () => (
         className="max-w-3xl mx-auto text-center"
       >
         <div className="gold-divider mx-auto mb-4 md:mb-5 lg:mb-6" />
-        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">
+        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">
           Partner with LEUNRE
         </h2>
         <p className="text-muted-foreground text-sm md:text-base lg:text-lg mb-8 md:mb-9 lg:mb-10 max-w-xl mx-auto leading-relaxed">
@@ -22,14 +22,14 @@ const CTASection = () => (
         <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-3.5 lg:gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-primary text-primary-foreground font-semibold text-sm md:text-sm lg:text-base hover:bg-forest-light transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-primary text-primary-foreground font-medium text-sm md:text-sm lg:text-base hover:bg-forest-light transition-colors"
           >
             Contact
             <ArrowRight size={16} />
           </Link>
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-medium text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
             style={{ borderColor: "#5C3A2E", color: "#5C3A2E", backgroundColor: "rgba(92,58,46,0.05)" }}
           >
             Browse Programs

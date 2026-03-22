@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary backdrop-blur-lg border-b border-primary-foreground/10">
       <div className="container mx-auto flex items-center justify-between h-14 md:h-15 lg:h-16 px-4 md:px-6 lg:px-8">
-        <Link to="/" className="font-heading text-xl md:text-[1.35rem] lg:text-2xl font-bold tracking-tight text-primary-foreground">
+        <Link to="/" className="font-heading text-xl md:text-[1.35rem] lg:text-2xl font-normal tracking-tight text-primary-foreground">
           LEUNRE
         </Link>
 
@@ -36,7 +36,7 @@ const Navbar = () => {
           ))}
           <a
             href="/contact"
-            className="ml-2 px-5 py-2 rounded-md bg-gold text-accent-foreground text-sm font-semibold hover:brightness-110 transition-all"
+            className="ml-2 px-5 py-2 rounded-md bg-gold text-accent-foreground text-sm font-medium hover:brightness-110 transition-all"
           >
             Contact
           </a>
@@ -75,7 +75,7 @@ const Navbar = () => {
               <a
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-1.5 md:mt-2 px-4 py-2.5 md:py-3 rounded-md bg-gold text-accent-foreground text-sm md:text-[0.9rem] font-semibold text-center"
+                className="mt-1.5 md:mt-2 px-4 py-2.5 md:py-3 rounded-md bg-gold text-accent-foreground text-sm md:text-[0.9rem] font-medium text-center"
               >
                 Contact
               </a>

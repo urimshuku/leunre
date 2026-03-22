@@ -39,7 +39,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
         >
           <div className="gold-divider mb-4 md:mb-5 lg:mb-6" />
-          <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-6 md:mb-7 lg:mb-8">
+          <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-normal text-foreground mb-6 md:mb-7 lg:mb-8">
             Our Story
           </h2>
           <div className="space-y-4 md:space-y-5 lg:space-y-6 text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed">
@@ -89,7 +89,7 @@ const AboutUs = () => {
                 <div className="hidden md:block absolute top-1/2 left-full w-[calc(((100vw-4rem)/3-4rem))] lg:w-[calc(((min(64rem,100vw)-4rem)/3-5rem))] -translate-y-1/2 border-t-2 border-dashed border-gold/30" />
               )}
             </div>
-            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">{step.label}</h3>
+            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-normal text-foreground mb-2 md:mb-2.5 lg:mb-3">{step.label}</h3>
             <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
           </motion.div>
         ))}
@@ -108,7 +108,7 @@ const AboutUs = () => {
             <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
               <Rocket className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
             </div>
-            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">Our Mission</h3>
+            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">Our Mission</h3>
             <p className="text-muted-foreground leading-relaxed text-sm md:text-sm lg:text-base">
               To unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
             </p>
@@ -125,7 +125,7 @@ const AboutUs = () => {
             <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
               <Eye className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
             </div>
-            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">Our Vision</h3>
+            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">Our Vision</h3>
             <p className="text-muted-foreground leading-relaxed text-sm md:text-sm lg:text-base">
               A world where personal insight and professional growth come together to create meaningful and lasting change.
             </p>
@@ -157,7 +157,7 @@ const AboutUs = () => {
               <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 md:mb-3.5 lg:mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
                 <value.icon className="w-4 h-4 md:w-4.5 md:h-4.5 lg:w-5 lg:h-5 text-primary" />
               </div>
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">{value.title}</h3>
+              <h3 className="text-base md:text-base lg:text-lg font-heading font-normal text-foreground mb-1.5 md:mb-1.5 lg:mb-2">{value.title}</h3>
               <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground leading-relaxed">{value.description}</p>
             </motion.div>
           </div>
@@ -188,7 +188,7 @@ const AboutUs = () => {
         </p>
         <a
           href="/contact"
-          className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
+          className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-medium text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
         >
           Join the Movement <ArrowRight size={16} />
         </a>

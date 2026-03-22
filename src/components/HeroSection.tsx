@@ -11,7 +11,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0, 0, 0.2, 1] }}
-            className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-bold leading-[1.1] mb-4 md:mb-5 lg:mb-6"
+            className="text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-heading font-normal leading-[1.1] mb-4 md:mb-5 lg:mb-6"
           >
             <span style={{ color: "#A64B1A" }}>Learn.</span>
             <br />
@@ -24,7 +24,7 @@ const HeroSection = () => (
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0, 0, 0.2, 1] }}
-            className="text-base md:text-lg lg:text-xl font-bold max-w-xl mb-4 md:mb-5 lg:mb-6 leading-relaxed" style={{ color: "#A64B1A" }}
+            className="text-base md:text-lg lg:text-xl font-normal max-w-xl mb-4 md:mb-5 lg:mb-6 leading-relaxed" style={{ color: "#A64B1A" }}
           >
             Unlocking Human Potential. Inspiring Transformation.
           </motion.p>
@@ -46,7 +46,7 @@ const HeroSection = () => (
           >
             <Link
               to="/programs"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md font-medium text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
               style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
             >
               Explore Programs
@@ -54,7 +54,7 @@ const HeroSection = () => (
             </Link>
             <Link
               to="/about"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-semibold text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md border font-medium text-sm md:text-sm lg:text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
               style={{ borderColor: "#5C3A2E", color: "#5C3A2E", backgroundColor: "rgba(92,58,46,0.05)" }}
             >
               Work With Us
