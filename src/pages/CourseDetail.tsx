@@ -17,8 +17,8 @@ const CourseDetail = () => {
       <PageLayout>
         <div className="min-h-screen flex items-center justify-center bg-background pt-16">
           <div className="text-center">
-            <h1 className="text-2xl font-heading font-bold text-foreground mb-4">Program Not Found</h1>
-            <Link to="/programs" className="text-primary hover:text-forest-light transition-colors font-semibold">
+            <h1 className="text-2xl font-heading font-normal text-foreground mb-4">Program Not Found</h1>
+            <Link to="/programs" className="text-primary hover:text-forest-light transition-colors font-medium">
               ← Back to Programs
             </Link>
           </div>
@@ -43,7 +43,7 @@ const CourseDetail = () => {
           </div>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-semibold text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-medium text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
             style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
           >
             Enroll / Inquire
@@ -61,7 +61,7 @@ const CourseDetail = () => {
             className="lg:col-span-2"
           >
             <div className="gold-divider mb-6" />
-            <h2 className="text-3xl font-heading font-bold text-foreground mb-6">Overview</h2>
+            <h2 className="text-3xl font-heading font-normal text-foreground mb-6">Overview</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">{course.overview}</p>
           </motion.div>
 
@@ -72,7 +72,7 @@ const CourseDetail = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="text-lg font-heading font-bold text-foreground mb-5">Who It's For</h3>
+              <h3 className="text-lg font-heading font-normal text-foreground mb-5">Who It's For</h3>
               <ul className="space-y-3">
                 {course.whoItsFor.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -94,7 +94,7 @@ const CourseDetail = () => {
           viewport={{ once: true }}
         >
           <div className="gold-divider mb-6" />
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-10">What You'll Achieve</h2>
+          <h2 className="text-3xl font-heading font-normal text-foreground mb-10">What You'll Achieve</h2>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {course.outcomes.map((outcome, i) => (
@@ -125,7 +125,7 @@ const CourseDetail = () => {
             viewport={{ once: true }}
           >
             <div className="gold-divider mb-6" />
-            <h2 className="text-3xl font-heading font-bold text-foreground mb-10">Curriculum Outline</h2>
+            <h2 className="text-3xl font-heading font-normal text-foreground mb-10">Curriculum Outline</h2>
           </motion.div>
           <Accordion type="single" collapsible className="space-y-3">
             {course.curriculum.map((mod, i) => (
@@ -134,7 +134,7 @@ const CourseDetail = () => {
                 value={`module-${i}`}
                 className="bg-card rounded-xl px-6 overflow-hidden card-elevated"
               >
-                <AccordionTrigger className="text-foreground font-heading font-semibold hover:no-underline">
+                <AccordionTrigger className="text-foreground font-heading font-medium hover:no-underline">
                   {mod.module}
                 </AccordionTrigger>
                 <AccordionContent>

@@ -17,7 +17,7 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
         viewport={{ once: true }}
         className="max-w-xl mx-auto"
       >
-        <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">
+        <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">
           {title}
         </h2>
         <p className="text-muted-foreground mb-6 md:mb-7 lg:mb-8 leading-relaxed text-sm md:text-sm lg:text-base">
@@ -25,7 +25,7 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
         </p>
         <a
           href={buttonHref}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-medium text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
         >
           {buttonText}
         </a>

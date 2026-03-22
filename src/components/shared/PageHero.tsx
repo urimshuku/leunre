@@ -20,7 +20,7 @@ const PageHero = ({ title, subtitle }: PageHeroProps) => (
         className="max-w-2xl"
       >
         <div className="gold-divider mb-4 md:mb-5 lg:mb-6" />
-        <h1 className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold mb-4 md:mb-5 lg:mb-6" style={{ color: "#b7551f" }}>
+        <h1 className="text-3xl md:text-4xl lg:text-6xl font-heading font-normal mb-4 md:mb-5 lg:mb-6" style={{ color: "#b7551f" }}>
           {title}
         </h1>
         <p className="text-base md:text-base lg:text-lg leading-relaxed whitespace-pre-line" style={{ color: "#b7551f" }}>

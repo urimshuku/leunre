@@ -66,7 +66,7 @@ const Products = () => (
             <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mx-auto mb-4 md:mb-5 lg:mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
               <Layers className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-primary" />
             </div>
-            <p className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-1 md:mb-1.5 lg:mb-2">Action Cards</p>
+            <p className="text-base md:text-base lg:text-lg font-heading font-normal text-foreground mb-1 md:mb-1.5 lg:mb-2">Action Cards</p>
             <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">Product image coming soon</p>
           </div>
         </motion.div>
@@ -76,10 +76,10 @@ const Products = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-semibold uppercase tracking-wider text-gold mb-3 md:mb-3.5 lg:mb-4">
+          <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-medium uppercase tracking-wider text-gold mb-3 md:mb-3.5 lg:mb-4">
             Flagship Tool
           </span>
-          <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">
+          <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">
             Action Cards
           </h2>
           <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-6 md:mb-7 lg:mb-8">
@@ -99,7 +99,7 @@ const Products = () => (
 
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-medium text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
           >
             Purchase Now <ArrowRight size={16} />
           </a>
@@ -154,7 +154,7 @@ const Products = () => (
               <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
                 <useCase.icon className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
               </div>
-              <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">{useCase.title}</h3>
+              <h3 className="text-lg md:text-lg lg:text-xl font-heading font-normal text-foreground mb-3 md:mb-4 lg:mb-5">{useCase.title}</h3>
               <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
                 {useCase.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 md:gap-2.5 lg:gap-3 text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">
@@ -188,7 +188,7 @@ const Products = () => (
             <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
               <BookOpen className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
             </div>
-            <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Self-Reflection Notebooks</h3>
+            <h3 className="text-lg md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-2.5 lg:mb-3">Self-Reflection Notebooks</h3>
             <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm">To pause and realign — guided journaling tools designed to help you reconnect with your purpose and track your growth journey.</p>
           </motion.div>
         </div>
@@ -204,7 +204,7 @@ const Products = () => (
             <div className="w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-primary/20 transition-colors">
               <Calendar className="w-5 h-5 md:w-5.5 md:h-5.5 lg:w-6 lg:h-6 text-primary" />
             </div>
-            <h3 className="text-lg md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-2.5 lg:mb-3">Interactive Calendars</h3>
+            <h3 className="text-lg md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-2.5 lg:mb-3">Interactive Calendars</h3>
             <p className="text-muted-foreground leading-relaxed text-xs md:text-[0.8rem] lg:text-sm">To integrate growth into everyday rhythm — structured calendars that weave learning and reflection into your daily routine.</p>
           </motion.div>
         </div>

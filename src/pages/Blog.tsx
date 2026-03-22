@@ -96,10 +96,10 @@ const Blog = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-accent mb-3 md:mb-4">
+          <span className="inline-block text-xs font-medium uppercase tracking-wider text-accent mb-3 md:mb-4">
             {featuredPost.category}
           </span>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-foreground mb-3 md:mb-4 lg:mb-5">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-normal text-foreground mb-3 md:mb-4 lg:mb-5">
             {featuredPost.title}
           </h2>
           <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-5 md:mb-6 lg:mb-8 max-w-3xl">
@@ -112,7 +112,7 @@ const Blog = () => (
           </div>
           <Link
             to={`/insights/${featuredPost.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"
           >
             Read Article <ArrowRight size={16} />
           </Link>
@@ -136,10 +136,10 @@ const Blog = () => (
               transition={{ delay: i * 0.08 }}
               className="flex flex-col flex-1"
             >
-              <span className="inline-block text-[10px] md:text-xs font-semibold uppercase tracking-wider text-accent mb-3">
+              <span className="inline-block text-[10px] md:text-xs font-medium uppercase tracking-wider text-accent mb-3">
                 {post.category}
               </span>
-              <h3 className="text-base md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-3">
+              <h3 className="text-base md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-3">
                 {post.title}
               </h3>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
@@ -151,7 +151,7 @@ const Blog = () => (
               </div>
               <Link
                 to={`/insights/${post.slug}`}
-                className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-primary hover:text-accent transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs md:text-sm font-medium text-primary hover:text-accent transition-colors"
               >
                 Read More <ArrowRight size={14} />
               </Link>
@@ -204,15 +204,15 @@ const Blog = () => (
               className="flex flex-col flex-1"
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="inline-block text-[10px] md:text-xs font-semibold uppercase tracking-wider text-accent">
+                <span className="inline-block text-[10px] md:text-xs font-medium uppercase tracking-wider text-accent">
                   {cs.industry}
                 </span>
                 <span className="text-[10px] md:text-xs text-muted-foreground">•</span>
-                <span className="inline-block text-[10px] md:text-xs font-semibold text-primary">
+                <span className="inline-block text-[10px] md:text-xs font-medium text-primary">
                   {cs.result}
                 </span>
               </div>
-              <h3 className="text-base md:text-lg lg:text-xl font-heading font-bold text-foreground mb-2 md:mb-3">
+              <h3 className="text-base md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-3">
                 {cs.title}
               </h3>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1">

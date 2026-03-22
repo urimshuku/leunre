@@ -29,7 +29,7 @@ const TestimonialsSection = () => (
         className="text-center mb-10 md:mb-12 lg:mb-16"
       >
         <div className="gold-divider mx-auto mb-4 md:mb-5 lg:mb-6" />
-        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">
+        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">
           What People Say
         </h2>
         <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
@@ -52,7 +52,7 @@ const TestimonialsSection = () => (
               <Quote className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-gold/50 group-hover:text-gold transition-colors duration-300 mb-3 md:mb-3.5 lg:mb-4" />
               <p className="text-foreground leading-relaxed mb-4 md:mb-5 lg:mb-6 italic text-sm md:text-[0.9rem] lg:text-base">"{item.quote}"</p>
               <div>
-                <p className="font-heading font-bold text-foreground text-sm md:text-[0.9rem] lg:text-base">{item.name}</p>
+                <p className="font-heading font-normal text-foreground text-sm md:text-[0.9rem] lg:text-base">{item.name}</p>
                 <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">{item.role}</p>
               </div>
             </motion.div>

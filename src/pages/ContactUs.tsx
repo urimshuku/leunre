@@ -37,7 +37,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-5 py-4 md:px-6 md:py-5 lg:px-8 lg:py-6 text-left"
       >
-        <span className="text-sm md:text-base font-heading font-semibold text-foreground pr-4">{question}</span>
+        <span className="text-sm md:text-base font-heading font-medium text-foreground pr-4">{question}</span>
         <ChevronDown size={18} className={`text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
@@ -101,11 +101,11 @@ const ContactUs = () => {
                 <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
                   <Mail className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary" />
                 </div>
-                <h2 className="text-xl md:text-xl lg:text-2xl font-heading font-bold text-foreground mb-3 md:mb-3.5 lg:mb-4">Thank You!</h2>
+                <h2 className="text-xl md:text-xl lg:text-2xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">Thank You!</h2>
                 <p className="text-muted-foreground mb-6 md:mb-7 lg:mb-8 text-sm md:text-sm lg:text-base">Your message has been received. We'll be in touch shortly.</p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", email: "", inquiryType: "", message: "" }); }}
-                  className="text-xs md:text-[0.8rem] lg:text-sm font-semibold text-primary hover:text-forest-light transition-colors"
+                  className="text-xs md:text-[0.8rem] lg:text-sm font-medium text-primary hover:text-forest-light transition-colors"
                 >
                   Send another message
                 </button>
@@ -113,7 +113,7 @@ const ContactUs = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5 lg:space-y-6" noValidate>
                 <div>
-                  <label htmlFor="name" className="block text-xs md:text-[0.8rem] lg:text-sm font-semibold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="name" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
                     Full Name
                   </label>
                   <input
@@ -129,7 +129,7 @@ const ContactUs = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs md:text-[0.8rem] lg:text-sm font-semibold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="email" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
                     Email Address
                   </label>
                   <input
@@ -145,7 +145,7 @@ const ContactUs = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="inquiryType" className="block text-xs md:text-[0.8rem] lg:text-sm font-semibold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="inquiryType" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
                     Inquiry Type
                   </label>
                   <select
@@ -164,7 +164,7 @@ const ContactUs = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs md:text-[0.8rem] lg:text-sm font-semibold text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="message" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
                     Message
                   </label>
                   <textarea
@@ -181,7 +181,7 @@ const ContactUs = () => {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-semibold text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-medium text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
                 >
                   Send Message <ArrowRight size={16} />
                 </button>
@@ -198,7 +198,7 @@ const ContactUs = () => {
             className="lg:col-span-2 space-y-4 md:space-y-6 lg:space-y-8"
           >
             <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">Get in Touch</h3>
+              <h3 className="text-base md:text-base lg:text-lg font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">Get in Touch</h3>
               <div className="space-y-3 md:space-y-4 lg:space-y-5">
                 <div className="flex items-start gap-2 md:gap-2.5 lg:gap-3">
                   <Mail size={16} className="text-gold mt-0.5 shrink-0" />
@@ -225,7 +225,7 @@ const ContactUs = () => {
             </div>
 
             <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-bold text-foreground mb-4 md:mb-5 lg:mb-6">Follow Us</h3>
+              <h3 className="text-base md:text-base lg:text-lg font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">Follow Us</h3>
               <div className="grid grid-cols-2 gap-2 md:gap-2.5 lg:gap-3">
                 {socials.map((s) => (
                   <a

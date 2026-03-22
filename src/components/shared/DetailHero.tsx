@@ -36,13 +36,13 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
           </Link>
         </div>
         {tag && (
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-gold mb-3">
+          <span className="inline-block text-xs font-medium uppercase tracking-wider text-gold mb-3">
             {tag}
           </span>
         )}
         <div className="gold-divider mb-4 md:mb-5 lg:mb-6" />
         <h1
-          className="text-3xl md:text-4xl lg:text-6xl font-heading font-bold mb-4 md:mb-5 lg:mb-6"
+          className="text-3xl md:text-4xl lg:text-6xl font-heading font-normal mb-4 md:mb-5 lg:mb-6"
           style={{ color: "#A64B1A" }}
         >
           {title}

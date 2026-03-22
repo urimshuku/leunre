@@ -12,7 +12,7 @@ const Footer = () => (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-8 md:mb-10 lg:mb-14">
         {/* Brand */}
         <div className="col-span-2 md:col-span-3 lg:col-span-2">
-          <h3 className="font-heading text-xl md:text-[1.35rem] lg:text-2xl font-bold mb-3 md:mb-3.5 lg:mb-4">LEUNRE</h3>
+          <h3 className="font-heading text-xl md:text-[1.35rem] lg:text-2xl font-normal mb-3 md:mb-3.5 lg:mb-4">LEUNRE</h3>
           <p className="text-primary-foreground/65 text-xs md:text-[0.8rem] lg:text-sm leading-relaxed mb-4 md:mb-5 lg:mb-6 max-w-xs">
             Learn. Unlearn. Relearn.<br />
             A movement dedicated to unlocking human potential through transformative learning experiences.
@@ -27,7 +27,7 @@ const Footer = () => (
                 className="bg-transparent border-none outline-none text-xs md:text-[0.8rem] lg:text-sm py-2.5 md:py-2.5 lg:py-3 w-full text-primary-foreground placeholder:text-primary-foreground/40"
               />
             </div>
-            <button className="px-3 py-2.5 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 bg-gold text-accent-foreground rounded-md text-xs md:text-[0.8rem] lg:text-sm font-semibold hover:brightness-110 transition-all whitespace-nowrap">
+            <button className="px-3 py-2.5 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 bg-gold text-accent-foreground rounded-md text-xs md:text-[0.8rem] lg:text-sm font-medium hover:brightness-110 transition-all whitespace-nowrap">
               Subscribe
             </button>
           </div>
@@ -38,7 +38,7 @@ const Footer = () => (
         <div className="hidden lg:block" />
         {Object.entries(footerLinks).map(([title, links]) => (
           <div key={title} className="text-right">
-            <h4 className="font-heading font-bold text-[10px] md:text-xs lg:text-sm uppercase tracking-wider mb-3 md:mb-3.5 lg:mb-4 text-primary-foreground/80">
+            <h4 className="font-heading font-normal text-[10px] md:text-xs lg:text-sm uppercase tracking-wider mb-3 md:mb-3.5 lg:mb-4 text-primary-foreground/80">
               {title}
             </h4>
             <ul className="space-y-1.5 md:space-y-1.5 lg:space-y-2">
