@@ -16,7 +16,7 @@ const ServiceDetail = () => {
       <PageLayout>
         <div className="min-h-screen flex items-center justify-center bg-background pt-16">
           <div className="text-center">
-            <h1 className="text-2xl font-heading font-normal text-foreground mb-4">Service Not Found</h1>
+            <h1 className="text-2xl font-heading text-foreground mb-4">Service Not Found</h1>
             <Link to="/services" className="text-primary hover:text-forest-light transition-colors font-medium">
               ← Back to Services
             </Link>
@@ -37,7 +37,7 @@ const ServiceDetail = () => {
       >
         <a
           href="/contact"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md font-medium text-base shadow-sm hover:shadow-md hover:brightness-110 transition-all"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-medium text-base hover:brightness-105 transition-all"
           style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
         >
           Book a Consultation
@@ -46,26 +46,26 @@ const ServiceDetail = () => {
 
       {/* Overview + Who It's For */}
       <ContentSection>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="gold-divider mb-6" />
-            <h2 className="text-3xl font-heading font-normal text-foreground mb-6">Overview</h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">{service.overview}</p>
+            <div className="gold-divider mb-6 md:mb-8" />
+            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-6 md:mb-8">Overview</h2>
+            <p className="text-muted-foreground leading-relaxed text-base md:text-lg max-w-xl">{service.overview}</p>
           </motion.div>
 
-          <div className="bg-card rounded-xl p-8 card-elevated card-elevated-hover transition-all duration-300">
+          <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="text-lg font-heading font-normal text-foreground mb-5">Ideal For</h3>
+              <h3 className="text-lg font-heading text-foreground mb-5 md:mb-6">Ideal For</h3>
               <ul className="space-y-3">
                 {service.audience.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -81,16 +81,16 @@ const ServiceDetail = () => {
 
       {/* Retreat Types - only for retreats */}
       {slug === "retreats" && (
-        <ContentSection>
+        <ContentSection variant="warm">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="gold-divider mx-auto mb-6" />
-            <h2 className="text-3xl font-heading font-normal text-foreground mb-10 text-center">Types of Retreats</h2>
+            <div className="gold-divider mx-auto mb-6 md:mb-8" />
+            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14 text-center">Types of Retreats</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto">
             {retreatTypes.map((type, i) => (
               <div
                 key={type.title}
@@ -102,10 +102,10 @@ const ServiceDetail = () => {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/20 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/15 transition-colors">
                     {i === 0 ? <User className="w-5 h-5 text-primary" /> : <Building2 className="w-5 h-5 text-primary" />}
                   </div>
-                  <h3 className="text-lg font-heading font-normal text-foreground mb-3">{type.title}</h3>
+                  <h3 className="text-lg font-heading text-foreground mb-3">{type.title}</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm">{type.description}</p>
                 </motion.div>
               </div>
@@ -115,16 +115,16 @@ const ServiceDetail = () => {
       )}
 
       {/* Outcomes */}
-      <ContentSection>
+      <ContentSection variant={slug === "retreats" ? "default" : "warm"}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="gold-divider mb-6" />
-          <h2 className="text-3xl font-heading font-normal text-foreground mb-10">Expected Outcomes</h2>
+          <div className="gold-divider mb-6 md:mb-8" />
+          <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14">Expected Outcomes</h2>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
           {service.outcomes.map((outcome, i) => (
             <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl p-6 card-elevated card-elevated-hover transition-all duration-300">
               <motion.div
@@ -137,7 +137,7 @@ const ServiceDetail = () => {
                 <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
                   <CheckCircle2 size={18} className="text-gold" />
                 </div>
-                <p className="text-foreground font-medium">{outcome}</p>
+                <p className="text-foreground font-medium text-sm">{outcome}</p>
               </motion.div>
             </div>
           ))}
@@ -146,16 +146,16 @@ const ServiceDetail = () => {
 
       {/* Our Approach */}
       <ContentSection>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="gold-divider mb-6" />
-            <h2 className="text-3xl font-heading font-normal text-foreground mb-10">Our Approach</h2>
+            <div className="gold-divider mb-6 md:mb-8" />
+            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14">Our Approach</h2>
           </motion.div>
-          <div className="space-y-6">
+          <div className="space-y-5 md:space-y-6">
             {service.approach.map((step, i) => (
               <div key={step.title} className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
                 <motion.div
@@ -165,12 +165,12 @@ const ServiceDetail = () => {
                   transition={{ delay: i * 0.1 }}
                   className="flex items-start gap-5"
                 >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-sm font-normal text-primary">{i + 1}</span>
+                  <div className="w-10 h-10 rounded-full bg-primary/8 flex items-center justify-center shrink-0">
+                    <span className="text-sm text-primary">{i + 1}</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-heading font-normal text-foreground mb-2">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                    <h3 className="text-lg font-heading text-foreground mb-2">{step.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
                   </div>
                 </motion.div>
               </div>
