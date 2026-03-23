@@ -20,28 +20,28 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-20 md:py-28 lg:py-36 bg-background border-b border-border/50 section-shadow">
+  <section className="py-24 md:py-32 lg:py-40 bg-background">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-10 md:mb-12 lg:mb-16"
+        className="text-center mb-14 md:mb-16 lg:mb-20"
       >
-        <div className="gold-divider mx-auto mb-4 md:mb-5 lg:mb-6" />
-        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">
+        <div className="gold-divider mx-auto mb-5 md:mb-6 lg:mb-7" />
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-4 md:mb-5 lg:mb-6">
           What People Say
         </h2>
-        <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed">
           Hear from leaders and organizations who have experienced the LEUNRE transformation.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
         {testimonials.map((item, i) => (
           <div
             key={item.name}
-            className="group bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300"
+            className="group bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -49,11 +49,11 @@ const TestimonialsSection = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
             >
-              <Quote className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-gold/50 group-hover:text-gold transition-colors duration-300 mb-3 md:mb-3.5 lg:mb-4" />
-              <p className="text-foreground leading-relaxed mb-4 md:mb-5 lg:mb-6 italic text-sm md:text-[0.9rem] lg:text-base">"{item.quote}"</p>
+              <Quote className="w-6 h-6 md:w-7 md:h-7 text-gold/40 group-hover:text-gold transition-colors duration-300 mb-4 md:mb-5" />
+              <p className="text-foreground leading-relaxed mb-6 md:mb-8 italic text-sm md:text-base">"{item.quote}"</p>
               <div>
-                <p className="font-heading font-normal text-foreground text-sm md:text-[0.9rem] lg:text-base">{item.name}</p>
-                <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">{item.role}</p>
+                <p className="font-heading text-foreground text-sm md:text-base">{item.name}</p>
+                <p className="text-xs md:text-sm text-muted-foreground mt-1">{item.role}</p>
               </div>
             </motion.div>
           </div>

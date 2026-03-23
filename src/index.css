@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 36 26% 96%;
+    --background: 37 18% 96%;
     --foreground: 16 33% 27%;
 
     --card: 0 0% 100%;
@@ -18,23 +18,23 @@
     --primary: 21 73% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 32% 93%;
+    --secondary: 30 24% 92%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 30 19% 88%;
-    --muted-foreground: 24 40% 39%;
+    --muted: 30 16% 90%;
+    --muted-foreground: 21 40% 38%;
 
     --accent: 43 56% 51%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 3 67% 54%;
+    --destructive: 5 61% 54%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 36 15% 92%;
-    --input: 36 15% 88%;
+    --border: 30 13% 84%;
+    --input: 30 13% 84%;
     --ring: 21 73% 38%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -46,14 +46,14 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --warm: 30 32% 93%;
+    --warm: 28 24% 92%;
     --warm-foreground: 21 73% 38%;
     --gold: 43 56% 51%;
     --gold-light: 44 69% 69%;
     --forest: 21 73% 38%;
     --forest-light: 24 65% 48%;
-    --cream: 30 32% 93%;
-    --philosophy-bg: 30 32% 93%;
+    --cream: 28 24% 92%;
+    --philosophy-bg: 28 24% 92%;
     --teal: 18 80% 45%;
     --teal-light: 18 80% 55%;
   }
@@ -86,13 +86,28 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
     color: #5C3A2E;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-weight: 300;
+    line-height: 1.08;
+  }
+
+  h2 {
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  h3, h4 {
+    font-weight: 500;
+    line-height: 1.25;
   }
 }
 
@@ -115,24 +130,20 @@
   }
 
   .gold-divider {
-    width: 60px;
-    height: 3px;
+    width: 48px;
+    height: 2px;
     background: #D8CEC5;
     border-radius: 2px;
   }
 
   .card-elevated {
-    box-shadow:
-      0 1px 3px 0 rgba(30, 25, 20, 0.04),
-      0 4px 12px -2px rgba(30, 25, 20, 0.08),
-      0 12px 28px -6px rgba(30, 25, 20, 0.06);
+    border: 1px solid #D8CEC5;
+    box-shadow: 0 1px 3px 0 rgba(30, 25, 20, 0.03), 0 2px 8px -2px rgba(30, 25, 20, 0.04);
   }
 
   .card-elevated-hover:hover {
-    box-shadow:
-      0 2px 6px 0 rgba(30, 25, 20, 0.06),
-      0 8px 20px -2px rgba(30, 25, 20, 0.12),
-      0 16px 36px -6px rgba(30, 25, 20, 0.08);
+    border-color: #CFC5BB;
+    box-shadow: 0 2px 6px 0 rgba(30, 25, 20, 0.05), 0 4px 14px -2px rgba(30, 25, 20, 0.07);
   }
 
   .section-shadow {
@@ -140,7 +151,22 @@
   }
 
   .hero-bottom-shadow {
-    box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.08), 0 2px 6px -2px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+  }
+
+  /* Signature dark section */
+  .bg-signature {
+    background-color: #5C3A2E;
+    color: #F7F5F2;
+  }
+
+  .bg-signature h1,
+  .bg-signature h2,
+  .bg-signature h3,
+  .bg-signature h4,
+  .bg-signature h5,
+  .bg-signature h6 {
+    color: #F7F5F2;
   }
 
   .marquee-track-wrapper {

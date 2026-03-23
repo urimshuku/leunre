@@ -34,51 +34,51 @@ const courses = [
 ];
 
 const FeaturedCourses = () => (
-  <section id="programs" className="py-20 md:py-28 lg:py-36 bg-background border-b border-border/50 section-shadow">
+  <section id="programs" className="py-24 md:py-32 lg:py-40 bg-background">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-12 lg:mb-16 gap-4"
+        className="flex flex-col md:flex-row md:items-end md:justify-between mb-14 md:mb-16 lg:mb-20 gap-6"
       >
         <div>
-          <div className="gold-divider mb-4 md:mb-5 lg:mb-6" />
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">
+          <div className="gold-divider mb-5 md:mb-6 lg:mb-7" />
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-4 md:mb-5 lg:mb-6">
             Featured Programs
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-xl">
+          <p className="text-muted-foreground text-sm md:text-base max-w-lg leading-relaxed">
             Growth happens through experience. Our trainings and workshops invite active participation — blending knowledge, practice, and reflection.
           </p>
         </div>
-        <Link to="/programs" className="inline-flex items-center gap-2 text-xs md:text-xs lg:text-sm font-medium text-primary hover:text-forest-light transition-colors">
+        <Link to="/programs" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-forest-light transition-colors shrink-0">
           View All Programs <ArrowRight size={14} />
         </Link>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-7">
         {courses.map((course, i) => (
           <div
             key={course.title}
             className="group bg-card rounded-xl overflow-hidden card-elevated card-elevated-hover transition-all duration-300"
           >
-            <div className="h-1.5 md:h-1.5 lg:h-2 bg-primary group-hover:bg-gold transition-colors" />
+            <div className="h-1.5 bg-primary group-hover:bg-gold transition-colors" />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-4 md:p-5 lg:p-6"
+              className="p-5 md:p-6 lg:p-7"
             >
-              <span className="inline-block text-[10px] md:text-[11px] lg:text-xs font-medium uppercase tracking-wider text-gold mb-3 md:mb-3.5 lg:mb-4">
+              <span className="inline-block text-[10px] md:text-xs font-medium uppercase tracking-wider text-gold mb-4 md:mb-5">
                 {course.tag}
               </span>
-              <div className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 md:mb-3.5 lg:mb-4 group-hover:bg-primary/20 transition-colors">
-                <course.icon className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 text-primary" />
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-4 md:mb-5 group-hover:bg-primary/15 transition-colors">
+                <course.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
               </div>
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-normal text-foreground mb-1.5 md:mb-1.5 lg:mb-2 whitespace-pre-line">{course.title}</h3>
-              <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground leading-relaxed mb-3 md:mb-3.5 lg:mb-4">{course.description}</p>
-              <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-xs md:text-xs lg:text-sm font-medium text-primary hover:text-forest-light transition-colors">
+              <h3 className="text-base md:text-lg font-heading text-foreground mb-2 md:mb-3 whitespace-pre-line">{course.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4 md:mb-5">{course.description}</p>
+              <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-forest-light transition-colors">
                 Learn More <ArrowRight size={12} />
               </Link>
             </motion.div>

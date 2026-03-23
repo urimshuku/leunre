@@ -35,14 +35,14 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
     <div className="bg-card rounded-xl card-elevated transition-all duration-300 overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 md:px-6 md:py-5 lg:px-8 lg:py-6 text-left"
+        className="w-full flex items-center justify-between px-6 py-5 md:px-8 md:py-6 text-left"
       >
-        <span className="text-sm md:text-base font-heading font-medium text-foreground pr-4">{question}</span>
+        <span className="text-sm md:text-base font-heading text-foreground pr-4">{question}</span>
         <ChevronDown size={18} className={`text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
-        <div className="px-5 pb-4 md:px-6 md:pb-5 lg:px-8 lg:pb-6 -mt-1">
-          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{answer}</p>
+        <div className="px-6 pb-5 md:px-8 md:pb-6 -mt-1">
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">{answer}</p>
         </div>
       )}
     </div>
@@ -88,7 +88,7 @@ const ContactUs = () => {
       />
 
       <ContentSection>
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
           {/* Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -98,22 +98,22 @@ const ContactUs = () => {
           >
             {submitted ? (
               <div className="bg-card rounded-xl p-8 md:p-10 lg:p-12 text-center card-elevated">
-                <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 mx-auto rounded-2xl bg-primary/10 flex items-center justify-center mb-4 md:mb-5 lg:mb-6">
-                  <Mail className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary" />
+                <div className="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-2xl bg-primary/8 flex items-center justify-center mb-5 md:mb-6">
+                  <Mail className="w-7 h-7 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h2 className="text-xl md:text-xl lg:text-2xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">Thank You!</h2>
-                <p className="text-muted-foreground mb-6 md:mb-7 lg:mb-8 text-sm md:text-sm lg:text-base">Your message has been received. We'll be in touch shortly.</p>
+                <h2 className="text-xl md:text-2xl font-heading text-foreground mb-4 md:mb-5">Thank You!</h2>
+                <p className="text-muted-foreground mb-8 text-sm md:text-base max-w-sm mx-auto">Your message has been received. We'll be in touch shortly.</p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", email: "", inquiryType: "", message: "" }); }}
-                  className="text-xs md:text-[0.8rem] lg:text-sm font-medium text-primary hover:text-forest-light transition-colors"
+                  className="text-sm font-medium text-primary hover:text-forest-light transition-colors"
                 >
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5 lg:space-y-6" noValidate>
+              <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6" noValidate>
                 <div>
-                  <label htmlFor="name" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                     Full Name
                   </label>
                   <input
@@ -123,13 +123,13 @@ const ContactUs = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your full name"
-                    className={`w-full px-3 py-2.5 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-xs md:text-[0.8rem] lg:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
                   />
-                  {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
+                  {errors.name && <p className="text-xs text-destructive mt-1.5">{errors.name}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     Email Address
                   </label>
                   <input
@@ -139,13 +139,13 @@ const ContactUs = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className={`w-full px-3 py-2.5 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-xs md:text-[0.8rem] lg:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
                   />
-                  {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
+                  {errors.email && <p className="text-xs text-destructive mt-1.5">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="inquiryType" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="inquiryType" className="block text-sm font-medium text-foreground mb-2">
                     Inquiry Type
                   </label>
                   <select
@@ -153,18 +153,18 @@ const ContactUs = () => {
                     name="inquiryType"
                     value={form.inquiryType}
                     onChange={handleChange}
-                    className={`w-full px-3 py-2.5 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 rounded-md border bg-card text-foreground text-xs md:text-[0.8rem] lg:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border-destructive" : "border-border"}`}
                   >
                     <option value="" disabled>Select an inquiry type</option>
                     {inquiryTypes.map((type) => (
                       <option key={type.value} value={type.value}>{type.label}</option>
                     ))}
                   </select>
-                  {errors.inquiryType && <p className="text-xs text-destructive mt-1">{errors.inquiryType}</p>}
+                  {errors.inquiryType && <p className="text-xs text-destructive mt-1.5">{errors.inquiryType}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground mb-1.5 md:mb-1.5 lg:mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                     Message
                   </label>
                   <textarea
@@ -174,14 +174,14 @@ const ContactUs = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell us how we can help..."
-                    className={`w-full px-3 py-2.5 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 rounded-md border bg-card text-foreground placeholder:text-muted-foreground text-xs md:text-[0.8rem] lg:text-sm outline-none transition-colors focus:ring-2 focus:ring-ring resize-none ${errors.message ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring resize-none ${errors.message ? "border-destructive" : "border-border"}`}
                   />
-                  {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
+                  {errors.message && <p className="text-xs text-destructive mt-1.5">{errors.message}</p>}
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-medium text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 md:px-8 md:py-4 rounded-lg bg-gold text-accent-foreground font-medium text-sm md:text-base hover:brightness-105 transition-all"
                 >
                   Send Message <ArrowRight size={16} />
                 </button>
@@ -195,43 +195,43 @@ const ContactUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 space-y-4 md:space-y-6 lg:space-y-8"
+            className="lg:col-span-2 space-y-5 md:space-y-6"
           >
-            <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">Get in Touch</h3>
-              <div className="space-y-3 md:space-y-4 lg:space-y-5">
-                <div className="flex items-start gap-2 md:gap-2.5 lg:gap-3">
+            <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+              <h3 className="text-base md:text-lg font-heading text-foreground mb-5 md:mb-6">Get in Touch</h3>
+              <div className="space-y-4 md:space-y-5">
+                <div className="flex items-start gap-3">
                   <Mail size={16} className="text-gold mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground">Email</p>
-                    <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">hello@leunre.com</p>
+                    <p className="text-sm font-medium text-foreground">Email</p>
+                    <p className="text-sm text-muted-foreground">hello@leunre.com</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-2 md:gap-2.5 lg:gap-3">
+                <div className="flex items-start gap-3">
                   <Phone size={16} className="text-gold mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground">Phone</p>
-                    <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">+1 (555) 000-0000</p>
+                    <p className="text-sm font-medium text-foreground">Phone</p>
+                    <p className="text-sm text-muted-foreground">+1 (555) 000-0000</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-2 md:gap-2.5 lg:gap-3">
+                <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground">Location</p>
-                    <p className="text-xs md:text-[0.8rem] lg:text-sm text-muted-foreground">Available globally — remote & in-person</p>
+                    <p className="text-sm font-medium text-foreground">Location</p>
+                    <p className="text-sm text-muted-foreground">Available globally — remote & in-person</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-card rounded-xl p-5 md:p-6 lg:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-base lg:text-lg font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">Follow Us</h3>
-              <div className="grid grid-cols-2 gap-2 md:gap-2.5 lg:gap-3">
+            <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+              <h3 className="text-base md:text-lg font-heading text-foreground mb-5 md:mb-6">Follow Us</h3>
+              <div className="grid grid-cols-2 gap-3">
                 {socials.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
-                    className="flex items-center gap-2 md:gap-2.5 lg:gap-3 px-3 py-2.5 md:px-3.5 md:py-2.5 lg:px-4 lg:py-3 rounded-lg border border-border hover:border-gold/30 hover:shadow-sm transition-all text-xs md:text-[0.8rem] lg:text-sm font-medium text-foreground"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border hover:border-gold/30 transition-all text-sm font-medium text-foreground"
                   >
                     <s.icon size={16} className="text-primary" />
                     {s.label}
@@ -244,10 +244,10 @@ const ContactUs = () => {
       </ContentSection>
 
       {/* FAQ Section */}
-      <section className="py-20 md:py-28 lg:py-36 border-b border-border/50 section-shadow" style={{ backgroundColor: '#f2f0ed' }}>
+      <section className="py-24 md:py-32 lg:py-40" style={{ backgroundColor: '#F2ECE6' }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <SectionHeader title="Frequently Asked Questions" className="mb-8 md:mb-10 lg:mb-12" />
-          <div className="max-w-3xl mx-auto space-y-3 md:space-y-4">
+          <SectionHeader title="Frequently Asked Questions" className="mb-10 md:mb-14 lg:mb-16" />
+          <div className="max-w-2xl space-y-3 md:space-y-4">
             {[
               { q: "What types of organizations do you work with?", a: "We work with organizations of all sizes — from startups to global enterprises — across industries. Our programs are tailored to meet each team's unique challenges and goals." },
               { q: "How long are your programs typically?", a: "Program length varies based on your needs. Workshops can be as short as a half-day, while comprehensive development programs may span several weeks or months." },
