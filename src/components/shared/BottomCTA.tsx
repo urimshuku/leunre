@@ -8,7 +8,7 @@ interface BottomCTAProps {
 }
 
 const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) => (
-  <section className="py-20 md:py-28 lg:py-36 bg-background border-b border-border/50 section-shadow">
+  <section className="py-24 md:py-32 lg:py-40 bg-background">
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
@@ -17,15 +17,15 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
         viewport={{ once: true }}
         className="max-w-xl mx-auto"
       >
-        <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-normal text-foreground mb-4 md:mb-5 lg:mb-6">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-5 md:mb-6 lg:mb-8">
           {title}
         </h2>
-        <p className="text-muted-foreground mb-6 md:mb-7 lg:mb-8 leading-relaxed text-sm md:text-sm lg:text-base">
+        <p className="text-muted-foreground mb-8 md:mb-10 lg:mb-12 leading-relaxed text-sm md:text-base max-w-lg mx-auto">
           {subtitle}
         </p>
         <a
           href={buttonHref}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-7 md:py-3.5 lg:px-8 lg:py-4 rounded-md bg-gold text-accent-foreground font-medium text-sm md:text-sm lg:text-base hover:brightness-110 transition-all"
+          className="inline-flex items-center justify-center gap-2 px-7 py-3.5 md:px-8 md:py-4 lg:px-9 lg:py-4.5 rounded-lg bg-gold text-accent-foreground font-medium text-sm md:text-base hover:brightness-105 transition-all"
         >
           {buttonText}
         </a>

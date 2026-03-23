@@ -89,23 +89,23 @@ const Blog = () => (
 
     {/* Featured Post */}
     <ContentSection>
-      <SectionHeader title="Featured" className="mb-8 md:mb-10 lg:mb-12" />
-      <div className="bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300">
+      <SectionHeader title="Featured" className="mb-10 md:mb-14 lg:mb-16" />
+      <div className="bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300 max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-medium uppercase tracking-wider text-accent mb-3 md:mb-4">
+          <span className="inline-block text-xs font-medium uppercase tracking-wider text-accent mb-4">
             {featuredPost.category}
           </span>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-heading font-normal text-foreground mb-3 md:mb-4 lg:mb-5">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-heading text-foreground mb-4 md:mb-5 lg:mb-6">
             {featuredPost.title}
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed mb-5 md:mb-6 lg:mb-8 max-w-3xl">
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-6 md:mb-8 max-w-xl">
             {featuredPost.excerpt}
           </p>
-          <div className="flex flex-wrap items-center gap-4 md:gap-5 text-xs md:text-sm text-muted-foreground mb-5 md:mb-6">
+          <div className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground mb-6 md:mb-8">
             <span className="flex items-center gap-1.5"><User size={14} /> {featuredPost.author}</span>
             <span className="flex items-center gap-1.5"><Calendar size={14} /> {featuredPost.date}</span>
             <span className="flex items-center gap-1.5"><Clock size={14} /> {featuredPost.readTime}</span>
@@ -121,13 +121,13 @@ const Blog = () => (
     </ContentSection>
 
     {/* Posts Grid */}
-    <ContentSection>
-      <SectionHeader title="Latest Articles" className="mb-8 md:mb-10 lg:mb-12" />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
+    <ContentSection variant="compact-warm">
+      <SectionHeader title="Latest Articles" className="mb-10 md:mb-14 lg:mb-16" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
         {posts.map((post, i) => (
           <div
             key={post.slug}
-            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
+            className="bg-card rounded-xl p-6 md:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -136,22 +136,22 @@ const Blog = () => (
               transition={{ delay: i * 0.08 }}
               className="flex flex-col flex-1"
             >
-              <span className="inline-block text-[10px] md:text-xs font-medium uppercase tracking-wider text-accent mb-3">
+              <span className="inline-block text-xs font-medium uppercase tracking-wider text-accent mb-4">
                 {post.category}
               </span>
-              <h3 className="text-base md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-3">
+              <h3 className="text-base md:text-lg font-heading text-foreground mb-3">
                 {post.title}
               </h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1">
                 {post.excerpt}
               </p>
-              <div className="flex items-center gap-3 text-[10px] md:text-xs text-muted-foreground mb-4">
+              <div className="flex items-center gap-3 text-xs text-muted-foreground mb-5">
                 <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                 <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
               </div>
               <Link
                 to={`/insights/${post.slug}`}
-                className="inline-flex items-center gap-1.5 text-xs md:text-sm font-medium text-primary hover:text-accent transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-accent transition-colors"
               >
                 Read More <ArrowRight size={14} />
               </Link>
@@ -162,10 +162,10 @@ const Blog = () => (
     </ContentSection>
 
     {/* Case Studies */}
-    <section className="py-20 md:py-28 lg:py-36 border-b border-border/50 section-shadow" style={{ backgroundColor: '#f2f0ed' }}>
+    <section className="py-24 md:py-32 lg:py-40" style={{ backgroundColor: '#F2ECE6' }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <SectionHeader title="Case Studies" className="mb-8 md:mb-10 lg:mb-12" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+      <SectionHeader title="Case Studies" className="mb-10 md:mb-14 lg:mb-16" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
         {[
           {
             title: "Transforming Leadership Culture at a Fortune 500",
@@ -194,7 +194,7 @@ const Blog = () => (
         ].map((cs, i) => (
           <div
             key={i}
-            className="bg-card rounded-xl p-5 md:p-6 lg:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
+            className="bg-card rounded-xl p-6 md:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -203,19 +203,19 @@ const Blog = () => (
               transition={{ delay: i * 0.08 }}
               className="flex flex-col flex-1"
             >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="inline-block text-[10px] md:text-xs font-medium uppercase tracking-wider text-accent">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="inline-block text-xs font-medium uppercase tracking-wider text-accent">
                   {cs.industry}
                 </span>
-                <span className="text-[10px] md:text-xs text-muted-foreground">•</span>
-                <span className="inline-block text-[10px] md:text-xs font-medium text-primary">
+                <span className="text-xs text-muted-foreground">•</span>
+                <span className="inline-block text-xs font-medium text-primary">
                   {cs.result}
                 </span>
               </div>
-              <h3 className="text-base md:text-lg lg:text-xl font-heading font-normal text-foreground mb-2 md:mb-3">
+              <h3 className="text-base md:text-lg font-heading text-foreground mb-3">
                 {cs.title}
               </h3>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed flex-1">
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1 max-w-md">
                 {cs.description}
               </p>
             </motion.div>

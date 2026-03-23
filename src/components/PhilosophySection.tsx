@@ -25,55 +25,55 @@ const PhilosophySection = () => {
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-  <section id="philosophy" className="py-20 md:py-28 lg:py-36 bg-background border-b border-border/50 section-shadow">
-    <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-10 md:mb-12 lg:mb-16"
-      >
-        <div className="gold-divider mx-auto mb-4 md:mb-5 lg:mb-6" />
-        <h2 className="text-2xl md:text-3xl lg:text-5xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4">
-          Our Philosophy
-        </h2>
-        <p className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-2xl mx-auto">
-          A cyclical journey of growth — not linear, but transformational.
-        </p>
-      </motion.div>
+    <section id="philosophy" className="py-16 md:py-20 lg:py-24" style={{ backgroundColor: "#F2ECE6" }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-14 md:mb-16 lg:mb-20"
+        >
+          <div className="gold-divider mx-auto mb-5 md:mb-6 lg:mb-7" />
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-4 md:mb-5 lg:mb-6">
+            Our Philosophy
+          </h2>
+          <p className="text-muted-foreground text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            A cyclical journey of growth — not linear, but transformational.
+          </p>
+        </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
-        {steps.map((step, i) => (
-          <motion.div
-            key={step.label}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className="text-center relative"
-          >
-            <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-4 md:mb-5 lg:mb-6">
-              <motion.div
-                className="w-full h-full rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10"
-                initial={{ rotate: 0 }}
-                whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
-              >
-                <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
-              </motion.div>
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 left-full w-[calc(((100vw-4rem)/3-4rem))] lg:w-[calc(((min(64rem,100vw)-4rem)/3-5rem))] -translate-y-1/2 border-t-2 border-dashed border-gold/30" />
-              )}
-            </div>
-            <h3 className="text-xl md:text-xl lg:text-2xl font-heading font-normal text-foreground mb-2 md:mb-2.5 lg:mb-3">{step.label}</h3>
-            <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-14 max-w-4xl mx-auto">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="text-center relative"
+            >
+              <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-5 md:mb-6 lg:mb-8">
+                <motion.div
+                  className="w-full h-full rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10"
+                  initial={{ rotate: 0 }}
+                  whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
+                >
+                  <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
+                </motion.div>
+                {i < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 left-full w-[calc(((100vw-4rem)/3-4rem))] lg:w-[calc(((min(64rem,100vw)-4rem)/3-5rem))] -translate-y-1/2 border-t-2 border-dashed border-gold/30" />
+                )}
+              </div>
+              <h3 className="text-xl md:text-2xl font-heading text-foreground mb-3 md:mb-4">{step.label}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm max-w-xs mx-auto">{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 };
 
 export default PhilosophySection;

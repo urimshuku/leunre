@@ -14,14 +14,14 @@ const SectionHeader = ({ title, subtitle, centered = false, className = "" }: Se
     viewport={{ once: true }}
     className={`${centered ? "text-center" : ""} ${className}`}
   >
-    <div className={`gold-divider mb-4 md:mb-5 lg:mb-6 ${centered ? "mx-auto" : ""}`} />
-    <h2 className="text-2xl md:text-[1.7rem] lg:text-4xl font-heading font-normal text-foreground mb-3 md:mb-3.5 lg:mb-4 whitespace-pre-line">
+    <div className={`gold-divider mb-5 md:mb-6 lg:mb-7 ${centered ? "mx-auto" : ""}`} />
+    <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-4 md:mb-5 lg:mb-6 whitespace-pre-line">
       {title}
     </h2>
     {subtitle && (
-      <div className={`text-muted-foreground text-sm md:text-base lg:text-lg leading-relaxed ${centered ? "max-w-2xl mx-auto" : ""}`}>
+      <div className={`text-muted-foreground text-sm md:text-base leading-relaxed ${centered ? "max-w-2xl mx-auto" : "max-w-2xl"}`}>
         {subtitle.split('\n').filter(Boolean).map((line, i) => (
-          <p key={i} className={i > 0 ? "mt-3" : ""}>{line}</p>
+          <p key={i} className={i > 0 ? "mt-4" : ""}>{line}</p>
         ))}
       </div>
     )}
