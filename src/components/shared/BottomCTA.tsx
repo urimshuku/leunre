@@ -8,7 +8,7 @@ interface BottomCTAProps {
 }
 
 const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) => (
-  <section className="py-24 md:py-32 lg:py-40 bg-background">
+  <section className="py-24 md:py-28 lg:py-32 bg-background">
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
@@ -17,15 +17,15 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
         viewport={{ once: true }}
         className="max-w-xl mx-auto"
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-5 md:mb-6 lg:mb-8">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-6 md:mb-8" style={{ color: "#1d1d1f" }}>
           {title}
         </h2>
-        <p className="text-muted-foreground mb-8 md:mb-10 lg:mb-12 leading-relaxed text-sm md:text-base max-w-lg mx-auto">
+        <p className="mb-10 md:mb-12 leading-relaxed text-base md:text-lg max-w-lg mx-auto" style={{ color: "#86868b" }}>
           {subtitle}
         </p>
         <a
           href={buttonHref}
-          className="inline-flex items-center justify-center gap-2 px-7 py-3.5 md:px-8 md:py-4 lg:px-9 lg:py-4.5 rounded-lg bg-gold text-accent-foreground font-medium text-sm md:text-base hover:brightness-105 transition-all"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
         >
           {buttonText}
         </a>

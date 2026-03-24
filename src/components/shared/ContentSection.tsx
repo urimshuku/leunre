@@ -8,24 +8,23 @@ interface ContentSectionProps {
 }
 
 const paddingMap = {
-  default: "py-24 md:py-32 lg:py-40",
-  warm: "py-24 md:py-32 lg:py-40",
+  default: "py-24 md:py-28 lg:py-32",
+  warm: "py-24 md:py-28 lg:py-32",
   compact: "py-16 md:py-20 lg:py-24",
   "compact-warm": "py-16 md:py-20 lg:py-24",
 };
 
 const bgMap = {
   default: "bg-background",
-  warm: "",
+  warm: "bg-background",
   compact: "bg-background",
-  "compact-warm": "",
+  "compact-warm": "bg-background",
 };
 
 const ContentSection = ({ children, variant = "default", className = "", id }: ContentSectionProps) => (
   <section
     id={id}
     className={`${paddingMap[variant]} ${bgMap[variant]} ${className}`}
-    style={variant === "warm" || variant === "compact-warm" ? { backgroundColor: "#F2ECE6" } : undefined}
   >
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       {children}
