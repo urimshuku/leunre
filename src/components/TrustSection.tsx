@@ -9,8 +9,8 @@ const metrics = [
 const TrustSection = () => (
   <section className="py-10 md:py-12 lg:py-14 bg-background overflow-hidden relative w-full"
     style={{
-      borderTop: "1px solid #D8CEC5",
-      borderBottom: "1px solid #D8CEC5",
+      borderTop: "1px solid hsl(30 10% 91%)",
+      borderBottom: "1px solid hsl(30 10% 91%)",
       maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
       WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
     }}
@@ -22,10 +22,10 @@ const TrustSection = () => (
             key={i}
             className="inline-flex items-center gap-3 mx-10 md:mx-14 lg:mx-20 shrink-0"
           >
-            <span className="text-xl md:text-2xl lg:text-3xl font-heading text-foreground">
+            <span className="text-xl md:text-2xl lg:text-3xl font-heading" style={{ color: "#1d1d1f" }}>
               {item.value}
             </span>
-            <span className="text-xs md:text-sm text-muted-foreground font-medium uppercase tracking-wider whitespace-nowrap">
+            <span className="text-xs md:text-sm font-medium uppercase tracking-wider whitespace-nowrap" style={{ color: "#86868b" }}>
               {item.label}
             </span>
           </div>
