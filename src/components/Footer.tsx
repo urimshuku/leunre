@@ -7,27 +7,28 @@ const footerLinks = {
 };
 
 const Footer = () => (
-  <footer className="bg-primary text-primary-foreground pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10 lg:pb-12" style={{ boxShadow: '0 -8px 40px -4px hsl(0 0% 0% / 0.15)' }}>
+  <footer className="bg-background pt-16 md:pt-20 lg:pt-24 pb-10 md:pb-12" style={{ borderTop: "1px solid hsl(30 10% 91%)" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 lg:gap-12 mb-10 md:mb-14 lg:mb-18">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 lg:gap-12 mb-12 md:mb-16">
         {/* Brand */}
         <div className="col-span-2 md:col-span-3 lg:col-span-2">
-          <h3 className="font-heading text-xl md:text-2xl mb-4 md:mb-5 text-primary-foreground/65">LEUNRE</h3>
-          <p className="text-primary-foreground/65 text-sm leading-relaxed mb-6 md:mb-8 max-w-xs">
+          <h3 className="font-heading text-xl md:text-2xl mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>LEUNRE</h3>
+          <p className="text-sm leading-relaxed mb-6 md:mb-8 max-w-xs" style={{ color: "#86868b" }}>
             Learn. Unlearn. Relearn.<br />
             A movement dedicated to unlocking human potential through transformative learning experiences.
           </p>
           {/* Newsletter */}
           <div className="flex gap-2">
-            <div className="flex items-center gap-2 bg-primary-foreground/10 rounded-lg px-3 flex-1">
-              <Mail size={14} className="text-primary-foreground/50" />
+            <div className="flex items-center gap-2 rounded-xl px-4 flex-1" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+              <Mail size={14} style={{ color: "#86868b" }} />
               <input
                 type="email"
                 placeholder="Your email"
-                className="bg-transparent border-none outline-none text-sm py-3 w-full text-primary-foreground placeholder:text-primary-foreground/40"
+                className="bg-transparent border-none outline-none text-sm py-3 w-full placeholder:text-muted-foreground"
+                style={{ color: "#1d1d1f" }}
               />
             </div>
-            <button className="px-4 py-3 bg-gold text-accent-foreground rounded-lg text-sm font-medium hover:brightness-105 transition-all whitespace-nowrap">
+            <button className="px-5 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
               Subscribe
             </button>
           </div>
@@ -37,13 +38,13 @@ const Footer = () => (
         <div className="hidden lg:block" />
         {Object.entries(footerLinks).map(([title, links]) => (
           <div key={title} className="text-right">
-            <h4 className="font-heading text-xs uppercase tracking-wider mb-4 md:mb-5 text-primary-foreground/80">
+            <h4 className="font-heading text-xs uppercase tracking-wider mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>
               {title}
             </h4>
-            <ul className="space-y-2 md:space-y-2.5">
+            <ul className="space-y-2.5">
               {links.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-sm text-primary-foreground/55 hover:text-gold transition-colors">
+                  <a href="#" className="text-sm hover:opacity-60 transition-opacity" style={{ color: "#86868b" }}>
                     {link}
                   </a>
                 </li>
@@ -53,13 +54,13 @@ const Footer = () => (
         ))}
       </div>
 
-      <div className="border-t border-primary-foreground/15 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-primary-foreground/45">
+      <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid hsl(30 10% 91%)" }}>
+        <p className="text-xs" style={{ color: "#86868b" }}>
           © 2026 LEUNRE. All rights reserved.
         </p>
         <div className="flex gap-6">
           {["LinkedIn"].map((social) => (
-            <a key={social} href="#" className="text-xs text-primary-foreground/45 hover:text-gold transition-colors">
+            <a key={social} href="#" className="text-xs hover:opacity-60 transition-opacity" style={{ color: "#86868b" }}>
               {social}
             </a>
           ))}
