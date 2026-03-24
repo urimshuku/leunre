@@ -32,17 +32,17 @@ const socials = [
 const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div className="bg-card rounded-xl card-elevated transition-all duration-300 overflow-hidden">
+    <div className="bg-card rounded-2xl card-elevated transition-all duration-300 overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-6 py-5 md:px-8 md:py-6 text-left"
       >
-        <span className="text-sm md:text-base font-heading text-foreground pr-4">{question}</span>
-        <ChevronDown size={18} className={`text-muted-foreground shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+        <span className="text-sm md:text-base font-heading pr-4" style={{ color: "#1d1d1f" }}>{question}</span>
+        <ChevronDown size={18} className={`shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} style={{ color: "#86868b" }} />
       </button>
       {open && (
         <div className="px-6 pb-5 md:px-8 md:pb-6 -mt-1">
-          <p className="text-sm text-muted-foreground leading-relaxed max-w-xl">{answer}</p>
+          <p className="text-sm leading-relaxed max-w-xl" style={{ color: "#86868b" }}>{answer}</p>
         </div>
       )}
     </div>
@@ -97,23 +97,21 @@ const ContactUs = () => {
             className="lg:col-span-3"
           >
             {submitted ? (
-              <div className="bg-card rounded-xl p-8 md:p-10 lg:p-12 text-center card-elevated">
-                <div className="w-14 h-14 md:w-16 md:h-16 mx-auto rounded-2xl bg-primary/8 flex items-center justify-center mb-5 md:mb-6">
-                  <Mail className="w-7 h-7 md:w-8 md:h-8 text-primary" />
-                </div>
-                <h2 className="text-xl md:text-2xl font-heading text-foreground mb-4 md:mb-5">Thank You!</h2>
-                <p className="text-muted-foreground mb-8 text-sm md:text-base max-w-sm mx-auto">Your message has been received. We'll be in touch shortly.</p>
+              <div className="bg-card rounded-2xl p-8 md:p-10 lg:p-12 text-center card-elevated">
+                <Mail className="w-8 h-8 text-primary mx-auto mb-6" strokeWidth={1.5} />
+                <h2 className="text-2xl md:text-3xl font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Thank You!</h2>
+                <p className="mb-8 text-sm md:text-base max-w-sm mx-auto" style={{ color: "#86868b" }}>Your message has been received. We'll be in touch shortly.</p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", email: "", inquiryType: "", message: "" }); }}
-                  className="text-sm font-medium text-primary hover:text-forest-light transition-colors"
+                  className="text-sm font-medium text-primary hover:opacity-70 transition-opacity"
                 >
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6" noValidate>
+              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Full Name
                   </label>
                   <input
@@ -123,13 +121,14 @@ const ContactUs = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your full name"
-                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.name ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3.5 rounded-xl border bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${errors.name ? "border-destructive" : "border-border"}`}
+                    style={{ color: "#1d1d1f" }}
                   />
                   {errors.name && <p className="text-xs text-destructive mt-1.5">{errors.name}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Email Address
                   </label>
                   <input
@@ -139,13 +138,14 @@ const ContactUs = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${errors.email ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3.5 rounded-xl border bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${errors.email ? "border-destructive" : "border-border"}`}
+                    style={{ color: "#1d1d1f" }}
                   />
                   {errors.email && <p className="text-xs text-destructive mt-1.5">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="inquiryType" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Inquiry Type
                   </label>
                   <select
@@ -153,7 +153,8 @@ const ContactUs = () => {
                     name="inquiryType"
                     value={form.inquiryType}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3.5 rounded-xl border bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border-destructive" : "border-border"}`}
+                    style={{ color: form.inquiryType ? "#1d1d1f" : undefined }}
                   >
                     <option value="" disabled>Select an inquiry type</option>
                     {inquiryTypes.map((type) => (
@@ -164,7 +165,7 @@ const ContactUs = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Message
                   </label>
                   <textarea
@@ -174,14 +175,15 @@ const ContactUs = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell us how we can help..."
-                    className={`w-full px-4 py-3 rounded-lg border bg-card text-foreground placeholder:text-muted-foreground text-sm outline-none transition-colors focus:ring-2 focus:ring-ring resize-none ${errors.message ? "border-destructive" : "border-border"}`}
+                    className={`w-full px-4 py-3.5 rounded-xl border bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 resize-none ${errors.message ? "border-destructive" : "border-border"}`}
+                    style={{ color: "#1d1d1f" }}
                   />
                   {errors.message && <p className="text-xs text-destructive mt-1.5">{errors.message}</p>}
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 md:px-8 md:py-4 rounded-lg bg-gold text-accent-foreground font-medium text-sm md:text-base hover:brightness-105 transition-all"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
                 >
                   Send Message <ArrowRight size={16} />
                 </button>
@@ -195,43 +197,44 @@ const ContactUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 space-y-5 md:space-y-6"
+            className="lg:col-span-2 space-y-6"
           >
-            <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-lg font-heading text-foreground mb-5 md:mb-6">Get in Touch</h3>
-              <div className="space-y-4 md:space-y-5">
+            <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
+              <div className="space-y-5">
                 <div className="flex items-start gap-3">
-                  <Mail size={16} className="text-gold mt-0.5 shrink-0" />
+                  <Mail size={16} className="text-primary mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-foreground">Email</p>
-                    <p className="text-sm text-muted-foreground">hello@leunre.com</p>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Email</p>
+                    <p className="text-sm" style={{ color: "#86868b" }}>hello@leunre.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Phone size={16} className="text-gold mt-0.5 shrink-0" />
+                  <Phone size={16} className="text-primary mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-foreground">Phone</p>
-                    <p className="text-sm text-muted-foreground">+1 (555) 000-0000</p>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Phone</p>
+                    <p className="text-sm" style={{ color: "#86868b" }}>+1 (555) 000-0000</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin size={16} className="text-gold mt-0.5 shrink-0" />
+                  <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-foreground">Location</p>
-                    <p className="text-sm text-muted-foreground">Available globally — remote & in-person</p>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Location</p>
+                    <p className="text-sm" style={{ color: "#86868b" }}>Available globally — remote & in-person</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
-              <h3 className="text-base md:text-lg font-heading text-foreground mb-5 md:mb-6">Follow Us</h3>
+            <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Follow Us</h3>
               <div className="grid grid-cols-2 gap-3">
                 {socials.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border hover:border-gold/30 transition-all text-sm font-medium text-foreground"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border hover:border-primary/20 transition-all text-sm font-medium"
+                    style={{ color: "#1d1d1f" }}
                   >
                     <s.icon size={16} className="text-primary" />
                     {s.label}
@@ -244,10 +247,10 @@ const ContactUs = () => {
       </ContentSection>
 
       {/* FAQ Section */}
-      <section className="py-24 md:py-32 lg:py-40" style={{ backgroundColor: '#F2ECE6' }}>
+      <section className="py-24 md:py-28 lg:py-32" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <SectionHeader title="Frequently Asked Questions" className="mb-10 md:mb-14 lg:mb-16" />
-          <div className="max-w-2xl space-y-3 md:space-y-4">
+          <SectionHeader title="Frequently Asked Questions" className="mb-12 md:mb-16" />
+          <div className="max-w-2xl space-y-4">
             {[
               { q: "What types of organizations do you work with?", a: "We work with organizations of all sizes — from startups to global enterprises — across industries. Our programs are tailored to meet each team's unique challenges and goals." },
               { q: "How long are your programs typically?", a: "Program length varies based on your needs. Workshops can be as short as a half-day, while comprehensive development programs may span several weeks or months." },

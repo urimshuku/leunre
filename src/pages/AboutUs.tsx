@@ -38,11 +38,10 @@ const AboutUs = () => {
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           viewport={{ once: true }}
         >
-          <div className="gold-divider mb-5 md:mb-6 lg:mb-8" />
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-6 md:mb-8 lg:mb-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-8 md:mb-10" style={{ color: "#1d1d1f" }}>
             Our Story
           </h2>
-          <div className="space-y-5 md:space-y-6 text-muted-foreground text-sm md:text-base leading-relaxed">
+          <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: "#86868b" }}>
             <p>
               After more than a decade in the corporate world, designing systems and structures for growth, one realization became clear: the most sustainable system is the one that supports human and planetary evolution together.
             </p>
@@ -58,75 +57,70 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Philosophy */}
-    <ContentSection variant="warm">
-      <SectionHeader
-        title="The LEUNRE Philosophy"
-        subtitle={"LEUNRE stands for Learning, Unlearning, and Relearning. It embodies the natural rhythm of growth: expanding awareness, releasing what no longer serves, and integrating what leads us forward.\n\nAt the heart of LEUNRE is the belief that genuine transformation happens through this continuous cycle.\n\nThrough this process, individuals and organizations develop adaptability, creativity, and depth."}
-        centered
-        className="mb-14 md:mb-16 lg:mb-20"
-      />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 lg:gap-14 max-w-4xl mx-auto">
-        {philosophySteps.map((step, i) => (
-          <motion.div
-            key={step.label}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className="text-center relative"
-          >
-            <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-5 md:mb-6 lg:mb-8">
-              <motion.div
-                className="w-full h-full rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10"
-                initial={{ rotate: 0 }}
-                whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
-              >
-                <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" />
-              </motion.div>
-              {i < philosophySteps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 left-full w-[calc(((100vw-4rem)/3-4rem))] lg:w-[calc(((min(64rem,100vw)-4rem)/3-5rem))] -translate-y-1/2 border-t-2 border-dashed border-gold/30" />
-              )}
-            </div>
-            <h3 className="text-xl md:text-2xl font-heading text-foreground mb-3 md:mb-4">{step.label}</h3>
-            <p className="text-muted-foreground leading-relaxed text-sm max-w-xs mx-auto">{step.description}</p>
-          </motion.div>
-        ))}
+    <section className="py-24 md:py-28 lg:py-32" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <SectionHeader
+          title="The LEUNRE Philosophy"
+          subtitle={"LEUNRE stands for Learning, Unlearning, and Relearning. It embodies the natural rhythm of growth: expanding awareness, releasing what no longer serves, and integrating what leads us forward.\n\nAt the heart of LEUNRE is the belief that genuine transformation happens through this continuous cycle.\n\nThrough this process, individuals and organizations develop adaptability, creativity, and depth."}
+          centered
+          className="mb-16 md:mb-20 lg:mb-24"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-4xl mx-auto">
+          {philosophySteps.map((step, i) => (
+            <motion.div
+              key={step.label}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="text-center relative"
+            >
+              <div className="relative mx-auto w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 mb-6 md:mb-8">
+                <motion.div
+                  className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10"
+                  initial={{ rotate: 0 }}
+                  whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
+                >
+                  <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
+                </motion.div>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{step.label}</h3>
+              <p className="leading-relaxed text-sm md:text-base max-w-xs mx-auto" style={{ color: "#86868b" }}>{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </ContentSection>
+    </section>
 
     {/* Mission & Vision */}
     <ContentSection>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-3xl mx-auto">
-        <div className="group bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
+        <div className="group bg-card rounded-2xl p-8 md:p-10 lg:p-12 card-elevated card-elevated-hover transition-all duration-300">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-11 h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-lg bg-primary/8 flex items-center justify-center mb-5 md:mb-6 lg:mb-8 group-hover:bg-primary/15 transition-colors">
-              <Rocket className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
-            </div>
-            <h3 className="text-xl md:text-2xl font-heading text-foreground mb-4 md:mb-5">Our Mission</h3>
-            <p className="text-muted-foreground leading-relaxed text-sm md:text-base max-w-sm">
+            <Rocket className="w-7 h-7 md:w-8 md:h-8 text-primary mb-6 md:mb-8" strokeWidth={1.5} />
+            <h3 className="text-2xl md:text-3xl font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Our Mission</h3>
+            <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               To unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
             </p>
           </motion.div>
         </div>
 
-        <div className="group bg-card rounded-xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover transition-all duration-300">
+        <div className="group bg-card rounded-2xl p-8 md:p-10 lg:p-12 card-elevated card-elevated-hover transition-all duration-300">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="w-11 h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-lg bg-primary/8 flex items-center justify-center mb-5 md:mb-6 lg:mb-8 group-hover:bg-primary/15 transition-colors">
-              <Eye className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
-            </div>
-            <h3 className="text-xl md:text-2xl font-heading text-foreground mb-4 md:mb-5">Our Vision</h3>
-            <p className="text-muted-foreground leading-relaxed text-sm md:text-base max-w-sm">
+            <Eye className="w-7 h-7 md:w-8 md:h-8 text-primary mb-6 md:mb-8" strokeWidth={1.5} />
+            <h3 className="text-2xl md:text-3xl font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Our Vision</h3>
+            <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               A world where personal insight and professional growth come together to create meaningful and lasting change.
             </p>
           </motion.div>
@@ -135,35 +129,35 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Values */}
-    <ContentSection variant="compact-warm">
-      <SectionHeader
-        title="Our Approach"
-        subtitle={"We believe that systems are living, and people are the pulse within them.\n\nOur approach honors the balance between structure and awareness — between measurable outcomes and meaningful impact.\n\nOur work is guided by three principles."}
-        centered
-        className="mb-14 md:mb-16 lg:mb-20"
-      />
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6 max-w-4xl mx-auto">
-        {values.map((value, i) => (
-          <div
-            key={value.title}
-            className="group bg-card rounded-xl p-6 md:p-8 lg:p-10 text-center card-elevated card-elevated-hover transition-all duration-300"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+    <section className="py-20 md:py-24 lg:py-28" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <SectionHeader
+          title="Our Approach"
+          subtitle={"We believe that systems are living, and people are the pulse within them.\n\nOur approach honors the balance between structure and awareness — between measurable outcomes and meaningful impact.\n\nOur work is guided by three principles."}
+          centered
+          className="mb-16 md:mb-20 lg:mb-24"
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+          {values.map((value, i) => (
+            <div
+              key={value.title}
+              className="group bg-card rounded-2xl p-8 md:p-10 text-center card-elevated card-elevated-hover transition-all duration-300"
             >
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-4 md:mb-5 mx-auto group-hover:bg-primary/15 transition-colors">
-                <value.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-              </div>
-              <h3 className="text-base md:text-lg font-heading text-foreground mb-2 md:mb-3">{value.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
-            </motion.div>
-          </div>
-        ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+              >
+                <value.icon className="w-7 h-7 md:w-8 md:h-8 text-primary mb-5 md:mb-6 mx-auto" strokeWidth={1.5} />
+                <h3 className="text-xl md:text-2xl font-heading mb-3" style={{ color: "#1d1d1f" }}>{value.title}</h3>
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: "#86868b" }}>{value.description}</p>
+              </motion.div>
+            </div>
+          ))}
+        </div>
       </div>
-    </ContentSection>
+    </section>
 
     {/* Movement Positioning */}
     <ContentSection>
@@ -171,7 +165,7 @@ const AboutUs = () => {
         title={"More Than a Company.\nA Movement."}
         subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."
         centered
-        className="mb-8 md:mb-10 lg:mb-12"
+        className="mb-10 md:mb-12"
       />
       <div className="max-w-xl mx-auto text-center">
         <motion.div
@@ -180,15 +174,15 @@ const AboutUs = () => {
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           viewport={{ once: true }}
         >
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-5 md:mb-6">
+        <p className="text-base md:text-lg leading-relaxed mb-6" style={{ color: "#86868b" }}>
           Whether you're an individual seeking clarity or an organization striving for purposeful impact, your growth contributes to something greater.
         </p>
-        <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-10 md:mb-12">
+        <p className="text-base md:text-lg leading-relaxed mb-12" style={{ color: "#86868b" }}>
           Together, we can build a world where learning transforms lives, and alignment guides change.
         </p>
         <a
           href="/contact"
-          className="inline-flex items-center gap-2 px-7 py-3.5 md:px-8 md:py-4 rounded-lg bg-gold text-accent-foreground font-medium text-sm md:text-base hover:brightness-105 transition-all"
+          className="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
         >
           Join the Movement <ArrowRight size={16} />
         </a>

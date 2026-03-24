@@ -17,8 +17,8 @@ const CourseDetail = () => {
       <PageLayout>
         <div className="min-h-screen flex items-center justify-center bg-background pt-16">
           <div className="text-center">
-            <h1 className="text-2xl font-heading text-foreground mb-4">Program Not Found</h1>
-            <Link to="/programs" className="text-primary hover:text-forest-light transition-colors font-medium">
+            <h1 className="text-2xl font-heading mb-4" style={{ color: "#1d1d1f" }}>Program Not Found</h1>
+            <Link to="/programs" className="text-primary hover:opacity-70 transition-opacity font-medium">
               ← Back to Programs
             </Link>
           </div>
@@ -37,13 +37,13 @@ const CourseDetail = () => {
         description={course.description}
       >
         <div className="flex flex-wrap items-center gap-6">
-          <div className="flex items-center gap-2" style={{ color: "#A64B1A" }}>
+          <div className="flex items-center gap-2" style={{ color: "#86868b" }}>
             <Clock size={18} />
             <span className="text-sm font-medium">{course.duration}</span>
           </div>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-medium text-base hover:brightness-105 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base hover:opacity-90 transition-all shadow-sm"
             style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
           >
             Enroll / Inquire
@@ -60,23 +60,22 @@ const CourseDetail = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="gold-divider mb-6 md:mb-8" />
-            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-6 md:mb-8">Overview</h2>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg max-w-xl">{course.overview}</p>
+            <h2 className="text-3xl md:text-4xl font-heading mb-8" style={{ color: "#1d1d1f" }}>Overview</h2>
+            <p className="leading-relaxed text-base md:text-lg max-w-xl" style={{ color: "#86868b" }}>{course.overview}</p>
           </motion.div>
 
-          <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+          <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="text-lg font-heading text-foreground mb-5 md:mb-6">Who It's For</h3>
+              <h3 className="text-lg md:text-xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Who It's For</h3>
               <ul className="space-y-3">
                 {course.whoItsFor.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
+                    <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -87,34 +86,33 @@ const CourseDetail = () => {
       </ContentSection>
 
       {/* Outcomes */}
-      <ContentSection variant="warm">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="gold-divider mb-6 md:mb-8" />
-          <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14">What You'll Achieve</h2>
-        </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
-          {course.outcomes.map((outcome, i) => (
-            <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl p-6 card-elevated card-elevated-hover transition-all duration-300">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 w-full"
-              >
-                <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                  <CheckCircle2 size={18} className="text-gold" />
-                </div>
-                <p className="text-foreground font-medium text-sm">{outcome}</p>
-              </motion.div>
-            </div>
-          ))}
+      <section className="py-24 md:py-28 lg:py-32" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-heading mb-12 md:mb-16" style={{ color: "#1d1d1f" }}>What You'll Achieve</h2>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {course.outcomes.map((outcome, i) => (
+              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-6 card-elevated card-elevated-hover transition-all duration-300">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-4 w-full"
+                >
+                  <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
+                  <p className="font-medium text-sm" style={{ color: "#1d1d1f" }}>{outcome}</p>
+                </motion.div>
+              </div>
+            ))}
+          </div>
         </div>
-      </ContentSection>
+      </section>
 
       {/* Curriculum */}
       <ContentSection>
@@ -124,24 +122,23 @@ const CourseDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="gold-divider mb-6 md:mb-8" />
-            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14">Curriculum Outline</h2>
+            <h2 className="text-3xl md:text-4xl font-heading mb-12 md:mb-16" style={{ color: "#1d1d1f" }}>Curriculum Outline</h2>
           </motion.div>
           <Accordion type="single" collapsible className="space-y-3">
             {course.curriculum.map((mod, i) => (
               <AccordionItem
                 key={mod.module}
                 value={`module-${i}`}
-                className="bg-card rounded-xl px-6 overflow-hidden card-elevated"
+                className="bg-card rounded-2xl px-6 overflow-hidden card-elevated"
               >
-                <AccordionTrigger className="text-foreground font-heading hover:no-underline text-sm md:text-base">
+                <AccordionTrigger className="font-heading hover:no-underline text-sm md:text-base" style={{ color: "#1d1d1f" }}>
                   {mod.module}
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="space-y-2 pb-2">
                     {mod.topics.map((topic) => (
-                      <li key={topic} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0" />
+                      <li key={topic} className="flex items-center gap-2 text-sm" style={{ color: "#86868b" }}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                         {topic}
                       </li>
                     ))}

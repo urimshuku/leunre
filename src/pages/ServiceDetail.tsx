@@ -16,8 +16,8 @@ const ServiceDetail = () => {
       <PageLayout>
         <div className="min-h-screen flex items-center justify-center bg-background pt-16">
           <div className="text-center">
-            <h1 className="text-2xl font-heading text-foreground mb-4">Service Not Found</h1>
-            <Link to="/services" className="text-primary hover:text-forest-light transition-colors font-medium">
+            <h1 className="text-2xl font-heading mb-4" style={{ color: "#1d1d1f" }}>Service Not Found</h1>
+            <Link to="/services" className="text-primary hover:opacity-70 transition-opacity font-medium">
               ← Back to Services
             </Link>
           </div>
@@ -37,7 +37,7 @@ const ServiceDetail = () => {
       >
         <a
           href="/contact"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-medium text-base hover:brightness-105 transition-all"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base hover:opacity-90 transition-all shadow-sm"
           style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
         >
           Book a Consultation
@@ -53,23 +53,22 @@ const ServiceDetail = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="gold-divider mb-6 md:mb-8" />
-            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-6 md:mb-8">Overview</h2>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg max-w-xl">{service.overview}</p>
+            <h2 className="text-3xl md:text-4xl font-heading mb-8" style={{ color: "#1d1d1f" }}>Overview</h2>
+            <p className="leading-relaxed text-base md:text-lg max-w-xl" style={{ color: "#86868b" }}>{service.overview}</p>
           </motion.div>
 
-          <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+          <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="text-lg font-heading text-foreground mb-5 md:mb-6">Ideal For</h3>
+              <h3 className="text-lg md:text-xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Ideal For</h3>
               <ul className="space-y-3">
                 {service.audience.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                    <CheckCircle2 size={16} className="text-gold mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
+                    <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -81,68 +80,66 @@ const ServiceDetail = () => {
 
       {/* Retreat Types - only for retreats */}
       {slug === "retreats" && (
-        <ContentSection variant="warm">
+        <section className="py-24 md:py-28 lg:py-32" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+          <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-heading mb-12 md:mb-16 text-center" style={{ color: "#1d1d1f" }}>Types of Retreats</h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
+              {retreatTypes.map((type, i) => (
+                <div
+                  key={type.title}
+                  className="group bg-card rounded-2xl p-8 md:p-10 text-center card-elevated card-elevated-hover transition-all duration-300"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    {i === 0 ? <User className="w-7 h-7 text-primary mx-auto mb-5" strokeWidth={1.5} /> : <Building2 className="w-7 h-7 text-primary mx-auto mb-5" strokeWidth={1.5} />}
+                    <h3 className="text-xl md:text-2xl font-heading mb-3" style={{ color: "#1d1d1f" }}>{type.title}</h3>
+                    <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>{type.description}</p>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Outcomes */}
+      <section className="py-24 md:py-28 lg:py-32" style={slug === "retreats" ? {} : { backgroundColor: "hsl(37 18% 96%)" }}>
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="gold-divider mx-auto mb-6 md:mb-8" />
-            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14 text-center">Types of Retreats</h2>
+            <h2 className="text-3xl md:text-4xl font-heading mb-12 md:mb-16" style={{ color: "#1d1d1f" }}>Expected Outcomes</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-3xl mx-auto">
-            {retreatTypes.map((type, i) => (
-              <div
-                key={type.title}
-                className="group bg-card rounded-xl p-6 md:p-8 text-center card-elevated card-elevated-hover transition-all duration-300"
-              >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {service.outcomes.map((outcome, i) => (
+              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-6 card-elevated card-elevated-hover transition-all duration-300">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-4 w-full"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/15 transition-colors">
-                    {i === 0 ? <User className="w-5 h-5 text-primary" /> : <Building2 className="w-5 h-5 text-primary" />}
-                  </div>
-                  <h3 className="text-lg font-heading text-foreground mb-3">{type.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">{type.description}</p>
+                  <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
+                  <p className="font-medium text-sm" style={{ color: "#1d1d1f" }}>{outcome}</p>
                 </motion.div>
               </div>
             ))}
           </div>
-        </ContentSection>
-      )}
-
-      {/* Outcomes */}
-      <ContentSection variant={slug === "retreats" ? "default" : "warm"}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="gold-divider mb-6 md:mb-8" />
-          <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14">Expected Outcomes</h2>
-        </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
-          {service.outcomes.map((outcome, i) => (
-            <div key={outcome} className="flex items-start gap-4 bg-card rounded-xl p-6 card-elevated card-elevated-hover transition-all duration-300">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 w-full"
-              >
-                <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                  <CheckCircle2 size={18} className="text-gold" />
-                </div>
-                <p className="text-foreground font-medium text-sm">{outcome}</p>
-              </motion.div>
-            </div>
-          ))}
         </div>
-      </ContentSection>
+      </section>
 
       {/* Our Approach */}
       <ContentSection>
@@ -152,12 +149,11 @@ const ServiceDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="gold-divider mb-6 md:mb-8" />
-            <h2 className="text-2xl md:text-3xl font-heading text-foreground mb-10 md:mb-14">Our Approach</h2>
+            <h2 className="text-3xl md:text-4xl font-heading mb-12 md:mb-16" style={{ color: "#1d1d1f" }}>Our Approach</h2>
           </motion.div>
-          <div className="space-y-5 md:space-y-6">
+          <div className="space-y-6">
             {service.approach.map((step, i) => (
-              <div key={step.title} className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+              <div key={step.title} className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -165,12 +161,12 @@ const ServiceDetail = () => {
                   transition={{ delay: i * 0.1 }}
                   className="flex items-start gap-5"
                 >
-                  <div className="w-10 h-10 rounded-full bg-primary/8 flex items-center justify-center shrink-0">
-                    <span className="text-sm text-primary">{i + 1}</span>
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center shrink-0">
+                    <span className="text-sm text-primary font-medium">{i + 1}</span>
                   </div>
                   <div>
-                    <h3 className="text-lg font-heading text-foreground mb-2">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed text-sm">{step.description}</p>
+                    <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>{step.title}</h3>
+                    <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>{step.description}</p>
                   </div>
                 </motion.div>
               </div>

@@ -19,53 +19,49 @@ const Services = () => (
         id={service.slug}
         variant={i % 2 === 1 ? "warm" : "default"}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-start">
-          {/* Left — Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
             viewport={{ once: true }}
           >
-            <div className="w-11 h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-lg bg-primary/8 flex items-center justify-center mb-5 md:mb-6 lg:mb-8 group-hover:bg-primary/15 transition-colors">
-              <service.icon className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
-            </div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading text-foreground mb-5 md:mb-6 lg:mb-8">
+            <service.icon className="w-8 h-8 text-primary mb-6 md:mb-8" strokeWidth={1.5} />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-6 md:mb-8" style={{ color: "#1d1d1f" }}>
               {service.title}
             </h2>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-8 md:mb-10 whitespace-pre-line max-w-lg">
+            <p className="text-base md:text-lg leading-relaxed mb-10 whitespace-pre-line max-w-lg" style={{ color: "#86868b" }}>
               {service.description}
             </p>
             <Link
               to={`/services/${service.slug}`}
-              className="inline-flex items-center gap-2 px-7 py-3.5 md:px-8 md:py-4 rounded-lg bg-gold text-accent-foreground font-medium text-sm md:text-base hover:brightness-105 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
             >
               Learn More <ArrowRight size={16} />
             </Link>
           </motion.div>
 
-          {/* Right — Audience + Outcomes */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="space-y-5 md:space-y-6"
+            className="space-y-6"
           >
-            <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+            <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
               >
-                <h3 className="text-base md:text-lg font-heading text-foreground mb-4 md:mb-5">
+                <h3 className="text-lg md:text-xl font-heading mb-5" style={{ color: "#1d1d1f" }}>
                   Ideal For
                 </h3>
                 <ul className="space-y-3">
                   {service.audience.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
+                    <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -73,20 +69,20 @@ const Services = () => (
               </motion.div>
             </div>
 
-            <div className="bg-card rounded-xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+            <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h3 className="text-base md:text-lg font-heading text-foreground mb-4 md:mb-5">
+                <h3 className="text-lg md:text-xl font-heading mb-5" style={{ color: "#1d1d1f" }}>
                   Expected Outcomes
                 </h3>
                 <ul className="space-y-3">
                   {service.outcomes.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
+                    <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                       {item}
                     </li>
                   ))}

@@ -13,10 +13,7 @@ interface DetailHeroProps {
 }
 
 const DetailHero = ({ backTo, backLabel, tag, title, description, children }: DetailHeroProps) => (
-  <section
-    className="pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-28 hero-bottom-shadow"
-    style={{ backgroundColor: "#edeae3" }}
-  >
+  <section className="pt-32 pb-20 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 bg-background">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, x: 60 }}
@@ -28,27 +25,20 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
           <Link
             to={backTo}
             className="inline-flex items-center gap-2 text-sm hover:opacity-70 transition-opacity"
-            style={{ color: "#A64B1A" }}
+            style={{ color: "#86868b" }}
           >
             <ArrowLeft size={16} /> {backLabel}
           </Link>
         </div>
         {tag && (
-          <span className="inline-block text-xs font-medium uppercase tracking-wider text-gold mb-4">
+          <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-4">
             {tag}
           </span>
         )}
-        <div className="gold-divider mb-5 md:mb-6 lg:mb-8" />
-        <h1
-          className="text-4xl md:text-5xl lg:text-[60px] font-heading mb-5 md:mb-6 lg:mb-8"
-          style={{ color: "#A64B1A" }}
-        >
+        <h1 className="text-5xl md:text-6xl lg:text-[72px] font-heading mb-6 md:mb-8" style={{ color: "#1d1d1f" }}>
           {title}
         </h1>
-        <p
-          className="text-base md:text-lg leading-relaxed whitespace-pre-line mb-8 max-w-xl"
-          style={{ color: "#A64B1A" }}
-        >
+        <p className="text-lg md:text-xl leading-relaxed whitespace-pre-line mb-8 max-w-xl" style={{ color: "#86868b" }}>
           {description}
         </p>
         {children}
