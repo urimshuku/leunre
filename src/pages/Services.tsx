@@ -19,18 +19,18 @@ const Services = () => (
         id={service.slug}
         variant={i % 2 === 1 ? "warm" : "default"}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
             viewport={{ once: true }}
           >
-            <service.icon className="w-8 h-8 text-primary mb-6 md:mb-8" strokeWidth={1.5} />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-6 md:mb-8" style={{ color: "#1d1d1f" }}>
+            <service.icon className="w-7 h-7 text-primary mb-5 md:mb-6" strokeWidth={1.5} />
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#1d1d1f" }}>
               {service.title}
             </h2>
-            <p className="text-base md:text-lg leading-relaxed mb-10 whitespace-pre-line max-w-lg" style={{ color: "#86868b" }}>
+            <p className="text-sm md:text-lg leading-relaxed mb-8 whitespace-pre-line max-w-lg" style={{ color: "#86868b" }}>
               {service.description}
             </p>
             <Link
@@ -46,19 +46,19 @@ const Services = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="space-y-6"
+            className="space-y-4"
           >
-            <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
               >
-                <h3 className="text-lg md:text-xl font-heading mb-5" style={{ color: "#1d1d1f" }}>
+                <h3 className="text-base md:text-lg font-heading mb-4" style={{ color: "#1d1d1f" }}>
                   Ideal For
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   {service.audience.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
@@ -69,17 +69,17 @@ const Services = () => (
               </motion.div>
             </div>
 
-            <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h3 className="text-lg md:text-xl font-heading mb-5" style={{ color: "#1d1d1f" }}>
+                <h3 className="text-base md:text-lg font-heading mb-4" style={{ color: "#1d1d1f" }}>
                   Expected Outcomes
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2.5">
                   {service.outcomes.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
