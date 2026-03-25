@@ -3,14 +3,14 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => (
-  <section className="relative min-h-[80vh] md:min-h-[85vh] lg:min-h-[90vh] flex items-center bg-background">
-    <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
+  <section className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center" style={{ backgroundColor: "#F9F8F6" }}>
+    <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-28 lg:py-36">
       <div className="max-w-3xl">
         <motion.h1
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0, 0, 0.2, 1] }}
-          className="text-5xl md:text-6xl lg:text-[76px] xl:text-[88px] font-heading leading-[1.04] mb-8 md:mb-10"
+          className="text-4xl md:text-6xl lg:text-[76px] xl:text-[88px] font-heading leading-[1.04] mb-6 md:mb-10"
           style={{ color: "#1d1d1f" }}
         >
           Learn.
@@ -24,7 +24,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0, 0, 0.2, 1] }}
-          className="text-xl md:text-2xl max-w-lg mb-6 md:mb-8 leading-relaxed"
+          className="text-lg md:text-2xl max-w-lg mb-4 md:mb-8 leading-relaxed"
           style={{ color: "#1d1d1f" }}
         >
           Unlocking Human Potential. Inspiring Transformation.
@@ -34,7 +34,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0, 0, 0.2, 1] }}
-          className="text-base md:text-lg max-w-lg mb-12 md:mb-14 leading-relaxed"
+          className="text-sm md:text-lg max-w-lg mb-10 md:mb-14 leading-relaxed"
           style={{ color: "#86868b" }}
         >
           LEUNRE is a movement unlocking human potential by inspiring new ways of thinking, fostering clarity, and helping individuals and organizations thrive.
@@ -48,16 +48,15 @@ const HeroSection = () => (
         >
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
-            style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-sm"
           >
             Explore Programs
             <ArrowRight size={16} />
           </Link>
           <Link
             to="/about"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl border font-medium text-sm md:text-base hover:bg-muted/50 transition-all"
-            style={{ borderColor: "hsl(30 10% 91%)", color: "#1d1d1f" }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all"
+            style={{ border: "1px solid #ECEAE6", color: "#1d1d1f", backgroundColor: "transparent" }}
           >
             Work With Us
             <ChevronRight size={16} />

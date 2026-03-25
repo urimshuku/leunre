@@ -7,19 +7,19 @@ const footerLinks = {
 };
 
 const Footer = () => (
-  <footer className="bg-background pt-16 md:pt-20 lg:pt-24 pb-10 md:pb-12" style={{ borderTop: "1px solid hsl(30 10% 91%)" }}>
+  <footer className="pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10" style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid #ECEAE6" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 lg:gap-12 mb-12 md:mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-10 md:mb-14">
         {/* Brand */}
         <div className="col-span-2 md:col-span-3 lg:col-span-2">
-          <h3 className="font-heading text-xl md:text-2xl mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>LEUNRE</h3>
-          <p className="text-sm leading-relaxed mb-6 md:mb-8 max-w-xs" style={{ color: "#86868b" }}>
+          <h3 className="font-heading text-lg md:text-xl mb-3 md:mb-4" style={{ color: "#86868b" }}>LEUNRE</h3>
+          <p className="text-sm leading-relaxed mb-5 md:mb-6 max-w-xs" style={{ color: "#86868b" }}>
             Learn. Unlearn. Relearn.<br />
             A movement dedicated to unlocking human potential through transformative learning experiences.
           </p>
           {/* Newsletter */}
           <div className="flex gap-2">
-            <div className="flex items-center gap-2 rounded-xl px-4 flex-1" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+            <div className="flex items-center gap-2 rounded-xl px-4 flex-1" style={{ backgroundColor: "#F7F5F2" }}>
               <Mail size={14} style={{ color: "#86868b" }} />
               <input
                 type="email"
@@ -38,10 +38,10 @@ const Footer = () => (
         <div className="hidden lg:block" />
         {Object.entries(footerLinks).map(([title, links]) => (
           <div key={title} className="text-right">
-            <h4 className="font-heading text-xs uppercase tracking-wider mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>
+            <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>
               {title}
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {links.map((link) => (
                 <li key={link}>
                   <a href="#" className="text-sm hover:opacity-60 transition-opacity" style={{ color: "#86868b" }}>
@@ -54,7 +54,7 @@ const Footer = () => (
         ))}
       </div>
 
-      <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid hsl(30 10% 91%)" }}>
+      <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid #ECEAE6" }}>
         <p className="text-xs" style={{ color: "#86868b" }}>
           © 2026 LEUNRE. All rights reserved.
         </p>

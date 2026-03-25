@@ -83,23 +83,23 @@ const Blog = () => (
 
     {/* Featured Post */}
     <ContentSection>
-      <SectionHeader title="Featured" className="mb-12 md:mb-16" />
-      <div className="bg-card rounded-2xl p-8 md:p-10 lg:p-12 card-elevated card-elevated-hover transition-all duration-300 max-w-3xl">
+      <SectionHeader title="Featured" className="mb-8 md:mb-12" />
+      <div className="bg-card rounded-2xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-4">
+          <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
             {featuredPost.category}
           </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading mb-5 md:mb-6" style={{ color: "#1d1d1f" }}>
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>
             {featuredPost.title}
           </h2>
-          <p className="text-base md:text-lg leading-relaxed mb-8 max-w-xl" style={{ color: "#86868b" }}>
+          <p className="text-sm md:text-lg leading-relaxed mb-6 max-w-xl" style={{ color: "#86868b" }}>
             {featuredPost.excerpt}
           </p>
-          <div className="flex flex-wrap items-center gap-5 text-sm mb-8" style={{ color: "#86868b" }}>
+          <div className="flex flex-wrap items-center gap-4 text-sm mb-6" style={{ color: "#86868b" }}>
             <span className="flex items-center gap-1.5"><User size={14} /> {featuredPost.author}</span>
             <span className="flex items-center gap-1.5"><Calendar size={14} /> {featuredPost.date}</span>
             <span className="flex items-center gap-1.5"><Clock size={14} /> {featuredPost.readTime}</span>
@@ -115,14 +115,14 @@ const Blog = () => (
     </ContentSection>
 
     {/* Posts Grid */}
-    <section className="py-20 md:py-24 lg:py-28" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <SectionHeader title="Latest Articles" className="mb-12 md:mb-16" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <SectionHeader title="Latest Articles" className="mb-8 md:mb-12" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {posts.map((post, i) => (
             <div
               key={post.slug}
-              className="bg-card rounded-2xl p-6 md:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
+              className="bg-card rounded-2xl p-5 md:p-6 flex flex-col card-elevated card-elevated-hover"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -131,16 +131,16 @@ const Blog = () => (
                 transition={{ delay: i * 0.08 }}
                 className="flex flex-col flex-1"
               >
-                <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-4">
+                <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
                   {post.category}
                 </span>
-                <h3 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>
+                <h3 className="text-base md:text-lg font-heading mb-2" style={{ color: "#1d1d1f" }}>
                   {post.title}
                 </h3>
-                <p className="text-sm leading-relaxed mb-5 flex-1" style={{ color: "#86868b" }}>
+                <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "#86868b" }}>
                   {post.excerpt}
                 </p>
-                <div className="flex items-center gap-3 text-xs mb-5" style={{ color: "#86868b" }}>
+                <div className="flex items-center gap-3 text-xs mb-4" style={{ color: "#86868b" }}>
                   <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                   <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
                 </div>
@@ -158,10 +158,10 @@ const Blog = () => (
     </section>
 
     {/* Case Studies */}
-    <section className="py-24 md:py-28 lg:py-32" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <SectionHeader title="Case Studies" className="mb-12 md:mb-16" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <SectionHeader title="Case Studies" className="mb-8 md:mb-12" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {[
           {
             title: "Transforming Leadership Culture at a Fortune 500",
@@ -190,7 +190,7 @@ const Blog = () => (
         ].map((cs, i) => (
           <div
             key={i}
-            className="bg-card rounded-2xl p-6 md:p-8 flex flex-col card-elevated card-elevated-hover transition-all duration-300"
+            className="bg-card rounded-2xl p-5 md:p-6 flex flex-col card-elevated card-elevated-hover"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -199,7 +199,7 @@ const Blog = () => (
               transition={{ delay: i * 0.08 }}
               className="flex flex-col flex-1"
             >
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3">
                 <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary">
                   {cs.industry}
                 </span>
@@ -208,7 +208,7 @@ const Blog = () => (
                   {cs.result}
                 </span>
               </div>
-              <h3 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>
+              <h3 className="text-base md:text-lg font-heading mb-2" style={{ color: "#1d1d1f" }}>
                 {cs.title}
               </h3>
               <p className="text-sm leading-relaxed flex-1 max-w-md" style={{ color: "#86868b" }}>

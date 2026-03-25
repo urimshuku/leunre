@@ -25,23 +25,23 @@ const PhilosophySection = () => {
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <section id="philosophy" className="py-24 md:py-28 lg:py-32" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+    <section id="philosophy" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16 md:mb-20 lg:mb-24"
+          className="text-center mb-12 md:mb-16 lg:mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#1d1d1f" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
             Our Philosophy
           </h2>
-          <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
+          <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
             A cyclical journey of growth — not linear, but transformational.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
           {steps.map((step, i) => (
             <motion.div
               key={step.label}
@@ -51,7 +51,7 @@ const PhilosophySection = () => {
               transition={{ delay: i * 0.15 }}
               className="text-center relative"
             >
-              <div className="relative mx-auto w-16 h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 mb-6 md:mb-8">
+              <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-5 md:mb-6">
                 <motion.div
                   className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10"
                   initial={{ rotate: 0 }}
@@ -59,10 +59,10 @@ const PhilosophySection = () => {
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
                 >
-                  <step.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
+                  <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
                 </motion.div>
               </div>
-              <h3 className="text-2xl md:text-3xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{step.label}</h3>
+              <h3 className="text-xl md:text-2xl font-heading mb-2 md:mb-3" style={{ color: "#1d1d1f" }}>{step.label}</h3>
               <p className="leading-relaxed text-sm md:text-base max-w-xs mx-auto" style={{ color: "#86868b" }}>{step.description}</p>
             </motion.div>
           ))}

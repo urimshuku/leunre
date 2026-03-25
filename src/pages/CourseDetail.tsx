@@ -15,7 +15,7 @@ const CourseDetail = () => {
   if (!course) {
     return (
       <PageLayout>
-        <div className="min-h-screen flex items-center justify-center bg-background pt-16">
+        <div className="min-h-screen flex items-center justify-center pt-16" style={{ backgroundColor: "#F9F8F6" }}>
           <div className="text-center">
             <h1 className="text-2xl font-heading mb-4" style={{ color: "#1d1d1f" }}>Program Not Found</h1>
             <Link to="/programs" className="text-primary hover:opacity-70 transition-opacity font-medium">
@@ -36,15 +36,14 @@ const CourseDetail = () => {
         title={course.title}
         description={course.description}
       >
-        <div className="flex flex-wrap items-center gap-6">
+        <div className="flex flex-wrap items-center gap-5">
           <div className="flex items-center gap-2" style={{ color: "#86868b" }}>
             <Clock size={18} />
             <span className="text-sm font-medium">{course.duration}</span>
           </div>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base hover:opacity-90 transition-all shadow-sm"
-            style={{ backgroundColor: "#A64B1A", color: "#ffffff" }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-sm"
           >
             Enroll / Inquire
           </a>
@@ -53,26 +52,26 @@ const CourseDetail = () => {
 
       {/* Overview */}
       <ContentSection>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <h2 className="text-3xl md:text-4xl font-heading mb-8" style={{ color: "#1d1d1f" }}>Overview</h2>
-            <p className="leading-relaxed text-base md:text-lg max-w-xl" style={{ color: "#86868b" }}>{course.overview}</p>
+            <h2 className="text-2xl md:text-3xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Overview</h2>
+            <p className="leading-relaxed text-sm md:text-lg max-w-xl" style={{ color: "#86868b" }}>{course.overview}</p>
           </motion.div>
 
-          <div className="bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover transition-all duration-300">
+          <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="text-lg md:text-xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Who It's For</h3>
-              <ul className="space-y-3">
+              <h3 className="text-base md:text-lg font-heading mb-5" style={{ color: "#1d1d1f" }}>Who It's For</h3>
+              <ul className="space-y-2.5">
                 {course.whoItsFor.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
                     <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
@@ -86,18 +85,18 @@ const CourseDetail = () => {
       </ContentSection>
 
       {/* Outcomes */}
-      <section className="py-24 md:py-28 lg:py-32" style={{ backgroundColor: "hsl(37 18% 96%)" }}>
+      <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading mb-12 md:mb-16" style={{ color: "#1d1d1f" }}>What You'll Achieve</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>What You'll Achieve</h2>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {course.outcomes.map((outcome, i) => (
-              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-6 card-elevated card-elevated-hover transition-all duration-300">
+              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-5 card-elevated card-elevated-hover">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -122,14 +121,14 @@ const CourseDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-heading mb-12 md:mb-16" style={{ color: "#1d1d1f" }}>Curriculum Outline</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>Curriculum Outline</h2>
           </motion.div>
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="single" collapsible className="space-y-2.5">
             {course.curriculum.map((mod, i) => (
               <AccordionItem
                 key={mod.module}
                 value={`module-${i}`}
-                className="bg-card rounded-2xl px-6 overflow-hidden card-elevated"
+                className="bg-card rounded-2xl px-5 overflow-hidden card-elevated"
               >
                 <AccordionTrigger className="font-heading hover:no-underline text-sm md:text-base" style={{ color: "#1d1d1f" }}>
                   {mod.module}
