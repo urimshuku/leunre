@@ -20,27 +20,27 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-24 md:py-28 lg:py-32 bg-background">
+  <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F7F5F2" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16 md:mb-20 lg:mb-24"
+        className="text-center mb-12 md:mb-16 lg:mb-20"
       >
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
           What People Say
         </h2>
-        <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
+        <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
           Hear from leaders and organizations who have experienced the LEUNRE transformation.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
         {testimonials.map((item, i) => (
           <div
             key={item.name}
-            className="group bg-card rounded-2xl p-8 md:p-10 card-elevated card-elevated-hover transition-all duration-300"
+            className="group bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -48,8 +48,8 @@ const TestimonialsSection = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
             >
-              <Quote className="w-6 h-6 md:w-7 md:h-7 text-border group-hover:text-primary transition-colors duration-300 mb-5 md:mb-6" strokeWidth={1.5} />
-              <p className="leading-relaxed mb-8 italic text-sm md:text-base" style={{ color: "#1d1d1f" }}>"{item.quote}"</p>
+              <Quote className="w-5 h-5 md:w-6 md:h-6 group-hover:text-primary transition-colors duration-300 mb-4 md:mb-5" style={{ color: "#D8CEC5" }} strokeWidth={1.5} />
+              <p className="leading-relaxed mb-6 italic text-sm md:text-base" style={{ color: "#1d1d1f" }}>"{item.quote}"</p>
               <div>
                 <p className="font-heading text-sm md:text-base" style={{ color: "#1d1d1f" }}>{item.name}</p>
                 <p className="text-xs md:text-sm mt-1" style={{ color: "#86868b" }}>{item.role}</p>
