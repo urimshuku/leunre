@@ -63,7 +63,9 @@ const Products = () => (
           style={{ backgroundColor: "#F7F5F2" }}
         >
           <div className="text-center p-6 md:p-8 lg:p-10">
-            <Layers className="w-10 h-10 md:w-14 md:h-14 text-primary mx-auto mb-5" strokeWidth={1} />
+            <div className="inline-flex icon-hover-border mx-auto mb-5">
+              <Layers className="w-10 h-10 md:w-14 md:h-14 text-primary" strokeWidth={1} />
+            </div>
             <p className="text-base md:text-lg font-heading mb-2" style={{ color: "#1d1d1f" }}>Action Cards</p>
             <p className="text-sm" style={{ color: "#86868b" }}>Product image coming soon</p>
           </div>
@@ -87,7 +89,9 @@ const Products = () => (
           <div className="grid grid-cols-2 gap-3 mb-8">
             {features.map((f) => (
               <div key={f.label} className="flex items-center gap-3 text-sm" style={{ color: "#1d1d1f" }}>
-                <f.icon className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
+                <div className="inline-flex icon-hover-border">
+                  <f.icon className="w-4 h-4 text-primary" strokeWidth={1.5} />
+                </div>
                 <span className="font-medium">{f.label}</span>
               </div>
             ))}
@@ -104,7 +108,7 @@ const Products = () => (
     </ContentSection>
 
     {/* Benefits */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="Why Action Cards?"
@@ -149,7 +153,9 @@ const Products = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <useCase.icon className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5" strokeWidth={1.5} />
+              <div className="inline-flex icon-hover-border mb-5">
+                <useCase.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-4" style={{ color: "#1d1d1f" }}>{useCase.title}</h3>
               <ul className="space-y-2.5">
                 {useCase.items.map((item) => (
@@ -166,7 +172,7 @@ const Products = () => (
     </ContentSection>
 
     {/* Additional Tools */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="More Tools Coming Soon"
@@ -182,7 +188,9 @@ const Products = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <BookOpen className="w-6 h-6 text-primary mb-5" strokeWidth={1.5} />
+              <div className="inline-flex icon-hover-border mb-5">
+                <BookOpen className="w-6 h-6 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Self-Reflection Notebooks</h3>
               <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>To pause and realign — guided journaling tools designed to help you reconnect with your purpose and track your growth journey.</p>
             </motion.div>
@@ -196,7 +204,9 @@ const Products = () => (
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Calendar className="w-6 h-6 text-primary mb-5" strokeWidth={1.5} />
+              <div className="inline-flex icon-hover-border mb-5">
+                <Calendar className="w-6 h-6 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Interactive Calendars</h3>
               <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>To integrate growth into everyday rhythm — structured calendars that weave learning and reflection into your daily routine.</p>
             </motion.div>

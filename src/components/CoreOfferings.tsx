@@ -20,7 +20,7 @@ const offerings = [
 ];
 
 const CoreOfferings = () => (
-  <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F7F5F2" }}>
+  <section className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F7F5F2" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,9 @@ const CoreOfferings = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <item.icon className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5 md:mb-6 mx-auto" strokeWidth={1.5} />
+              <div className="inline-flex icon-hover-border mb-5 md:mb-6 mx-auto">
+                <item.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>
               <p className="leading-relaxed text-sm md:text-base max-w-xs mx-auto" style={{ color: "#86868b" }}>{item.description}</p>
             </motion.div>

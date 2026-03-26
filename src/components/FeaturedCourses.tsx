@@ -34,7 +34,7 @@ const courses = [
 ];
 
 const FeaturedCourses = () => (
-  <section id="programs" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F7F5F2" }}>
+  <section id="programs" className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F7F5F2" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,9 @@ const FeaturedCourses = () => (
               <span className="inline-block text-[11px] font-medium uppercase tracking-wider text-primary mb-4">
                 {course.tag}
               </span>
-              <course.icon className="w-5 h-5 md:w-6 md:h-6 text-primary mb-4" strokeWidth={1.5} />
+              <div className="inline-flex icon-hover-border mb-4">
+                <course.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-base md:text-lg font-heading mb-2 whitespace-pre-line" style={{ color: "#1d1d1f" }}>{course.title}</h3>
               <p className="text-sm leading-relaxed mb-5" style={{ color: "#86868b" }}>{course.description}</p>
               <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity">

@@ -98,7 +98,9 @@ const ContactUs = () => {
           >
             {submitted ? (
               <div className="bg-card rounded-2xl p-6 md:p-8 lg:p-10 text-center card-elevated">
-                <Mail className="w-7 h-7 text-primary mx-auto mb-5" strokeWidth={1.5} />
+                <div className="inline-flex icon-hover-border mx-auto mb-5">
+                  <Mail className="w-7 h-7 text-primary" strokeWidth={1.5} />
+                </div>
                 <h2 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Thank You!</h2>
                 <p className="mb-6 text-sm md:text-base max-w-sm mx-auto" style={{ color: "#86868b" }}>Your message has been received. We'll be in touch shortly.</p>
                 <button
@@ -203,21 +205,27 @@ const ContactUs = () => {
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Mail size={16} className="text-primary mt-0.5 shrink-0" />
+                  <div className="inline-flex icon-hover-border">
+                    <Mail size={16} className="text-primary" />
+                  </div>
                   <div>
                     <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Email</p>
                     <p className="text-sm" style={{ color: "#86868b" }}>hello@leunre.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Phone size={16} className="text-primary mt-0.5 shrink-0" />
+                  <div className="inline-flex icon-hover-border">
+                    <Phone size={16} className="text-primary" />
+                  </div>
                   <div>
                     <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Phone</p>
                     <p className="text-sm" style={{ color: "#86868b" }}>+1 (555) 000-0000</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+                  <div className="inline-flex icon-hover-border">
+                    <MapPin size={16} className="text-primary" />
+                  </div>
                   <div>
                     <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Location</p>
                     <p className="text-sm" style={{ color: "#86868b" }}>Available globally — remote & in-person</p>
@@ -247,7 +255,7 @@ const ContactUs = () => {
       </ContentSection>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+      <section className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F2ECE6" }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <SectionHeader title="Frequently Asked Questions" className="mb-8 md:mb-12" />
           <div className="max-w-2xl space-y-3">

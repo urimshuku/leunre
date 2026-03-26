@@ -12,7 +12,7 @@ const Footer = () => (
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-10 md:mb-14">
         {/* Brand */}
         <div className="col-span-2 md:col-span-3 lg:col-span-2">
-          <h3 className="font-heading text-lg md:text-xl mb-3 md:mb-4" style={{ color: "#86868b" }}>LEUNRE</h3>
+          <h3 className="font-heading text-lg md:text-xl font-semibold mb-3 md:mb-4" style={{ color: "#86868b" }}>LEUNRE</h3>
           <p className="text-sm leading-relaxed mb-5 md:mb-6 max-w-xs" style={{ color: "#86868b" }}>
             Learn. Unlearn. Relearn.<br />
             A movement dedicated to unlocking human potential through transformative learning experiences.
