@@ -57,7 +57,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Philosophy */}
-    <section className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="The LEUNRE Philosophy"
@@ -103,9 +103,7 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex icon-hover-border mb-5 md:mb-6">
-              <Rocket className="w-6 h-6 md:w-7 md:h-7 text-primary" strokeWidth={1.5} />
-            </div>
+            <Rocket className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5 md:mb-6" strokeWidth={1.5} />
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Mission</h3>
             <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               To unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
@@ -120,9 +118,7 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="inline-flex icon-hover-border mb-5 md:mb-6">
-              <Eye className="w-6 h-6 md:w-7 md:h-7 text-primary" strokeWidth={1.5} />
-            </div>
+            <Eye className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5 md:mb-6" strokeWidth={1.5} />
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Vision</h3>
             <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               A world where personal insight and professional growth come together to create meaningful and lasting change.
@@ -133,7 +129,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Values */}
-    <section className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="Our Approach"
@@ -153,9 +149,7 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
               >
-                <div className="inline-flex icon-hover-border mb-4 md:mb-5 mx-auto">
-                  <value.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" strokeWidth={1.5} />
-                </div>
+                <value.icon className="w-6 h-6 md:w-7 md:h-7 text-primary mb-4 md:mb-5 mx-auto" strokeWidth={1.5} />
                 <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>{value.title}</h3>
                 <p className="text-sm md:text-base leading-relaxed" style={{ color: "#86868b" }}>{value.description}</p>
               </motion.div>
@@ -166,7 +160,7 @@ const AboutUs = () => {
     </section>
 
     {/* Movement Positioning */}
-    <ContentSection variant="warm">
+    <ContentSection>
       <SectionHeader
         title={"More Than a Company.\nA Movement."}
         subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."

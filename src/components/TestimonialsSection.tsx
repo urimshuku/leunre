@@ -20,7 +20,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F7F5F2" }}>
+  <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F7F5F2" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -48,9 +48,7 @@ const TestimonialsSection = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
             >
-              <div className="inline-flex icon-hover-border mb-4 md:mb-5">
-                <Quote className="w-5 h-5 md:w-6 md:h-6 group-hover:text-primary transition-colors duration-300" style={{ color: "#D8CEC5" }} strokeWidth={1.5} />
-              </div>
+              <Quote className="w-5 h-5 md:w-6 md:h-6 group-hover:text-primary transition-colors duration-300 mb-4 md:mb-5" style={{ color: "#D8CEC5" }} strokeWidth={1.5} />
               <p className="leading-relaxed mb-6 italic text-sm md:text-base" style={{ color: "#1d1d1f" }}>"{item.quote}"</p>
               <div>
                 <p className="font-heading text-sm md:text-base" style={{ color: "#1d1d1f" }}>{item.name}</p>

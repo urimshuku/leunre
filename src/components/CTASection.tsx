@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CTASection = () => (
-  <section id="contact" className="bg-signature py-16 md:py-24 lg:py-28 section-separator">
+  <section id="contact" className="bg-signature py-16 md:py-24 lg:py-28">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, x: 60 }}

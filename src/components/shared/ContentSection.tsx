@@ -5,7 +5,6 @@ interface ContentSectionProps {
   variant?: "default" | "warm" | "compact" | "compact-warm";
   className?: string;
   id?: string;
-  separator?: boolean;
 }
 
 const paddingMap = {
@@ -15,6 +14,13 @@ const paddingMap = {
   "compact-warm": "py-12 md:py-16 lg:py-20",
 };
 
+const bgMap = {
+  default: "",
+  warm: "",
+  compact: "",
+  "compact-warm": "",
+};
+
 const bgStyle: Record<string, React.CSSProperties> = {
   default: { backgroundColor: "#F7F5F2" },
   warm: { backgroundColor: "#F2ECE6" },
@@ -22,10 +28,10 @@ const bgStyle: Record<string, React.CSSProperties> = {
   "compact-warm": { backgroundColor: "#F2ECE6" },
 };
 
-const ContentSection = ({ children, variant = "default", className = "", id, separator = true }: ContentSectionProps) => (
+const ContentSection = ({ children, variant = "default", className = "", id }: ContentSectionProps) => (
   <section
     id={id}
-    className={`${paddingMap[variant]} ${separator ? "section-separator" : ""} ${className}`}
+    className={`${paddingMap[variant]} ${bgMap[variant]} ${className}`}
     style={bgStyle[variant]}
   >
     <div className="container mx-auto px-4 md:px-6 lg:px-8">

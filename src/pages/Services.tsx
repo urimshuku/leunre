@@ -26,9 +26,7 @@ const Services = () => (
             transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex icon-hover-border mb-5 md:mb-6">
-              <service.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
-            </div>
+            <service.icon className="w-7 h-7 text-primary mb-5 md:mb-6" strokeWidth={1.5} />
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#1d1d1f" }}>
               {service.title}
             </h2>

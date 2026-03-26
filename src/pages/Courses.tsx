@@ -32,9 +32,7 @@ const Courses = () => (
                   <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
                     {course.tag}
                   </span>
-                  <div className="inline-flex icon-hover-border">
-                    <course.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
-                  </div>
+                  <course.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
                 </div>
                 <div className="flex items-center gap-1.5 text-sm" style={{ color: "#86868b" }}>
                   <Clock size={12} />

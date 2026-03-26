@@ -17,9 +17,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl" style={{ backgroundColor: "rgba(255,255,255,0.72)", borderBottom: "1px solid #ECEAE6" }}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl" style={{ borderBottom: "1px solid #ECEAE6" }}>
       <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-4 md:px-6 lg:px-8">
-        <Link to="/" className="font-heading text-lg md:text-xl font-semibold tracking-tight" style={{ color: "#86868b" }}>
+        <Link to="/" className="font-heading text-lg md:text-xl tracking-tight" style={{ color: "#86868b" }}>
           LEUNRE
         </Link>
 
@@ -61,8 +61,8 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden overflow-hidden"
-            style={{ backgroundColor: "rgba(255,255,255,0.95)", borderBottom: "1px solid #ECEAE6" }}
+            className="lg:hidden bg-white overflow-hidden"
+            style={{ borderBottom: "1px solid #ECEAE6" }}
           >
             <div className="flex flex-col gap-0.5 p-4">
               {navLinks.filter(l => l.label !== "Contact").map((link) => (

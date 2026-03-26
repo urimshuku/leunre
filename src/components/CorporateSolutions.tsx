@@ -18,7 +18,7 @@ const solutions = [
 ];
 
 const CorporateSolutions = () => (
-  <section id="services" className="py-16 md:py-24 lg:py-28 section-separator" style={{ backgroundColor: "#F2ECE6" }}>
+  <section id="services" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -47,9 +47,7 @@ const CorporateSolutions = () => (
               transition={{ delay: i * 0.12 }}
               className="flex flex-col flex-1"
             >
-              <div className="inline-flex icon-hover-border mb-5 md:mb-6">
-                <item.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" strokeWidth={1.5} />
-              </div>
+              <item.icon className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5 md:mb-6" strokeWidth={1.5} />
               <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>
               <p className="leading-relaxed text-sm md:text-base mb-5 md:mb-6 flex-1 max-w-sm" style={{ color: "#86868b" }}>{item.description}</p>
               <Link to={item.link} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-auto">
