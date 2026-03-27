@@ -38,6 +38,9 @@ const AboutUs = () => {
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           viewport={{ once: true }}
         >
+          <div className="mb-6 md:mb-8">
+            <div className="gold-divider" />
+          </div>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6 md:mb-8" style={{ color: "#1d1d1f" }}>
             Our Story
           </h2>
@@ -96,6 +99,7 @@ const AboutUs = () => {
 
     {/* Mission & Vision */}
     <ContentSection>
+      <SectionHeader title="Our Purpose" centered className="mb-12 md:mb-16" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
         <div className="group bg-card rounded-2xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover">
           <motion.div
@@ -103,7 +107,9 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Rocket className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5 md:mb-6" strokeWidth={1.5} />
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+              <Rocket className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+            </div>
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Mission</h3>
             <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               To unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
@@ -118,7 +124,9 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <Eye className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5 md:mb-6" strokeWidth={1.5} />
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+              <Eye className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+            </div>
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Vision</h3>
             <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               A world where personal insight and professional growth come together to create meaningful and lasting change.
@@ -149,7 +157,9 @@ const AboutUs = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
               >
-                <value.icon className="w-6 h-6 md:w-7 md:h-7 text-primary mb-4 md:mb-5 mx-auto" strokeWidth={1.5} />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+                  <value.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+                </div>
                 <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>{value.title}</h3>
                 <p className="text-sm md:text-base leading-relaxed" style={{ color: "#86868b" }}>{value.description}</p>
               </motion.div>
@@ -160,35 +170,37 @@ const AboutUs = () => {
     </section>
 
     {/* Movement Positioning */}
-    <ContentSection>
-      <SectionHeader
-        title={"More Than a Company.\nA Movement."}
-        subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."
-        centered
-        className="mb-8 md:mb-10"
-      />
-      <div className="max-w-xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          viewport={{ once: true }}
-        >
-        <p className="text-sm md:text-lg leading-relaxed mb-5" style={{ color: "#86868b" }}>
-          Whether you're an individual seeking clarity or an organization striving for purposeful impact, your growth contributes to something greater.
-        </p>
-        <p className="text-sm md:text-lg leading-relaxed mb-10" style={{ color: "#86868b" }}>
-          Together, we can build a world where learning transforms lives, and alignment guides change.
-        </p>
-        <a
-          href="/contact"
-          className="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
-        >
-          Join the Movement <ArrowRight size={16} />
-        </a>
-        </motion.div>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <SectionHeader
+          title={"More Than a Company.\nA Movement."}
+          subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."
+          centered
+          className="mb-8 md:mb-10"
+        />
+        <div className="max-w-xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
+            viewport={{ once: true }}
+          >
+          <p className="text-sm md:text-lg leading-relaxed mb-5" style={{ color: "#86868b" }}>
+            Whether you're an individual seeking clarity or an organization striving for purposeful impact, your growth contributes to something greater.
+          </p>
+          <p className="text-sm md:text-lg leading-relaxed mb-10" style={{ color: "#86868b" }}>
+            Together, we can build a world where learning transforms lives, and alignment guides change.
+          </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
+          >
+            Join the Movement <ArrowRight size={16} />
+          </a>
+          </motion.div>
+        </div>
       </div>
-    </ContentSection>
+    </section>
   </PageLayout>
   );
 };

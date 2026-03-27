@@ -12,6 +12,9 @@ const CTASection = () => (
         viewport={{ once: true }}
         className="max-w-xl mx-auto text-center"
       >
+        <div className="flex justify-center mb-6 md:mb-8">
+          <div style={{ width: 40, height: 2, backgroundColor: "rgba(245,245,247,0.2)", borderRadius: 2 }} />
+        </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
           Partner with LEUNRE
         </h2>
