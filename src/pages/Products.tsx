@@ -74,6 +74,9 @@ const Products = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
+          <div className="mb-6 md:mb-8">
+            <div className="gold-divider" />
+          </div>
           <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
             Flagship Tool
           </span>
@@ -149,7 +152,9 @@ const Products = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <useCase.icon className="w-6 h-6 md:w-7 md:h-7 text-primary mb-5" strokeWidth={1.5} />
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+                <useCase.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-4" style={{ color: "#1d1d1f" }}>{useCase.title}</h3>
               <ul className="space-y-2.5">
                 {useCase.items.map((item) => (
@@ -175,20 +180,22 @@ const Products = () => (
           className="mb-12 md:mb-16"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
-          <div className="relative bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
+          <div className="relative group bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
             <div className="absolute inset-0 bg-white/50 z-10 rounded-2xl" />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <BookOpen className="w-6 h-6 text-primary mb-5" strokeWidth={1.5} />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
+                <BookOpen className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Self-Reflection Notebooks</h3>
               <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>To pause and realign — guided journaling tools designed to help you reconnect with your purpose and track your growth journey.</p>
             </motion.div>
           </div>
 
-          <div className="relative bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
+          <div className="relative group bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
             <div className="absolute inset-0 bg-white/50 z-10 rounded-2xl" />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -196,7 +203,9 @@ const Products = () => (
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Calendar className="w-6 h-6 text-primary mb-5" strokeWidth={1.5} />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
+                <Calendar className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Interactive Calendars</h3>
               <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>To integrate growth into everyday rhythm — structured calendars that weave learning and reflection into your daily routine.</p>
             </motion.div>
