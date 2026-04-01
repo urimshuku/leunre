@@ -197,7 +197,7 @@ const ContactUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 space-y-4"
+            className="lg:col-span-2 flex flex-col"
           >
             <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
