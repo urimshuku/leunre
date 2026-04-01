@@ -10,6 +10,8 @@ import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
+import ArticleDetail from "./pages/ArticleDetail";
+import CaseStudyDetail from "./pages/CaseStudyDetail";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import NotFound from "./pages/NotFound";
@@ -33,7 +35,8 @@ const App = () => (
           <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/tools" element={<Products />} />
           <Route path="/insights" element={<Blog />} />
-          <Route path="/insights/:slug" element={<Blog />} />
+          <Route path="/insights/articles/:slug" element={<ArticleDetail />} />
+          <Route path="/insights/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/brand-guide" element={<BrandStyleGuide />} />
