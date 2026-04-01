@@ -43,7 +43,7 @@ const CoreOfferings = () => (
         {offerings.map((item, i) => (
           <div
             key={item.title}
-            className="group p-6 md:p-8 lg:p-10 rounded-2xl bg-card card-elevated card-elevated-hover text-center"
+            className="group p-8 md:p-10 lg:p-12 rounded-2xl bg-card card-elevated card-elevated-hover text-center"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
