@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, User } from "lucide-react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/shared/PageLayout";
 import { articles } from "@/data/articles";
@@ -7,9 +7,13 @@ import NotFound from "./NotFound";
 
 const ArticleDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const article = articles.find((a) => a.slug === slug);
+  const currentIndex = articles.findIndex((a) => a.slug === slug);
+  const article = currentIndex >= 0 ? articles[currentIndex] : undefined;
 
   if (!article) return <NotFound />;
+
+  const prevArticle = currentIndex > 0 ? articles[currentIndex - 1] : null;
+  const nextArticle = currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
 
   return (
     <PageLayout>
@@ -58,13 +62,36 @@ const ArticleDetail = () => {
               </motion.p>
             ))}
           </div>
-          <div className="mt-12 pt-8" style={{ borderTop: "1px solid #ECEAE6" }}>
-            <Link
-              to="/insights"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:opacity-70 transition-opacity"
-            >
-              <ArrowLeft size={14} /> Back to all articles
-            </Link>
+
+          <div className="mt-12 pt-8 flex items-center justify-center gap-6" style={{ borderTop: "1px solid #ECEAE6" }}>
+            {prevArticle ? (
+              <Link
+                to={`/insights/articles/${prevArticle.slug}`}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-primary/5"
+                style={{ border: "1px solid #ECEAE6" }}
+                title={prevArticle.title}
+              >
+                <ArrowLeft size={16} style={{ color: "#86868b" }} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10 rounded-full flex items-center justify-center opacity-30" style={{ border: "1px solid #ECEAE6" }}>
+                <ArrowLeft size={16} style={{ color: "#86868b" }} />
+              </div>
+            )}
+            {nextArticle ? (
+              <Link
+                to={`/insights/articles/${nextArticle.slug}`}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-primary/5"
+                style={{ border: "1px solid #ECEAE6" }}
+                title={nextArticle.title}
+              >
+                <ArrowRight size={16} style={{ color: "#86868b" }} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10 rounded-full flex items-center justify-center opacity-30" style={{ border: "1px solid #ECEAE6" }}>
+                <ArrowRight size={16} style={{ color: "#86868b" }} />
+              </div>
+            )}
           </div>
         </div>
       </section>

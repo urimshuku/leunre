@@ -29,8 +29,8 @@ const Services = () => (
             <div className="mb-6 md:mb-8">
               <div className="gold-divider" />
             </div>
-            <div className="group inline-block mb-5 md:mb-6">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+            <div className="inline-block mb-5 md:mb-6">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center border border-primary/20">
                 <service.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
             </div>

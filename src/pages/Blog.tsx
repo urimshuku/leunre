@@ -85,9 +85,12 @@ const Blog = () => (
                 <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#1d1d1f" }}>
                   {cs.title}
                 </h3>
-                <p className="text-sm leading-relaxed flex-1 max-w-md" style={{ color: "#86868b" }}>
+                <p className="text-sm leading-relaxed mb-4 flex-1 max-w-md" style={{ color: "#86868b" }}>
                   {cs.description}
                 </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                  Read More <ArrowRight size={14} />
+                </span>
               </motion.div>
             </Link>
           ))}

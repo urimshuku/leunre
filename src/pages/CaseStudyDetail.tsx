@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/shared/PageLayout";
 import { caseStudies } from "@/data/caseStudies";
@@ -7,9 +7,13 @@ import NotFound from "./NotFound";
 
 const CaseStudyDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const study = caseStudies.find((cs) => cs.slug === slug);
+  const currentIndex = caseStudies.findIndex((cs) => cs.slug === slug);
+  const study = currentIndex >= 0 ? caseStudies[currentIndex] : undefined;
 
   if (!study) return <NotFound />;
+
+  const prevStudy = currentIndex > 0 ? caseStudies[currentIndex - 1] : null;
+  const nextStudy = currentIndex < caseStudies.length - 1 ? caseStudies[currentIndex + 1] : null;
 
   return (
     <PageLayout>
@@ -48,19 +52,16 @@ const CaseStudyDetail = () => {
 
       <section className="py-12 md:py-20" style={{ backgroundColor: "#F7F5F2" }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
-          {/* Challenge */}
           <div className="mb-10">
             <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>The Challenge</h2>
             <p className="text-base leading-relaxed" style={{ color: "#5C3A2E" }}>{study.challenge}</p>
           </div>
 
-          {/* Approach */}
           <div className="mb-10">
             <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>Our Approach</h2>
             <p className="text-base leading-relaxed" style={{ color: "#5C3A2E" }}>{study.approach}</p>
           </div>
 
-          {/* Outcomes */}
           <div className="mb-10">
             <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>Key Outcomes</h2>
             <ul className="space-y-3">
@@ -80,7 +81,6 @@ const CaseStudyDetail = () => {
             </ul>
           </div>
 
-          {/* Full Story */}
           <div className="space-y-6">
             {study.content.map((paragraph, i) => (
               <motion.p
@@ -96,13 +96,35 @@ const CaseStudyDetail = () => {
             ))}
           </div>
 
-          <div className="mt-12 pt-8" style={{ borderTop: "1px solid #ECEAE6" }}>
-            <Link
-              to="/insights"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:opacity-70 transition-opacity"
-            >
-              <ArrowLeft size={14} /> Back to all insights
-            </Link>
+          <div className="mt-12 pt-8 flex items-center justify-center gap-6" style={{ borderTop: "1px solid #ECEAE6" }}>
+            {prevStudy ? (
+              <Link
+                to={`/insights/case-studies/${prevStudy.slug}`}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-primary/5"
+                style={{ border: "1px solid #ECEAE6" }}
+                title={prevStudy.title}
+              >
+                <ArrowLeft size={16} style={{ color: "#86868b" }} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10 rounded-full flex items-center justify-center opacity-30" style={{ border: "1px solid #ECEAE6" }}>
+                <ArrowLeft size={16} style={{ color: "#86868b" }} />
+              </div>
+            )}
+            {nextStudy ? (
+              <Link
+                to={`/insights/case-studies/${nextStudy.slug}`}
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-primary/5"
+                style={{ border: "1px solid #ECEAE6" }}
+                title={nextStudy.title}
+              >
+                <ArrowRight size={16} style={{ color: "#86868b" }} />
+              </Link>
+            ) : (
+              <div className="w-10 h-10 rounded-full flex items-center justify-center opacity-30" style={{ border: "1px solid #ECEAE6" }}>
+                <ArrowRight size={16} style={{ color: "#86868b" }} />
+              </div>
+            )}
           </div>
         </div>
       </section>
