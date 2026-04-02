@@ -154,7 +154,7 @@ const ContactUs = () => {
                     value={form.inquiryType}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border border-destructive" : ""}`}
-                    style={{ color: form.inquiryType ? "#F1F1EF" : undefined, border: errors.inquiryType ? undefined : "1px solid #ECEAE6" }}
+                    style={{ color: form.inquiryType ? "#1d1d1f" : undefined, border: errors.inquiryType ? undefined : "1px solid #ECEAE6" }}
                   >
                     <option value="" disabled>Select an inquiry type</option>
                     {inquiryTypes.map((type) => (
