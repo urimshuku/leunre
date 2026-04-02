@@ -37,7 +37,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-5 py-4 md:px-6 md:py-5 text-left"
       >
-        <span className="text-sm md:text-base font-heading pr-4" style={{ color: "#F1F1EF" }}>{question}</span>
+        <span className="text-sm md:text-base font-heading pr-4" style={{ color: "#1d1d1f" }}>{question}</span>
         <ChevronDown size={18} className={`shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} style={{ color: "#86868b" }} />
       </button>
       {open && (
@@ -99,7 +99,7 @@ const ContactUs = () => {
             {submitted ? (
               <div className="bg-card rounded-2xl p-6 md:p-8 lg:p-10 text-center card-elevated">
                 <Mail className="w-7 h-7 text-primary mx-auto mb-5" strokeWidth={1.5} />
-                <h2 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#F1F1EF" }}>Thank You!</h2>
+                <h2 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Thank You!</h2>
                 <p className="mb-6 text-sm md:text-base max-w-sm mx-auto" style={{ color: "#86868b" }}>Your message has been received. We'll be in touch shortly.</p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", email: "", inquiryType: "", message: "" }); }}
@@ -111,7 +111,7 @@ const ContactUs = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: "#F1F1EF" }}>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Full Name
                   </label>
                   <input
@@ -122,13 +122,13 @@ const ContactUs = () => {
                     onChange={handleChange}
                     placeholder="Your full name"
                     className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${errors.name ? "border border-destructive" : ""}`}
-                    style={{ color: "#F1F1EF", border: errors.name ? undefined : "1px solid #ECEAE6" }}
+                    style={{ color: "#1d1d1f", border: errors.name ? undefined : "1px solid #ECEAE6" }}
                   />
                   {errors.name && <p className="text-xs text-destructive mt-1.5">{errors.name}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: "#F1F1EF" }}>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Email Address
                   </label>
                   <input
@@ -139,13 +139,13 @@ const ContactUs = () => {
                     onChange={handleChange}
                     placeholder="you@example.com"
                     className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${errors.email ? "border border-destructive" : ""}`}
-                    style={{ color: "#F1F1EF", border: errors.email ? undefined : "1px solid #ECEAE6" }}
+                    style={{ color: "#1d1d1f", border: errors.email ? undefined : "1px solid #ECEAE6" }}
                   />
                   {errors.email && <p className="text-xs text-destructive mt-1.5">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-medium mb-2" style={{ color: "#F1F1EF" }}>
+                  <label htmlFor="inquiryType" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Inquiry Type
                   </label>
                   <select
@@ -165,7 +165,7 @@ const ContactUs = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: "#F1F1EF" }}>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
                     Message
                   </label>
                   <textarea
@@ -176,7 +176,7 @@ const ContactUs = () => {
                     onChange={handleChange}
                     placeholder="Tell us how we can help..."
                     className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 resize-none ${errors.message ? "border border-destructive" : ""}`}
-                    style={{ color: "#F1F1EF", border: errors.message ? undefined : "1px solid #ECEAE6" }}
+                    style={{ color: "#1d1d1f", border: errors.message ? undefined : "1px solid #ECEAE6" }}
                   />
                   {errors.message && <p className="text-xs text-destructive mt-1.5">{errors.message}</p>}
                 </div>
@@ -200,26 +200,26 @@ const ContactUs = () => {
             className="lg:col-span-2 flex flex-col"
           >
             <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover flex-1">
-              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#F1F1EF" }}>Get in Touch</h3>
+              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Mail size={16} className="text-primary mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-sm font-medium" style={{ color: "#F1F1EF" }}>Email</p>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Email</p>
                     <p className="text-sm" style={{ color: "#86868b" }}>hello@leunre.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone size={16} className="text-primary mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-sm font-medium" style={{ color: "#F1F1EF" }}>Phone</p>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Phone</p>
                     <p className="text-sm" style={{ color: "#86868b" }}>+1 (555) 000-0000</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
                   <div>
-                    <p className="text-sm font-medium" style={{ color: "#F1F1EF" }}>Location</p>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Location</p>
                     <p className="text-sm" style={{ color: "#86868b" }}>Available globally — remote & in-person</p>
                   </div>
                 </div>
@@ -227,14 +227,14 @@ const ContactUs = () => {
             </div>
 
             <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover mt-4">
-              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#F1F1EF" }}>Follow Us</h3>
+              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Follow Us</h3>
               <div>
                 {socials.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
                     className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-sm font-medium"
-                    style={{ color: "#F1F1EF", border: "1px solid #ECEAE6" }}
+                    style={{ color: "#1d1d1f", border: "1px solid #ECEAE6" }}
                   >
                     <s.icon size={16} className="text-primary" />
                     {s.label}

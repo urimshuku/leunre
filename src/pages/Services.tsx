@@ -34,7 +34,7 @@ const Services = () => (
                 <service.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
             </div>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#F1F1EF" }}>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#1d1d1f" }}>
               {service.title}
             </h2>
             <p className="text-sm md:text-lg leading-relaxed mb-8 whitespace-pre-line max-w-lg" style={{ color: "#86868b" }}>
@@ -62,7 +62,7 @@ const Services = () => (
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
               >
-                <h3 className="text-base md:text-lg font-heading mb-4" style={{ color: "#F1F1EF" }}>
+                <h3 className="text-base md:text-lg font-heading mb-4" style={{ color: "#1d1d1f" }}>
                   Ideal For
                 </h3>
                 <ul className="space-y-2.5">
@@ -83,7 +83,7 @@ const Services = () => (
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h3 className="text-base md:text-lg font-heading mb-4" style={{ color: "#F1F1EF" }}>
+                <h3 className="text-base md:text-lg font-heading mb-4" style={{ color: "#1d1d1f" }}>
                   Expected Outcomes
                 </h3>
                 <ul className="space-y-2.5">

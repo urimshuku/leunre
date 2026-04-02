@@ -14,7 +14,7 @@ const PageHero = ({ title, subtitle }: PageHeroProps) => (
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         className="max-w-2xl"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8" style={{ color: "#F1F1EF" }}>
+        <h1 className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8" style={{ color: "#1d1d1f" }}>
           {title}
         </h1>
         <p className="text-base md:text-xl leading-relaxed whitespace-pre-line max-w-xl" style={{ color: "#86868b" }}>

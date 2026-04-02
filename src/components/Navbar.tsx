@@ -30,7 +30,7 @@ const Navbar = () => {
               key={link.label}
               href={link.href}
               className="text-sm transition-opacity hover:opacity-60"
-              style={{ color: "#F1F1EF" }}
+              style={{ color: "#1d1d1f" }}
             >
               {link.label}
             </a>
@@ -46,7 +46,7 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           className="lg:hidden p-2"
-          style={{ color: "#F1F1EF" }}
+          style={{ color: "#1d1d1f" }}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -71,7 +71,7 @@ const Navbar = () => {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="px-4 py-3 rounded-lg text-sm transition-colors"
-                  style={{ color: "#F1F1EF" }}
+                  style={{ color: "#1d1d1f" }}
                 >
                   {link.label}
                 </a>

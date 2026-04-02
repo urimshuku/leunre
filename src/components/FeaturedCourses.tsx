@@ -46,7 +46,7 @@ const FeaturedCourses = () => (
           <div className="mb-6 md:mb-8">
             <div className="gold-divider" />
           </div>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#F1F1EF" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
             Featured Programs
           </h2>
           <p className="text-sm md:text-lg max-w-lg leading-relaxed" style={{ color: "#86868b" }}>
@@ -77,7 +77,7 @@ const FeaturedCourses = () => (
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center mb-4 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
                 <course.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-base md:text-lg font-heading mb-2 whitespace-pre-line" style={{ color: "#F1F1EF" }}>{course.title}</h3>
+              <h3 className="text-base md:text-lg font-heading mb-2 whitespace-pre-line" style={{ color: "#1d1d1f" }}>{course.title}</h3>
               <p className="text-sm leading-relaxed mb-5" style={{ color: "#86868b" }}>{course.description}</p>
               <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity">
                 Learn More <ArrowRight size={12} />

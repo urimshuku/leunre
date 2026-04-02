@@ -17,7 +17,7 @@ const CourseDetail = () => {
       <PageLayout>
         <div className="min-h-screen flex items-center justify-center pt-16" style={{ backgroundColor: "#F9F8F6" }}>
           <div className="text-center">
-            <h1 className="text-2xl font-heading mb-4" style={{ color: "#F1F1EF" }}>Program Not Found</h1>
+            <h1 className="text-2xl font-heading mb-4" style={{ color: "#1d1d1f" }}>Program Not Found</h1>
             <Link to="/programs" className="text-primary hover:opacity-70 transition-opacity font-medium">
               ← Back to Programs
             </Link>
@@ -59,7 +59,7 @@ const CourseDetail = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <h2 className="text-2xl md:text-3xl font-heading mb-6" style={{ color: "#F1F1EF" }}>Overview</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Overview</h2>
             <p className="leading-relaxed text-sm md:text-lg max-w-xl" style={{ color: "#86868b" }}>{course.overview}</p>
           </motion.div>
 
@@ -70,7 +70,7 @@ const CourseDetail = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="text-base md:text-lg font-heading mb-5" style={{ color: "#F1F1EF" }}>Who It's For</h3>
+              <h3 className="text-base md:text-lg font-heading mb-5" style={{ color: "#1d1d1f" }}>Who It's For</h3>
               <ul className="space-y-2.5">
                 {course.whoItsFor.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
@@ -92,7 +92,7 @@ const CourseDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#F1F1EF" }}>What You'll Achieve</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>What You'll Achieve</h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {course.outcomes.map((outcome, i) => (
@@ -105,7 +105,7 @@ const CourseDetail = () => {
                   className="flex items-start gap-4 w-full"
                 >
                   <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
-                  <p className="font-medium text-sm" style={{ color: "#F1F1EF" }}>{outcome}</p>
+                  <p className="font-medium text-sm" style={{ color: "#1d1d1f" }}>{outcome}</p>
                 </motion.div>
               </div>
             ))}
@@ -121,7 +121,7 @@ const CourseDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#F1F1EF" }}>Curriculum Outline</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>Curriculum Outline</h2>
           </motion.div>
           <Accordion type="single" collapsible className="space-y-2.5">
             {course.curriculum.map((mod, i) => (
@@ -130,7 +130,7 @@ const CourseDetail = () => {
                 value={`module-${i}`}
                 className="bg-card rounded-2xl px-5 overflow-hidden card-elevated"
               >
-                <AccordionTrigger className="font-heading hover:no-underline text-sm md:text-base" style={{ color: "#F1F1EF" }}>
+                <AccordionTrigger className="font-heading hover:no-underline text-sm md:text-base" style={{ color: "#1d1d1f" }}>
                   {mod.module}
                 </AccordionTrigger>
                 <AccordionContent>

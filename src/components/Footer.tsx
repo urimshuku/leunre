@@ -18,7 +18,7 @@ const Footer = () => (
             A movement dedicated to unlocking human potential through transformative learning experiences.
           </p>
           {/* Newsletter */}
-          <h4 className="font-heading text-xs uppercase tracking-wider mb-3" style={{ color: "#F1F1EF" }}>Join Our Newsletter</h4>
+          <h4 className="font-heading text-xs uppercase tracking-wider mb-3" style={{ color: "#1d1d1f" }}>Join Our Newsletter</h4>
           <div className="flex gap-2">
             <div className="flex items-center gap-2 rounded-xl px-4 flex-1" style={{ backgroundColor: "#F7F5F2" }}>
               <Mail size={14} style={{ color: "#86868b" }} />
@@ -26,7 +26,7 @@ const Footer = () => (
                 type="email"
                 placeholder="Your email"
                 className="bg-transparent border-none outline-none text-sm py-3 w-full placeholder:text-muted-foreground"
-                style={{ color: "#F1F1EF" }}
+                style={{ color: "#1d1d1f" }}
               />
             </div>
             <button className="px-5 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
@@ -39,7 +39,7 @@ const Footer = () => (
         <div className="hidden lg:block" />
         {Object.entries(footerLinks).map(([title, links]) => (
           <div key={title} className="text-right">
-            <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4" style={{ color: "#F1F1EF" }}>
+            <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>
               {title}
             </h4>
             <ul className="space-y-2">

@@ -34,7 +34,7 @@ const ArticleDetail = () => {
             <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-4">
               {article.category}
             </span>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6" style={{ color: "#F1F1EF" }}>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6" style={{ color: "#1d1d1f" }}>
               {article.title}
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-sm" style={{ color: "#86868b" }}>

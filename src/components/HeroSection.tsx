@@ -11,7 +11,7 @@ const HeroSection = () => (
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0, 0, 0.2, 1] }}
           className="text-4xl md:text-6xl lg:text-[76px] xl:text-[88px] font-heading leading-[1.04] mb-6 md:mb-10"
-          style={{ color: "#F1F1EF" }}
+          style={{ color: "#1d1d1f" }}
         >
           Learn.
           <br />
@@ -25,7 +25,7 @@ const HeroSection = () => (
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0, 0, 0.2, 1] }}
           className="text-lg md:text-2xl max-w-lg mb-4 md:mb-8 leading-relaxed"
-          style={{ color: "#F1F1EF" }}
+          style={{ color: "#1d1d1f" }}
         >
           Unlocking Human Potential. Inspiring Transformation.
         </motion.p>
@@ -56,7 +56,7 @@ const HeroSection = () => (
           <Link
             to="/about"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all hover:bg-black/5"
-            style={{ border: "1px solid #ECEAE6", color: "#F1F1EF", backgroundColor: "transparent" }}
+            style={{ border: "1px solid #ECEAE6", color: "#1d1d1f", backgroundColor: "transparent" }}
           >
             Work With Us
             <ChevronRight size={16} />

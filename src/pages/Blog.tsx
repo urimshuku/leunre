@@ -35,7 +35,7 @@ const Blog = () => (
                 <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
                   {post.category}
                 </span>
-                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#F1F1EF" }}>
+                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#1d1d1f" }}>
                   {post.title}
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "#86868b" }}>
@@ -78,11 +78,11 @@ const Blog = () => (
                     {cs.industry}
                   </span>
                   <span className="text-xs" style={{ color: "#86868b" }}>•</span>
-                  <span className="inline-block text-xs font-medium" style={{ color: "#F1F1EF" }}>
+                  <span className="inline-block text-xs font-medium" style={{ color: "#1d1d1f" }}>
                     {cs.result}
                   </span>
                 </div>
-                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#F1F1EF" }}>
+                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#1d1d1f" }}>
                   {cs.title}
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 flex-1 max-w-md" style={{ color: "#86868b" }}>

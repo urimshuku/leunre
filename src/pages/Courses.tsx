@@ -43,7 +43,7 @@ const Courses = () => (
                 </div>
               </div>
 
-              <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#F1F1EF" }}>
+              <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>
                 {course.title}
               </h2>
               <p className="leading-relaxed text-sm md:text-base mb-5 max-w-md" style={{ color: "#86868b" }}>
@@ -51,7 +51,7 @@ const Courses = () => (
               </p>
 
               <div className="mb-5">
-                <h3 className="text-sm font-medium mb-2.5" style={{ color: "#F1F1EF" }}>Key Outcomes</h3>
+                <h3 className="text-sm font-medium mb-2.5" style={{ color: "#1d1d1f" }}>Key Outcomes</h3>
                 <ul className="space-y-2">
                   {course.outcomes.map((outcome) => (
                     <li key={outcome} className="flex items-start gap-2 text-sm" style={{ color: "#86868b" }}>

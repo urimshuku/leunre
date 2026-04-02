@@ -64,7 +64,7 @@ const Products = () => (
         >
           <div className="text-center p-6 md:p-8 lg:p-10">
             <Layers className="w-10 h-10 md:w-14 md:h-14 text-primary mx-auto mb-5" strokeWidth={1} />
-            <p className="text-base md:text-lg font-heading mb-2" style={{ color: "#F1F1EF" }}>Action Cards</p>
+            <p className="text-base md:text-lg font-heading mb-2" style={{ color: "#1d1d1f" }}>Action Cards</p>
             <p className="text-sm" style={{ color: "#86868b" }}>Product image coming soon</p>
           </div>
         </motion.div>
@@ -80,7 +80,7 @@ const Products = () => (
           <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
             Flagship Tool
           </span>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#F1F1EF" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-6" style={{ color: "#1d1d1f" }}>
             Action Cards
           </h2>
           <p className="text-sm md:text-lg leading-relaxed mb-8 max-w-lg" style={{ color: "#86868b" }}>
@@ -89,7 +89,7 @@ const Products = () => (
 
           <div className="grid grid-cols-2 gap-3 mb-8">
             {features.map((f) => (
-              <div key={f.label} className="flex items-center gap-3 text-sm" style={{ color: "#F1F1EF" }}>
+              <div key={f.label} className="flex items-center gap-3 text-sm" style={{ color: "#1d1d1f" }}>
                 <f.icon className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
                 <span className="font-medium">{f.label}</span>
               </div>
@@ -125,7 +125,7 @@ const Products = () => (
               className="flex items-start gap-3"
             >
               <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
-              <p className="font-medium text-sm" style={{ color: "#F1F1EF" }}>{benefit}</p>
+              <p className="font-medium text-sm" style={{ color: "#1d1d1f" }}>{benefit}</p>
             </motion.div>
           ))}
         </div>
@@ -155,7 +155,7 @@ const Products = () => (
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
                 <useCase.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg md:text-xl font-heading mb-4" style={{ color: "#F1F1EF" }}>{useCase.title}</h3>
+              <h3 className="text-lg md:text-xl font-heading mb-4" style={{ color: "#1d1d1f" }}>{useCase.title}</h3>
               <ul className="space-y-2.5">
                 {useCase.items.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
@@ -190,7 +190,7 @@ const Products = () => (
               <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
                 <BookOpen className="w-5 h-5 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#F1F1EF" }}>Self-Reflection Notebooks</h3>
+              <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Self-Reflection Notebooks</h3>
               <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>To pause and realign — guided journaling tools designed to help you reconnect with your purpose and track your growth journey.</p>
             </motion.div>
           </div>
@@ -206,7 +206,7 @@ const Products = () => (
               <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
                 <Calendar className="w-5 h-5 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#F1F1EF" }}>Interactive Calendars</h3>
+              <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Interactive Calendars</h3>
               <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>To integrate growth into everyday rhythm — structured calendars that weave learning and reflection into your daily routine.</p>
             </motion.div>
           </div>
