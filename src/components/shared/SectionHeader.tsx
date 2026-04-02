@@ -20,7 +20,7 @@ const SectionHeader = ({ title, subtitle, centered = false, className = "", hide
         <div className="gold-divider" />
       </div>
     )}
-    <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6 whitespace-pre-line" style={{ color: "#1d1d1f" }}>
+    <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6 whitespace-pre-line" style={{ color: "#F1F1EF" }}>
       {title}
     </h2>
     {subtitle && (

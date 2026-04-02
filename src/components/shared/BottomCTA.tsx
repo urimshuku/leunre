@@ -8,7 +8,7 @@ interface BottomCTAProps {
 }
 
 const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) => (
-  <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+  <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
@@ -20,7 +20,7 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
         <div className="flex justify-center mb-6 md:mb-8">
           <div className="gold-divider" />
         </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#F1F1EF" }}>
           {title}
         </h2>
         <p className="mb-8 md:mb-12 leading-relaxed text-sm md:text-lg max-w-lg mx-auto" style={{ color: "#86868b" }}>

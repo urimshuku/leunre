@@ -35,7 +35,7 @@ const Blog = () => (
                 <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
                   {post.category}
                 </span>
-                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#1d1d1f" }}>
+                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#F1F1EF" }}>
                   {post.title}
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "#86868b" }}>
@@ -56,7 +56,7 @@ const Blog = () => (
     </section>
 
     {/* Case Studies */}
-    <section className="py-12 md:py-20 lg:py-24" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-12 md:py-20 lg:py-24" style={{ backgroundColor: "#F1F1EF" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader title="Case Studies" className="mb-8 md:mb-12" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
@@ -78,11 +78,11 @@ const Blog = () => (
                     {cs.industry}
                   </span>
                   <span className="text-xs" style={{ color: "#86868b" }}>•</span>
-                  <span className="inline-block text-xs font-medium" style={{ color: "#1d1d1f" }}>
+                  <span className="inline-block text-xs font-medium" style={{ color: "#F1F1EF" }}>
                     {cs.result}
                   </span>
                 </div>
-                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#1d1d1f" }}>
+                <h3 className="text-base md:text-lg font-heading mb-2 group-hover:text-primary transition-colors" style={{ color: "#F1F1EF" }}>
                   {cs.title}
                 </h3>
                 <p className="text-sm leading-relaxed mb-4 flex-1 max-w-md" style={{ color: "#86868b" }}>

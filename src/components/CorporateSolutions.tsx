@@ -18,7 +18,7 @@ const solutions = [
 ];
 
 const CorporateSolutions = () => (
-  <section id="services" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+  <section id="services" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ const CorporateSolutions = () => (
         <div className="flex justify-center mb-6 md:mb-8">
           <div className="gold-divider" />
         </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#F1F1EF" }}>
           Corporate Solutions
         </h2>
         <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
@@ -53,7 +53,7 @@ const CorporateSolutions = () => (
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
                 <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>
+              <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#F1F1EF" }}>{item.title}</h3>
               <p className="leading-relaxed text-sm md:text-base mb-5 md:mb-6 flex-1 max-w-sm" style={{ color: "#86868b" }}>{item.description}</p>
               <Link to={item.link} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-auto">
                 Learn More <ArrowRight size={12} />

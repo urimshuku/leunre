@@ -25,7 +25,7 @@ const PhilosophySection = () => {
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <section id="philosophy" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+    <section id="philosophy" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ const PhilosophySection = () => {
           <div className="flex justify-center mb-6 md:mb-8">
             <div className="gold-divider" />
           </div>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#F1F1EF" }}>
             Our Philosophy
           </h2>
           <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
@@ -65,7 +65,7 @@ const PhilosophySection = () => {
                   <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
                 </motion.div>
               </div>
-              <h3 className="text-xl md:text-2xl font-heading mb-2 md:mb-3" style={{ color: "#1d1d1f" }}>{step.label}</h3>
+              <h3 className="text-xl md:text-2xl font-heading mb-2 md:mb-3" style={{ color: "#F1F1EF" }}>{step.label}</h3>
               <p className="leading-relaxed text-sm md:text-base max-w-xs mx-auto" style={{ color: "#86868b" }}>{step.description}</p>
             </motion.div>
           ))}

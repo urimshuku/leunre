@@ -16,7 +16,7 @@ const ServiceDetail = () => {
       <PageLayout>
         <div className="min-h-screen flex items-center justify-center pt-16" style={{ backgroundColor: "#F9F8F6" }}>
           <div className="text-center">
-            <h1 className="text-2xl font-heading mb-4" style={{ color: "#1d1d1f" }}>Service Not Found</h1>
+            <h1 className="text-2xl font-heading mb-4" style={{ color: "#F1F1EF" }}>Service Not Found</h1>
             <Link to="/services" className="text-primary hover:opacity-70 transition-opacity font-medium">
               ← Back to Services
             </Link>
@@ -52,7 +52,7 @@ const ServiceDetail = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <h2 className="text-2xl md:text-3xl font-heading mb-6" style={{ color: "#1d1d1f" }}>Overview</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-6" style={{ color: "#F1F1EF" }}>Overview</h2>
             <p className="leading-relaxed text-sm md:text-lg max-w-xl" style={{ color: "#86868b" }}>{service.overview}</p>
           </motion.div>
 
@@ -63,7 +63,7 @@ const ServiceDetail = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="text-base md:text-lg font-heading mb-5" style={{ color: "#1d1d1f" }}>Ideal For</h3>
+              <h3 className="text-base md:text-lg font-heading mb-5" style={{ color: "#F1F1EF" }}>Ideal For</h3>
               <ul className="space-y-2.5">
                 {service.audience.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#86868b" }}>
@@ -79,14 +79,14 @@ const ServiceDetail = () => {
 
       {/* Retreat Types - only for retreats */}
       {slug === "retreats" && (
-        <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+        <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12 text-center" style={{ color: "#1d1d1f" }}>Types of Retreats</h2>
+              <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12 text-center" style={{ color: "#F1F1EF" }}>Types of Retreats</h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
               {retreatTypes.map((type, i) => (
@@ -101,7 +101,7 @@ const ServiceDetail = () => {
                     transition={{ delay: i * 0.1 }}
                   >
                     {i === 0 ? <User className="w-6 h-6 text-primary mx-auto mb-4" strokeWidth={1.5} /> : <Building2 className="w-6 h-6 text-primary mx-auto mb-4" strokeWidth={1.5} />}
-                    <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>{type.title}</h3>
+                    <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#F1F1EF" }}>{type.title}</h3>
                     <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>{type.description}</p>
                   </motion.div>
                 </div>
@@ -112,14 +112,14 @@ const ServiceDetail = () => {
       )}
 
       {/* Outcomes */}
-      <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: slug === "retreats" ? "#F7F5F2" : "#F2ECE6" }}>
+      <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: slug === "retreats" ? "#F7F5F2" : "#F1F1EF" }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>Expected Outcomes</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#F1F1EF" }}>Expected Outcomes</h2>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {service.outcomes.map((outcome, i) => (
@@ -132,7 +132,7 @@ const ServiceDetail = () => {
                   className="flex items-start gap-4 w-full"
                 >
                   <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
-                  <p className="font-medium text-sm" style={{ color: "#1d1d1f" }}>{outcome}</p>
+                  <p className="font-medium text-sm" style={{ color: "#F1F1EF" }}>{outcome}</p>
                 </motion.div>
               </div>
             ))}
@@ -148,7 +148,7 @@ const ServiceDetail = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>Our Approach</h2>
+            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#F1F1EF" }}>Our Approach</h2>
           </motion.div>
           <div className="space-y-4">
             {service.approach.map((step, i) => (
@@ -164,7 +164,7 @@ const ServiceDetail = () => {
                     <span className="text-sm text-primary font-medium">{i + 1}</span>
                   </div>
                   <div>
-                    <h3 className="text-base md:text-lg font-heading mb-2" style={{ color: "#1d1d1f" }}>{step.title}</h3>
+                    <h3 className="text-base md:text-lg font-heading mb-2" style={{ color: "#F1F1EF" }}>{step.title}</h3>
                     <p className="leading-relaxed text-sm" style={{ color: "#86868b" }}>{step.description}</p>
                   </div>
                 </motion.div>

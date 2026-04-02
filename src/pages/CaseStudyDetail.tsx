@@ -36,11 +36,11 @@ const CaseStudyDetail = () => {
                 {study.industry}
               </span>
               <span className="text-xs" style={{ color: "#86868b" }}>•</span>
-              <span className="inline-block text-xs font-medium" style={{ color: "#1d1d1f" }}>
+              <span className="inline-block text-xs font-medium" style={{ color: "#F1F1EF" }}>
                 {study.result}
               </span>
             </div>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6" style={{ color: "#1d1d1f" }}>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6" style={{ color: "#F1F1EF" }}>
               {study.title}
             </h1>
             <p className="text-base md:text-lg leading-relaxed" style={{ color: "#86868b" }}>
@@ -53,17 +53,17 @@ const CaseStudyDetail = () => {
       <section className="py-12 md:py-20" style={{ backgroundColor: "#F7F5F2" }}>
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
           <div className="mb-10">
-            <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>The Challenge</h2>
+            <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#F1F1EF" }}>The Challenge</h2>
             <p className="text-base leading-relaxed" style={{ color: "#5C3A2E" }}>{study.challenge}</p>
           </div>
 
           <div className="mb-10">
-            <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>Our Approach</h2>
+            <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#F1F1EF" }}>Our Approach</h2>
             <p className="text-base leading-relaxed" style={{ color: "#5C3A2E" }}>{study.approach}</p>
           </div>
 
           <div className="mb-10">
-            <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>Key Outcomes</h2>
+            <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#F1F1EF" }}>Key Outcomes</h2>
             <ul className="space-y-3">
               {study.outcomes.map((outcome, i) => (
                 <motion.li

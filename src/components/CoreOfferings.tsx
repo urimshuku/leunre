@@ -31,7 +31,7 @@ const CoreOfferings = () => (
         <div className="flex justify-center mb-6 md:mb-8">
           <div className="gold-divider" />
         </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#F1F1EF" }}>
           What We Offer
         </h2>
         <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
@@ -54,7 +54,7 @@ const CoreOfferings = () => (
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
                 <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>
+              <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#F1F1EF" }}>{item.title}</h3>
               <p className="leading-relaxed text-sm md:text-base max-w-xs mx-auto" style={{ color: "#86868b" }}>{item.description}</p>
             </motion.div>
           </div>

@@ -35,7 +35,7 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
             {tag}
           </span>
         )}
-        <h1 className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8" style={{ color: "#1d1d1f" }}>
+        <h1 className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8" style={{ color: "#F1F1EF" }}>
           {title}
         </h1>
         <p className="text-base md:text-xl leading-relaxed whitespace-pre-line mb-6 md:mb-8 max-w-xl" style={{ color: "#86868b" }}>

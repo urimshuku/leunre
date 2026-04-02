@@ -41,7 +41,7 @@ const AboutUs = () => {
           <div className="mb-6 md:mb-8">
             <div className="gold-divider" />
           </div>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6 md:mb-8" style={{ color: "#1d1d1f" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6 md:mb-8" style={{ color: "#F1F1EF" }}>
             Our Story
           </h2>
           <div className="space-y-5 text-sm md:text-lg leading-relaxed" style={{ color: "#86868b" }}>
@@ -60,7 +60,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Philosophy */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="The LEUNRE Philosophy"
@@ -89,7 +89,7 @@ const AboutUs = () => {
                   <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
                 </motion.div>
               </div>
-              <h3 className="text-xl md:text-2xl font-heading mb-2 md:mb-3" style={{ color: "#1d1d1f" }}>{step.label}</h3>
+              <h3 className="text-xl md:text-2xl font-heading mb-2 md:mb-3" style={{ color: "#F1F1EF" }}>{step.label}</h3>
               <p className="leading-relaxed text-sm md:text-base max-w-xs mx-auto" style={{ color: "#86868b" }}>{step.description}</p>
             </motion.div>
           ))}
@@ -110,7 +110,7 @@ const AboutUs = () => {
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
               <Rocket className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Mission</h3>
+            <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#F1F1EF" }}>Our Mission</h3>
             <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               To unlocking human potential by inspiring new ways of thinking, enhancing perception, and fostering clarity. We empower individuals to transform, and we help organizations cultivate cultures where purpose, well-being, and collaboration naturally thrive.
             </p>
@@ -127,7 +127,7 @@ const AboutUs = () => {
             <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
               <Eye className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Vision</h3>
+            <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#F1F1EF" }}>Our Vision</h3>
             <p className="leading-relaxed text-sm md:text-base max-w-sm" style={{ color: "#86868b" }}>
               A world where personal insight and professional growth come together to create meaningful and lasting change.
             </p>
@@ -137,7 +137,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Values */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="Our Approach"
@@ -160,7 +160,7 @@ const AboutUs = () => {
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
                   <value.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>{value.title}</h3>
+                <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#F1F1EF" }}>{value.title}</h3>
                 <p className="text-sm md:text-base leading-relaxed" style={{ color: "#86868b" }}>{value.description}</p>
               </motion.div>
             </div>
@@ -170,7 +170,7 @@ const AboutUs = () => {
     </section>
 
     {/* Movement Positioning */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title={"More Than a Company.\nA Movement."}
