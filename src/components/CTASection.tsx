@@ -13,12 +13,12 @@ const CTASection = () => (
         className="max-w-xl mx-auto text-center"
       >
         <div className="flex justify-center mb-6 md:mb-8">
-          <div style={{ width: 40, height: 2, backgroundColor: "#D8CEC5", borderRadius: 2 }} />
+          <div style={{ width: 40, height: 2, backgroundColor: "rgba(245,245,247,0.2)", borderRadius: 2 }} />
         </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
           Partner with LEUNRE
         </h2>
-        <p className="text-sm md:text-base mb-8 md:mb-12 max-w-lg mx-auto leading-relaxed" style={{ color: "#86868b" }}>
+        <p className="text-sm md:text-base mb-8 md:mb-12 max-w-lg mx-auto leading-relaxed" style={{ color: "rgba(245,245,247,0.6)" }}>
           Whether you're an individual seeking growth or an organization ready for transformation, we're here to guide the journey.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -31,8 +31,8 @@ const CTASection = () => (
           </Link>
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl border font-medium text-sm md:text-base hover:bg-black/5 transition-all"
-            style={{ borderColor: "#ECEAE6", color: "#1d1d1f" }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl border font-medium text-sm md:text-base hover:bg-white/10 transition-all"
+            style={{ borderColor: "rgba(245,245,247,0.2)", color: "#f5f5f7" }}
           >
             Browse Programs
           </Link>

@@ -23,9 +23,9 @@ const bgMap = {
 
 const bgStyle: Record<string, React.CSSProperties> = {
   default: { backgroundColor: "#F7F5F2" },
-  warm: { backgroundColor: "#F1F1EF" },
+  warm: { backgroundColor: "#F2ECE6" },
   compact: { backgroundColor: "#F7F5F2" },
-  "compact-warm": { backgroundColor: "#F1F1EF" },
+  "compact-warm": { backgroundColor: "#F2ECE6" },
 };
 
 const ContentSection = ({ children, variant = "default", className = "", id }: ContentSectionProps) => (

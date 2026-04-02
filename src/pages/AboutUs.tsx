@@ -60,7 +60,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Philosophy */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="The LEUNRE Philosophy"
@@ -137,7 +137,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Values */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="Our Approach"
@@ -170,7 +170,7 @@ const AboutUs = () => {
     </section>
 
     {/* Movement Positioning */}
-    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F1F1EF" }}>
+    <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title={"More Than a Company.\nA Movement."}
