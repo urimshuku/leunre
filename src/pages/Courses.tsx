@@ -16,9 +16,10 @@ const Courses = () => (
     <ContentSection>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {courses.map((course, i) => (
-          <div
+          <Link
             key={course.slug}
-            className="group bg-card rounded-2xl overflow-hidden card-elevated card-elevated-hover"
+            to={`/programs/${course.slug}`}
+            className="group bg-card rounded-2xl overflow-hidden card-elevated card-elevated-hover cursor-pointer block"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,14 +62,11 @@ const Courses = () => (
                 </ul>
               </div>
 
-              <Link
-                to={`/programs/${course.slug}`}
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-70 transition-opacity"
-              >
+              <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
                 Learn More <ArrowRight size={14} />
-              </Link>
+              </span>
             </motion.div>
-          </div>
+          </Link>
         ))}
       </div>
     </ContentSection>
