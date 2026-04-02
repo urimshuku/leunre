@@ -18,7 +18,6 @@ const Footer = () => (
             A movement dedicated to unlocking human potential through transformative learning experiences.
           </p>
           {/* Newsletter */}
-          <h4 className="font-heading text-sm mb-3" style={{ color: "#1d1d1f" }}>Join Our Newsletter</h4>
           <div className="flex gap-2">
             <div className="flex items-center gap-2 rounded-xl px-4 flex-1" style={{ backgroundColor: "#F7F5F2" }}>
               <Mail size={14} style={{ color: "#86868b" }} />

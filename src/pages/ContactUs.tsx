@@ -192,15 +192,14 @@ const ContactUs = () => {
           </motion.div>
 
           {/* Sidebar */}
-          {/* Sidebar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 flex flex-col justify-between"
+            className="lg:col-span-2 flex flex-col"
           >
-            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
+            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover flex-1">
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
