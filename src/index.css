@@ -167,10 +167,10 @@
     box-shadow: none;
   }
 
-  /* Signature dark section */
+  /* Signature section */
   .bg-signature {
-    background-color: #1d1d1f;
-    color: #f5f5f7;
+    background-color: #F1F1EF;
+    color: #5C3A2E;
   }
 
   .bg-signature h1,
@@ -179,7 +179,7 @@
   .bg-signature h4,
   .bg-signature h5,
   .bg-signature h6 {
-    color: #f5f5f7;
+    color: #1d1d1f;
   }
 
   .marquee-track-wrapper {
