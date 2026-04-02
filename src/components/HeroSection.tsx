@@ -55,8 +55,7 @@ const HeroSection = () => (
           </Link>
           <Link
             to="/about"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all"
-            style={{ border: "1px solid #ECEAE6", color: "#1d1d1f", backgroundColor: "transparent" }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-sm"
           >
             Work With Us
             <ChevronRight size={16} />

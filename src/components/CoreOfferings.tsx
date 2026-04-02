@@ -4,17 +4,17 @@ import { BookOpen, Users, ShoppingBag } from "lucide-react";
 const offerings = [
   {
     icon: BookOpen,
-    title: "Programs",
+    title: "Clarity",
     description: "Structured learning programs designed to develop critical thinking and emotional intelligence.",
   },
   {
     icon: Users,
-    title: "Services",
+    title: "Connection",
     description: "Organizational development support and immersive retreats that drive transformation and culture change.",
   },
   {
     icon: ShoppingBag,
-    title: "Tools",
+    title: "Conscious Growth",
     description: "Curated tools and resources that support continuous personal and professional development.",
   },
 ];
@@ -32,18 +32,18 @@ const CoreOfferings = () => (
           <div className="gold-divider" />
         </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
-          What We Offer
+          Our Approach
         </h2>
         <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
           Comprehensive solutions for individuals and organizations seeking meaningful growth and transformation.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {offerings.map((item, i) => (
           <div
             key={item.title}
-            className="group p-8 md:p-10 lg:p-12 rounded-2xl bg-card card-elevated card-elevated-hover text-center"
+            className="text-center"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -51,8 +51,8 @@ const CoreOfferings = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
-                <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+              <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center mx-auto mb-5 md:mb-6">
+                <item.icon className="w-6 h-6 md:w-7 md:h-7 text-primary" strokeWidth={1.5} fill="currentColor" opacity={0.15} />
               </div>
               <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>
               <p className="leading-relaxed text-sm md:text-base max-w-xs mx-auto" style={{ color: "#86868b" }}>{item.description}</p>
