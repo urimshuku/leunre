@@ -226,7 +226,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover mt-0 pt-[24px] pb-[24px] mb-[80px]">
+            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover mt-0 pt-[24px] mb-[80px] pb-[17px]">
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Follow Us</h3>
               <div>
                 {socials.map((s) => (
