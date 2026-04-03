@@ -18,7 +18,7 @@ const solutions = [
 ];
 
 const CorporateSolutions = () => (
-  <section id="services" className="py-16 md:py-24 lg:py-28 bg-muted border-0 pt-[112px]" style={{ backgroundColor: "#F2ECE6" }}>
+  <section id="services" className="py-16 md:py-24 lg:py-28 border-0 bg-muted pt-[112px] pb-[112px]" style={{ backgroundColor: "#F2ECE6" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
