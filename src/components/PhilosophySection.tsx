@@ -25,7 +25,7 @@ const PhilosophySection = () => {
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <section id="philosophy" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+    <section id="philosophy" className="py-16 md:py-24 lg:py-28 bg-muted pt-[112px]" style={{ backgroundColor: "#F2ECE6" }}>
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,7 +34,7 @@ const PhilosophySection = () => {
           className="text-center mb-12 md:mb-16 lg:mb-20"
         >
           <div className="flex justify-center mb-6 md:mb-8">
-            <div className="gold-divider" />
+            <div className="gold-divider border-solid border-2 shadow-md border-sky-600" />
           </div>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
             Our Philosophy

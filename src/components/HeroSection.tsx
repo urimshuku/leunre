@@ -3,7 +3,7 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => (
-  <section className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center" style={{ backgroundColor: "#F9F8F6" }}>
+  <section className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-muted" style={{ backgroundColor: "#F9F8F6" }}>
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-28 lg:py-36">
       <div className="max-w-3xl">
         <motion.h1
