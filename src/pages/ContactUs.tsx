@@ -200,9 +200,52 @@ const ContactUs = () => {
             className="lg:col-span-2 flex flex-col"
           >
             <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover flex-1 pb-0 mt-[24px] pt-[24px] mb-[24px]">
-// ... keep existing code
+              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Mail size={16} className="text-primary mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Email</p>
+                    <p className="text-sm" style={{ color: "#86868b" }}>hello@leunre.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Phone size={16} className="text-primary mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Phone</p>
+                    <p className="text-sm" style={{ color: "#86868b" }}>+1 (555) 000-0000</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Location</p>
+                    <p className="text-sm" style={{ color: "#86868b" }}>Available globally — remote & in-person</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover mt-0 pt-[24px] pb-[24px] mb-[80px]">
-// ... keep existing code
+              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Follow Us</h3>
+              <div>
+                {socials.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-sm font-medium"
+                    style={{ color: "#1d1d1f", border: "1px solid #ECEAE6" }}
+                  >
+                    <s.icon size={16} className="text-primary" />
+                    {s.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </ContentSection>
+
       {/* FAQ Section */}
       <section className="py-16 md:py-24 lg:py-28 bg-[#f7f5f2]">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
