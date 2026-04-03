@@ -18,7 +18,7 @@ const solutions = [
 ];
 
 const CorporateSolutions = () => (
-  <section id="services" className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+  <section id="services" className="py-16 md:py-24 lg:py-28 bg-muted border-0 pt-[112px]" style={{ backgroundColor: "#F2ECE6" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ const CorporateSolutions = () => (
         className="text-center mb-12 md:mb-16 lg:mb-20"
       >
         <div className="flex justify-center mb-6 md:mb-8">
-          <div className="gold-divider" />
+          <div className="gold-divider border-2 border-solid border-sky-600" />
         </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
           Corporate Solutions
