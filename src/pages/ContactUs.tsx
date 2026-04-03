@@ -199,7 +199,7 @@ const ContactUs = () => {
             transition={{ delay: 0.1 }}
             className="lg:col-span-2 flex flex-col"
           >
-            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover flex-1">
+            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover flex-1 pb-0 mt-[24px] pt-[24px] mb-[24px]">
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -226,7 +226,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover mt-4">
+            <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover mt-0 pt-[24px] pb-[24px] mb-[80px]">
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Follow Us</h3>
               <div>
                 {socials.map((s) => (
@@ -247,7 +247,7 @@ const ContactUs = () => {
       </ContentSection>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#F2ECE6" }}>
+      <section className="py-16 md:py-24 lg:py-28 bg-[#f7f5f2]">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <SectionHeader title="Frequently Asked Questions" className="mb-8 md:mb-12" />
           <div className="max-w-2xl space-y-3">
