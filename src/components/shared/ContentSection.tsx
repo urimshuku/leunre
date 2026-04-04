@@ -15,16 +15,16 @@ const paddingMap = {
 };
 
 const bgMap = {
-  default: "",
+  default: "bg-[#f3f2f1]",
   warm: "",
-  compact: "",
+  compact: "bg-[#f3f2f1]",
   "compact-warm": "",
 };
 
 const bgStyle: Record<string, React.CSSProperties> = {
-  default: { backgroundColor: "#F7F5F2" },
+  default: {},
   warm: { backgroundColor: "#F2ECE6" },
-  compact: { backgroundColor: "#F7F5F2" },
+  compact: {},
   "compact-warm": { backgroundColor: "#F2ECE6" },
 };
 
