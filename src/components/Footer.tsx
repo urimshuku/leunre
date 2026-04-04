@@ -9,9 +9,9 @@ const footerLinks = {
 const Footer = () => (
   <footer className="pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10" style={{ backgroundColor: "#FFFFFF", borderTop: "1px solid #ECEAE6" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-10 md:mb-14">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-10 md:mb-14">
         {/* Brand */}
-        <div className="col-span-2 md:col-span-3 lg:col-span-2">
+        <div className="col-span-1 md:col-span-3 lg:col-span-2">
           <h3 className="font-heading text-lg md:text-xl mb-3 md:mb-4 font-semibold" style={{ color: "#1d1d1f" }}>LEUNRE</h3>
           <p className="text-sm leading-relaxed mb-5 md:mb-6 max-w-xs" style={{ color: "#86868b" }}>
             Learn. Unlearn. Relearn.<br />
@@ -37,6 +37,7 @@ const Footer = () => (
 
         {/* Link columns */}
         <div className="hidden lg:block" />
+        <div className="col-span-1 md:col-span-3 lg:col-span-3 grid grid-cols-3 gap-4 md:gap-8">
         {Object.entries(footerLinks).map(([title, links]) => (
           <div key={title} className="text-right">
             <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>
