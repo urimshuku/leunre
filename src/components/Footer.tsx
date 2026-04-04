@@ -39,7 +39,7 @@ const Footer = () => (
         <div className="hidden lg:block" />
         <div className="col-span-1 md:col-span-3 lg:col-span-3 grid grid-cols-3 gap-4 md:gap-8">
         {Object.entries(footerLinks).map(([title, links]) => (
-          <div key={title} className="text-right">
+          <div key={title} className="text-center md:text-right">
             <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>
               {title}
             </h4>

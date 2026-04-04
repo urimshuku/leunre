@@ -155,19 +155,20 @@ const AboutUs = () => {
               transition={{ delay: i * 0.08 }}
               className="text-center"
             >
-              <motion.div
-                className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-primary/20"
-                whileInView={
-                  i === 0
-                    ? { scaleY: [1, 0.1, 1], transition: { duration: 0.3, delay: 0.6, times: [0, 0.5, 1] } }
-                    : i === 1
-                    ? { scale: [1, 1.25, 1, 1.25, 1, 1.25, 1], transition: { duration: 1.2, delay: 0.5, times: [0, 0.1, 0.2, 0.35, 0.45, 0.6, 0.7] } }
-                    : { rotate: [0, 360], transition: { duration: 1, delay: 0.5, ease: "easeInOut" } }
-                }
-                viewport={{ once: true, amount: 0.5 }}
-              >
-                <value.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
-              </motion.div>
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-primary/20">
+                <motion.div
+                  whileInView={
+                    i === 0
+                      ? { scaleY: [1, 0.1, 1], transition: { duration: 1.2, delay: 0.8, times: [0, 0.5, 1] } }
+                      : i === 1
+                      ? { scale: [1, 1.2, 1, 1.2, 1, 1.2, 1], transition: { duration: 3, delay: 0.8, times: [0, 0.1, 0.2, 0.4, 0.5, 0.7, 0.8] } }
+                      : { rotate: [0, 360], transition: { duration: 2.5, delay: 0.8, ease: "easeInOut" } }
+                  }
+                  viewport={{ once: true, amount: 0.5 }}
+                >
+                  <value.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+                </motion.div>
+              </div>
               <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>{value.title}</h3>
               <p className="text-sm md:text-base leading-relaxed" style={{ color: "#86868b" }}>{value.description}</p>
             </motion.div>
