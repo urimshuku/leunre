@@ -31,7 +31,7 @@ const CTASection = () => (
           </Link>
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl border font-medium text-sm md:text-base hover:bg-white/10 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl border font-medium text-sm md:text-base hover:opacity-60 transition-all"
             style={{ borderColor: "#D8CEC5", color: "#1d1d1f" }}
           >
             Browse Programs
