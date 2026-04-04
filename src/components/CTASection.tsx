@@ -13,7 +13,7 @@ const CTASection = () => (
         className="max-w-xl mx-auto text-center"
       >
         <div className="flex justify-center mb-6 md:mb-8">
-          <div className="border-sky-600" style={{ width: 40, height: 2, backgroundColor: "rgba(245,245,247,0.2)", borderRadius: 2 }} />
+          <div className="border-sky-600" style={{ width: 40, height: 2, backgroundColor: "#D8CEC5", borderRadius: 2 }} />
         </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#1d1d1f" }}>
           Partner with LEUNRE
