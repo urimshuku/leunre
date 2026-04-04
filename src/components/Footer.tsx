@@ -54,6 +54,7 @@ const Footer = () => (
             </ul>
           </div>
         ))}
+        </div>
       </div>
 
       <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-4" style={{ borderTop: "1px solid #ECEAE6" }}>
