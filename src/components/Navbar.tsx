@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl" style={{ backgroundColor: "rgba(255,255,255,0.72)", borderBottom: "1px solid #ECEAE6" }}>
       <div className="container mx-auto flex items-center justify-between h-14 md:h-16 px-4 md:px-6 lg:px-8">
-        <Link to="/" className="font-heading text-lg md:text-xl tracking-tight font-semibold" style={{ color: "#86868b" }}>
+        <Link to="/" className="font-heading text-lg md:text-xl tracking-tight font-semibold" style={{ color: "#1d1d1f" }}>
           LEUNRE
         </Link>
 

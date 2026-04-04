@@ -32,7 +32,7 @@ const CTASection = () => (
           <Link
             to="/programs"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl border font-medium text-sm md:text-base hover:bg-white/10 transition-all"
-            style={{ borderColor: "rgba(245,245,247,0.2)", color: "#f5f5f7" }}
+            style={{ borderColor: "#D8CEC5", color: "#1d1d1f" }}
           >
             Browse Programs
           </Link>
