@@ -43,7 +43,7 @@ const FeaturedCourses = () => (
         className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-16 lg:mb-20 gap-3 md:gap-6"
       >
         <div>
-          <div className="mb-6 md:mb-8">
+          <div className="mb-4 md:mb-8">
             <div className="gold-divider border-sky-600 border-2 border-solid" />
           </div>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
