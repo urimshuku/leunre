@@ -60,7 +60,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0, 0, 0.2, 1] }}
-          className="text-sm md:text-lg max-w-lg mb-10 md:mb-14 leading-relaxed"
+          className="text-xs md:text-lg max-w-lg mb-7 md:mb-14 leading-relaxed"
           style={{ color: "#86868b" }}
         >
           LEUNRE is a movement unlocking human potential by inspiring new ways of thinking, fostering clarity, and helping individuals and organizations thrive.
