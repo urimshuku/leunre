@@ -144,7 +144,7 @@ const Products = () => (
         {useCases.map((useCase, i) => (
           <div
             key={useCase.title}
-            className="group bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover"
+            className="group bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover shadow"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}

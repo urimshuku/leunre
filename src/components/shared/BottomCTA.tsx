@@ -18,7 +18,7 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
         className="max-w-xl mx-auto"
       >
         <div className="flex justify-center mb-6 md:mb-8">
-          <div className="gold-divider" />
+          <div className="gold-divider border-sky-600 border-2 border-solid" />
         </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#1d1d1f" }}>
           {title}
