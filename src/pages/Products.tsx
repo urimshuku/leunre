@@ -75,7 +75,7 @@ const Products = () => (
           viewport={{ once: true }}
         >
           <div className="mb-6 md:mb-8">
-            <div className="gold-divider" />
+            <div className="gold-divider border-sky-600 border-2 border-solid" />
           </div>
           <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
             Flagship Tool
