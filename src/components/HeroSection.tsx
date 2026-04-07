@@ -50,7 +50,7 @@ const HeroSection = () => (
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.15, ease: [0, 0, 0.2, 1] }}
-          className="text-lg md:text-2xl max-w-lg mb-4 md:mb-8 leading-relaxed"
+          className="text-base md:text-2xl max-w-lg mb-3 md:mb-8 leading-relaxed"
           style={{ color: "#1d1d1f" }}
         >
           Unlocking Human Potential. Inspiring Transformation.
