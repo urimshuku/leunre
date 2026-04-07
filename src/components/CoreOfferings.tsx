@@ -26,7 +26,7 @@ const CoreOfferings = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12 md:mb-16 lg:mb-20"
+        className="text-center mb-8 md:mb-16 lg:mb-20"
       >
         <div className="flex justify-center mb-6 md:mb-8">
           <div className="gold-divider bg-inherit text-inherit border-2 border-sky-600 border-solid" />
