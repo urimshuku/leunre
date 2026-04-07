@@ -8,7 +8,7 @@ interface BottomCTAProps {
 }
 
 const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) => (
-  <section className="bg-[#f3f2f1] py-16 md:py-24 lg:py-28">
+  <section className="bg-[#f3f2f1] py-16 md:py-24 lg:py-28 border">
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
         initial={{ opacity: 0, x: -60 }}
