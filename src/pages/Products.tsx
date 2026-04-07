@@ -59,7 +59,7 @@ const Products = () => (
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="aspect-square rounded-2xl flex items-center justify-center card-elevated"
+          className="aspect-square rounded-2xl flex items-center justify-center card-elevated shadow-md"
           style={{ backgroundColor: "#F7F5F2" }}
         >
           <div className="text-center p-6 md:p-8 lg:p-10">
