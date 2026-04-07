@@ -31,8 +31,16 @@ const CTASection = () => (
           </Link>
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl border font-medium text-sm md:text-base hover:bg-[#ECEAE6] transition-all"
-            style={{ borderColor: "#D8CEC5", color: "#1d1d1f" }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all"
+            style={{ backgroundColor: "#e8e4df", color: "#3d3530", border: "1px solid #ddd8d2" }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#e2d9d0";
+              e.currentTarget.style.borderColor = "#d4cbc1";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#e8e4df";
+              e.currentTarget.style.borderColor = "#ddd8d2";
+            }}
           >
             Browse Programs
           </Link>
