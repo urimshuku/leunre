@@ -25,18 +25,18 @@ const PhilosophySection = () => {
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <section id="philosophy" className="py-10 md:py-24 lg:py-28 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-[#f3f2f1] border-0">
+    <section id="philosophy" className="py-10 md:py-24 lg:py-28 pb-[48px] pt-[48px] md:pb-[112px] md:pt-[112px] bg-[#f3f2f1] border-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16 lg:mb-20"
+          className="text-center mb-8 md:mb-16 lg:mb-20"
         >
-          <div className="flex justify-center mb-6 md:mb-8">
+          <div className="flex justify-center mb-4 md:mb-8">
             <div className="gold-divider border-solid border-2 shadow-md border-sky-600" />
           </div>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
+          <h2 className="text-xl md:text-4xl lg:text-5xl font-heading mb-3 md:mb-6" style={{ color: "#1d1d1f" }}>
             Our Philosophy
           </h2>
           <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
@@ -44,7 +44,7 @@ const PhilosophySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 max-w-4xl mx-auto">
           {steps.map((step, i) => (
             <motion.div
               key={step.label}
