@@ -25,7 +25,7 @@ const PhilosophySection = () => {
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <section id="philosophy" className="py-10 md:py-24 lg:py-28 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-[#f3f2f1] border-0">
+    <section id="philosophy" className="py-10 md:py-24 lg:py-28 pb-[48px] pt-[48px] md:pb-[112px] md:pt-[112px] bg-[#f3f2f1] border-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
