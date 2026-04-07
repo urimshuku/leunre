@@ -28,7 +28,7 @@ const TestimonialsSection = () => (
         viewport={{ once: true }}
         className="text-center mb-8 md:mb-16 lg:mb-20"
       >
-        <div className="flex justify-center mb-6 md:mb-8">
+        <div className="flex justify-center mb-4 md:mb-8">
           <div className="gold-divider border-sky-600 border-2 border-solid opacity-100" />
         </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6 text-inherit" style={{ color: "#1d1d1f" }}>
