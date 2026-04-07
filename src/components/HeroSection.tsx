@@ -70,11 +70,11 @@ const HeroSection = () => (
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: [0, 0, 0.2, 1] }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4"
         >
           <Link
             to="/programs"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:bg-primary/80 transition-all shadow-sm"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:bg-primary/80 transition-all shadow-sm"
           >
             Explore Programs
             <ArrowRight size={16} />
