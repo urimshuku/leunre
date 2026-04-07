@@ -20,18 +20,18 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-10 md:py-24 lg:py-28 border pt-[48px] pb-[48px] md:pt-[112px] md:pb-[112px] bg-[#f3f2f1]">
+  <section className="py-10 md:py-24 lg:py-28 border pt-[72px] pb-[72px] md:pt-[112px] md:pb-[112px] bg-[#f3f2f1]">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-8 md:mb-16 lg:mb-20"
+        className="text-center mb-12 md:mb-16 lg:mb-20"
       >
-        <div className="flex justify-center mb-4 md:mb-8">
+        <div className="flex justify-center mb-6 md:mb-8">
           <div className="gold-divider border-sky-600 border-2 border-solid opacity-100" />
         </div>
-        <h2 className="text-xl md:text-4xl lg:text-5xl font-heading mb-3 md:mb-6 text-inherit" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6 text-inherit" style={{ color: "#1d1d1f" }}>
           What People Say
         </h2>
         <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
