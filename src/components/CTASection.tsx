@@ -24,7 +24,7 @@ const CTASection = () => (
         <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:bg-primary/80 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:bg-primary/80 transition-all"
           >
             Contact
             <ArrowRight size={16} />

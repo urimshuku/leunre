@@ -31,7 +31,7 @@ const CoreOfferings = () => (
         <div className="flex justify-center mb-4 md:mb-8">
           <div className="gold-divider bg-inherit text-inherit border-2 border-sky-600 border-solid" />
         </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-xl md:text-4xl lg:text-5xl font-heading mb-3 md:mb-6" style={{ color: "#1d1d1f" }}>
           What We Offer
         </h2>
         <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
