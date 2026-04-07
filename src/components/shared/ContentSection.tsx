@@ -8,8 +8,8 @@ interface ContentSectionProps {
 }
 
 const paddingMap = {
-  default: "py-16 md:py-24 lg:py-28 pt-[112px] pb-[112px] border-0",
-  warm: "py-16 md:py-24 lg:py-28 pt-[112px] pb-[112px] border-0",
+  default: "py-16 md:py-24 lg:py-28 pt-[112px] pb-[112px] border",
+  warm: "py-16 md:py-24 lg:py-28 pt-[112px] pb-[112px] border",
   compact: "py-12 md:py-16 lg:py-20",
   "compact-warm": "py-12 md:py-16 lg:py-20",
 };
