@@ -28,7 +28,7 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref }: BottomCTAProps) 
         </p>
         <a
           href={buttonHref}
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all rounded-xl shadow-sm"
         >
           {buttonText}
         </a>
