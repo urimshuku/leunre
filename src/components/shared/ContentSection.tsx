@@ -16,16 +16,16 @@ const paddingMap = {
 
 const bgMap = {
   default: "bg-[#f3f2f1]",
-  warm: "",
+  warm: "bg-[#f3f2f1]",
   compact: "bg-[#f3f2f1]",
-  "compact-warm": "",
+  "compact-warm": "bg-[#f3f2f1]",
 };
 
 const bgStyle: Record<string, React.CSSProperties> = {
   default: {},
-  warm: { backgroundColor: "#F2ECE6" },
+  warm: {},
   compact: {},
-  "compact-warm": { backgroundColor: "#F2ECE6" },
+  "compact-warm": {},
 };
 
 const ContentSection = ({ children, variant = "default", className = "", id }: ContentSectionProps) => (
