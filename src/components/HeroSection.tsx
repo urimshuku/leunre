@@ -30,13 +30,13 @@ const HeroSection = () => (
       }}
     />
 
-    <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-28 lg:py-36">
+    <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-10 md:py-28 lg:py-36">
       <div className="max-w-3xl">
         <motion.h1
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0, 0, 0.2, 1] }}
-          className="text-4xl md:text-6xl lg:text-[76px] xl:text-[88px] font-heading leading-[1.04] mb-6 md:mb-10"
+          className="text-3xl md:text-6xl lg:text-[76px] xl:text-[88px] font-heading leading-[1.04] mb-4 md:mb-10"
           style={{ color: "#1d1d1f" }}
         >
           Learn.
