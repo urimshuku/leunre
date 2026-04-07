@@ -3,7 +3,33 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => (
-  <section className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px]">
+  <section className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px] overflow-hidden">
+    {/* Organic blob shapes */}
+    <div
+      className="absolute pointer-events-none"
+      style={{
+        top: "-10%",
+        right: "-5%",
+        width: "55%",
+        height: "70%",
+        background: "radial-gradient(ellipse at center, rgba(164, 76, 35, 0.06) 0%, transparent 70%)",
+        filter: "blur(80px)",
+        borderRadius: "50%",
+      }}
+    />
+    <div
+      className="absolute pointer-events-none"
+      style={{
+        bottom: "-15%",
+        left: "-8%",
+        width: "45%",
+        height: "60%",
+        background: "radial-gradient(ellipse at center, rgba(180, 150, 120, 0.05) 0%, transparent 70%)",
+        filter: "blur(90px)",
+        borderRadius: "50%",
+      }}
+    />
+
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-28 lg:py-36">
       <div className="max-w-3xl">
         <motion.h1
@@ -55,8 +81,20 @@ const HeroSection = () => (
           </Link>
           <Link
             to="/about"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all hover:bg-[#ECEAE6]"
-            style={{ border: "1px solid #ECEAE6", color: "#1d1d1f", backgroundColor: "transparent" }}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all"
+            style={{
+              backgroundColor: "#e8e4df",
+              color: "#3d3530",
+              border: "1px solid #ddd8d2",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#e2d9d0";
+              e.currentTarget.style.borderColor = "#d4cbc1";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#e8e4df";
+              e.currentTarget.style.borderColor = "#ddd8d2";
+            }}
           >
             Work With Us
             <ChevronRight size={16} />
