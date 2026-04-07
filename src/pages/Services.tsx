@@ -27,7 +27,7 @@ const Services = () => (
             viewport={{ once: true }}
           >
             <div className="mb-6 md:mb-8">
-              <div className="gold-divider" />
+              <div className="gold-divider border-sky-600 border-2 border-solid" />
             </div>
             <div className="inline-block mb-5 md:mb-6">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center border border-primary/20">
