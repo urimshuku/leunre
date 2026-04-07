@@ -33,7 +33,7 @@ const PhilosophySection = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-16 lg:mb-20"
         >
-          <div className="flex justify-center mb-6 md:mb-8">
+          <div className="flex justify-center mb-4 md:mb-8">
             <div className="gold-divider border-solid border-2 shadow-md border-sky-600" />
           </div>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
