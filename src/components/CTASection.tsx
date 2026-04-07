@@ -18,7 +18,7 @@ const CTASection = () => (
         <h2 className="text-xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-8" style={{ color: "#1d1d1f" }}>
           Partner with LEUNRE
         </h2>
-        <p className="text-sm md:text-base mb-8 md:mb-12 max-w-lg mx-auto leading-relaxed" style={{ color: "#86868b" }}>
+        <p className="text-xs md:text-base mb-6 md:mb-12 max-w-lg mx-auto leading-relaxed" style={{ color: "#86868b" }}>
           Whether you're an individual seeking growth or an organization ready for transformation, we're here to guide the journey.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
