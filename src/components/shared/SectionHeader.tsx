@@ -17,7 +17,7 @@ const SectionHeader = ({ title, subtitle, centered = false, className = "", hide
   >
     {!hideSeparator && (
       <div className={`mb-6 md:mb-8 ${centered ? "flex justify-center" : ""}`}>
-        <div className="gold-divider" />
+        <div className="gold-divider border-sky-600 border-2 border-solid" />
       </div>
     )}
     <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6 whitespace-pre-line" style={{ color: "#1d1d1f" }}>

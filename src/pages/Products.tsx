@@ -59,7 +59,7 @@ const Products = () => (
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="aspect-square rounded-2xl flex items-center justify-center card-elevated"
+          className="aspect-square rounded-2xl flex items-center justify-center card-elevated shadow-md"
           style={{ backgroundColor: "#F7F5F2" }}
         >
           <div className="text-center p-6 md:p-8 lg:p-10">
@@ -75,7 +75,7 @@ const Products = () => (
           viewport={{ once: true }}
         >
           <div className="mb-6 md:mb-8">
-            <div className="gold-divider" />
+            <div className="gold-divider border-sky-600 border-2 border-solid" />
           </div>
           <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
             Flagship Tool
@@ -144,7 +144,7 @@ const Products = () => (
         {useCases.map((useCase, i) => (
           <div
             key={useCase.title}
-            className="group bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover"
+            className="group bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover shadow"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
