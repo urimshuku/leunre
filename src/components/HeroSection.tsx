@@ -3,29 +3,29 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => (
-  <section className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px] overflow-hidden">
-    {/* Organic blob shapes */}
+  <section className="relative min-h-[50vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[24px] pb-[24px] md:pt-[40px] md:pb-[40px] overflow-hidden">
+    {/* Organic blob shapes — deeper warm tones for visible contrast */}
     <div
       className="absolute pointer-events-none"
       style={{
-        top: "-10%",
-        right: "-5%",
+        top: "-8%",
+        right: "-3%",
         width: "55%",
         height: "70%",
-        background: "radial-gradient(ellipse at center, rgba(164, 76, 35, 0.06) 0%, transparent 70%)",
-        filter: "blur(80px)",
+        background: "radial-gradient(ellipse at center, rgba(164, 76, 35, 0.14) 0%, rgba(164, 76, 35, 0.04) 50%, transparent 72%)",
+        filter: "blur(70px)",
         borderRadius: "50%",
       }}
     />
     <div
       className="absolute pointer-events-none"
       style={{
-        bottom: "-15%",
-        left: "-8%",
-        width: "45%",
-        height: "60%",
-        background: "radial-gradient(ellipse at center, rgba(180, 150, 120, 0.05) 0%, transparent 70%)",
-        filter: "blur(90px)",
+        bottom: "-12%",
+        left: "-6%",
+        width: "48%",
+        height: "55%",
+        background: "radial-gradient(ellipse at center, rgba(160, 130, 100, 0.15) 0%, rgba(160, 130, 100, 0.05) 50%, transparent 72%)",
+        filter: "blur(80px)",
         borderRadius: "50%",
       }}
     />
