@@ -21,7 +21,7 @@ const CTASection = () => (
         <p className="text-xs md:text-base mb-6 md:mb-12 max-w-lg mx-auto leading-relaxed" style={{ color: "#86868b" }}>
           Whether you're an individual seeking growth or an organization ready for transformation, we're here to guide the journey.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
           <Link
             to="/contact"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:bg-primary/80 transition-all"
