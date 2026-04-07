@@ -20,7 +20,7 @@ const offerings = [
 ];
 
 const CoreOfferings = () => (
-  <section className="py-10 md:py-24 lg:py-28 pt-[72px] md:pt-[112px] border bg-[#f3f2f1]">
+  <section className="py-10 md:py-24 lg:py-28 pt-[48px] md:pt-[112px] border bg-[#f3f2f1]">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
