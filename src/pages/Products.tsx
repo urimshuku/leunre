@@ -98,7 +98,7 @@ const Products = () => (
 
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium text-sm md:text-base transition-all rounded-xl opacity-90 shadow-sm"
           >
             Purchase Now <ArrowRight size={16} />
           </a>
