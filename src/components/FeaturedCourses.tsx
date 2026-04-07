@@ -40,7 +40,7 @@ const FeaturedCourses = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 lg:mb-20 gap-4 md:gap-6"
+        className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-16 lg:mb-20 gap-3 md:gap-6"
       >
         <div>
           <div className="mb-6 md:mb-8">
