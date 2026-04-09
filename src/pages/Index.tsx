@@ -1,4 +1,5 @@
 import PageLayout from "@/components/shared/PageLayout";
+import HomePageBackground from "@/components/HomePageBackground";
 import HeroSection from "@/components/HeroSection";
 import TrustSection from "@/components/TrustSection";
 import CoreOfferings from "@/components/CoreOfferings";
@@ -11,13 +12,15 @@ import CTASection from "@/components/CTASection";
 const Index = () => (
   <PageLayout>
     <HeroSection />
-    <TrustSection />
-    <CoreOfferings />
-    <PhilosophySection />
-    <FeaturedCourses />
-    <CorporateSolutions />
-    <TestimonialsSection />
-    <CTASection />
+    <HomePageBackground>
+      <TrustSection />
+      <CoreOfferings />
+      <PhilosophySection />
+      <FeaturedCourses />
+      <CorporateSolutions />
+      <TestimonialsSection />
+      <CTASection />
+    </HomePageBackground>
   </PageLayout>
 );
 

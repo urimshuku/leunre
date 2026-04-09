@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Manrope"', 'system-ui', 'sans-serif'],
-        body: ['"Inter"', 'system-ui', 'sans-serif'],
+        heading: ['"Roboto"', 'system-ui', 'sans-serif'],
+        body: ['"Mulish"', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

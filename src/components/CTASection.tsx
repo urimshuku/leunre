@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CTASection = () => (
-  <section id="contact" className="py-10 md:py-24 lg:py-28 border-0 pt-[72px] bg-[#f9f8f6] md:pt-[112px] pb-[112px]">
+  <section id="contact" className="py-10 md:py-24 lg:py-28 pt-[72px] md:pt-[112px] pb-[112px] bg-transparent border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, x: 60 }}
@@ -13,7 +13,7 @@ const CTASection = () => (
         className="max-w-xl mx-auto text-center"
       >
         <div className="flex justify-center mb-6 md:mb-8">
-          <div className="border-sky-600 border-2 border-solid opacity-100" style={{ width: 40, height: 2, backgroundColor: "#D8CEC5", borderRadius: 2 }} />
+          <div className="gold-divider border-sky-600 border-2 border-solid opacity-100" />
         </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#1d1d1f" }}>
           Partner with LEUNRE

@@ -6,7 +6,10 @@ interface PageHeroProps {
 }
 
 const PageHero = ({ title, subtitle }: PageHeroProps) => (
-  <section className="pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28 shadow-none" style={{ backgroundColor: "#F9F8F6" }}>
+  <section
+    className="pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28 shadow-[0px_0px_0px_0px_rgba(0,0,0,0),0px_4px_0px_0px_rgba(0,0,0,0.15),0px_4px_0px_0px_rgba(0,0,0,0.15)]"
+    style={{ backgroundColor: "#F9F8F6" }}
+  >
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, x: 60 }}

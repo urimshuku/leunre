@@ -17,8 +17,8 @@ const colors = [
 ];
 
 const typography = [
-  { name: "Heading", family: "Manrope", weights: "300, 400, 600", usage: "All headings (h1–h6), color #5C3A2E. No bold weights used — light and regular only for elegance." },
-  { name: "Body", family: "Inter", weights: "400, 500", usage: "Body text, paragraphs, UI elements. Color #5C3A2E / #8A5A3B. No bold weights." },
+  { name: "Heading", family: "Roboto", weights: "400, 500, 600, 700", usage: "All headings (h1–h6), sans, color #5C3A2E. Semibold for hierarchy." },
+  { name: "Body", family: "Mulish", weights: "400, 500, 600, 700", usage: "Body text, paragraphs, UI elements. Sans, color #5C3A2E / #8A5A3B." },
 ];
 
 const BrandStyleGuide = () => (

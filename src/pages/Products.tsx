@@ -107,7 +107,7 @@ const Products = () => (
     </ContentSection>
 
     {/* Benefits */}
-    <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] shadow-none">
+    <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-b-8 border-x-0 border-t-0 border-b-[#eae8e6] shadow-none">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="Why Action Cards?"
@@ -171,7 +171,7 @@ const Products = () => (
     </ContentSection>
 
     {/* Additional Tools */}
-    <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-inherit">
+    <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-b-8 border-x-0 border-t-0 border-b-[#eae8e6]">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="More Tools Coming Soon"

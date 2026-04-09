@@ -25,7 +25,7 @@ const PhilosophySection = () => {
   const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <section id="philosophy" className="py-10 md:py-24 lg:py-28 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-[#f3f2f1] border-0">
+    <section id="philosophy" className="py-10 md:py-24 lg:py-28 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-transparent border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const PhilosophySection = () => {
             >
               <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-5 md:mb-6">
                 <motion.div
-                  className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10"
+                  className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 shadow-[0_4px_12px_0_rgba(0,0,0,0.15)]"
                   initial={{ rotate: 0 }}
                   whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
                   viewport={{ once: true, amount: 0.5 }}

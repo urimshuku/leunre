@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -146,7 +146,7 @@
 
   .card-elevated {
     border: 1px solid #ECEAE6;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     border-radius: 16px;
   }
 
@@ -156,7 +156,7 @@
 
   .card-elevated-hover:hover {
     border-color: #ECEAE6;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
   }
 
