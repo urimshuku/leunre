@@ -11,6 +11,9 @@ const Services = () => (
     <PageHero
       title="Our Services"
       subtitle="Tailored solutions for organizations ready to invest in their people, culture, and leadership capacity."
+      withHomeAtmosphere
+      matchProgramsSize
+      noShadow
     />
 
     {services.map((service, i) => (
@@ -18,7 +21,7 @@ const Services = () => (
         key={service.title}
         id={service.slug}
         variant={i % 2 === 1 ? "warm" : "default"}
-        className={service.slug === "organizational-development" ? "!border-b-8" : ""}
+        className={service.slug === "organizational-development" ? "border-none" : ""}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
           <motion.div
