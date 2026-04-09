@@ -26,21 +26,21 @@ const Navbar = () => {
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.filter(l => l.label !== "Contact").map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="text-sm transition-opacity hover:opacity-60"
               style={{ color: "#1d1d1f" }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="ml-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -66,23 +66,23 @@ const Navbar = () => {
           >
             <div className="flex flex-col gap-0.5 p-4">
               {navLinks.filter(l => l.label !== "Contact").map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setOpen(false)}
                   className="px-4 py-3 rounded-lg text-sm transition-colors"
                   style={{ color: "#1d1d1f" }}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium text-center"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

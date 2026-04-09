@@ -25,6 +25,22 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      (function redirectFromGitHubPages404(location) {
+        if (location.search[1] === "/") {
+          const decoded = location.search
+            .slice(1)
+            .split("&")
+            .map((s) => s.replace(/~and~/g, "&"))
+            .join("?");
+          window.history.replaceState(
+            null,
+            "",
+            decoded + location.hash,
+          );
+        }
+      }(window.location));
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

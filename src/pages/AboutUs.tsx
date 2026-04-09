@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { RotateCw, RotateCcw, RefreshCw, ArrowRight, Eye, Rocket, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 import PageLayout from "@/components/shared/PageLayout";
 import PageHero from "@/components/shared/PageHero";
 import ContentSection from "@/components/shared/ContentSection";
@@ -199,12 +200,12 @@ const AboutUs = () => {
           <p className="text-sm md:text-lg leading-relaxed mb-10" style={{ color: "#86868b" }}>
             Together, we can build a world where learning transforms lives, and alignment guides change.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
           >
             Join the Movement <ArrowRight size={16} />
-          </a>
+          </Link>
           </motion.div>
         </div>
       </div>
