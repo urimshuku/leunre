@@ -34,7 +34,7 @@ const courses = [
 ];
 
 const FeaturedCourses = () => (
-  <section id="programs" className="py-10 md:py-24 lg:py-28 border pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-[#f3f2f1]">
+  <section id="programs" className="py-10 md:py-24 lg:py-28 border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-transparent">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -62,14 +62,14 @@ const FeaturedCourses = () => (
         {courses.map((course, i) => (
           <div
             key={course.title}
-            className="group bg-card rounded-2xl overflow-hidden card-elevated card-elevated-hover"
+            className="group bg-card rounded-2xl card-elevated card-elevated-hover h-full min-h-0 flex flex-col"
           >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-5 md:p-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ delay: i * 0.1, duration: 0.35 }}
+              className="p-5 md:p-6 flex flex-col flex-1 min-h-0"
             >
               <span className="inline-block text-[11px] font-medium uppercase tracking-wider text-primary mb-4">
                 {course.tag}
@@ -78,8 +78,8 @@ const FeaturedCourses = () => (
                 <course.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="text-base md:text-lg font-heading mb-2 whitespace-pre-line" style={{ color: "#1d1d1f" }}>{course.title}</h3>
-              <p className="text-sm leading-relaxed mb-5" style={{ color: "#86868b" }}>{course.description}</p>
-              <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity">
+              <p className="text-sm leading-relaxed flex-1 mb-0" style={{ color: "#86868b" }}>{course.description}</p>
+              <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-5">
                 Learn More <ArrowRight size={12} />
               </Link>
             </motion.div>

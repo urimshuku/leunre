@@ -67,28 +67,34 @@ const ArticleDetail = () => {
             {prevArticle ? (
               <Link
                 to={`/insights/articles/${prevArticle.slug}`}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-primary/5"
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-primary/5 shadow-[0_4px_12px_0_rgba(0,0,0,0.12)] hover:shadow-[0_6px_16px_0_rgba(0,0,0,0.14)]"
                 style={{ border: "1px solid #ECEAE6" }}
                 title={prevArticle.title}
               >
                 <ArrowLeft size={16} style={{ color: "#86868b" }} />
               </Link>
             ) : (
-              <div className="w-10 h-10 rounded-full flex items-center justify-center opacity-30" style={{ border: "1px solid #ECEAE6" }}>
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center opacity-30 shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]"
+                style={{ border: "1px solid #ECEAE6" }}
+              >
                 <ArrowLeft size={16} style={{ color: "#86868b" }} />
               </div>
             )}
             {nextArticle ? (
               <Link
                 to={`/insights/articles/${nextArticle.slug}`}
-                className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 hover:bg-primary/5"
+                className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-primary/5 shadow-[0_4px_12px_0_rgba(0,0,0,0.12)] hover:shadow-[0_6px_16px_0_rgba(0,0,0,0.14)]"
                 style={{ border: "1px solid #ECEAE6" }}
                 title={nextArticle.title}
               >
                 <ArrowRight size={16} style={{ color: "#86868b" }} />
               </Link>
             ) : (
-              <div className="w-10 h-10 rounded-full flex items-center justify-center opacity-30" style={{ border: "1px solid #ECEAE6" }}>
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center opacity-30 shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]"
+                style={{ border: "1px solid #ECEAE6" }}
+              >
                 <ArrowRight size={16} style={{ color: "#86868b" }} />
               </div>
             )}

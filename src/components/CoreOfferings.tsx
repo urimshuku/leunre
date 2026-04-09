@@ -20,21 +20,21 @@ const offerings = [
 ];
 
 const CoreOfferings = () => (
-  <section className="py-10 md:py-24 lg:py-28 pt-[72px] md:pt-[112px] border bg-[#f3f2f1]">
+  <section className="py-10 md:py-24 lg:py-28 pt-[72px] md:pt-[112px] border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0 bg-transparent">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12 md:mb-16 lg:mb-20"
+        className="text-left mb-12 md:mb-16 lg:mb-20"
       >
-        <div className="flex justify-center mb-6 md:mb-8">
+        <div className="flex justify-start mb-6 md:mb-8">
           <div className="gold-divider bg-inherit text-inherit border-2 border-sky-600 border-solid" />
         </div>
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-4 md:mb-6" style={{ color: "#1d1d1f" }}>
           What We Offer
         </h2>
-        <p className="text-sm md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "#86868b" }}>
+        <p className="text-sm md:text-lg max-w-xl leading-relaxed" style={{ color: "#86868b" }}>
           Comprehensive solutions for individuals and organizations seeking meaningful growth and transformation.
         </p>
       </motion.div>
