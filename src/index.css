@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 16 33% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 16 33% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 16 33% 27%;
+
+    --primary: 21 73% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 10% 96%;
+    --secondary-foreground: 16 33% 27%;
+
+    --muted: 30 8% 95%;
+    --muted-foreground: 21 30% 45%;
+
+    --accent: 43 56% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 5 61% 54%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 34 10% 91%;
+    --input: 34 10% 91%;
+    --ring: 21 73% 38%;
+
+    --radius: 0.75rem;
+
+    /* Refined surface tokens */
+    --surface-hero: 40 14% 97%;
+    --surface-main: 37 18% 96%;
+    --surface-alt: 30 18% 93%;
+    --surface-cool: 220 10% 96%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --warm: 0 0% 98%;
+    --warm-foreground: 21 73% 38%;
+    --gold: 43 56% 51%;
+    --gold-light: 44 69% 69%;
+    --forest: 21 73% 38%;
+    --forest-light: 24 65% 48%;
+    --cream: 0 0% 98%;
+    --philosophy-bg: 0 0% 98%;
+    --teal: 18 80% 45%;
+    --teal-light: 18 80% 55%;
+    --surface: 37 18% 96%;
+  }
+
+  .dark {
+    --background: 24 30% 6%;
+    --foreground: 0 0% 92%;
+    --card: 24 20% 12%;
+    --card-foreground: 40 20% 97%;
+    --popover: 24 25% 10%;
+    --popover-foreground: 40 20% 97%;
+    --primary: 21 73% 50%;
+    --primary-foreground: 24 30% 6%;
+    --secondary: 24 20% 15%;
+    --secondary-foreground: 40 20% 97%;
+    --muted: 24 15% 15%;
+    --muted-foreground: 40 10% 65%;
+    --accent: 43 56% 51%;
+    --accent-foreground: 40 20% 97%;
+    --border: 24 15% 20%;
+    --input: 24 15% 20%;
+    --ring: 21 73% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    line-height: 1.7;
+    color: #5C3A2E;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    color: #1d1d1f;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-weight: 600;
+    line-height: 1.06;
+  }
+
+  h2 {
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  h3, h4 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 100%);
+  }
+
+  .bg-hero-gradient {
+    background: hsl(var(--surface-hero));
+  }
+
+  .bg-warm-gradient {
+    background: hsl(var(--surface));
+  }
+
+  .bg-section-alt {
+    background: hsl(var(--surface-alt));
+  }
+
+  .gold-divider {
+    width: 40px;
+    height: 2px;
+    background: #D8CEC5;
+    border-radius: 2px;
+  }
+
+  .card-elevated {
+    border: 1px solid #ECEAE6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+  }
+
+  .card-elevated-hover {
+    transition: all 200ms ease;
+  }
+
+  .card-elevated-hover:hover {
+    border-color: #ECEAE6;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .section-shadow {
+    box-shadow: none;
+  }
+
+  .hero-bottom-shadow {
+    box-shadow: none;
+  }
+
+
+  .marquee-track-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
