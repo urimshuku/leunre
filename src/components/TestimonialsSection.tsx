@@ -49,11 +49,11 @@ const TestimonialsSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6">
+      <div className="flex flex-wrap gap-4 md:gap-6 lg:grid lg:grid-cols-5">
         {testimonials.map((item, i) => (
           <div
             key={item.name}
-            className="group bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover"
+            className="group w-full sm:w-[calc(50%-0.75rem)] lg:w-auto bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
