@@ -18,26 +18,30 @@ type LiquidBlob = {
 
 function LiquidBlobLayer({ blob, shouldAnimate }: { blob: LiquidBlob; shouldAnimate: boolean }) {
   const [ready, setReady] = useState(false);
+  const tonedStyle: CSSProperties = {
+    ...blob.style,
+    opacity: typeof blob.style.opacity === "number" ? blob.style.opacity * 0.72 : blob.style.opacity,
+  };
 
   useEffect(() => {
     setReady(true);
   }, []);
 
   if (!ready || !shouldAnimate) {
-    return <div className="absolute pointer-events-none" style={blob.style} aria-hidden />;
+    return <div className="absolute pointer-events-none" style={tonedStyle} aria-hidden />;
   }
 
   return (
     <motion.div
       className="absolute pointer-events-none will-change-transform"
-      style={blob.style}
+      style={tonedStyle}
       animate={blob.animate}
       transition={{
-        duration: Math.max(blob.duration * 0.35, 2.8),
+        duration: blob.duration,
         delay: blob.delay ?? 0,
         repeat: Infinity,
-        repeatType: "loop",
-        ease: [0.2, 0.9, 0.3, 1],
+        repeatType: "mirror",
+        ease: "easeInOut",
       }}
       aria-hidden
     />
@@ -164,46 +168,6 @@ const liquidBlobs: LiquidBlob[] = [
     duration: 12.2,
     delay: 1,
   },
-  {
-    style: {
-      top: "80%",
-      right: "24%",
-      width: "30%",
-      height: "26%",
-      background:
-        "radial-gradient(ellipse at 50% 50%, rgba(164, 76, 35, 0.21) 0%, rgba(164, 76, 35, 0.13) 34%, rgba(164, 76, 35, 0.06) 58%, rgba(164, 76, 35, 0) 80%)",
-      filter: "blur(66px)",
-      opacity: 0.74,
-    },
-    animate: {
-      x: [0, 62, -36, -52, 20, 0],
-      y: [0, -46, -14, 50, 26, 0],
-      scale: [1, 1.16, 0.92, 1.12, 1.02, 1],
-      rotate: [0, 10, -8, -12, 6, 0],
-    },
-    duration: 9.2,
-    delay: 0.4,
-  },
-  {
-    style: {
-      top: "92%",
-      left: "28%",
-      width: "36%",
-      height: "30%",
-      background:
-        "radial-gradient(ellipse at 52% 50%, rgba(164, 76, 35, 0.22) 0%, rgba(164, 76, 35, 0.14) 34%, rgba(164, 76, 35, 0.06) 58%, rgba(164, 76, 35, 0) 80%)",
-      filter: "blur(72px)",
-      opacity: 0.78,
-    },
-    animate: {
-      x: [0, -68, -30, 36, 58, 0],
-      y: [0, 46, 98, 30, -26, 0],
-      scale: [1, 0.88, 1.1, 1.16, 1.01, 1],
-      rotate: [0, -12, -6, 10, 14, 0],
-    },
-    duration: 10.8,
-    delay: 1.4,
-  },
 ];
 
 interface HomePageBackgroundProps {
@@ -229,9 +193,38 @@ function PerformanceAwareBackground({ children }: HomePageBackgroundProps) {
   }, []);
 
   return (
-    <div className="relative bg-[#f3f2f1] overflow-x-hidden isolate">
+    <div
+      className="relative bg-[#f3f2f1] overflow-x-hidden isolate"
+      style={{
+        backgroundImage:
+          "radial-gradient(ellipse at 50% 30%, rgba(164, 76, 35, 0.18) 0%, rgba(164, 76, 35, 0.1) 28%, rgba(164, 76, 35, 0.04) 48%, rgba(243, 242, 241, 0) 72%), linear-gradient(180deg, #f3f2f1 0%, #f3f2f1 100%)",
+      }}
+    >
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(255,255,255,0) 50%, rgba(53, 46, 38, 0.08) 100%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="absolute pointer-events-none z-0"
+        style={{
+          top: "6%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "38%",
+          height: "24%",
+          borderRadius: "9999px",
+          background:
+            "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.18) 36%, rgba(255,255,255,0) 72%)",
+          filter: "blur(30px)",
+        }}
+        aria-hidden
+      />
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden>
-        {(shouldAnimate ? liquidBlobs : [liquidBlobs[0], liquidBlobs[2], liquidBlobs[4], liquidBlobs[6], liquidBlobs[7]]).map((blob, i) => (
+        {(shouldAnimate ? liquidBlobs : [liquidBlobs[0], liquidBlobs[2], liquidBlobs[4], liquidBlobs[6]]).map((blob, i) => (
           <LiquidBlobLayer key={i} blob={blob} shouldAnimate={shouldAnimate} />
         ))}
       </div>
@@ -240,7 +233,7 @@ function PerformanceAwareBackground({ children }: HomePageBackgroundProps) {
         style={{
           backgroundImage: EXTREME_NOISE_OVERLAY,
           backgroundRepeat: "repeat",
-          backgroundSize: "72px 72px",
+          backgroundSize: "56px 56px",
           mixBlendMode: "hard-light",
           opacity: 1,
         }}

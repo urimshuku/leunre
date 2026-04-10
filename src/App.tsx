@@ -20,12 +20,18 @@ import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
+/** Vite BASE_URL ends with `/`; React Router basename should have no trailing slash (omit for root). */
+const routerBasename = (() => {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  return base === "" ? undefined : base;
+})();
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={routerBasename}>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />

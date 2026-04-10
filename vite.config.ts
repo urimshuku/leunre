@@ -4,14 +4,18 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
+// Always use the same base as GitHub Pages (project site: /repo-name/).
+// Dev: open http://localhost:8080/leunre/  — same path as https://<user>.github.io/leunre/
 export default defineConfig(({ mode }) => ({
   base: "/leunre/",
   server: {
-    host: "::",
     port: 8080,
-    hmr: {
-      overlay: false,
-    },
+    host: true,
+    open: "/leunre/",
+  },
+  preview: {
+    port: 4173,
+    host: true,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

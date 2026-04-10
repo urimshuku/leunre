@@ -21,7 +21,36 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px] overflow-hidden">
+    <section
+      className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px] overflow-hidden"
+      style={{
+        backgroundImage:
+          "radial-gradient(ellipse at 52% 44%, rgba(164, 76, 35, 0.2) 0%, rgba(164, 76, 35, 0.12) 26%, rgba(164, 76, 35, 0.05) 50%, rgba(249, 248, 246, 0) 74%), linear-gradient(180deg, #f9f8f6 0%, #f3f2f1 100%)",
+      }}
+    >
+    <div
+      className="absolute inset-0 pointer-events-none z-0"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(255,255,255,0) 48%, rgba(53, 46, 38, 0.08) 100%)",
+      }}
+      aria-hidden
+    />
+    <div
+      className="absolute pointer-events-none z-0"
+      style={{
+        top: "18%",
+        left: "50%",
+        transform: "translateX(-50%)",
+        width: "44%",
+        height: "38%",
+        borderRadius: "9999px",
+        background:
+          "radial-gradient(circle, rgba(255,255,255,0.54) 0%, rgba(255,255,255,0.24) 38%, rgba(255,255,255,0) 72%)",
+        filter: "blur(28px)",
+      }}
+      aria-hidden
+    />
     {/* Liquid orange atmosphere */}
     {animateBlobs && <motion.div
       className="absolute pointer-events-none"
@@ -45,7 +74,7 @@ const HeroSection = () => {
         background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.3) 0%, rgba(164, 76, 35, 0.2) 30%, rgba(164, 76, 35, 0.1) 52%, rgba(164, 76, 35, 0) 76%)",
         filter: "blur(82px)",
         borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%",
-        opacity: 0.95,
+        opacity: 1,
       }}
     />
     }
@@ -74,14 +103,14 @@ const HeroSection = () => {
           "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.29) 0%, rgba(164, 76, 35, 0.19) 30%, rgba(164, 76, 35, 0.1) 52%, rgba(164, 76, 35, 0) 76%)",
         filter: "blur(90px)",
         borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%",
-        opacity: 0.93,
+        opacity: 0.98,
       }}
     />
     }
     {!animateBlobs && (
       <>
-        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "68%", height: "84%", background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.24) 0%, rgba(164, 76, 35, 0.14) 36%, rgba(164, 76, 35, 0.08) 58%, rgba(164, 76, 35, 0) 78%)", filter: "blur(72px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.92 }} />
-        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "66%", height: "82%", background: "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.22) 0%, rgba(164, 76, 35, 0.13) 36%, rgba(164, 76, 35, 0.08) 58%, rgba(164, 76, 35, 0) 78%)", filter: "blur(78px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.9 }} />
+        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "68%", height: "84%", background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.3) 0%, rgba(164, 76, 35, 0.18) 36%, rgba(164, 76, 35, 0.1) 58%, rgba(164, 76, 35, 0) 78%)", filter: "blur(72px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.96 }} />
+        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "66%", height: "82%", background: "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.28) 0%, rgba(164, 76, 35, 0.16) 36%, rgba(164, 76, 35, 0.1) 58%, rgba(164, 76, 35, 0) 78%)", filter: "blur(78px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.94 }} />
       </>
     )}
     <div
@@ -89,7 +118,7 @@ const HeroSection = () => {
       style={{
         backgroundImage: EXTREME_NOISE_OVERLAY,
         backgroundRepeat: "repeat",
-        backgroundSize: "72px 72px",
+        backgroundSize: "56px 56px",
         mixBlendMode: "hard-light",
         opacity: 1,
       }}
@@ -149,17 +178,17 @@ const HeroSection = () => {
             to="/about"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all"
             style={{
-              backgroundColor: "#e8e4df",
+              backgroundColor: "#FFFFFF",
               color: "#3d3530",
-              border: "1px solid #ddd8d2",
+              border: "1px solid #ECEAE6",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#e2d9d0";
-              e.currentTarget.style.borderColor = "#d4cbc1";
+              e.currentTarget.style.backgroundColor = "#f5f3f0";
+              e.currentTarget.style.borderColor = "#ddd8d2";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#e8e4df";
-              e.currentTarget.style.borderColor = "#ddd8d2";
+              e.currentTarget.style.backgroundColor = "#FFFFFF";
+              e.currentTarget.style.borderColor = "#ECEAE6";
             }}
           >
             Work With Us
