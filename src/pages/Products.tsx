@@ -197,7 +197,7 @@ const Products = () => (
       </section>
 
       {/* Use Cases */}
-      <ContentSection className="bg-transparent pt-0 md:pt-0 lg:pt-0 border-0">
+      <ContentSection className="bg-transparent border-0">
       <SectionHeader
         title="How to Use Action Cards"
         subtitle="Versatile enough for solo practice and powerful enough for team settings."

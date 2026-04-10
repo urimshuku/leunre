@@ -84,35 +84,6 @@ const CourseDetail = () => {
         </div>
       </ContentSection>
 
-      {/* Outcomes */}
-      <section className="bg-[#f3f2f1] py-16 md:py-24 lg:py-28">
-        <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>What You'll Achieve</h2>
-          </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {course.outcomes.map((outcome, i) => (
-              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-5 card-elevated card-elevated-hover">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-start gap-4 w-full"
-                >
-                  <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
-                  <p className="font-medium text-sm" style={{ color: "#1d1d1f" }}>{outcome}</p>
-                </motion.div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Curriculum */}
       <ContentSection>
         <div className="max-w-2xl mx-auto">
@@ -148,6 +119,35 @@ const CourseDetail = () => {
           </Accordion>
         </div>
       </ContentSection>
+
+      {/* Outcomes */}
+      <section className="bg-[#f3f2f1] py-16 md:py-24 lg:py-28">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl md:text-3xl font-heading mb-8 md:mb-12" style={{ color: "#1d1d1f" }}>What You'll Achieve</h2>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {course.outcomes.map((outcome, i) => (
+              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-5 card-elevated card-elevated-hover">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-4 w-full"
+                >
+                  <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
+                  <p className="font-medium text-sm" style={{ color: "#1d1d1f" }}>{outcome}</p>
+                </motion.div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <BottomCTA
         title="Ready to Begin?"
