@@ -10,6 +10,7 @@ interface PageHeroProps {
   withHomeAtmosphere?: boolean;
   matchProgramsSize?: boolean;
   noShadow?: boolean;
+  transparentBackground?: boolean;
 }
 
 const PageHero = ({
@@ -18,6 +19,7 @@ const PageHero = ({
   withHomeAtmosphere = false,
   matchProgramsSize = false,
   noShadow = false,
+  transparentBackground = false,
 }: PageHeroProps) => {
   const [animateBlobs, setAnimateBlobs] = useState(false);
 
@@ -41,7 +43,7 @@ const PageHero = ({
           ? "min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center pt-[40px] pb-[40px]"
           : "pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28"
       }`}
-      style={{ backgroundColor: "#F9F8F6" }}
+      style={{ backgroundColor: transparentBackground ? "transparent" : "#F9F8F6" }}
     >
       {withHomeAtmosphere && animateBlobs && (
         <>

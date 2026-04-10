@@ -112,7 +112,7 @@ const ServiceDetail = () => {
       )}
 
       {/* Outcomes */}
-      <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-b-8 border-x-0 border-t-0 border-b-[#eae8e6]">
+      <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0 border-b-black">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
