@@ -25,7 +25,7 @@ const HeroSection = () => {
       className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px] overflow-hidden"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse at 52% 44%, rgba(164, 76, 35, 0.2) 0%, rgba(164, 76, 35, 0.12) 26%, rgba(164, 76, 35, 0.05) 50%, rgba(249, 248, 246, 0) 74%), linear-gradient(180deg, #f9f8f6 0%, #f3f2f1 100%)",
+          "radial-gradient(ellipse at 52% 44%, rgba(164, 76, 35, 0.17) 0%, rgba(164, 76, 35, 0.1) 26%, rgba(164, 76, 35, 0.042) 50%, rgba(249, 248, 246, 0) 74%), linear-gradient(180deg, #f9f8f6 0%, #f3f2f1 100%)",
       }}
     >
     <div
@@ -53,64 +53,96 @@ const HeroSection = () => {
     />
     {/* Liquid orange atmosphere */}
     {animateBlobs && <motion.div
-      className="absolute pointer-events-none"
+      className="absolute pointer-events-none will-change-[transform,border-radius]"
       animate={{
-        x: [0, 104, 48, -26, -78, 0],
-        y: [0, -54, 36, 86, 18, 0],
-        scale: [1, 1.18, 0.98, 0.84, 1.08, 1],
-        rotate: [-8, 7, 18, 9, -10, -8],
+        x: [0, 148, 92, -44, -132, -58, 124, 36, -96, 0],
+        y: [0, -88, 22, 118, 54, -72, -28, 96, 14, 0],
+        scale: [1, 1.26, 0.88, 1.14, 0.78, 1.2, 0.92, 1.08, 0.86, 1],
+        rotate: [-12, 14, 22, -8, -18, 11, 19, -14, 6, -12],
+        borderRadius: [
+          "56% 44% 63% 37% / 46% 58% 42% 54%",
+          "74% 26% 28% 72% / 32% 68% 58% 42%",
+          "28% 72% 68% 32% / 64% 36% 38% 62%",
+          "46% 54% 62% 38% / 54% 46% 24% 76%",
+          "68% 32% 34% 66% / 36% 64% 52% 48%",
+          "34% 66% 72% 28% / 62% 38% 44% 56%",
+          "52% 48% 40% 60% / 48% 52% 70% 30%",
+          "62% 38% 58% 42% / 42% 58% 34% 66%",
+          "40% 60% 48% 52% / 58% 42% 62% 38%",
+          "56% 44% 63% 37% / 46% 58% 42% 54%",
+        ],
       }}
       transition={{
-        duration: 10,
         repeat: Infinity,
-        repeatType: "mirror",
-        ease: "easeInOut",
+        repeatType: "loop",
+        times: [0, 0.08, 0.19, 0.28, 0.42, 0.51, 0.64, 0.76, 0.9, 1],
+        x: { duration: 17, ease: "easeInOut" },
+        y: { duration: 22, ease: "easeInOut" },
+        scale: { duration: 14, ease: "easeInOut" },
+        rotate: { duration: 19, ease: "easeInOut" },
+        borderRadius: { duration: 9, ease: "easeInOut" },
       }}
       style={{
         top: "-28%",
         right: "-22%",
-        width: "84%",
-        height: "98%",
-        background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.3) 0%, rgba(164, 76, 35, 0.2) 30%, rgba(164, 76, 35, 0.1) 52%, rgba(164, 76, 35, 0) 76%)",
-        filter: "blur(82px)",
+        width: "77%",
+        height: "90%",
+        background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.48) 0%, rgba(164, 76, 35, 0.33) 18%, rgba(164, 76, 35, 0.18) 32%, rgba(164, 76, 35, 0.075) 46%, rgba(164, 76, 35, 0) 62%)",
+        filter: "blur(36px)",
         borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%",
-        opacity: 1,
+        opacity: 0.94,
       }}
     />
     }
     {/* Second blob: same orange wash as primary; distinct motion/shape */}
     {animateBlobs && <motion.div
-      className="absolute pointer-events-none"
+      className="absolute pointer-events-none will-change-[transform,border-radius]"
       animate={{
-        x: [0, -102, -44, 32, 84, 0],
-        y: [0, 52, 94, 28, -26, 0],
-        scale: [1, 0.84, 1.1, 1.19, 1.02, 1],
-        rotate: [10, -10, -19, -4, 12, 10],
+        x: [0, -138, -62, 48, 118, 72, -96, -28, 86, 0],
+        y: [0, 64, 132, 44, -48, -102, 28, 88, -36, 0],
+        scale: [1, 0.8, 1.22, 0.9, 1.16, 1.04, 0.84, 1.12, 0.94, 1],
+        rotate: [12, -16, -24, 8, 18, -11, -7, 15, -20, 12],
+        borderRadius: [
+          "41% 59% 47% 53% / 60% 43% 57% 40%",
+          "22% 78% 64% 36% / 58% 42% 28% 72%",
+          "70% 30% 32% 68% / 34% 66% 72% 28%",
+          "48% 52% 70% 30% / 52% 48% 40% 60%",
+          "36% 64% 44% 56% / 68% 32% 54% 46%",
+          "58% 42% 76% 24% / 40% 60% 46% 54%",
+          "30% 70% 52% 48% / 64% 36% 66% 34%",
+          "66% 34% 38% 62% / 46% 54% 58% 42%",
+          "44% 56% 60% 40% / 50% 50% 32% 68%",
+          "41% 59% 47% 53% / 60% 43% 57% 40%",
+        ],
       }}
       transition={{
-        duration: 9,
-        delay: 0.5,
+        delay: 0.4,
         repeat: Infinity,
-        repeatType: "mirror",
-        ease: "easeInOut",
+        repeatType: "loop",
+        times: [0, 0.12, 0.21, 0.33, 0.45, 0.54, 0.67, 0.79, 0.91, 1],
+        x: { duration: 20, ease: "easeInOut" },
+        y: { duration: 15, ease: "easeInOut" },
+        scale: { duration: 18, ease: "easeInOut" },
+        rotate: { duration: 16, ease: "easeInOut" },
+        borderRadius: { duration: 8.5, ease: "easeInOut" },
       }}
       style={{
         bottom: "-38%",
         left: "-30%",
-        width: "82%",
-        height: "96%",
+        width: "75%",
+        height: "88%",
         background:
-          "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.29) 0%, rgba(164, 76, 35, 0.19) 30%, rgba(164, 76, 35, 0.1) 52%, rgba(164, 76, 35, 0) 76%)",
-        filter: "blur(90px)",
+          "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.46) 0%, rgba(164, 76, 35, 0.31) 18%, rgba(164, 76, 35, 0.17) 32%, rgba(164, 76, 35, 0.075) 46%, rgba(164, 76, 35, 0) 62%)",
+        filter: "blur(38px)",
         borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%",
-        opacity: 0.98,
+        opacity: 0.92,
       }}
     />
     }
     {!animateBlobs && (
       <>
-        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "68%", height: "84%", background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.3) 0%, rgba(164, 76, 35, 0.18) 36%, rgba(164, 76, 35, 0.1) 58%, rgba(164, 76, 35, 0) 78%)", filter: "blur(72px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.96 }} />
-        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "66%", height: "82%", background: "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.28) 0%, rgba(164, 76, 35, 0.16) 36%, rgba(164, 76, 35, 0.1) 58%, rgba(164, 76, 35, 0) 78%)", filter: "blur(78px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.94 }} />
+        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "62%", height: "77%", background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.46) 0%, rgba(164, 76, 35, 0.29) 22%, rgba(164, 76, 35, 0.15) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(34px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.94 }} />
+        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "60%", height: "75%", background: "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.44) 0%, rgba(164, 76, 35, 0.27) 22%, rgba(164, 76, 35, 0.145) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(36px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.92 }} />
       </>
     )}
     <div
@@ -120,7 +152,7 @@ const HeroSection = () => {
         backgroundRepeat: "repeat",
         backgroundSize: "56px 56px",
         mixBlendMode: "hard-light",
-        opacity: 1,
+        opacity: 0.78,
       }}
       aria-hidden
     />

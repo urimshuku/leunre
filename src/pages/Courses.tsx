@@ -3,12 +3,12 @@ import { ArrowRight, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/shared/PageLayout";
 import ContentSection from "@/components/shared/ContentSection";
-import HomePageBackground from "@/components/HomePageBackground";
+import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { courses } from "@/data/courses";
 
 const Courses = () => (
   <PageLayout>
-    <HomePageBackground>
+    <UnifiedPageAtmosphere>
       <section className="relative pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
@@ -84,7 +84,7 @@ const Courses = () => (
           ))}
         </div>
       </ContentSection>
-    </HomePageBackground>
+    </UnifiedPageAtmosphere>
   </PageLayout>
 );
 

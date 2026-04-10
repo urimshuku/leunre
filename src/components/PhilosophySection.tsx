@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { RotateCw, RotateCcw, RefreshCw } from "lucide-react";
 
 const steps = [
@@ -22,7 +23,18 @@ const steps = [
 const iconRotations = [360, -360, 360];
 
 const PhilosophySection = () => {
-  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prefersReducedMotion = useReducedMotion();
+  const reduceMotion = prefersReducedMotion === true;
+  const [rotations, setRotations] = useState([0, 0, 0]);
+
+  const onIconHover = (index: number) => {
+    if (reduceMotion) return;
+    setRotations((prev) => {
+      const next = [...prev];
+      next[index] += iconRotations[index];
+      return next;
+    });
+  };
 
   return (
     <section id="philosophy" className="py-10 md:py-24 lg:py-28 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-transparent border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0">
@@ -56,13 +68,15 @@ const PhilosophySection = () => {
             >
               <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-5 md:mb-6">
                 <motion.div
-                  className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 shadow-[0_4px_12px_0_rgba(0,0,0,0.15)]"
+                  className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 shadow-[0_4px_12px_0_rgba(0,0,0,0.15)] cursor-pointer"
                   initial={{ rotate: 0 }}
-                  whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
+                  animate={{ rotate: reduceMotion ? 0 : rotations[i] }}
+                  transition={{ duration: 0.55, ease: [0, 0, 0.2, 1] }}
+                  whileHover={reduceMotion ? undefined : { scale: 1.04 }}
+                  onHoverStart={() => onIconHover(i)}
+                  aria-hidden
                 >
-                  <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
+                  <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground pointer-events-none" strokeWidth={1.5} />
                 </motion.div>
               </div>
               <h3 className="text-xl md:text-2xl font-heading mb-2 md:mb-3" style={{ color: "#1d1d1f" }}>{step.label}</h3>
