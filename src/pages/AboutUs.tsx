@@ -5,6 +5,7 @@ import PageLayout from "@/components/shared/PageLayout";
 import PageHero from "@/components/shared/PageHero";
 import ContentSection from "@/components/shared/ContentSection";
 import SectionHeader from "@/components/shared/SectionHeader";
+import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 
 const values = [
   { icon: Eye, title: "Clarity", description: "Seeing what truly matters." },
@@ -25,13 +26,16 @@ const AboutUs = () => {
 
   return (
   <PageLayout>
+    <UnifiedPageAtmosphere>
     <PageHero
       title="About"
       subtitle="A movement dedicated to transforming how people think, perceive, and grow."
+      noShadow
+      transparentBackground
     />
 
     {/* Brand Story */}
-    <ContentSection>
+    <ContentSection className="!bg-transparent">
       <div className="max-w-2xl mx-auto">
         <motion.div
            initial={{ opacity: 0, x: -60 }}
@@ -61,7 +65,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Philosophy */}
-    <section className="py-16 md:py-24 lg:py-28 pt-[112px] pb-[112px] bg-[#f3f2f1] border-b-8 border-b-[#eae8e6] border-t-0 border-x-0">
+    <section className="py-16 md:py-24 lg:py-28 pt-[112px] pb-[112px] bg-transparent border-b-0 border-t-0 border-x-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="The LEUNRE Philosophy"
@@ -99,7 +103,7 @@ const AboutUs = () => {
     </section>
 
     {/* Mission & Vision */}
-    <ContentSection>
+    <ContentSection className="!bg-transparent">
       <SectionHeader title="Our Purpose" centered className="mb-12 md:mb-16" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
         <div className="group bg-card rounded-2xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover">
@@ -138,7 +142,7 @@ const AboutUs = () => {
     </ContentSection>
 
     {/* Values */}
-    <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0 border-b-black">
+    <section className="py-16 md:py-24 lg:py-28 bg-transparent pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title="Our Approach"
@@ -179,7 +183,7 @@ const AboutUs = () => {
     </section>
 
     {/* Movement Positioning */}
-    <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0 border-b-black">
+    <section className="py-16 md:py-24 lg:py-28 bg-transparent pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader
           title={"More Than a Company.\nA Movement."}
@@ -210,6 +214,7 @@ const AboutUs = () => {
         </div>
       </div>
     </section>
+    </UnifiedPageAtmosphere>
   </PageLayout>
   );
 };

@@ -6,6 +6,7 @@ import PageLayout from "@/components/shared/PageLayout";
 import PageHero from "@/components/shared/PageHero";
 import ContentSection from "@/components/shared/ContentSection";
 import SectionHeader from "@/components/shared/SectionHeader";
+import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { useToast } from "@/hooks/use-toast";
 
 const contactSchema = z.object({
@@ -82,12 +83,15 @@ const ContactUs = () => {
 
   return (
     <PageLayout>
+      <UnifiedPageAtmosphere>
       <PageHero
         title="Contact"
         subtitle="We would love to hear from you — whether you're exploring collaboration, training, or simply resonating with our mission."
+        noShadow
+        transparentBackground
       />
 
-      <ContentSection>
+      <ContentSection className="!bg-transparent">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 lg:gap-14">
           {/* Form */}
           <motion.div
@@ -247,7 +251,7 @@ const ContactUs = () => {
       </ContentSection>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1]">
+      <section className="py-16 md:py-24 lg:py-28 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <SectionHeader title="Frequently Asked Questions" className="mb-8 md:mb-12" />
           <div className="max-w-2xl space-y-3">
@@ -271,6 +275,7 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
+      </UnifiedPageAtmosphere>
     </PageLayout>
   );
 };
