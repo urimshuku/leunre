@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { RotateCw, RotateCcw, RefreshCw, ArrowRight, Eye, Rocket, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/shared/PageLayout";
@@ -22,7 +22,7 @@ const philosophySteps = [
 const iconRotations = [360, -360, 360];
 
 const AboutUs = () => {
-  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduceMotion = useReducedMotion() === true;
 
   return (
   <PageLayout>
@@ -85,13 +85,21 @@ const AboutUs = () => {
             >
               <div className="relative mx-auto w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-5 md:mb-6">
                 <motion.div
-                  className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10"
-                  initial={{ rotate: 0 }}
-                  whileInView={prefersReducedMotion ? {} : { rotate: iconRotations[i] }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.8, ease: [0, 0, 0.2, 1], delay: i * 0.15 }}
+                  className="w-full h-full"
+                  initial={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.88 }}
+                  whileInView={reduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{ duration: 0.45, delay: i * 0.1, ease: [0, 0, 0.2, 1] }}
                 >
-                  <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
+                  <motion.div
+                    className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10"
+                    initial={{ rotate: 0 }}
+                    whileInView={reduceMotion ? { rotate: 0 } : { rotate: iconRotations[i] }}
+                    viewport={{ once: true, amount: 0.35 }}
+                    transition={{ duration: 0.75, ease: [0, 0, 0.2, 1], delay: i * 0.14 }}
+                  >
+                    <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
+                  </motion.div>
                 </motion.div>
               </div>
               <h3 className="text-xl md:text-2xl font-heading mb-2 md:mb-3" style={{ color: "#1d1d1f" }}>{step.label}</h3>
