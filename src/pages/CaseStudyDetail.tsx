@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/shared/PageLayout";
+import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { caseStudies } from "@/data/caseStudies";
 import NotFound from "./NotFound";
 
@@ -17,7 +18,8 @@ const CaseStudyDetail = () => {
 
   return (
     <PageLayout>
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24" style={{ backgroundColor: "#F9F8F6" }}>
+      <UnifiedPageAtmosphere>
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
           <Link
             to="/insights"
@@ -50,7 +52,7 @@ const CaseStudyDetail = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20" style={{ backgroundColor: "#F7F5F2" }}>
+      <section className="py-12 md:py-20 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
           <div className="mb-10">
             <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>The Challenge</h2>
@@ -134,6 +136,7 @@ const CaseStudyDetail = () => {
           </div>
         </div>
       </section>
+      </UnifiedPageAtmosphere>
     </PageLayout>
   );
 };

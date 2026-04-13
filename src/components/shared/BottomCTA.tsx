@@ -10,23 +10,33 @@ interface BottomCTAProps {
   transparentBackground?: boolean;
 }
 
+const darkCardStyle: React.CSSProperties = {
+  background: "linear-gradient(160deg, rgba(30,30,30,0.92) 0%, rgba(18,18,18,0.96) 48%, rgba(24,22,20,0.94) 100%)",
+  border: "1px solid rgba(255,255,255,0.10)",
+  boxShadow:
+    "0 4px 30px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.4)",
+  backdropFilter: "blur(14px) saturate(1.12)",
+  WebkitBackdropFilter: "blur(14px) saturate(1.12)",
+};
+
 const BottomCTA = ({ title, subtitle, buttonText, buttonHref, transparentBackground = false }: BottomCTAProps) => (
   <section className={`py-16 md:py-24 lg:py-28 ${transparentBackground ? "bg-transparent" : "bg-[#f3f2f1]"}`}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
-        initial={{ opacity: 0, x: -60 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         viewport={{ once: true }}
-        className="max-w-xl mx-auto"
+        className="max-w-3xl mx-auto px-8 py-14 md:px-14 md:py-20 rounded-3xl"
+        style={darkCardStyle}
       >
         <div className="flex justify-center mb-6 md:mb-8">
           <div className="gold-divider border-sky-600 border-2 border-solid" />
         </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#1d1d1f" }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
           {title}
         </h2>
-        <p className="mb-8 md:mb-12 leading-relaxed text-sm md:text-lg max-w-lg mx-auto" style={{ color: "#86868b" }}>
+        <p className="mb-8 md:mb-12 leading-relaxed text-sm md:text-lg max-w-lg mx-auto" style={{ color: "#a1a1a6" }}>
           {subtitle}
         </p>
         <a

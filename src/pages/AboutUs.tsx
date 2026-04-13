@@ -194,23 +194,34 @@ const AboutUs = () => {
     {/* Movement Positioning */}
     <section className="py-16 md:py-24 lg:py-28 bg-transparent pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <SectionHeader
-          title={"More Than a Company.\nA Movement."}
-          subtitle="LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance."
-          centered
-          className="mb-8 md:mb-10"
-        />
-        <div className="max-w-xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-            viewport={{ once: true }}
-          >
-          <p className="text-sm md:text-lg leading-relaxed mb-5" style={{ color: "#86868b" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto px-8 py-14 md:px-14 md:py-20 text-center rounded-3xl"
+          style={{
+            background: "linear-gradient(160deg, rgba(30,30,30,0.92) 0%, rgba(18,18,18,0.96) 48%, rgba(24,22,20,0.94) 100%)",
+            border: "1px solid rgba(255,255,255,0.10)",
+            boxShadow:
+              "0 4px 30px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.4)",
+            backdropFilter: "blur(14px) saturate(1.12)",
+            WebkitBackdropFilter: "blur(14px) saturate(1.12)",
+          }}
+        >
+          <div className="flex justify-center mb-6 md:mb-8">
+            <div className="gold-divider border-sky-600 border-2 border-solid" />
+          </div>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-3 md:mb-5" style={{ color: "#f5f5f7" }}>
+            More Than a Company.{"\n"}A Movement.
+          </h2>
+          <p className="text-sm md:text-base leading-relaxed mb-5 max-w-lg mx-auto" style={{ color: "#a1a1a6" }}>
+            LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance.
+          </p>
+          <p className="text-sm md:text-base leading-relaxed mb-5 max-w-lg mx-auto" style={{ color: "#a1a1a6" }}>
             Whether you're an individual seeking clarity or an organization striving for purposeful impact, your growth contributes to something greater.
           </p>
-          <p className="text-sm md:text-lg leading-relaxed mb-10" style={{ color: "#86868b" }}>
+          <p className="text-sm md:text-base leading-relaxed mb-10 max-w-lg mx-auto" style={{ color: "#a1a1a6" }}>
             Together, we can build a world where learning transforms lives, and alignment guides change.
           </p>
           <Link
@@ -219,8 +230,7 @@ const AboutUs = () => {
           >
             Join the Movement <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
           </Link>
-          </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
     </UnifiedPageAtmosphere>

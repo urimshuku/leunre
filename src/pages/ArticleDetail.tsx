@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User } from "lucide-react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/shared/PageLayout";
+import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { articles } from "@/data/articles";
 import NotFound from "./NotFound";
 
@@ -17,7 +18,8 @@ const ArticleDetail = () => {
 
   return (
     <PageLayout>
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24" style={{ backgroundColor: "#F9F8F6" }}>
+      <UnifiedPageAtmosphere>
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
           <Link
             to="/insights"
@@ -46,7 +48,7 @@ const ArticleDetail = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20" style={{ backgroundColor: "#F7F5F2" }}>
+      <section className="py-12 md:py-20 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
           <div className="space-y-6">
             {article.content.map((paragraph, i) => (
@@ -101,6 +103,7 @@ const ArticleDetail = () => {
           </div>
         </div>
       </section>
+      </UnifiedPageAtmosphere>
     </PageLayout>
   );
 };
