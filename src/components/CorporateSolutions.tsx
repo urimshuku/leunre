@@ -55,8 +55,12 @@ const CorporateSolutions = () => (
               </div>
               <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>
               <p className="leading-relaxed text-sm md:text-base mb-5 md:mb-6 flex-1 max-w-sm" style={{ color: "#86868b" }}>{item.description}</p>
-              <Link to={item.link} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-auto">
-                Learn More <ArrowRight size={12} />
+              <Link
+                to={item.link}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-auto"
+              >
+                Learn More{" "}
+                <ArrowRight size={12} className="icon-arrow-nudge icon-arrow-nudge--right" />
               </Link>
             </motion.div>
           </div>

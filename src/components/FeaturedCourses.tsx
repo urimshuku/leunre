@@ -53,8 +53,12 @@ const FeaturedCourses = () => (
             Growth happens through experience. Our trainings and workshops invite active participation — blending knowledge, practice, and reflection.
           </p>
         </div>
-        <Link to="/programs" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-70 transition-opacity shrink-0">
-          View All Programs <ArrowRight size={14} />
+        <Link
+          to="/programs"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-70 transition-opacity shrink-0"
+        >
+          View All Programs{" "}
+          <ArrowRight size={14} className="icon-arrow-nudge icon-arrow-nudge--right" />
         </Link>
       </motion.div>
 
@@ -79,8 +83,12 @@ const FeaturedCourses = () => (
               </div>
               <h3 className="text-base md:text-lg font-heading mb-2 whitespace-pre-line" style={{ color: "#1d1d1f" }}>{course.title}</h3>
               <p className="text-sm leading-relaxed flex-1 mb-0" style={{ color: "#86868b" }}>{course.description}</p>
-              <Link to={`/programs/${course.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-5">
-                Learn More <ArrowRight size={12} />
+              <Link
+                to={`/programs/${course.slug}`}
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-5"
+              >
+                Learn More{" "}
+                <ArrowRight size={12} className="icon-arrow-nudge icon-arrow-nudge--right" />
               </Link>
             </motion.div>
           </div>

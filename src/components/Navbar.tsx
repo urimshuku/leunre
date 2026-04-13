@@ -93,10 +93,10 @@ const Navbar = () => {
               </div>
             </div>
 
-            <div className="flex justify-end items-center min-w-0">
+            <div className="flex justify-end items-center min-w-0 shrink-0">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all btn-bevel-solid"
+                className="inline-flex items-center justify-center shrink-0 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all btn-bevel-solid"
               >
                 Contact
               </Link>
@@ -113,21 +113,29 @@ const Navbar = () => {
         >
           <Link
             to="/"
-            className="font-heading text-lg tracking-tight font-semibold"
+            className="font-heading text-lg tracking-tight font-semibold min-w-0 truncate"
             style={linkStyle}
           >
             LEUNRE
           </Link>
-          <button
-            type="button"
-            className={cn("p-2 rounded-full", !scrolled && "hover:bg-black/[0.04]")}
-            style={{ color: "#1d1d1f" }}
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-2 shrink-0">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all btn-bevel-solid"
+            >
+              Contact
+            </Link>
+            <button
+              type="button"
+              className={cn("p-2 rounded-full shrink-0", !scrolled && "hover:bg-black/[0.04]")}
+              style={{ color: "#1d1d1f" }}
+              onClick={() => setOpen(!open)}
+              aria-expanded={open}
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -164,7 +172,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium text-center btn-bevel-solid"
+                className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium btn-bevel-solid"
               >
                 Contact
               </Link>

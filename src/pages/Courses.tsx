@@ -77,7 +77,8 @@ const Courses = () => (
                 </div>
 
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                  Learn More <ArrowRight size={14} />
+                  Learn More{" "}
+                  <ArrowRight size={14} className="icon-arrow-nudge icon-arrow-nudge--right" />
                 </span>
               </motion.div>
             </Link>

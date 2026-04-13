@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 interface BottomCTAProps {
   title: string;
@@ -33,6 +34,7 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref, transparentBackgro
           className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all rounded-xl btn-bevel-solid"
         >
           {buttonText}
+          <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
         </a>
       </motion.div>
     </div>

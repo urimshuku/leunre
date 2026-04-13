@@ -24,7 +24,7 @@ const CaseStudyDetail = () => {
             className="inline-flex items-center gap-1.5 text-sm mb-8 hover:opacity-70 transition-opacity"
             style={{ color: "#86868b" }}
           >
-            <ArrowLeft size={14} /> Back to Insights
+            <ArrowLeft size={14} className="icon-arrow-nudge icon-arrow-nudge--left" /> Back to Insights
           </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -104,14 +104,14 @@ const CaseStudyDetail = () => {
                 style={{ border: "1px solid #ECEAE6" }}
                 title={prevStudy.title}
               >
-                <ArrowLeft size={16} style={{ color: "#86868b" }} />
+                <ArrowLeft size={16} className="icon-arrow-nudge icon-arrow-nudge--left" style={{ color: "#86868b" }} />
               </Link>
             ) : (
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center opacity-30 shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]"
                 style={{ border: "1px solid #ECEAE6" }}
               >
-                <ArrowLeft size={16} style={{ color: "#86868b" }} />
+                <ArrowLeft size={16} className="icon-arrow-nudge icon-arrow-nudge--left" style={{ color: "#86868b" }} />
               </div>
             )}
             {nextStudy ? (
@@ -121,14 +121,14 @@ const CaseStudyDetail = () => {
                 style={{ border: "1px solid #ECEAE6" }}
                 title={nextStudy.title}
               >
-                <ArrowRight size={16} style={{ color: "#86868b" }} />
+                <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" style={{ color: "#86868b" }} />
               </Link>
             ) : (
               <div
                 className="w-10 h-10 rounded-full flex items-center justify-center opacity-30 shadow-[0_4px_12px_0_rgba(0,0,0,0.12)]"
                 style={{ border: "1px solid #ECEAE6" }}
               >
-                <ArrowRight size={16} style={{ color: "#86868b" }} />
+                <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" style={{ color: "#86868b" }} />
               </div>
             )}
           </div>

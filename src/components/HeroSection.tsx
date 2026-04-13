@@ -204,7 +204,7 @@ const HeroSection = () => {
             className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base bg-primary text-primary-foreground hover:bg-primary/80 transition-all btn-bevel-solid"
           >
             Explore Programs
-            <ArrowRight size={16} />
+            <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
           </Link>
           <Link
             to="/about"
@@ -224,7 +224,7 @@ const HeroSection = () => {
             }}
           >
             Work With Us
-            <ChevronRight size={16} />
+            <ChevronRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
           </Link>
         </motion.div>
       </div>

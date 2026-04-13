@@ -165,7 +165,7 @@ const Products = () => (
                 href="#"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium text-sm md:text-base transition-all rounded-xl opacity-90 btn-bevel-solid"
               >
-                Purchase Now <ArrowRight size={16} />
+                Purchase Now <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
               </a>
             </motion.div>
           </div>

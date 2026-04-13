@@ -216,7 +216,7 @@ const AboutUs = () => {
             to="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all btn-bevel-solid"
           >
-            Join the Movement <ArrowRight size={16} />
+            Join the Movement <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
           </Link>
           </motion.div>
         </div>

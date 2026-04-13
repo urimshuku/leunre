@@ -137,6 +137,48 @@
       inset 0 -1px 0 rgba(0, 0, 0, 0.07),
       0 1px 2px rgba(0, 0, 0, 0.06);
   }
+
+  /**
+   * Site-wide CTA arrow nudge (Ditto-style): add `icon-arrow-nudge icon-arrow-nudge--right`
+   * or `--left` on Lucide icons inside links, buttons, or `.group` containers.
+   */
+  .icon-arrow-nudge {
+    flex-shrink: 0;
+    transition: transform 300ms ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .icon-arrow-nudge {
+      transition: none;
+    }
+
+    a:hover .icon-arrow-nudge--right,
+    button:hover .icon-arrow-nudge--right,
+    [role="button"]:hover .icon-arrow-nudge--right,
+    [role="menuitem"]:hover .icon-arrow-nudge--right,
+    .group:hover .icon-arrow-nudge--right,
+    a:hover .icon-arrow-nudge--left,
+    button:hover .icon-arrow-nudge--left,
+    [role="menuitem"]:hover .icon-arrow-nudge--left,
+    .group:hover .icon-arrow-nudge--left {
+      transform: none;
+    }
+  }
+
+  a:hover .icon-arrow-nudge--right,
+  button:hover .icon-arrow-nudge--right,
+  [role="button"]:hover .icon-arrow-nudge--right,
+  [role="menuitem"]:hover .icon-arrow-nudge--right,
+  .group:hover .icon-arrow-nudge--right {
+    transform: translateX(0.375rem);
+  }
+
+  a:hover .icon-arrow-nudge--left,
+  button:hover .icon-arrow-nudge--left,
+  [role="menuitem"]:hover .icon-arrow-nudge--left,
+  .group:hover .icon-arrow-nudge--left {
+    transform: translateX(-0.375rem);
+  }
 }
 
 @layer utilities {

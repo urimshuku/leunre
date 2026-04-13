@@ -27,7 +27,7 @@ const DetailHero = ({ backTo, backLabel, tag, title, description, children }: De
             className="inline-flex items-center gap-2 text-sm hover:opacity-70 transition-opacity"
             style={{ color: "#86868b" }}
           >
-            <ArrowLeft size={16} /> {backLabel}
+            <ArrowLeft size={16} className="icon-arrow-nudge icon-arrow-nudge--left" /> {backLabel}
           </Link>
         </div>
         {tag && (

@@ -120,7 +120,8 @@ const Blog = () => {
                           <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
                         </div>
                         <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                          Read More <ArrowRight size={14} />
+                          Read More{" "}
+                          <ArrowRight size={14} className="icon-arrow-nudge icon-arrow-nudge--right" />
                         </span>
                       </motion.div>
                     </Link>
@@ -172,7 +173,8 @@ const Blog = () => {
                           {cs.description}
                         </p>
                         <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                          Read More <ArrowRight size={14} />
+                          Read More{" "}
+                          <ArrowRight size={14} className="icon-arrow-nudge icon-arrow-nudge--right" />
                         </span>
                       </motion.div>
                     </Link>

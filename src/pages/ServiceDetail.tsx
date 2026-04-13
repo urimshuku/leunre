@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CheckCircle2, User, Building2 } from "lucide-react";
+import { CheckCircle2, User, Building2, ArrowRight } from "lucide-react";
 import PageLayout from "@/components/shared/PageLayout";
 import DetailHero from "@/components/shared/DetailHero";
 import ContentSection from "@/components/shared/ContentSection";
@@ -40,6 +40,7 @@ const ServiceDetail = () => {
           className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base bg-primary text-primary-foreground hover:opacity-90 transition-all btn-bevel-solid"
         >
           Book a Consultation
+          <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
         </Link>
       </DetailHero>
 

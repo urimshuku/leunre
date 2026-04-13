@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MapPin, Phone, Linkedin, ChevronDown } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { z } from "zod";
 import PageLayout from "@/components/shared/PageLayout";
 import PageHero from "@/components/shared/PageHero";
@@ -8,6 +8,7 @@ import ContentSection from "@/components/shared/ContentSection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { useToast } from "@/hooks/use-toast";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -30,25 +31,13 @@ const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "#" },
 ];
 
-const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="bg-card rounded-2xl card-elevated overflow-hidden">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-5 py-4 md:px-6 md:py-5 text-left"
-      >
-        <span className="text-sm md:text-base font-heading pr-4" style={{ color: "#1d1d1f" }}>{question}</span>
-        <ChevronDown size={18} className={`shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`} style={{ color: "#86868b" }} />
-      </button>
-      {open && (
-        <div className="px-5 pb-4 md:px-6 md:pb-5 -mt-1">
-          <p className="text-sm leading-relaxed max-w-xl" style={{ color: "#86868b" }}>{answer}</p>
-        </div>
-      )}
-    </div>
-  );
-};
+const contactFaqs = [
+  { q: "What types of organizations do you work with?", a: "We work with organizations of all sizes — from startups to global enterprises — across industries. Our programs are tailored to meet each team's unique challenges and goals." },
+  { q: "How long are your programs typically?", a: "Program length varies based on your needs. Workshops can be as short as a half-day, while comprehensive development programs may span several weeks or months." },
+  { q: "Do you offer virtual or remote programs?", a: "Yes! We offer both in-person and virtual programs. Our remote workshops are designed to be just as engaging and impactful as our on-site experiences." },
+  { q: "How do I know which program is right for me?", a: "We recommend starting with a conversation. Reach out through the form above, and we'll help you identify the best fit based on your goals and context." },
+  { q: "What makes LEUNRE different from other learning providers?", a: "Our approach centers on unlearning — helping you let go of outdated mental models before building new ones. This creates deeper, more lasting transformation." },
+] as const;
 
 const ContactUs = () => {
   const { toast } = useToast();
@@ -189,7 +178,7 @@ const ContactUs = () => {
                   type="submit"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all btn-bevel-solid"
                 >
-                  Send Message <ArrowRight size={16} />
+                  Send Message <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
                 </button>
               </form>
             )}
@@ -254,25 +243,35 @@ const ContactUs = () => {
       <section className="py-16 md:py-24 lg:py-28 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <SectionHeader title="Frequently Asked Questions" className="mb-8 md:mb-12" />
-          <div className="max-w-2xl space-y-3">
-            {[
-              { q: "What types of organizations do you work with?", a: "We work with organizations of all sizes — from startups to global enterprises — across industries. Our programs are tailored to meet each team's unique challenges and goals." },
-              { q: "How long are your programs typically?", a: "Program length varies based on your needs. Workshops can be as short as a half-day, while comprehensive development programs may span several weeks or months." },
-              { q: "Do you offer virtual or remote programs?", a: "Yes! We offer both in-person and virtual programs. Our remote workshops are designed to be just as engaging and impactful as our on-site experiences." },
-              { q: "How do I know which program is right for me?", a: "We recommend starting with a conversation. Reach out through the form above, and we'll help you identify the best fit based on your goals and context." },
-              { q: "What makes LEUNRE different from other learning providers?", a: "Our approach centers on unlearning — helping you let go of outdated mental models before building new ones. This creates deeper, more lasting transformation." },
-            ].map((faq, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <FAQItem question={faq.q} answer={faq.a} />
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            className="max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Accordion type="single" collapsible className="space-y-3">
+              {contactFaqs.map((faq, i) => (
+                <AccordionItem
+                  key={faq.q}
+                  value={`faq-${i}`}
+                  className="border-0 bg-card rounded-2xl card-elevated overflow-hidden"
+                >
+                  <AccordionTrigger
+                    className="px-5 py-4 md:px-6 md:py-5 hover:no-underline font-heading text-sm md:text-base text-left [&>svg]:text-[#86868b] [&>svg]:h-[18px] [&>svg]:w-[18px] [&>svg]:transition-transform [&>svg]:duration-300 [&>svg]:ease-out"
+                    style={{ color: "#1d1d1f" }}
+                  >
+                    <span className="pr-4 text-left">{faq.q}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-5 pb-4 md:px-6 md:pb-5 -mt-1 text-sm">
+                    <p className="leading-relaxed max-w-xl" style={{ color: "#86868b" }}>
+                      {faq.a}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
         </div>
       </section>
       </UnifiedPageAtmosphere>
