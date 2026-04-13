@@ -5,6 +5,7 @@ import PageLayout from "@/components/shared/PageLayout";
 import DetailHero from "@/components/shared/DetailHero";
 import ContentSection from "@/components/shared/ContentSection";
 import BottomCTA from "@/components/shared/BottomCTA";
+import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { getServiceBySlug, retreatTypes } from "@/data/services";
 
 const ServiceDetail = () => {
@@ -28,12 +29,14 @@ const ServiceDetail = () => {
 
   return (
     <PageLayout>
+      <UnifiedPageAtmosphere>
       <DetailHero
         backTo="/services"
         backLabel="All Services"
         tag={service.tag}
         title={service.title}
         description={service.description}
+        transparentBackground
       >
         <Link
           to="/contact"
@@ -45,7 +48,7 @@ const ServiceDetail = () => {
       </DetailHero>
 
       {/* Overview + Who It's For */}
-      <ContentSection>
+      <ContentSection className="!bg-transparent">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -80,7 +83,7 @@ const ServiceDetail = () => {
 
       {/* Retreat Types - only for retreats */}
       {slug === "retreats" && (
-        <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1]">
+        <section className="py-16 md:py-24 lg:py-28 bg-transparent">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -113,7 +116,7 @@ const ServiceDetail = () => {
       )}
 
       {/* Outcomes */}
-      <section className="py-16 md:py-24 lg:py-28 bg-[#f3f2f1] pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0 border-b-black">
+      <section className="py-16 md:py-24 lg:py-28 bg-transparent pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -142,7 +145,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* Our Approach */}
-      <ContentSection>
+      <ContentSection className="!bg-transparent">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -180,7 +183,9 @@ const ServiceDetail = () => {
         subtitle={`Let's discuss how ${service.title.toLowerCase()} can create lasting impact for your organization.`}
         buttonText="Book a Consultation"
         buttonHref="/contact"
+        transparentBackground
       />
+      </UnifiedPageAtmosphere>
     </PageLayout>
   );
 };

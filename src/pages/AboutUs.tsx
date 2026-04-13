@@ -158,33 +158,34 @@ const AboutUs = () => {
           centered
           className="mb-12 md:mb-16 lg:mb-20"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           {values.map((value, i) => (
-            <motion.div
-              key={value.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="text-center"
-            >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
-                <motion.div
-                  whileInView={
-                    i === 0
-                      ? { scaleY: [1, 0.1, 1], transition: { duration: 1.2, delay: 0.8, times: [0, 0.5, 1] } }
-                      : i === 1
-                      ? { scale: [1, 1.2, 1, 1.2, 1, 1.2, 1], transition: { duration: 3, delay: 0.8, times: [0, 0.1, 0.2, 0.4, 0.5, 0.7, 0.8] } }
-                      : { rotate: [0, 360], transition: { duration: 2.5, delay: 0.8, ease: "easeInOut" } }
-                  }
-                  viewport={{ once: true, amount: 0.5 }}
-                >
-                  <value.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
-                </motion.div>
-              </div>
-              <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>{value.title}</h3>
-              <p className="text-sm md:text-base leading-relaxed" style={{ color: "#86868b" }}>{value.description}</p>
-            </motion.div>
+            <div key={value.title} className="group p-6 md:p-8 card-elevated text-center flex flex-col">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex flex-col flex-1"
+              >
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
+                  <motion.div
+                    whileInView={
+                      i === 0
+                        ? { scaleY: [1, 0.1, 1], transition: { duration: 1.2, delay: 0.8, times: [0, 0.5, 1] } }
+                        : i === 1
+                        ? { scale: [1, 1.2, 1, 1.2, 1, 1.2, 1], transition: { duration: 3, delay: 0.8, times: [0, 0.1, 0.2, 0.4, 0.5, 0.7, 0.8] } }
+                        : { rotate: [0, 360], transition: { duration: 2.5, delay: 0.8, ease: "easeInOut" } }
+                    }
+                    viewport={{ once: true, amount: 0.5 }}
+                  >
+                    <value.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+                  </motion.div>
+                </div>
+                <h3 className="text-lg md:text-xl font-heading mb-2 md:mb-3" style={{ color: "#1d1d1f" }}>{value.title}</h3>
+                <p className="text-sm md:text-base leading-relaxed flex-1" style={{ color: "#86868b" }}>{value.description}</p>
+              </motion.div>
+            </div>
           ))}
         </div>
       </div>

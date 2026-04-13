@@ -10,10 +10,11 @@ interface DetailHeroProps {
   title: string;
   description: string;
   children?: ReactNode;
+  transparentBackground?: boolean;
 }
 
-const DetailHero = ({ backTo, backLabel, tag, title, description, children }: DetailHeroProps) => (
-  <section className="pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28" style={{ backgroundColor: "#F9F8F6" }}>
+const DetailHero = ({ backTo, backLabel, tag, title, description, children, transparentBackground = false }: DetailHeroProps) => (
+  <section className="pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28" style={transparentBackground ? undefined : { backgroundColor: "#F9F8F6" }}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, x: 60 }}

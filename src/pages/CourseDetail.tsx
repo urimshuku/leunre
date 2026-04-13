@@ -5,6 +5,7 @@ import PageLayout from "@/components/shared/PageLayout";
 import DetailHero from "@/components/shared/DetailHero";
 import ContentSection from "@/components/shared/ContentSection";
 import BottomCTA from "@/components/shared/BottomCTA";
+import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { getCourseBySlug } from "@/data/courses";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -29,12 +30,14 @@ const CourseDetail = () => {
 
   return (
     <PageLayout>
+      <UnifiedPageAtmosphere>
       <DetailHero
         backTo="/programs"
         backLabel="All Programs"
         tag={course.tag}
         title={course.title}
         description={course.description}
+        transparentBackground
       >
         <div className="flex flex-wrap items-center gap-5">
           <div className="flex items-center gap-2" style={{ color: "#86868b" }}>
@@ -52,7 +55,7 @@ const CourseDetail = () => {
       </DetailHero>
 
       {/* Overview */}
-      <ContentSection>
+      <ContentSection className="!bg-transparent">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -86,7 +89,7 @@ const CourseDetail = () => {
       </ContentSection>
 
       {/* Curriculum */}
-      <ContentSection>
+      <ContentSection className="!bg-transparent">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -122,7 +125,7 @@ const CourseDetail = () => {
       </ContentSection>
 
       {/* Outcomes */}
-      <section className="bg-[#f3f2f1] py-16 md:py-24 lg:py-28">
+      <section className="bg-transparent py-16 md:py-24 lg:py-28">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -155,7 +158,9 @@ const CourseDetail = () => {
         subtitle="Take the first step toward transformation. Reach out to learn more about enrollment and upcoming cohorts."
         buttonText="Enroll / Inquire"
         buttonHref="#contact"
+        transparentBackground
       />
+      </UnifiedPageAtmosphere>
     </PageLayout>
   );
 };
