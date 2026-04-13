@@ -8,12 +8,14 @@ interface PageLayoutProps {
 }
 
 const PageLayout = ({ children }: PageLayoutProps) => (
-  <>
+  <div className="bg-[#1d1d1f]">
     <Navbar />
-    <main>{children}</main>
+    <main className="relative rounded-b-[2rem] md:rounded-b-[3rem] overflow-hidden bg-[#F9F8F6]">
+      {children}
+    </main>
     <Footer />
     <BrandMarkBackdrop />
-  </>
+  </div>
 );
 
 export default PageLayout;

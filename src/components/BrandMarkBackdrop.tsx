@@ -25,14 +25,15 @@ const BrandMarkBackdrop = () => {
     <section
       ref={sectionRef}
       aria-hidden="true"
-      className="relative mt-0 w-full max-w-[100vw] overflow-hidden bg-[#FFFFFF]"
+      className="relative mt-0 w-full max-w-[100vw] overflow-hidden"
+      style={{ backgroundColor: "#1d1d1f" }}
     >
       <div className="pointer-events-none relative mx-auto min-h-[clamp(10.5rem,28vh,20rem)] max-w-full min-w-0 select-none md:min-h-[clamp(12rem,32vh,24rem)]">
         <span
           className="font-heading absolute left-1/2 whitespace-nowrap font-bold transition-opacity duration-1000 ease-out"
           style={{
             bottom: 0,
-            color: "rgba(29, 29, 31, 0.085)",
+            color: "rgba(255, 255, 255, 0.06)",
             fontSize: "clamp(6.5rem, 24vw, 26rem)",
             letterSpacing: "0.02em",
             lineHeight: 0.82,
