@@ -93,7 +93,7 @@ const PhilosophySection = () => {
                   transition={{ duration: 0.45, delay: i * 0.1, ease: [0, 0, 0.2, 1] }}
                 >
                   <motion.div
-                    className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 shadow-[0_4px_12px_0_rgba(0,0,0,0.15)] cursor-pointer"
+                    className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 cursor-pointer btn-bevel-solid"
                     initial={{ rotate: 0 }}
                     animate={{ rotate: reduceMotion ? 0 : rotations[i] }}
                     transition={{ duration: 0.65, ease: [0, 0, 0.2, 1] }}

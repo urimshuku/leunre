@@ -48,7 +48,7 @@ const Services = () => (
                 </p>
                 <Link
                   to={`/services/${service.slug}`}
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all btn-bevel-solid"
                 >
                   Learn More <ArrowRight size={16} />
                 </Link>

@@ -31,70 +31,48 @@ const Blog = () => {
         <section className="pt-8 md:pt-12 pb-2 md:pb-4 bg-transparent" aria-label="Choose content type">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div
-              className="mx-auto flex max-w-sm rounded-full p-1.5"
+              className="relative mx-auto grid max-w-sm grid-cols-2 rounded-full px-1.5 pt-2 pb-1.5 btn-bevel-outline"
               style={{ backgroundColor: "#E8E6E3" }}
               role="tablist"
             >
-              <div
-                className="relative grid flex-1 grid-cols-1 cursor-pointer"
+              <motion.div
+                className="pointer-events-none absolute top-2 bottom-1.5 rounded-full bg-white btn-bevel-solid"
+                style={{ width: "calc(50% - 6px)" }}
+                initial={false}
+                animate={{
+                  left: tab === "articles" ? "6px" : "50%",
+                }}
+                transition={springToggle}
+                aria-hidden
+              />
+              <button
+                type="button"
+                role="tab"
+                aria-selected={tab === "articles"}
+                id="tab-articles"
+                aria-controls="panel-articles"
                 onClick={() => setTab("articles")}
-              >
-                {tab === "articles" && (
-                  <motion.div
-                    layoutId="insights-toggle-pill"
-                    className="pointer-events-none absolute inset-0 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-                    transition={springToggle}
-                    aria-hidden
-                  />
+                className={cn(
+                  "relative z-10 min-h-[44px] w-full rounded-full px-5 py-2.5 text-sm transition-colors md:min-h-0 md:px-8 md:py-3 md:text-base",
+                  tab === "articles" ? "font-medium text-[#1d1d1f]" : "font-normal text-[#86868b]",
                 )}
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={tab === "articles"}
-                  id="tab-articles"
-                  aria-controls="panel-articles"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setTab("articles");
-                  }}
-                  className={cn(
-                    "relative z-10 w-full rounded-full px-5 py-2.5 text-sm transition-colors md:px-8 md:py-3 md:text-base",
-                    tab === "articles" ? "font-medium text-[#1d1d1f]" : "font-normal text-[#86868b]",
-                  )}
-                >
-                  Articles
-                </button>
-              </div>
-              <div
-                className="relative grid flex-1 grid-cols-1 cursor-pointer"
+              >
+                Articles
+              </button>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={tab === "case-studies"}
+                id="tab-case-studies"
+                aria-controls="panel-case-studies"
                 onClick={() => setTab("case-studies")}
-              >
-                {tab === "case-studies" && (
-                  <motion.div
-                    layoutId="insights-toggle-pill"
-                    className="pointer-events-none absolute inset-0 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
-                    transition={springToggle}
-                    aria-hidden
-                  />
+                className={cn(
+                  "relative z-10 min-h-[44px] w-full rounded-full px-5 py-2.5 text-sm transition-colors md:min-h-0 md:px-8 md:py-3 md:text-base",
+                  tab === "case-studies" ? "font-medium text-[#1d1d1f]" : "font-normal text-[#86868b]",
                 )}
-                <button
-                  type="button"
-                  role="tab"
-                  aria-selected={tab === "case-studies"}
-                  id="tab-case-studies"
-                  aria-controls="panel-case-studies"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setTab("case-studies");
-                  }}
-                  className={cn(
-                    "relative z-10 w-full rounded-full px-5 py-2.5 text-sm transition-colors md:px-8 md:py-3 md:text-base",
-                    tab === "case-studies" ? "font-medium text-[#1d1d1f]" : "font-normal text-[#86868b]",
-                  )}
-                >
-                  Case Studies
-                </button>
-              </div>
+              >
+                Case Studies
+              </button>
             </div>
           </div>
         </section>

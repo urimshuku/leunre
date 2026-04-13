@@ -37,7 +37,7 @@ const ServiceDetail = () => {
       >
         <Link
           to="/contact"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base bg-primary text-primary-foreground hover:opacity-90 transition-all shadow-sm"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-medium text-base bg-primary text-primary-foreground hover:opacity-90 transition-all btn-bevel-solid"
         >
           Book a Consultation
         </Link>

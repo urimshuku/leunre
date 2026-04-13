@@ -119,6 +119,26 @@
   }
 }
 
+@layer components {
+  /* Embossed bevel for solid primary / destructive CTAs (shared with Navbar contact). */
+  .btn-bevel-solid {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.45),
+      inset 1px 0 0 rgba(255, 255, 255, 0.18),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+      inset -1px 0 0 rgba(0, 0, 0, 0.14),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Softer raised edge for outline / muted surfaces */
+  .btn-bevel-outline {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.07),
+      0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+}
+
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;

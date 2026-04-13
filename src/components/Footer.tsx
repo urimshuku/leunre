@@ -29,7 +29,7 @@ const Footer = () => (
                 style={{ color: "#1d1d1f" }}
               />
             </div>
-            <button className="px-5 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap">
+            <button className="px-5 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap btn-bevel-solid">
               Subscribe
             </button>
           </div>

@@ -92,7 +92,7 @@ const AboutUs = () => {
                   transition={{ duration: 0.45, delay: i * 0.1, ease: [0, 0, 0.2, 1] }}
                 >
                   <motion.div
-                    className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10"
+                    className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 btn-bevel-solid"
                     initial={{ rotate: 0 }}
                     whileInView={reduceMotion ? { rotate: 0 } : { rotate: iconRotations[i] }}
                     viewport={{ once: true, amount: 0.35 }}
@@ -214,7 +214,7 @@ const AboutUs = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all shadow-sm"
+            className="inline-flex items-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all btn-bevel-solid"
           >
             Join the Movement <ArrowRight size={16} />
           </Link>

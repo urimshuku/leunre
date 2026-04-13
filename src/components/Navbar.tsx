@@ -96,7 +96,7 @@ const Navbar = () => {
             <div className="flex justify-end items-center min-w-0">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all shadow-sm"
+                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all btn-bevel-solid"
               >
                 Contact
               </Link>
@@ -164,7 +164,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium text-center"
+                className="mt-2 px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium text-center btn-bevel-solid"
               >
                 Contact
               </Link>
