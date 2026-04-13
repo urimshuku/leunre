@@ -71,7 +71,10 @@ const Navbar = () => {
             <div className="flex justify-start items-center min-w-0">
               <Link
                 to="/"
-                className="font-heading text-lg md:text-xl tracking-tight font-semibold shrink-0"
+                className={cn(
+                  "font-heading text-lg md:text-xl tracking-tight font-semibold shrink-0 transition-[margin] duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+                  scrolled && "ml-2"
+                )}
                 style={linkStyle}
               >
                 LEUNRE

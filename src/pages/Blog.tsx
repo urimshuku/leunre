@@ -31,9 +31,14 @@ const Blog = () => {
         <section className="pt-8 md:pt-12 pb-2 md:pb-4 bg-transparent" aria-label="Choose content type">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div
-              className="relative mx-auto grid max-w-sm grid-cols-2 rounded-full px-1.5 pt-2 pb-1.5 btn-bevel-outline"
+              className="relative mx-auto grid max-w-sm grid-cols-2 rounded-full px-1.5 pt-2 pb-1.5 btn-bevel-outline cursor-pointer"
               style={{ backgroundColor: "#E8E6E3" }}
               role="tablist"
+              onClick={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                setTab(x < rect.width / 2 ? "articles" : "case-studies");
+              }}
             >
               <motion.div
                 className="pointer-events-none absolute top-2 bottom-1.5 rounded-full bg-white btn-bevel-solid"
