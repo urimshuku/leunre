@@ -30,19 +30,19 @@ const CARD_GAP = 24;
 const CARD_HEIGHT_MOBILE = 260;
 const CARD_HEIGHT_DESKTOP = 300;
 
-const SLIDE_DURATION_SEC = 2;
+const SLIDE_DURATION_SEC = 1.5;
 /** Time to stay on a slide after it has finished moving, before advancing */
-const DWELL_MS = 10_000;
+const DWELL_MS = 7_000;
 
 const SLIDE_EASE = [0.32, 0.72, 0, 1] as const;
+/** Left column leads, then center, then right — reads as “first pushes middle to third” */
+const PUSH_STAGGER_SEC = 0.07;
 
 const TestimonialsSection = () => {
   const isMobile = useIsMobile();
   const n = testimonials.length;
-  /** Triple strip: middle block indices `n`…`2n` (duplicate of first item at `n` and `2n`) */
   const loopSlides = [...testimonials, ...testimonials, ...testimonials];
 
-  /** Start at `2n`: same centered card as `n`, but we decrement so motion is right→left (strip moves right). */
   const [slideIndex, setSlideIndex] = useState(2 * n);
   const instantJumpRef = useRef(false);
   const dwellTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -53,7 +53,6 @@ const TestimonialsSection = () => {
   const viewportWidth = isMobile ? cardWidth : 3 * cardWidth + 2 * CARD_GAP;
   const edgePad = viewportWidth / 2 - cardWidth / 2;
 
-  /** Dot index while using decrementing physical index `slideIndex` */
   const logicalActive = ((2 * n - slideIndex) % n + n) % n;
 
   const clearDwellTimer = useCallback(() => {
@@ -67,9 +66,6 @@ const TestimonialsSection = () => {
     setSlideIndex((prev) => {
       if (prev === n) {
         instantJumpRef.current = true;
-        requestAnimationFrame(() => {
-          instantJumpRef.current = false;
-        });
         return 2 * n;
       }
       return prev - 1;
@@ -84,7 +80,6 @@ const TestimonialsSection = () => {
     }, DWELL_MS);
   }, [clearDwellTimer, advanceSlide]);
 
-  /** First slide: stay 10s, then advance (same ref as manual dwell so dot-click can cancel) */
   useEffect(() => {
     dwellTimeoutRef.current = window.setTimeout(() => {
       dwellTimeoutRef.current = null;
@@ -94,8 +89,19 @@ const TestimonialsSection = () => {
   }, [advanceSlide, clearDwellTimer]);
 
   const handleTrackAnimationComplete = useCallback(() => {
-    scheduleNextAdvance();
-  }, [scheduleNextAdvance]);
+    if (instantJumpRef.current) {
+      instantJumpRef.current = false;
+      scheduleNextAdvance();
+      return;
+    }
+    /* Staggered card motion can outlast the track; start dwell after the last slot finishes */
+    const extraMs = isMobile ? 0 : Math.round(2 * PUSH_STAGGER_SEC * 1000);
+    if (extraMs > 0) {
+      window.setTimeout(() => scheduleNextAdvance(), extraMs);
+    } else {
+      scheduleNextAdvance();
+    }
+  }, [scheduleNextAdvance, isMobile]);
 
   const goToLogicalIndex = (logical: number) => {
     clearDwellTimer();
@@ -105,6 +111,28 @@ const TestimonialsSection = () => {
   const slideTransition = instantJumpRef.current
     ? { duration: 0 }
     : { duration: SLIDE_DURATION_SEC, ease: SLIDE_EASE };
+
+  const pushSlotForIndex = (i: number) => {
+    if (isMobile) return 1;
+    const d = i - slideIndex;
+    if (d === -1) return 0;
+    if (d === 0) return 1;
+    if (d === 1) return 2;
+    return 1;
+  };
+
+  const cardMotionTransition = (i: number) => {
+    if (instantJumpRef.current) {
+      return { duration: 0 };
+    }
+    const slot = pushSlotForIndex(i);
+    const d = SLIDE_DURATION_SEC;
+    const s = slot * PUSH_STAGGER_SEC;
+    return {
+      opacity: { duration: d, ease: SLIDE_EASE, delay: s },
+      x: { duration: d, ease: SLIDE_EASE, delay: s },
+    };
+  };
 
   return (
     <section className="py-10 md:py-24 lg:py-28 pt-[72px] pb-[72px] md:pt-[112px] md:pb-[112px] bg-transparent">
@@ -136,15 +164,15 @@ const TestimonialsSection = () => {
 
       <div className="w-full flex justify-center overflow-x-auto overflow-y-visible md:overflow-x-visible px-4 md:px-6 lg:px-8">
         <div
-          className="relative shrink-0 overflow-hidden rounded-none"
+          className="relative shrink-0 overflow-hidden rounded-none flex items-center"
           style={{
             width: viewportWidth,
             maxWidth: "100%",
-            height: cardHeight,
+            height: cardHeight + 24,
           }}
         >
           <motion.div
-            className="flex h-full"
+            className="flex"
             style={{
               gap: CARD_GAP,
               paddingLeft: edgePad,
@@ -155,53 +183,66 @@ const TestimonialsSection = () => {
             transition={slideTransition}
             onAnimationComplete={handleTrackAnimationComplete}
           >
-            {loopSlides.map((item, i) => (
-              <motion.div
-                key={`slide-${i}`}
-                className="flex-shrink-0"
-                style={{ width: cardWidth, height: cardHeight }}
-                initial={false}
-                animate={{
-                  opacity: i === slideIndex ? 1 : 0.4,
-                }}
-                transition={{
-                  duration: SLIDE_DURATION_SEC * 0.45,
-                  ease: SLIDE_EASE,
-                }}
-              >
-                <div
-                  className="w-full h-full bg-card rounded-2xl p-6 md:p-8 card-elevated flex flex-col"
-                  style={{ minHeight: cardHeight, height: cardHeight }}
+            {loopSlides.map((item, i) => {
+              const slot = pushSlotForIndex(i);
+              const isPushTriple =
+                !isMobile && i >= slideIndex - 1 && i <= slideIndex + 1;
+              /** Relative to row: left leads right, center follows, right lags (pushed to third). */
+              const pushX =
+                instantJumpRef.current || !isPushTriple
+                  ? 0
+                  : slot === 0
+                    ? [14, 0]
+                    : slot === 1
+                      ? [6, 0]
+                      : [-12, 0];
+
+              return (
+                <motion.div
+                  key={`slide-${i}`}
+                  className="flex-shrink-0"
+                  style={{ width: cardWidth, height: cardHeight }}
+                  initial={false}
+                  animate={{
+                    opacity: i === slideIndex ? 1 : 0.4,
+                    x: pushX,
+                  }}
+                  transition={cardMotionTransition(i)}
                 >
-                  <Quote
-                    className="w-5 h-5 md:w-6 md:h-6 mb-4 md:mb-5 flex-shrink-0"
-                    fill="rgba(196, 98, 42, 0.75)"
-                    stroke="none"
-                    strokeWidth={0}
-                  />
-                  <p
-                    className="leading-relaxed mb-6 italic text-sm md:text-base flex-1 min-h-0 overflow-y-auto [scrollbar-width:thin]"
-                    style={{ color: "#1d1d1f" }}
+                  <div
+                    className="w-full h-full bg-card rounded-2xl p-6 md:p-8 card-elevated flex flex-col"
+                    style={{ minHeight: cardHeight, height: cardHeight }}
                   >
-                    &ldquo;{item.quote}&rdquo;
-                  </p>
-                  <div className="flex-shrink-0 mt-auto">
+                    <Quote
+                      className="w-5 h-5 md:w-6 md:h-6 mb-4 md:mb-5 flex-shrink-0"
+                      fill="rgba(196, 98, 42, 0.75)"
+                      stroke="none"
+                      strokeWidth={0}
+                    />
                     <p
-                      className="font-heading text-sm md:text-base"
+                      className="leading-relaxed mb-6 italic text-sm md:text-base flex-1 min-h-0 overflow-y-auto [scrollbar-width:thin]"
                       style={{ color: "#1d1d1f" }}
                     >
-                      {item.name}
+                      &ldquo;{item.quote}&rdquo;
                     </p>
-                    <p
-                      className="text-xs md:text-sm mt-1"
-                      style={{ color: "#86868b" }}
-                    >
-                      {item.role}
-                    </p>
+                    <div className="flex-shrink-0 mt-auto">
+                      <p
+                        className="font-heading text-sm md:text-base"
+                        style={{ color: "#1d1d1f" }}
+                      >
+                        {item.name}
+                      </p>
+                      <p
+                        className="text-xs md:text-sm mt-1"
+                        style={{ color: "#86868b" }}
+                      >
+                        {item.role}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>
