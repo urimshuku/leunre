@@ -41,7 +41,7 @@ const CorporateSolutions = () => (
         {solutions.map((item, i) => (
           <div
             key={item.title}
-            className="group p-6 md:p-8 lg:p-10 rounded-2xl bg-card card-elevated card-elevated-hover flex flex-col"
+            className="group p-6 md:p-8 lg:p-10 card-elevated flex flex-col"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const CorporateSolutions = () => (
               transition={{ delay: i * 0.12 }}
               className="flex flex-col flex-1"
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
                 <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>

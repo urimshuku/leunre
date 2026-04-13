@@ -66,7 +66,7 @@ const FeaturedCourses = () => (
         {courses.map((course, i) => (
           <div
             key={course.title}
-            className="group bg-card rounded-2xl card-elevated card-elevated-hover h-full min-h-0 flex flex-col"
+            className="group card-elevated h-full min-h-0 flex flex-col"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -78,7 +78,7 @@ const FeaturedCourses = () => (
               <span className="inline-block text-[11px] font-medium uppercase tracking-wider text-primary mb-4">
                 {course.tag}
               </span>
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center mb-4 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center mb-4 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
                 <course.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="text-base md:text-lg font-heading mb-2 whitespace-pre-line" style={{ color: "#1d1d1f" }}>{course.title}</h3>

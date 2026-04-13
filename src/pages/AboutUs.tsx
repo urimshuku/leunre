@@ -114,13 +114,13 @@ const AboutUs = () => {
     <ContentSection className="!bg-transparent">
       <SectionHeader title="Our Purpose" centered className="mb-12 md:mb-16" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto">
-        <div className="group bg-card rounded-2xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover">
+        <div className="group p-6 md:p-8 lg:p-10 card-elevated">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
               <Rocket className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
             </div>
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Mission</h3>
@@ -130,14 +130,14 @@ const AboutUs = () => {
           </motion.div>
         </div>
 
-        <div className="group bg-card rounded-2xl p-6 md:p-8 lg:p-10 card-elevated card-elevated-hover">
+        <div className="group p-6 md:p-8 lg:p-10 card-elevated">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
               <Eye className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
             </div>
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Vision</h3>
@@ -168,7 +168,7 @@ const AboutUs = () => {
               transition={{ delay: i * 0.08 }}
               className="text-center"
             >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-primary/20">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
                 <motion.div
                   whileInView={
                     i === 0

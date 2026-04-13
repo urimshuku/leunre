@@ -36,7 +36,7 @@ const Services = () => (
                   <div className="gold-divider border-sky-600 border-2 border-solid" />
                 </div>
                 <div className="inline-block mb-5 md:mb-6">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center border border-primary/20">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center border border-white/45 bg-white/20 backdrop-blur-sm">
                     <service.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const Services = () => (
                 transition={{ delay: 0.1 }}
                 className="space-y-4"
               >
-                <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
+                <div className="p-5 md:p-6 card-elevated">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ const Services = () => (
                   </motion.div>
                 </div>
 
-                <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
+                <div className="p-5 md:p-6 card-elevated">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

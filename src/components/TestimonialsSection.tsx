@@ -210,7 +210,7 @@ const TestimonialsSection = () => {
                   transition={cardMotionTransition(i)}
                 >
                   <div
-                    className="w-full h-full bg-card rounded-2xl p-6 md:p-8 card-elevated flex flex-col"
+                    className="w-full h-full card-elevated p-6 md:p-8 flex flex-col"
                     style={{ minHeight: cardHeight, height: cardHeight }}
                   >
                     <Quote

@@ -124,8 +124,7 @@ const Products = () => (
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="aspect-square rounded-2xl flex items-center justify-center card-elevated shadow-md"
-              style={{ backgroundColor: "#F7F5F2" }}
+              className="aspect-square flex items-center justify-center card-elevated"
             >
               <div className="text-center p-6 md:p-8 lg:p-10">
                 <Layers className="w-10 h-10 md:w-14 md:h-14 text-primary mx-auto mb-5" strokeWidth={1} />
@@ -208,7 +207,7 @@ const Products = () => (
         {useCases.map((useCase, i) => (
           <div
             key={useCase.title}
-            className="group bg-card rounded-2xl p-6 md:p-8 card-elevated card-elevated-hover shadow"
+            className="group p-6 md:p-8 card-elevated"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -216,7 +215,7 @@ const Products = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
                 <useCase.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg md:text-xl font-heading mb-4" style={{ color: "#1d1d1f" }}>{useCase.title}</h3>
@@ -243,14 +242,14 @@ const Products = () => (
               className="mb-12 md:mb-16"
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 w-full max-w-none">
-              <div className="relative group bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
-                <div className="absolute inset-0 bg-white/50 z-10 rounded-2xl" />
+              <div className="relative group p-6 md:p-8 overflow-hidden card-elevated">
+                <div className="absolute inset-0 bg-white/50 z-10 rounded-3xl" />
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
                     <BookOpen className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Self-Reflection Notebooks</h3>
@@ -258,15 +257,15 @@ const Products = () => (
                 </motion.div>
               </div>
 
-              <div className="relative group bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
-                <div className="absolute inset-0 bg-white/50 z-10 rounded-2xl" />
+              <div className="relative group p-6 md:p-8 overflow-hidden card-elevated">
+                <div className="absolute inset-0 bg-white/50 z-10 rounded-3xl" />
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
                     <Calendar className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Interactive Calendars</h3>
@@ -274,15 +273,15 @@ const Products = () => (
                 </motion.div>
               </div>
 
-              <div className="relative group bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
-                <div className="absolute inset-0 bg-white/50 z-10 rounded-2xl" />
+              <div className="relative group p-6 md:p-8 overflow-hidden card-elevated">
+                <div className="absolute inset-0 bg-white/50 z-10 rounded-3xl" />
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
                     <Target className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Life Vision Kit</h3>
@@ -290,15 +289,15 @@ const Products = () => (
                 </motion.div>
               </div>
 
-              <div className="relative group bg-card rounded-2xl p-6 md:p-8 overflow-hidden card-elevated">
-                <div className="absolute inset-0 bg-white/50 z-10 rounded-2xl" />
+              <div className="relative group p-6 md:p-8 overflow-hidden card-elevated">
+                <div className="absolute inset-0 bg-white/50 z-10 rounded-3xl" />
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-primary/20">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
                     <Headphones className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Guided Audio Experiences</h3>

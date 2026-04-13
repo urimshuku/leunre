@@ -64,7 +64,7 @@ const CourseDetail = () => {
             <p className="leading-relaxed text-sm md:text-lg max-w-xl" style={{ color: "#86868b" }}>{course.overview}</p>
           </motion.div>
 
-          <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
+          <div className="p-5 md:p-6 card-elevated">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ const CourseDetail = () => {
               <AccordionItem
                 key={mod.module}
                 value={`module-${i}`}
-                className="bg-card rounded-2xl px-5 overflow-hidden card-elevated"
+                className="px-5 overflow-hidden card-elevated"
               >
                 <AccordionTrigger className="font-heading hover:no-underline text-sm md:text-base" style={{ color: "#1d1d1f" }}>
                   {mod.module}
@@ -133,7 +133,7 @@ const CourseDetail = () => {
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {course.outcomes.map((outcome, i) => (
-              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-5 card-elevated card-elevated-hover">
+              <div key={outcome} className="flex items-start gap-4 p-5 card-elevated">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

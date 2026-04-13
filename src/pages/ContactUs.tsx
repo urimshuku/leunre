@@ -90,7 +90,7 @@ const ContactUs = () => {
             className="lg:col-span-3"
           >
             {submitted ? (
-              <div className="bg-card rounded-2xl p-6 md:p-8 lg:p-10 text-center card-elevated">
+              <div className="p-6 md:p-8 lg:p-10 text-center card-elevated">
                 <Mail className="w-7 h-7 text-primary mx-auto mb-5" strokeWidth={1.5} />
                 <h2 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Thank You!</h2>
                 <p className="mb-6 text-sm md:text-base max-w-sm mx-auto" style={{ color: "#86868b" }}>Your message has been received. We'll be in touch shortly.</p>
@@ -192,7 +192,7 @@ const ContactUs = () => {
             transition={{ delay: 0.1 }}
             className="lg:col-span-2 flex flex-col"
           >
-            <div className="bg-card rounded-2xl p-5 md:p-6 border border-[#ECEAE6] shadow-none flex-1 mt-[24px] pt-[24px] pb-0 mb-[15px]">
+            <div className="p-5 md:p-6 card-elevated flex-1 mt-[24px] pt-[24px] pb-0 mb-[15px]">
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -219,7 +219,7 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <div className="bg-card rounded-2xl p-5 md:p-6 border border-[#ECEAE6] shadow-none mt-0 mb-[85px] pt-[20px] pb-[15px]">
+            <div className="p-5 md:p-6 card-elevated mt-0 mb-[85px] pt-[20px] pb-[15px]">
               <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Follow Us</h3>
               <div>
                 {socials.map((s) => (
@@ -255,7 +255,7 @@ const ContactUs = () => {
                 <AccordionItem
                   key={faq.q}
                   value={`faq-${i}`}
-                  className="border-0 bg-card rounded-2xl card-elevated overflow-hidden"
+                  className="card-elevated overflow-hidden border-b-0"
                 >
                   <AccordionTrigger
                     className="px-5 py-4 md:px-6 md:py-5 hover:no-underline font-heading text-sm md:text-base text-left [&>svg]:text-[#86868b] [&>svg]:h-[18px] [&>svg]:w-[18px] [&>svg]:transition-transform [&>svg]:duration-300 [&>svg]:ease-out"

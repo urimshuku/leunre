@@ -33,7 +33,7 @@ const Courses = () => (
             <Link
               key={course.slug}
               to={`/programs/${course.slug}`}
-              className="group bg-card rounded-2xl overflow-hidden card-elevated card-elevated-hover cursor-pointer block"
+              className="group overflow-hidden card-elevated cursor-pointer block"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ const Courses = () => (
                     <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
                       {course.tag}
                     </span>
-                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
                       <course.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" strokeWidth={1.5} />
                     </div>
                   </div>

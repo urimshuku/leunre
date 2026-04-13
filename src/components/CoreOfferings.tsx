@@ -43,7 +43,7 @@ const CoreOfferings = () => (
         {offerings.map((item, i) => (
           <div
             key={item.title}
-            className="group p-8 md:p-10 lg:p-12 rounded-2xl bg-card card-elevated card-elevated-hover text-center"
+            className="group p-8 md:p-10 lg:p-12 card-elevated text-center"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +51,7 @@ const CoreOfferings = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-5 md:mb-6 border border-primary/20 transition-colors duration-200 group-hover:bg-primary/5">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mx-auto mb-5 md:mb-6 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
                 <item.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg md:text-xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>{item.title}</h3>

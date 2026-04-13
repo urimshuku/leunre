@@ -57,7 +57,7 @@ const ServiceDetail = () => {
             <p className="leading-relaxed text-sm md:text-lg max-w-xl" style={{ color: "#86868b" }}>{service.overview}</p>
           </motion.div>
 
-          <div className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
+          <div className="p-5 md:p-6 card-elevated">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -93,7 +93,7 @@ const ServiceDetail = () => {
               {retreatTypes.map((type, i) => (
                 <div
                   key={type.title}
-                  className="group bg-card rounded-2xl p-6 md:p-8 text-center card-elevated card-elevated-hover"
+                  className="group p-6 md:p-8 text-center card-elevated"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -124,7 +124,7 @@ const ServiceDetail = () => {
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {service.outcomes.map((outcome, i) => (
-              <div key={outcome} className="flex items-start gap-4 bg-card rounded-2xl p-5 card-elevated card-elevated-hover">
+              <div key={outcome} className="flex items-start gap-4 p-5 card-elevated">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ const ServiceDetail = () => {
           </motion.div>
           <div className="space-y-4">
             {service.approach.map((step, i) => (
-              <div key={step.title} className="bg-card rounded-2xl p-5 md:p-6 card-elevated card-elevated-hover">
+              <div key={step.title} className="p-5 md:p-6 card-elevated">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

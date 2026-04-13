@@ -97,7 +97,7 @@ const Blog = () => {
                     <Link
                       key={post.slug}
                       to={`/insights/articles/${post.slug}`}
-                      className="bg-card rounded-2xl p-5 md:p-6 flex flex-col card-elevated card-elevated-hover cursor-pointer group"
+                      className="p-5 md:p-6 flex flex-col card-elevated cursor-pointer group"
                     >
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ const Blog = () => {
                     <Link
                       key={cs.slug}
                       to={`/insights/case-studies/${cs.slug}`}
-                      className="bg-card rounded-2xl p-5 md:p-6 flex flex-col card-elevated card-elevated-hover cursor-pointer group"
+                      className="p-5 md:p-6 flex flex-col card-elevated cursor-pointer group"
                     >
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
