@@ -31,15 +31,18 @@ const Blog = () => {
         <section className="pt-8 md:pt-12 pb-2 md:pb-4 bg-transparent" aria-label="Choose content type">
           <div className="container mx-auto px-4 md:px-6 lg:px-8">
             <div
-              className="mx-auto flex max-w-md rounded-full p-1.5"
+              className="mx-auto flex max-w-sm rounded-full p-1.5"
               style={{ backgroundColor: "#E8E6E3" }}
               role="tablist"
             >
-              <div className="relative grid flex-1 grid-cols-1">
+              <div
+                className="relative grid flex-1 grid-cols-1 cursor-pointer"
+                onClick={() => setTab("articles")}
+              >
                 {tab === "articles" && (
                   <motion.div
                     layoutId="insights-toggle-pill"
-                    className="absolute inset-0 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+                    className="pointer-events-none absolute inset-0 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
                     transition={springToggle}
                     aria-hidden
                   />
@@ -50,7 +53,10 @@ const Blog = () => {
                   aria-selected={tab === "articles"}
                   id="tab-articles"
                   aria-controls="panel-articles"
-                  onClick={() => setTab("articles")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setTab("articles");
+                  }}
                   className={cn(
                     "relative z-10 w-full rounded-full px-5 py-2.5 text-sm transition-colors md:px-8 md:py-3 md:text-base",
                     tab === "articles" ? "font-medium text-[#1d1d1f]" : "font-normal text-[#86868b]",
@@ -59,11 +65,14 @@ const Blog = () => {
                   Articles
                 </button>
               </div>
-              <div className="relative grid flex-1 grid-cols-1">
+              <div
+                className="relative grid flex-1 grid-cols-1 cursor-pointer"
+                onClick={() => setTab("case-studies")}
+              >
                 {tab === "case-studies" && (
                   <motion.div
                     layoutId="insights-toggle-pill"
-                    className="absolute inset-0 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
+                    className="pointer-events-none absolute inset-0 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,0.08)]"
                     transition={springToggle}
                     aria-hidden
                   />
@@ -74,7 +83,10 @@ const Blog = () => {
                   aria-selected={tab === "case-studies"}
                   id="tab-case-studies"
                   aria-controls="panel-case-studies"
-                  onClick={() => setTab("case-studies")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setTab("case-studies");
+                  }}
                   className={cn(
                     "relative z-10 w-full rounded-full px-5 py-2.5 text-sm transition-colors md:px-8 md:py-3 md:text-base",
                     tab === "case-studies" ? "font-medium text-[#1d1d1f]" : "font-normal text-[#86868b]",
