@@ -64,9 +64,10 @@ const FeaturedCourses = () => (
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {courses.map((course, i) => (
-          <div
+          <Link
             key={course.title}
-            className="group card-elevated h-full min-h-0 flex flex-col"
+            to={`/programs/${course.slug}`}
+            className="group card-elevated h-full min-h-0 flex flex-col no-underline"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -89,15 +90,12 @@ const FeaturedCourses = () => (
               </div>
               <h3 className="text-base md:text-lg font-heading mb-2 whitespace-pre-line" style={{ color: "#1d1d1f" }}>{course.title}</h3>
               <p className="text-sm leading-relaxed flex-1 mb-0" style={{ color: "#86868b" }}>{course.description}</p>
-              <Link
-                to={`/programs/${course.slug}`}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:opacity-70 transition-opacity mt-5"
-              >
+              <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary mt-5">
                 Learn More{" "}
                 <ArrowRight size={12} className="icon-arrow-nudge icon-arrow-nudge--right" />
-              </Link>
+              </span>
             </motion.div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
