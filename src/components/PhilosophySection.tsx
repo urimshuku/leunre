@@ -21,6 +21,11 @@ const steps = [
 ];
 
 const iconRotations = [360, -360, 360];
+const orangeTokenIconStyle = {
+  background: "linear-gradient(180deg, #CC7A44 0%, #B7642F 100%)",
+  border: "1px solid rgba(255, 255, 255, 0.32)",
+  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(71,32,11,0.35), 0 2px 6px rgba(120,57,25,0.26)",
+};
 
 const PhilosophySection = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -93,7 +98,8 @@ const PhilosophySection = () => {
                   transition={{ duration: 0.45, delay: i * 0.1, ease: [0, 0, 0.2, 1] }}
                 >
                   <motion.div
-                    className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 cursor-pointer btn-bevel-solid"
+                    className="w-full h-full rounded-full flex items-center justify-center relative z-10 cursor-pointer"
+                    style={orangeTokenIconStyle}
                     initial={{ rotate: 0 }}
                     animate={{ rotate: reduceMotion ? 0 : rotations[i] }}
                     transition={{ duration: 0.65, ease: [0, 0, 0.2, 1] }}
@@ -101,7 +107,7 @@ const PhilosophySection = () => {
                     onHoverStart={() => onIconHover(i)}
                     aria-hidden
                   >
-                    <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground pointer-events-none" strokeWidth={1.5} />
+                    <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-white pointer-events-none" strokeWidth={1.5} />
                   </motion.div>
                 </motion.div>
               </div>

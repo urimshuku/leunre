@@ -36,7 +36,7 @@ const Services = () => (
                   <div className="gold-divider border-sky-600 border-2 border-solid" />
                 </div>
                 <div className="inline-block mb-5 md:mb-6">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center border border-white/45 bg-white/20 backdrop-blur-sm">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center icon-tile-grain icon-tile-standard">
                     <service.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
                   </div>
                 </div>

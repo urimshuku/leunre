@@ -47,7 +47,7 @@ const Courses = () => (
                     <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-3">
                       {course.tag}
                     </span>
-                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
+                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-2xl flex items-center justify-center transition-transform duration-200 group-hover:scale-[1.03] icon-tile-grain icon-tile-standard">
                       <course.icon className="w-4 h-4 md:w-5 md:h-5 text-primary" strokeWidth={1.5} />
                     </div>
                   </div>

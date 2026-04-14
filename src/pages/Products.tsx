@@ -215,7 +215,7 @@ const Products = () => (
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-200 group-hover:scale-[1.03] icon-tile-grain icon-tile-standard">
                 <useCase.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg md:text-xl font-heading mb-4" style={{ color: "#1d1d1f" }}>{useCase.title}</h3>
@@ -249,7 +249,7 @@ const Products = () => (
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
+                  <div className="w-10 h-10 rounded-2xl flex items-center justify-center mb-5 icon-tile-grain icon-tile-standard">
                     <BookOpen className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Self-Reflection Notebooks</h3>
@@ -265,7 +265,7 @@ const Products = () => (
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
+                  <div className="w-10 h-10 rounded-2xl flex items-center justify-center mb-5 icon-tile-grain icon-tile-standard">
                     <Calendar className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Interactive Calendars</h3>
@@ -281,7 +281,7 @@ const Products = () => (
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
+                  <div className="w-10 h-10 rounded-2xl flex items-center justify-center mb-5 icon-tile-grain icon-tile-standard">
                     <Target className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Life Vision Kit</h3>
@@ -297,7 +297,7 @@ const Products = () => (
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-5 border border-white/45 bg-white/20 backdrop-blur-sm">
+                  <div className="w-10 h-10 rounded-2xl flex items-center justify-center mb-5 icon-tile-grain icon-tile-standard">
                     <Headphones className="w-5 h-5 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg md:text-xl font-heading mb-2" style={{ color: "#1d1d1f" }}>Guided Audio Experiences</h3>

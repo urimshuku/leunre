@@ -20,6 +20,11 @@ const philosophySteps = [
 ];
 
 const iconRotations = [360, -360, 360];
+const orangeTokenIconStyle = {
+  background: "linear-gradient(180deg, #CC7A44 0%, #B7642F 100%)",
+  border: "1px solid rgba(255, 255, 255, 0.32)",
+  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(71,32,11,0.35), 0 2px 6px rgba(120,57,25,0.26)",
+};
 
 const AboutUs = () => {
   const reduceMotion = useReducedMotion() === true;
@@ -92,13 +97,14 @@ const AboutUs = () => {
                   transition={{ duration: 0.45, delay: i * 0.1, ease: [0, 0, 0.2, 1] }}
                 >
                   <motion.div
-                    className="w-full h-full rounded-full bg-primary flex items-center justify-center relative z-10 btn-bevel-solid"
+                    className="w-full h-full rounded-full flex items-center justify-center relative z-10"
+                    style={orangeTokenIconStyle}
                     initial={{ rotate: 0 }}
                     whileInView={reduceMotion ? { rotate: 0 } : { rotate: iconRotations[i] }}
                     viewport={{ once: true, amount: 0.35 }}
                     transition={{ duration: 0.75, ease: [0, 0, 0.2, 1], delay: i * 0.14 }}
                   >
-                    <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-primary-foreground" strokeWidth={1.5} />
+                    <step.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 text-white" strokeWidth={1.5} />
                   </motion.div>
                 </motion.div>
               </div>
@@ -120,7 +126,7 @@ const AboutUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center mb-5 md:mb-6 transition-transform duration-200 group-hover:scale-[1.03] icon-tile-grain icon-tile-standard">
               <Rocket className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
             </div>
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Mission</h3>
@@ -137,7 +143,7 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-5 md:mb-6 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl flex items-center justify-center mb-5 md:mb-6 transition-transform duration-200 group-hover:scale-[1.03] icon-tile-grain icon-tile-standard">
               <Eye className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
             </div>
             <h3 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Our Vision</h3>
@@ -160,7 +166,7 @@ const AboutUs = () => {
         />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           {values.map((value, i) => (
-            <div key={value.title} className="group p-6 md:p-8 card-elevated text-center flex flex-col">
+            <div key={value.title} className="group p-8 md:p-10 lg:p-12 card-elevated text-center flex flex-col">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +174,7 @@ const AboutUs = () => {
                 transition={{ delay: i * 0.08 }}
                 className="flex flex-col flex-1"
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mx-auto mb-4 md:mb-5 border border-white/45 bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:bg-primary/5">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-5 transition-transform duration-200 group-hover:scale-[1.03] icon-tile-grain icon-tile-standard">
                   <motion.div
                     whileInView={
                       i === 0
