@@ -21,7 +21,7 @@ const philosophySteps = [
 
 const iconRotations = [360, -360, 360];
 const orangeTokenIconStyle = {
-  background: "linear-gradient(180deg, #CC7A44 0%, #B7642F 100%)",
+  background: "hsl(var(--primary))",
   border: "1px solid rgba(255, 255, 255, 0.32)",
   boxShadow: "inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(71,32,11,0.35), 0 2px 6px rgba(120,57,25,0.26)",
 };
