@@ -56,12 +56,12 @@ const CaseStudyDetail = () => {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-3xl">
           <div className="mb-10">
             <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>The Challenge</h2>
-            <p className="text-base leading-relaxed" style={{ color: "#5C3A2E" }}>{study.challenge}</p>
+            <p className="text-base leading-relaxed" style={{ color: "#1d1d1f" }}>{study.challenge}</p>
           </div>
 
           <div className="mb-10">
             <h2 className="text-lg md:text-xl font-heading mb-3" style={{ color: "#1d1d1f" }}>Our Approach</h2>
-            <p className="text-base leading-relaxed" style={{ color: "#5C3A2E" }}>{study.approach}</p>
+            <p className="text-base leading-relaxed" style={{ color: "#1d1d1f" }}>{study.approach}</p>
           </div>
 
           <div className="mb-10">
@@ -74,7 +74,7 @@ const CaseStudyDetail = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 + i * 0.1 }}
                   className="flex items-start gap-3 text-base leading-relaxed"
-                  style={{ color: "#5C3A2E" }}
+                  style={{ color: "#1d1d1f" }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
                   {outcome}
@@ -91,7 +91,7 @@ const CaseStudyDetail = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.08 }}
                 className="text-base md:text-lg leading-relaxed"
-                style={{ color: "#5C3A2E" }}
+                style={{ color: "#1d1d1f" }}
               >
                 {paragraph}
               </motion.p>

@@ -58,7 +58,7 @@ const ArticleDetail = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 + i * 0.08 }}
                 className="text-base md:text-lg leading-relaxed"
-                style={{ color: "#5C3A2E" }}
+                style={{ color: "#1d1d1f" }}
               >
                 {paragraph}
               </motion.p>
