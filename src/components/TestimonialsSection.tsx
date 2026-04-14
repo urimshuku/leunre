@@ -188,7 +188,6 @@ const TestimonialsSection = () => {
               const slot = pushSlotForIndex(i);
               const isPushTriple =
                 !isMobile && i >= slideIndex - 1 && i <= slideIndex + 1;
-              /** Relative to row: left leads right, center follows, right lags (pushed to third). */
               const pushX =
                 instantJumpRef.current || !isPushTriple
                   ? 0
@@ -198,11 +197,13 @@ const TestimonialsSection = () => {
                       ? [6, 0]
                       : [-12, 0];
 
+              const nearby = Math.abs(i - slideIndex) <= 2;
+
               return (
                 <motion.div
                   key={`slide-${i}`}
                   className="flex-shrink-0"
-                  style={{ width: cardWidth, height: cardHeight }}
+                  style={{ width: cardWidth, height: cardHeight, visibility: nearby ? "visible" : "hidden" }}
                   initial={false}
                   animate={{
                     opacity: i === slideIndex ? 1 : 0.4,
@@ -210,37 +211,39 @@ const TestimonialsSection = () => {
                   }}
                   transition={cardMotionTransition(i)}
                 >
-                  <div
-                    className="group w-full h-full card-elevated p-6 md:p-8 lg:p-10 flex flex-col"
-                    style={{ minHeight: cardHeight, height: cardHeight }}
-                  >
-                    <Quote
-                      className="w-5 h-5 md:w-6 md:h-6 mb-4 md:mb-5 flex-shrink-0"
-                      fill="rgba(196, 98, 42, 0.75)"
-                      stroke="none"
-                      strokeWidth={0}
-                    />
-                    <p
-                      className="leading-relaxed mb-6 italic text-sm md:text-base flex-1 min-h-0 overflow-y-auto [scrollbar-width:thin]"
-                      style={{ color: "#1d1d1f" }}
+                  {nearby && (
+                    <div
+                      className="group w-full h-full card-elevated p-6 md:p-8 lg:p-10 flex flex-col"
+                      style={{ minHeight: cardHeight, height: cardHeight }}
                     >
-                      &ldquo;{item.quote}&rdquo;
-                    </p>
-                    <div className="flex-shrink-0 mt-auto">
+                      <Quote
+                        className="w-5 h-5 md:w-6 md:h-6 mb-4 md:mb-5 flex-shrink-0"
+                        fill="rgba(196, 98, 42, 0.75)"
+                        stroke="none"
+                        strokeWidth={0}
+                      />
                       <p
-                        className="font-heading text-sm md:text-base"
+                        className="leading-relaxed mb-6 italic text-sm md:text-base flex-1 min-h-0 overflow-y-auto [scrollbar-width:thin]"
                         style={{ color: "#1d1d1f" }}
                       >
-                        {item.name}
+                        &ldquo;{item.quote}&rdquo;
                       </p>
-                      <p
-                        className="text-xs md:text-sm mt-1"
-                        style={{ color: "#86868b" }}
-                      >
-                        {item.role}
-                      </p>
+                      <div className="flex-shrink-0 mt-auto">
+                        <p
+                          className="font-heading text-sm md:text-base"
+                          style={{ color: "#1d1d1f" }}
+                        >
+                          {item.name}
+                        </p>
+                        <p
+                          className="text-xs md:text-sm mt-1"
+                          style={{ color: "#86868b" }}
+                        >
+                          {item.role}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </motion.div>
               );
             })}

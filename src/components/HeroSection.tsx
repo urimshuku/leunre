@@ -3,9 +3,6 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const EXTREME_NOISE_OVERLAY =
-  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.85' numOctaves='6' seed='13' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")";
-
 const HeroSection = () => {
   const [animateBlobs, setAnimateBlobs] = useState(false);
 
@@ -47,13 +44,13 @@ const HeroSection = () => {
         borderRadius: "9999px",
         background:
           "radial-gradient(circle, rgba(255,255,255,0.54) 0%, rgba(255,255,255,0.24) 38%, rgba(255,255,255,0) 72%)",
-        filter: "blur(28px)",
+        filter: "blur(18px)",
       }}
       aria-hidden
     />
     {/* Liquid orange atmosphere */}
     {animateBlobs && <motion.div
-      className="absolute pointer-events-none will-change-[transform,border-radius]"
+      className="absolute pointer-events-none will-change-[transform]"
       animate={{
         x: [0, 148, 92, -44, -132, -58, 124, 36, -96, 0],
         y: [0, -88, 22, 118, 54, -72, -28, 96, 14, 0],
@@ -88,15 +85,14 @@ const HeroSection = () => {
         width: "77%",
         height: "90%",
         background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.48) 0%, rgba(164, 76, 35, 0.33) 18%, rgba(164, 76, 35, 0.18) 32%, rgba(164, 76, 35, 0.075) 46%, rgba(164, 76, 35, 0) 62%)",
-        filter: "blur(36px)",
+        filter: "blur(24px)",
         borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%",
         opacity: 0.94,
       }}
     />
     }
-    {/* Second blob: same orange wash as primary; distinct motion/shape */}
     {animateBlobs && <motion.div
-      className="absolute pointer-events-none will-change-[transform,border-radius]"
+      className="absolute pointer-events-none will-change-[transform]"
       animate={{
         x: [0, -138, -62, 48, 118, 72, -96, -28, 86, 0],
         y: [0, 64, 132, 44, -48, -102, 28, 88, -36, 0],
@@ -133,7 +129,7 @@ const HeroSection = () => {
         height: "88%",
         background:
           "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.46) 0%, rgba(164, 76, 35, 0.31) 18%, rgba(164, 76, 35, 0.17) 32%, rgba(164, 76, 35, 0.075) 46%, rgba(164, 76, 35, 0) 62%)",
-        filter: "blur(38px)",
+        filter: "blur(24px)",
         borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%",
         opacity: 0.92,
       }}
@@ -141,21 +137,11 @@ const HeroSection = () => {
     }
     {!animateBlobs && (
       <>
-        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "62%", height: "77%", background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.46) 0%, rgba(164, 76, 35, 0.29) 22%, rgba(164, 76, 35, 0.15) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(34px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.94 }} />
-        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "60%", height: "75%", background: "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.44) 0%, rgba(164, 76, 35, 0.27) 22%, rgba(164, 76, 35, 0.145) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(36px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.92 }} />
+        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "62%", height: "77%", background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.46) 0%, rgba(164, 76, 35, 0.29) 22%, rgba(164, 76, 35, 0.15) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(24px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.94 }} />
+        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "60%", height: "75%", background: "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.44) 0%, rgba(164, 76, 35, 0.27) 22%, rgba(164, 76, 35, 0.145) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(24px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.92 }} />
       </>
     )}
-    <div
-      className="absolute inset-0 pointer-events-none z-[1]"
-      style={{
-        backgroundImage: EXTREME_NOISE_OVERLAY,
-        backgroundRepeat: "repeat",
-        backgroundSize: "56px 56px",
-        mixBlendMode: "hard-light",
-        opacity: 0.78,
-      }}
-      aria-hidden
-    />
+    {/* Noise overlay removed for GPU performance */}
 
     <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-28 lg:py-36">
       <div className="max-w-3xl">
