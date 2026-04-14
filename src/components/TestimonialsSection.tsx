@@ -164,11 +164,12 @@ const TestimonialsSection = () => {
 
       <div className="w-full flex justify-center overflow-x-auto overflow-y-visible md:overflow-x-visible px-4 md:px-6 lg:px-8">
         <div
-          className="relative shrink-0 overflow-hidden rounded-none flex items-center"
+          className="relative shrink-0 overflow-hidden rounded-none flex items-center py-8"
           style={{
             width: viewportWidth,
             maxWidth: "100%",
-            height: cardHeight + 24,
+            /* Extra vertical space so .card-elevated box-shadow matches Corporate Solutions (not clipped). */
+            height: cardHeight + 64,
           }}
         >
           <motion.div
@@ -210,7 +211,7 @@ const TestimonialsSection = () => {
                   transition={cardMotionTransition(i)}
                 >
                   <div
-                    className="w-full h-full card-elevated p-6 md:p-8 flex flex-col"
+                    className="group w-full h-full card-elevated p-6 md:p-8 lg:p-10 flex flex-col"
                     style={{ minHeight: cardHeight, height: cardHeight }}
                   >
                     <Quote
