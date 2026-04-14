@@ -258,7 +258,7 @@ const ContactUs = () => {
                   className="card-elevated overflow-hidden border-b-0"
                 >
                   <AccordionTrigger
-                    className="px-5 py-4 md:px-6 md:py-5 hover:no-underline font-heading text-sm md:text-base text-left [&>svg]:text-[#86868b] [&>svg]:h-[18px] [&>svg]:w-[18px] [&>svg]:transition-transform [&>svg]:duration-300 [&>svg]:ease-out"
+                    className="px-5 py-4 md:px-6 md:py-5 hover:no-underline font-heading text-sm md:text-base text-left [&>svg]:text-[#86868b] [&>svg]:h-[18px] [&>svg]:w-[18px] [&>svg]:transition-transform [&>svg]:duration-200 [&>svg]:ease-[cubic-bezier(0.2,0.9,0.25,1)]"
                     style={{ color: "#1d1d1f" }}
                   >
                     <span className="pr-4 text-left">{faq.q}</span>
