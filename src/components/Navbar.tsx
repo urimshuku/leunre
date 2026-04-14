@@ -75,7 +75,7 @@ const Navbar = () => {
             className="w-full mx-auto"
             style={{
               ...barVisuals(scrolled),
-              maxWidth: scrolled ? 1120 : 2000,
+              maxWidth: scrolled ? 1120 : "none",
               height: scrolled ? 52 : 64,
             }}
           >
@@ -164,7 +164,7 @@ const Navbar = () => {
             className="flex items-center justify-between w-full mx-auto"
             style={{
               ...barVisuals(scrolled),
-              maxWidth: scrolled ? 512 : 2000,
+              maxWidth: scrolled ? 512 : "none",
               height: scrolled ? 48 : 56,
               padding: scrolled ? "0 12px" : "0 16px",
             }}
