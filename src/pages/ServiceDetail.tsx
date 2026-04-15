@@ -183,6 +183,8 @@ const ServiceDetail = () => {
         subtitle={`Let's discuss how ${service.title.toLowerCase()} can create lasting impact for your organization.`}
         buttonText="Book a Consultation"
         buttonHref="/contact"
+        backgroundImage={`${import.meta.env.BASE_URL}ready-to-get-started-bg.png`}
+        backgroundPosition="center"
         transparentBackground
       />
       </UnifiedPageAtmosphere>

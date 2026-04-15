@@ -313,6 +313,8 @@ const Products = () => (
           subtitle="Get your Action Cards today and start your journey of transformation."
           buttonText="Purchase Now"
           buttonHref="#"
+          backgroundImage={`${import.meta.env.BASE_URL}ready-to-grow-bg.png`}
+          backgroundPosition="center"
           transparentBackground
         />
       </div>

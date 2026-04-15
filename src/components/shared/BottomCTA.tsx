@@ -8,6 +8,9 @@ interface BottomCTAProps {
   buttonHref: string;
   /** When true, section has no solid fill so parent blobs/grain show through (e.g. Tools page). */
   transparentBackground?: boolean;
+  /** Optional photo background, rendered with CTA overlay + grain layers. */
+  backgroundImage?: string;
+  backgroundPosition?: string;
 }
 
 const darkCardStyle: React.CSSProperties = {
@@ -19,7 +22,15 @@ const darkCardStyle: React.CSSProperties = {
   WebkitBackdropFilter: "blur(14px) saturate(1.12)",
 };
 
-const BottomCTA = ({ title, subtitle, buttonText, buttonHref, transparentBackground = false }: BottomCTAProps) => (
+const BottomCTA = ({
+  title,
+  subtitle,
+  buttonText,
+  buttonHref,
+  transparentBackground = false,
+  backgroundImage,
+  backgroundPosition = "center",
+}: BottomCTAProps) => (
   <section className={`py-16 md:py-24 lg:py-28 ${transparentBackground ? "bg-transparent" : "bg-[#f3f2f1]"}`}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
@@ -27,25 +38,53 @@ const BottomCTA = ({ title, subtitle, buttonText, buttonHref, transparentBackgro
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         viewport={{ once: true }}
-        className="max-w-3xl mx-auto px-8 py-14 md:px-14 md:py-20 rounded-3xl"
+        className="relative max-w-3xl mx-auto px-8 py-14 md:px-14 md:py-20 rounded-3xl overflow-hidden"
         style={darkCardStyle}
       >
-        <div className="flex justify-center mb-6 md:mb-8">
-          <div className="gold-divider border-sky-600 border-2 border-solid" />
+        {backgroundImage ? (
+          <>
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: "cover",
+                backgroundPosition,
+              }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(160deg, rgba(20,18,16,0.20) 0%, rgba(12,12,12,0.20) 48%, rgba(18,16,14,0.20) 100%)" }}
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
+                backgroundRepeat: "repeat",
+                backgroundSize: "120px 120px",
+                mixBlendMode: "overlay",
+                opacity: 0.38,
+              }}
+            />
+          </>
+        ) : null}
+        <div className="relative">
+          <div className="flex justify-center mb-6 md:mb-8">
+            <div className="gold-divider border-sky-600 border-2 border-solid" />
+          </div>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
+            {title}
+          </h2>
+          <p className="mb-8 md:mb-12 leading-relaxed text-sm md:text-lg max-w-lg mx-auto" style={{ color: "#f5f5f7" }}>
+            {subtitle}
+          </p>
+          <a
+            href={buttonHref}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all rounded-xl btn-bevel-solid"
+          >
+            {buttonText}
+            <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
+          </a>
         </div>
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
-          {title}
-        </h2>
-        <p className="mb-8 md:mb-12 leading-relaxed text-sm md:text-lg max-w-lg mx-auto" style={{ color: "#a1a1a6" }}>
-          {subtitle}
-        </p>
-        <a
-          href={buttonHref}
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all rounded-xl btn-bevel-solid"
-        >
-          {buttonText}
-          <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
-        </a>
       </motion.div>
     </div>
   </section>

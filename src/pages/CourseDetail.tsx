@@ -158,6 +158,8 @@ const CourseDetail = () => {
         subtitle="Take the first step toward transformation. Reach out to learn more about enrollment and upcoming cohorts."
         buttonText="Enroll / Inquire"
         buttonHref="#contact"
+        backgroundImage={`${import.meta.env.BASE_URL}ready-to-begin-bg.png`}
+        backgroundPosition="center"
         transparentBackground
       />
       </UnifiedPageAtmosphere>
