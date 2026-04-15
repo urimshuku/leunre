@@ -39,7 +39,7 @@ function LiquidBlobLayer({ blob, motionDisabled }: { blob: LiquidBlob; motionDis
 
   return (
     <motion.div
-      className="absolute pointer-events-none will-change-[transform]"
+      className="absolute pointer-events-none will-change-[transform,border-radius]"
       style={baseStyle}
       animate={blob.animate}
       transition={{
@@ -61,7 +61,7 @@ function LiquidBlobLayer({ blob, motionDisabled }: { blob: LiquidBlob; motionDis
   );
 }
 
-/** Three blobs (reduced from 6): top-right, top-left, bottom-right. Lower blur radii for GPU savings. */
+/** Six blobs: wide travel, uneven pacing, desynced axes (loop, not mirror). */
 const liquidBlobs: LiquidBlob[] = [
   {
     style: {
@@ -71,7 +71,7 @@ const liquidBlobs: LiquidBlob[] = [
       height: "42%",
       background:
         "radial-gradient(ellipse at 40% 44%, rgba(164, 76, 35, 0.52) 0%, rgba(164, 76, 35, 0.36) 16%, rgba(164, 76, 35, 0.21) 30%, rgba(164, 76, 35, 0.09) 44%, rgba(164, 76, 35, 0) 60%)",
-      filter: "blur(24px)",
+      filter: "blur(38px)",
       opacity: 0.94,
     },
     animate: {
@@ -106,7 +106,7 @@ const liquidBlobs: LiquidBlob[] = [
       height: "40%",
       background:
         "radial-gradient(ellipse at 62% 46%, rgba(164, 76, 35, 0.5) 0%, rgba(164, 76, 35, 0.33) 16%, rgba(164, 76, 35, 0.2) 30%, rgba(164, 76, 35, 0.085) 44%, rgba(164, 76, 35, 0) 60%)",
-      filter: "blur(24px)",
+      filter: "blur(40px)",
       opacity: 0.93,
     },
     animate: {
@@ -135,13 +135,118 @@ const liquidBlobs: LiquidBlob[] = [
   },
   {
     style: {
+      top: "38%",
+      left: "-18%",
+      width: "44%",
+      height: "38%",
+      background:
+        "radial-gradient(ellipse at 58% 48%, rgba(164, 76, 35, 0.48) 0%, rgba(164, 76, 35, 0.31) 18%, rgba(164, 76, 35, 0.18) 32%, rgba(164, 76, 35, 0.08) 46%, rgba(164, 76, 35, 0) 60%)",
+      filter: "blur(42px)",
+      opacity: 0.93,
+    },
+    animate: {
+      x: [0, -98, -72, 88, -48, 92, -112, 64, -28, 0],
+      y: [0, -52, -88, 92, 56, 28, -64, 118, -42, 0],
+      scale: [1, 1.14, 1.24, 0.84, 0.9, 1.18, 0.88, 1.06, 0.92, 1],
+      rotate: [0, 16, 24, -14, 10, 18, -20, 6, -10, 0],
+      borderRadius: [
+        "50% 50% 46% 54% / 40% 60% 58% 42%",
+        "76% 24% 28% 72% / 32% 68% 70% 30%",
+        "28% 72% 76% 24% / 68% 32% 26% 74%",
+        "40% 60% 54% 46% / 56% 44% 66% 34%",
+        "70% 30% 38% 62% / 38% 62% 48% 52%",
+        "34% 66% 60% 40% / 64% 36% 44% 56%",
+        "58% 42% 32% 68% / 44% 56% 62% 38%",
+        "46% 54% 70% 30% / 52% 48% 36% 64%",
+        "64% 36% 42% 58% / 42% 58% 52% 48%",
+        "50% 50% 46% 54% / 40% 60% 58% 42%",
+      ],
+    },
+    duration: 13.4,
+    delay: 0.55,
+    times: [0, 0.09, 0.22, 0.3, 0.44, 0.56, 0.65, 0.78, 0.91, 1],
+    yDurationScale: 1.31,
+    borderRadiusDurationScale: 0.42,
+  },
+  {
+    style: {
+      top: "42%",
+      right: "-16%",
+      width: "46%",
+      height: "40%",
+      background:
+        "radial-gradient(ellipse at 42% 50%, rgba(164, 76, 35, 0.5) 0%, rgba(164, 76, 35, 0.33) 18%, rgba(164, 76, 35, 0.2) 32%, rgba(164, 76, 35, 0.085) 46%, rgba(164, 76, 35, 0) 60%)",
+      filter: "blur(44px)",
+      opacity: 0.93,
+    },
+    animate: {
+      x: [0, 118, 152, -72, 96, -44, 128, -96, 52, 0],
+      y: [0, 44, 72, -88, -52, 108, 32, -118, 68, 0],
+      scale: [1, 1.08, 1.16, 0.8, 0.88, 1.26, 0.92, 1.12, 0.98, 1],
+      rotate: [0, -10, -20, 16, -6, 12, -16, 20, -8, 0],
+      borderRadius: [
+        "46% 54% 58% 42% / 52% 48% 44% 56%",
+        "78% 22% 30% 70% / 28% 72% 66% 34%",
+        "22% 78% 70% 30% / 72% 28% 32% 68%",
+        "60% 40% 44% 56% / 36% 64% 74% 26%",
+        "32% 68% 72% 28% / 64% 36% 40% 60%",
+        "54% 46% 26% 74% / 48% 52% 58% 42%",
+        "68% 32% 50% 50% / 40% 60% 46% 54%",
+        "40% 60% 64% 36% / 58% 42% 52% 48%",
+        "52% 48% 38% 62% / 46% 54% 68% 32%",
+        "46% 54% 58% 42% / 52% 48% 44% 56%",
+      ],
+    },
+    duration: 12.2,
+    delay: 0.15,
+    times: [0, 0.13, 0.21, 0.34, 0.46, 0.55, 0.67, 0.8, 0.93, 1],
+    yDurationScale: 1.18,
+    scaleDurationScale: 0.95,
+  },
+  {
+    style: {
+      bottom: "-8%",
+      left: "-14%",
+      width: "44%",
+      height: "36%",
+      background:
+        "radial-gradient(ellipse at 56% 44%, rgba(164, 76, 35, 0.47) 0%, rgba(164, 76, 35, 0.3) 18%, rgba(164, 76, 35, 0.17) 34%, rgba(164, 76, 35, 0.072) 48%, rgba(164, 76, 35, 0) 62%)",
+      filter: "blur(40px)",
+      opacity: 0.92,
+    },
+    animate: {
+      x: [0, -88, -124, 96, -58, -76, 112, -32, 78, 0],
+      y: [0, -48, -72, 72, 48, 18, -88, 104, -56, 0],
+      scale: [1, 0.94, 0.88, 1.22, 1.14, 1.1, 0.82, 1.06, 0.9, 1],
+      rotate: [0, -12, -22, 12, -18, -24, 10, 8, -16, 0],
+      borderRadius: [
+        "48% 52% 56% 44% / 50% 50% 42% 58%",
+        "82% 18% 24% 76% / 26% 74% 70% 30%",
+        "20% 80% 72% 28% / 74% 26% 30% 70%",
+        "58% 42% 38% 62% / 44% 56% 78% 22%",
+        "66% 34% 76% 24% / 34% 66% 38% 62%",
+        "36% 64% 50% 50% / 62% 38% 54% 46%",
+        "54% 46% 32% 68% / 40% 60% 72% 28%",
+        "44% 56% 68% 32% / 56% 44% 46% 54%",
+        "50% 50% 58% 42% / 48% 52% 36% 64%",
+        "48% 52% 56% 44% / 50% 50% 42% 58%",
+      ],
+    },
+    duration: 13.9,
+    delay: 0.7,
+    times: [0, 0.08, 0.19, 0.29, 0.41, 0.53, 0.62, 0.73, 0.87, 1],
+    yDurationScale: 1.27,
+    rotateDurationScale: 1.28,
+  },
+  {
+    style: {
       bottom: "-6%",
       right: "-12%",
       width: "46%",
       height: "38%",
       background:
         "radial-gradient(ellipse at 46% 52%, rgba(164, 76, 35, 0.48) 0%, rgba(164, 76, 35, 0.31) 18%, rgba(164, 76, 35, 0.18) 32%, rgba(164, 76, 35, 0.08) 46%, rgba(164, 76, 35, 0) 60%)",
-      filter: "blur(24px)",
+      filter: "blur(42px)",
       opacity: 0.93,
     },
     animate: {
