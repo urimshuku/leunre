@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { type CSSProperties, type ReactNode, useEffect, useState } from "react";
 
+const EXTREME_NOISE_OVERLAY =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.85' numOctaves='6' seed='13' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")";
+
 type LiquidBlob = {
   style: CSSProperties;
   animate: {
@@ -331,7 +334,17 @@ function PerformanceAwareBackground({ children }: HomePageBackgroundProps) {
           <LiquidBlobLayer key={i} blob={blob} motionDisabled={reduceMotion} />
         ))}
       </div>
-      {/* Noise overlay removed for GPU performance */}
+      <div
+        className="absolute inset-0 pointer-events-none z-[1]"
+        style={{
+          backgroundImage: EXTREME_NOISE_OVERLAY,
+          backgroundRepeat: "repeat",
+          backgroundSize: "56px 56px",
+          mixBlendMode: "hard-light",
+          opacity: 0.72,
+        }}
+        aria-hidden
+      />
       <div className="relative z-10">{children}</div>
     </div>
   );
