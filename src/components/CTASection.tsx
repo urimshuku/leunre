@@ -40,9 +40,6 @@ const CTASection = () => (
           }}
         />
         <div className="relative px-8 py-14 md:px-14 md:py-20 text-center">
-          <div className="flex justify-center mb-6 md:mb-8">
-            <div className="gold-divider border-sky-600 border-2 border-solid opacity-100" />
-          </div>
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
             Partner with LEUNRE
           </h2>

@@ -68,9 +68,11 @@ const BottomCTA = ({
           </>
         ) : null}
         <div className="relative">
-          <div className="flex justify-center mb-6 md:mb-8">
-            <div className="gold-divider border-sky-600 border-2 border-solid" />
-          </div>
+          {!backgroundImage ? (
+            <div className="flex justify-center mb-6 md:mb-8">
+              <div className="gold-divider border-sky-600 border-2 border-solid" />
+            </div>
+          ) : null}
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
             {title}
           </h2>
