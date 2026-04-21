@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { heroReveal } from "@/lib/motion";
 
 const EXTREME_NOISE_OVERLAY =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.85' numOctaves='6' seed='13' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")";
@@ -134,19 +135,28 @@ const PageHero = ({
         />
       )}
       <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-          className="max-w-2xl"
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8" style={{ color: "#1d1d1f" }}>
+        <div className="max-w-2xl">
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={heroReveal}
+            custom={0.08}
+            className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8"
+            style={{ color: "#1d1d1f" }}
+          >
             {title}
-          </h1>
-          <p className="text-base md:text-xl leading-relaxed whitespace-pre-line max-w-xl" style={{ color: "#86868b" }}>
+          </motion.h1>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={heroReveal}
+            custom={0.08}
+            className="text-base md:text-xl leading-relaxed whitespace-pre-line max-w-xl"
+            style={{ color: "#86868b" }}
+          >
             {subtitle}
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
       </div>
     </section>
   );

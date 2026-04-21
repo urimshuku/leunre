@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/shared/PageLayout";
 import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { caseStudies } from "@/data/caseStudies";
+import { heroReveal } from "@/lib/motion";
 import NotFound from "./NotFound";
 
 const CaseStudyDetail = () => {
@@ -28,11 +29,7 @@ const CaseStudyDetail = () => {
           >
             <ArrowLeft size={14} className="icon-arrow-nudge icon-arrow-nudge--left" /> Back to Insights
           </Link>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary">
                 {study.industry}
@@ -42,13 +39,27 @@ const CaseStudyDetail = () => {
                 {study.result}
               </span>
             </div>
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6" style={{ color: "#1d1d1f" }}>
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={heroReveal}
+              custom={0.08}
+              className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6"
+              style={{ color: "#1d1d1f" }}
+            >
               {study.title}
-            </h1>
-            <p className="text-base md:text-lg leading-relaxed" style={{ color: "#86868b" }}>
+            </motion.h1>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={heroReveal}
+              custom={0.08}
+              className="text-base md:text-lg leading-relaxed"
+              style={{ color: "#86868b" }}
+            >
               {study.description}
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </section>
 

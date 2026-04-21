@@ -2,24 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const heroReveal = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-    filter: "blur(18px)",
-  },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.9,
-      delay,
-      ease: [0.16, 1, 0.3, 1],
-    },
-  }),
-};
+import { heroReveal } from "@/lib/motion";
 
 const HeroSection = () => {
   const [animateBlobs, setAnimateBlobs] = useState(false);

@@ -5,25 +5,35 @@ import PageLayout from "@/components/shared/PageLayout";
 import ContentSection from "@/components/shared/ContentSection";
 import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { courses } from "@/data/courses";
+import { heroReveal } from "@/lib/motion";
 
 const Courses = () => (
   <PageLayout>
     <UnifiedPageAtmosphere>
       <section className="relative pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
-            className="max-w-2xl"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8" style={{ color: "#1d1d1f" }}>
+          <div className="max-w-2xl">
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={heroReveal}
+              custom={0.08}
+              className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8"
+              style={{ color: "#1d1d1f" }}
+            >
               Our Programs
-            </h1>
-            <p className="text-base md:text-xl leading-relaxed whitespace-pre-line max-w-xl" style={{ color: "#86868b" }}>
+            </motion.h1>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={heroReveal}
+              custom={0.08}
+              className="text-base md:text-xl leading-relaxed whitespace-pre-line max-w-xl"
+              style={{ color: "#86868b" }}
+            >
               {"Growth happens through experience.\nOur trainings and workshops invite active participation — blending knowledge, practice, and reflection."}
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </section>
 
