@@ -1,9 +1,56 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
 const footerLinks = {
   Company: ["About", "Our Team", "Careers", "Press"],
   Resources: ["Insights", "Case Studies", "Research", "FAQ"],
   Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+};
+
+type FooterLinkColumnProps = {
+  title: string;
+  links: string[];
+};
+
+const FooterLinkColumn = ({ title, links }: FooterLinkColumnProps) => {
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  return (
+    <div className="text-center md:text-right">
+      <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4 md:pr-3" style={{ color: "#ffffff" }}>
+        {title}
+      </h4>
+      <ul className="space-y-2" onMouseLeave={() => setHovered(null)}>
+        {links.map((link, i) => (
+          <li key={link} className="flex justify-center md:justify-end">
+            <a
+              href="#"
+              className="relative inline-flex items-center pr-3 text-sm"
+              style={{ color: "#9a9a9a" }}
+              onMouseEnter={() => setHovered(i)}
+              onFocus={() => setHovered(i)}
+              onBlur={() => setHovered(null)}
+            >
+              {link}
+              {hovered === i && (
+                <motion.span
+                  layoutId={`footer-dot-${title}`}
+                  className="absolute right-0 h-1 w-1 rounded-full pointer-events-none"
+                  style={{ top: "calc(50% - 2px)", backgroundColor: "#f5f5f7" }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 30,
+                  }}
+                />
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 const Footer = () => (
@@ -39,20 +86,7 @@ const Footer = () => (
         <div className="hidden lg:block" />
         <div className="col-span-1 md:col-span-3 lg:col-span-3 grid grid-cols-3 gap-4 md:gap-8">
         {Object.entries(footerLinks).map(([title, links]) => (
-          <div key={title} className="text-center md:text-right">
-            <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4" style={{ color: "#ffffff" }}>
-              {title}
-            </h4>
-            <ul className="space-y-2">
-              {links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-sm hover:opacity-60 transition-opacity" style={{ color: "#9a9a9a" }}>
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterLinkColumn key={title} title={title} links={links} />
         ))}
         </div>
       </div>
