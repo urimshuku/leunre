@@ -182,7 +182,9 @@ const HeroSection = () => {
           className="text-lg md:text-2xl max-w-lg mb-4 md:mb-8 leading-relaxed"
           style={{ color: "#1d1d1f" }}
         >
-          Unlocking Human Potential. Inspiring Transformation.
+          Unlocking Human Potential.
+          <br />
+          Inspiring Transformation.
         </motion.p>
 
         <motion.p
