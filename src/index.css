@@ -206,6 +206,101 @@
     border-radius: 2px;
   }
 
+  .accordion-trigger-smooth {
+    transition: color 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .accordion-chevron-smooth {
+    transition: transform 480ms cubic-bezier(0.16, 1, 0.3, 1), opacity 280ms ease;
+    transform-origin: center;
+  }
+
+  .accordion-content-inner {
+    will-change: opacity, transform;
+  }
+
+  .accordion-content-smooth[data-state="open"] > .accordion-content-inner {
+    animation: accordion-inner-in 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .accordion-content-smooth[data-state="closed"] > .accordion-content-inner {
+    animation: accordion-inner-out 260ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  .dropdown-content-smooth {
+    transform-origin: var(--radix-dropdown-menu-content-transform-origin, var(--radix-select-content-transform-origin, center));
+    will-change: opacity, transform;
+  }
+
+  .dropdown-content-smooth[data-state="open"] {
+    animation: dropdown-soft-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .dropdown-content-smooth[data-state="closed"] {
+    animation: dropdown-soft-out 180ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes accordion-inner-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes accordion-inner-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes dropdown-soft-in {
+    from {
+      opacity: 0;
+      transform: translateY(-6px) scale(0.98);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes dropdown-soft-out {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(-4px) scale(0.985);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .accordion-chevron-smooth,
+    .accordion-trigger-smooth {
+      transition: none;
+    }
+
+    .accordion-content-smooth,
+    .accordion-content-smooth > .accordion-content-inner,
+    .dropdown-content-smooth {
+      animation-duration: 1ms !important;
+    }
+  }
+
   /** Site-wide glass-style panels (content cards). Backdrop-filter removed for GPU perf. */
   .card-elevated {
     border-radius: 24px;
