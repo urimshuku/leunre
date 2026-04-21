@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/shared/PageLayout";
 import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { articles } from "@/data/articles";
-import { heroReveal } from "@/lib/motion";
 import NotFound from "./NotFound";
 
 const ArticleDetail = () => {
@@ -29,33 +28,23 @@ const ArticleDetail = () => {
           >
             <ArrowLeft size={14} className="icon-arrow-nudge icon-arrow-nudge--left" /> Back to Insights
           </Link>
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <span className="inline-block text-xs font-medium uppercase tracking-wider text-primary mb-4">
               {article.category}
             </span>
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={heroReveal}
-              custom={0.08}
-              className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6"
-              style={{ color: "#1d1d1f" }}
-            >
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-6" style={{ color: "#1d1d1f" }}>
               {article.title}
-            </motion.h1>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={heroReveal}
-              custom={0.08}
-              className="flex flex-wrap items-center gap-4 text-sm"
-              style={{ color: "#86868b" }}
-            >
+            </h1>
+            <div className="flex flex-wrap items-center gap-4 text-sm" style={{ color: "#86868b" }}>
               <span className="flex items-center gap-1.5"><User size={14} /> {article.author}</span>
               <span className="flex items-center gap-1.5"><Calendar size={14} /> {article.date}</span>
               <span className="flex items-center gap-1.5"><Clock size={14} /> {article.readTime}</span>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
