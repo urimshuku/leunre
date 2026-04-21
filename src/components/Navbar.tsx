@@ -14,7 +14,8 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const SCROLL_THRESHOLD = 56;
+const SCROLL_ENTER_THRESHOLD = 72;
+const SCROLL_EXIT_THRESHOLD = 28;
 
 const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
 const DUR = "700ms";
@@ -39,7 +40,13 @@ const Navbar = () => {
 
   const rafRef = useRef(0);
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > SCROLL_THRESHOLD);
+    const update = () => {
+      const y = window.scrollY;
+      setScrolled((current) => {
+        if (current) return y > SCROLL_EXIT_THRESHOLD;
+        return y > SCROLL_ENTER_THRESHOLD;
+      });
+    };
     update();
     const handleScroll = () => {
       if (rafRef.current) return;
@@ -86,7 +93,7 @@ const Navbar = () => {
             className="w-full mx-auto"
             style={{
               ...barVisuals(scrolled),
-              maxWidth: scrolled ? 1120 : "none",
+              maxWidth: scrolled ? 1120 : "100%",
               height: scrolled ? 52 : 64,
             }}
           >
@@ -175,7 +182,7 @@ const Navbar = () => {
             className="flex items-center justify-between w-full mx-auto"
             style={{
               ...barVisuals(scrolled),
-              maxWidth: scrolled ? 512 : "none",
+              maxWidth: scrolled ? 512 : "100%",
               height: scrolled ? 48 : 56,
               padding: scrolled ? "0 12px" : "0 16px",
             }}
