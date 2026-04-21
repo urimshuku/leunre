@@ -28,8 +28,6 @@ const morphTransition = [
 
 const wrapperTransition = `padding ${DUR} ${EASE}`;
 
-const shadowFlat =
-  "0 1px 0 0 #ECEAE6, 0 0 0 0 rgba(0,0,0,0), inset 0 0 0 0 rgba(255,255,255,0)";
 const shadowPill =
   "0 0 0 0 rgba(236,234,230,0), 0 6px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.75)";
 
@@ -68,10 +66,10 @@ const Navbar = () => {
 
   const barVisuals = (pill: boolean): React.CSSProperties => ({
     borderRadius: pill ? 9999 : 0,
-    backgroundColor: pill ? "rgba(255,255,255,0.62)" : "rgba(249,248,246,0.82)",
-    backdropFilter: pill ? "blur(40px) saturate(1.5)" : "blur(16px)",
-    WebkitBackdropFilter: pill ? "blur(40px) saturate(1.5)" : "blur(16px)",
-    boxShadow: pill ? shadowPill : shadowFlat,
+    backgroundColor: pill ? "rgba(255,255,255,0.62)" : "rgba(255,255,255,0)",
+    backdropFilter: pill ? "blur(40px) saturate(1.5)" : "none",
+    WebkitBackdropFilter: pill ? "blur(40px) saturate(1.5)" : "none",
+    boxShadow: pill ? shadowPill : "none",
     borderWidth: 1,
     borderStyle: "solid" as const,
     borderColor: pill ? "rgba(232,230,227,0.7)" : "transparent",
