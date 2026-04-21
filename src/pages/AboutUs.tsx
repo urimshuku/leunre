@@ -205,7 +205,7 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           viewport={{ once: true }}
-          className="relative max-w-3xl mx-auto rounded-3xl overflow-hidden"
+          className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden"
           style={{
             border: "1px solid rgba(255,255,255,0.10)",
             boxShadow:
@@ -234,7 +234,7 @@ const AboutUs = () => {
               opacity: 0.38,
             }}
           />
-          <div className="relative px-8 py-14 md:px-14 md:py-20 text-center">
+          <div className="relative px-8 py-16 md:px-16 md:py-24 lg:px-20 lg:py-28 text-center">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-3 md:mb-5" style={{ color: "#f5f5f7" }}>
               More Than a Company.{"\n"}A Movement.
             </h2>

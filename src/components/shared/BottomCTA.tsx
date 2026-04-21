@@ -38,7 +38,11 @@ const BottomCTA = ({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         viewport={{ once: true }}
-        className="relative max-w-3xl mx-auto px-8 py-14 md:px-14 md:py-20 rounded-3xl overflow-hidden"
+        className={`relative mx-auto rounded-3xl overflow-hidden ${
+          backgroundImage
+            ? "max-w-5xl px-8 py-16 md:px-16 md:py-24 lg:px-20 lg:py-28"
+            : "max-w-3xl px-8 py-14 md:px-14 md:py-20"
+        }`}
         style={darkCardStyle}
       >
         {backgroundImage ? (
