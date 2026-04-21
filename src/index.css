@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 16 33% 27%;
 
-    --primary: 10 54% 46%;
+    --primary: 21 73% 38%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 30 10% 96%;
@@ -32,7 +32,7 @@
 
     --border: 34 10% 91%;
     --input: 34 10% 91%;
-    --ring: 10 54% 46%;
+    --ring: 21 73% 38%;
 
     --radius: 0.5rem;
 
@@ -53,10 +53,10 @@
 
     /* Custom tokens */
     --warm: 0 0% 98%;
-    --warm-foreground: 10 54% 46%;
+    --warm-foreground: 21 73% 38%;
     --gold: 43 56% 51%;
     --gold-light: 44 69% 69%;
-    --forest: 10 54% 46%;
+    --forest: 21 73% 38%;
     --forest-light: 24 65% 48%;
     --cream: 0 0% 98%;
     --philosophy-bg: 0 0% 98%;
@@ -73,8 +73,8 @@
     --card-foreground: 40 20% 97%;
     --popover: 24 25% 10%;
     --popover-foreground: 40 20% 97%;
-    --primary: 10 54% 46%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 21 73% 50%;
+    --primary-foreground: 24 30% 6%;
     --secondary: 24 20% 15%;
     --secondary-foreground: 40 20% 97%;
     --muted: 24 15% 15%;
@@ -83,7 +83,7 @@
     --accent-foreground: 40 20% 97%;
     --border: 24 15% 20%;
     --input: 24 15% 20%;
-    --ring: 10 54% 46%;
+    --ring: 21 73% 50%;
   }
 }
 
@@ -352,7 +352,7 @@
   .icon-tile-standard {
     background: rgba(247, 236, 226, 0.84);
     border: 2px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 2px 8px rgba(179, 75, 53, 0.14);
+    box-shadow: 0 2px 8px rgba(164, 76, 35, 0.14);
   }
 
   .icon-tile-grain::before {

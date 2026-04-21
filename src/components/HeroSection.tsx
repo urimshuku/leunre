@@ -26,7 +26,7 @@ const HeroSection = () => {
       className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px] overflow-hidden"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse at 52% 44%, rgba(179, 75, 53, 0.17) 0%, rgba(179, 75, 53, 0.1) 26%, rgba(179, 75, 53, 0.042) 50%, rgba(249, 248, 246, 0) 74%), linear-gradient(180deg, #f9f8f6 0%, #f3f2f1 100%)",
+          "radial-gradient(ellipse at 52% 44%, rgba(164, 76, 35, 0.17) 0%, rgba(164, 76, 35, 0.1) 26%, rgba(164, 76, 35, 0.042) 50%, rgba(249, 248, 246, 0) 74%), linear-gradient(180deg, #f9f8f6 0%, #f3f2f1 100%)",
       }}
     >
     <div
@@ -88,7 +88,7 @@ const HeroSection = () => {
         right: "-22%",
         width: "77%",
         height: "90%",
-        background: "radial-gradient(ellipse at 35% 40%, rgba(179, 75, 53, 0.48) 0%, rgba(179, 75, 53, 0.33) 18%, rgba(179, 75, 53, 0.18) 32%, rgba(179, 75, 53, 0.075) 46%, rgba(179, 75, 53, 0) 62%)",
+        background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.48) 0%, rgba(164, 76, 35, 0.33) 18%, rgba(164, 76, 35, 0.18) 32%, rgba(164, 76, 35, 0.075) 46%, rgba(164, 76, 35, 0) 62%)",
         filter: "blur(24px)",
         borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%",
         opacity: 0.94,
@@ -132,7 +132,7 @@ const HeroSection = () => {
         width: "75%",
         height: "88%",
         background:
-          "radial-gradient(ellipse at 64% 46%, rgba(179, 75, 53, 0.46) 0%, rgba(179, 75, 53, 0.31) 18%, rgba(179, 75, 53, 0.17) 32%, rgba(179, 75, 53, 0.075) 46%, rgba(179, 75, 53, 0) 62%)",
+          "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.46) 0%, rgba(164, 76, 35, 0.31) 18%, rgba(164, 76, 35, 0.17) 32%, rgba(164, 76, 35, 0.075) 46%, rgba(164, 76, 35, 0) 62%)",
         filter: "blur(24px)",
         borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%",
         opacity: 0.92,
@@ -141,8 +141,8 @@ const HeroSection = () => {
     }
     {!animateBlobs && (
       <>
-        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "62%", height: "77%", background: "radial-gradient(ellipse at 35% 40%, rgba(179, 75, 53, 0.46) 0%, rgba(179, 75, 53, 0.29) 22%, rgba(179, 75, 53, 0.15) 36%, rgba(179, 75, 53, 0.06) 48%, rgba(179, 75, 53, 0) 62%)", filter: "blur(24px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.94 }} />
-        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "60%", height: "75%", background: "radial-gradient(ellipse at 64% 46%, rgba(179, 75, 53, 0.44) 0%, rgba(179, 75, 53, 0.27) 22%, rgba(179, 75, 53, 0.145) 36%, rgba(179, 75, 53, 0.06) 48%, rgba(179, 75, 53, 0) 62%)", filter: "blur(24px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.92 }} />
+        <div className="absolute pointer-events-none" style={{ top: "-22%", right: "-18%", width: "62%", height: "77%", background: "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.46) 0%, rgba(164, 76, 35, 0.29) 22%, rgba(164, 76, 35, 0.15) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(24px)", borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%", opacity: 0.94 }} />
+        <div className="absolute pointer-events-none" style={{ bottom: "-26%", left: "-24%", width: "60%", height: "75%", background: "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.44) 0%, rgba(164, 76, 35, 0.27) 22%, rgba(164, 76, 35, 0.145) 36%, rgba(164, 76, 35, 0.06) 48%, rgba(164, 76, 35, 0) 62%)", filter: "blur(24px)", borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%", opacity: 0.92 }} />
       </>
     )}
     <div
