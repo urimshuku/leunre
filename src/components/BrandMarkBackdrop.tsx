@@ -1,44 +1,31 @@
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 /**
  * Post-footer strip: same white surface as the footer, with an oversized
  * cropped wordmark (layout as before the “fit on screen” change).
  */
 const BrandMarkBackdrop = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [revealed, setRevealed] = useState(false);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setRevealed(true);
-      },
-      { rootMargin: "80px 0px 0px 0px", threshold: 0 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const reduceMotion = useReducedMotion() === true;
 
   return (
     <section
-      ref={sectionRef}
       aria-hidden="true"
       className="relative mt-0 w-full max-w-[100vw] overflow-hidden"
       style={{ backgroundColor: "#1d1d1f" }}
     >
       <div className="pointer-events-none relative mx-auto min-h-[clamp(10.5rem,28vh,20rem)] max-w-full min-w-0 select-none md:min-h-[clamp(12rem,32vh,24rem)]">
-        <span
-          className="font-heading absolute left-1/2 whitespace-nowrap font-bold transition-opacity duration-1000 ease-out"
+        <motion.span
+          className="font-heading absolute left-1/2 whitespace-nowrap font-bold"
+          initial={reduceMotion ? { opacity: 1, x: "-50%", y: "4%" } : { opacity: 0, x: "-50%", y: "28%" }}
+          whileInView={{ opacity: 1, x: "-50%", y: "4%" }}
+          viewport={{ once: true, amount: 0.2, margin: "80px 0px 0px 0px" }}
+          transition={{ duration: reduceMotion ? 0 : 3, ease: [0.16, 1, 0.3, 1] }}
           style={{
             bottom: 0,
             color: "rgba(255, 255, 255, 0.06)",
             fontSize: "clamp(6.5rem, 24vw, 26rem)",
             letterSpacing: "0.02em",
             lineHeight: 0.82,
-            opacity: revealed ? 1 : 0,
-            transform: "translateX(-50%) translateY(4%)",
             WebkitMaskImage:
               "linear-gradient(to bottom, #000 0%, #000 28%, rgba(0,0,0,0.45) 75%, rgba(0,0,0,0) 100%)",
             maskImage:
@@ -46,7 +33,7 @@ const BrandMarkBackdrop = () => {
           }}
         >
           LEUNRE
-        </span>
+        </motion.span>
       </div>
     </section>
   );
