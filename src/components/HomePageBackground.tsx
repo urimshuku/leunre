@@ -73,7 +73,7 @@ const liquidBlobs: LiquidBlob[] = [
       width: "48%",
       height: "42%",
       background:
-        "radial-gradient(ellipse at 40% 44%, rgba(164, 76, 35, 0.52) 0%, rgba(164, 76, 35, 0.36) 16%, rgba(164, 76, 35, 0.21) 30%, rgba(164, 76, 35, 0.09) 44%, rgba(164, 76, 35, 0) 60%)",
+        "radial-gradient(ellipse at 40% 44%, rgba(179, 75, 53, 0.52) 0%, rgba(179, 75, 53, 0.36) 16%, rgba(179, 75, 53, 0.21) 30%, rgba(179, 75, 53, 0.09) 44%, rgba(179, 75, 53, 0) 60%)",
       filter: "blur(38px)",
       opacity: 0.94,
     },
@@ -108,7 +108,7 @@ const liquidBlobs: LiquidBlob[] = [
       width: "46%",
       height: "40%",
       background:
-        "radial-gradient(ellipse at 62% 46%, rgba(164, 76, 35, 0.5) 0%, rgba(164, 76, 35, 0.33) 16%, rgba(164, 76, 35, 0.2) 30%, rgba(164, 76, 35, 0.085) 44%, rgba(164, 76, 35, 0) 60%)",
+        "radial-gradient(ellipse at 62% 46%, rgba(179, 75, 53, 0.5) 0%, rgba(179, 75, 53, 0.33) 16%, rgba(179, 75, 53, 0.2) 30%, rgba(179, 75, 53, 0.085) 44%, rgba(179, 75, 53, 0) 60%)",
       filter: "blur(40px)",
       opacity: 0.93,
     },
@@ -143,7 +143,7 @@ const liquidBlobs: LiquidBlob[] = [
       width: "44%",
       height: "38%",
       background:
-        "radial-gradient(ellipse at 58% 48%, rgba(164, 76, 35, 0.48) 0%, rgba(164, 76, 35, 0.31) 18%, rgba(164, 76, 35, 0.18) 32%, rgba(164, 76, 35, 0.08) 46%, rgba(164, 76, 35, 0) 60%)",
+        "radial-gradient(ellipse at 58% 48%, rgba(179, 75, 53, 0.48) 0%, rgba(179, 75, 53, 0.31) 18%, rgba(179, 75, 53, 0.18) 32%, rgba(179, 75, 53, 0.08) 46%, rgba(179, 75, 53, 0) 60%)",
       filter: "blur(42px)",
       opacity: 0.93,
     },
@@ -173,12 +173,46 @@ const liquidBlobs: LiquidBlob[] = [
   },
   {
     style: {
+      top: "32%",
+      right: "-14%",
+      width: "38%",
+      height: "30%",
+      background:
+        "radial-gradient(ellipse at 38% 48%, rgba(179, 75, 53, 0.26) 0%, rgba(179, 75, 53, 0.16) 30%, rgba(179, 75, 53, 0.08) 52%, rgba(179, 75, 53, 0) 76%)",
+      filter: "blur(46px)",
+      opacity: 0.78,
+    },
+    animate: {
+      x: [0, 46, 74, 28, -18, 34, 0],
+      y: [0, -42, -18, 36, 62, 12, 0],
+      scale: [1, 1.12, 0.96, 1.18, 0.9, 1.06, 1],
+      rotate: [0, -10, 7, 18, 4, -8, 0],
+      borderRadius: [
+        "62% 38% 54% 46% / 42% 58% 46% 54%",
+        "76% 24% 34% 66% / 34% 66% 58% 42%",
+        "40% 60% 72% 28% / 62% 38% 30% 70%",
+        "58% 42% 38% 62% / 46% 54% 72% 28%",
+        "34% 66% 60% 40% / 66% 34% 44% 56%",
+        "68% 32% 44% 56% / 38% 62% 54% 46%",
+        "62% 38% 54% 46% / 42% 58% 46% 54%",
+      ],
+    },
+    duration: 16.5,
+    delay: 0.25,
+    times: [0, 0.16, 0.31, 0.47, 0.62, 0.82, 1],
+    yDurationScale: 1.2,
+    scaleDurationScale: 0.9,
+    rotateDurationScale: 1.15,
+    borderRadiusDurationScale: 0.62,
+  },
+  {
+    style: {
       top: "42%",
       right: "-16%",
       width: "46%",
       height: "40%",
       background:
-        "radial-gradient(ellipse at 42% 50%, rgba(164, 76, 35, 0.5) 0%, rgba(164, 76, 35, 0.33) 18%, rgba(164, 76, 35, 0.2) 32%, rgba(164, 76, 35, 0.085) 46%, rgba(164, 76, 35, 0) 60%)",
+        "radial-gradient(ellipse at 42% 50%, rgba(179, 75, 53, 0.5) 0%, rgba(179, 75, 53, 0.33) 18%, rgba(179, 75, 53, 0.2) 32%, rgba(179, 75, 53, 0.085) 46%, rgba(179, 75, 53, 0) 60%)",
       filter: "blur(44px)",
       opacity: 0.93,
     },
@@ -213,7 +247,7 @@ const liquidBlobs: LiquidBlob[] = [
       width: "44%",
       height: "36%",
       background:
-        "radial-gradient(ellipse at 56% 44%, rgba(164, 76, 35, 0.47) 0%, rgba(164, 76, 35, 0.3) 18%, rgba(164, 76, 35, 0.17) 34%, rgba(164, 76, 35, 0.072) 48%, rgba(164, 76, 35, 0) 62%)",
+        "radial-gradient(ellipse at 56% 44%, rgba(179, 75, 53, 0.47) 0%, rgba(179, 75, 53, 0.3) 18%, rgba(179, 75, 53, 0.17) 34%, rgba(179, 75, 53, 0.072) 48%, rgba(179, 75, 53, 0) 62%)",
       filter: "blur(40px)",
       opacity: 0.92,
     },
@@ -248,7 +282,7 @@ const liquidBlobs: LiquidBlob[] = [
       width: "46%",
       height: "38%",
       background:
-        "radial-gradient(ellipse at 46% 52%, rgba(164, 76, 35, 0.48) 0%, rgba(164, 76, 35, 0.31) 18%, rgba(164, 76, 35, 0.18) 32%, rgba(164, 76, 35, 0.08) 46%, rgba(164, 76, 35, 0) 60%)",
+        "radial-gradient(ellipse at 46% 52%, rgba(179, 75, 53, 0.48) 0%, rgba(179, 75, 53, 0.31) 18%, rgba(179, 75, 53, 0.18) 32%, rgba(179, 75, 53, 0.08) 46%, rgba(179, 75, 53, 0) 60%)",
       filter: "blur(42px)",
       opacity: 0.93,
     },
@@ -303,7 +337,7 @@ function PerformanceAwareBackground({ children }: HomePageBackgroundProps) {
       className="relative bg-[#f3f2f1] overflow-x-hidden isolate"
       style={{
         backgroundImage:
-          "radial-gradient(ellipse at 15% 25%, rgba(164, 76, 35, 0.075) 0%, rgba(164, 76, 35, 0.033) 40%, transparent 68%), radial-gradient(ellipse at 85% 70%, rgba(164, 76, 35, 0.067) 0%, rgba(164, 76, 35, 0.03) 42%, transparent 70%), linear-gradient(180deg, #f3f2f1 0%, #f3f2f1 100%)",
+          "radial-gradient(ellipse at 15% 25%, rgba(179, 75, 53, 0.075) 0%, rgba(179, 75, 53, 0.033) 40%, transparent 68%), radial-gradient(ellipse at 85% 70%, rgba(179, 75, 53, 0.067) 0%, rgba(179, 75, 53, 0.03) 42%, transparent 70%), linear-gradient(180deg, #f3f2f1 0%, #f3f2f1 100%)",
       }}
     >
       <div

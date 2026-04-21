@@ -59,7 +59,7 @@ const Products = () => (
           width: "62%",
           height: "40%",
           background:
-            "radial-gradient(ellipse at 35% 40%, rgba(164, 76, 35, 0.22) 0%, rgba(164, 76, 35, 0.14) 32%, rgba(164, 76, 35, 0.08) 54%, rgba(164, 76, 35, 0) 78%)",
+            "radial-gradient(ellipse at 35% 40%, rgba(179, 75, 53, 0.22) 0%, rgba(179, 75, 53, 0.14) 32%, rgba(179, 75, 53, 0.08) 54%, rgba(179, 75, 53, 0) 78%)",
           filter: "blur(84px)",
           borderRadius: "56% 44% 63% 37% / 46% 58% 42% 54%",
           opacity: 0.92,
@@ -74,7 +74,7 @@ const Products = () => (
           width: "64%",
           height: "48%",
           background:
-            "radial-gradient(ellipse at 64% 46%, rgba(164, 76, 35, 0.2) 0%, rgba(164, 76, 35, 0.12) 34%, rgba(164, 76, 35, 0.06) 56%, rgba(164, 76, 35, 0) 80%)",
+            "radial-gradient(ellipse at 64% 46%, rgba(179, 75, 53, 0.2) 0%, rgba(179, 75, 53, 0.12) 34%, rgba(179, 75, 53, 0.06) 56%, rgba(179, 75, 53, 0) 80%)",
           filter: "blur(92px)",
           borderRadius: "41% 59% 47% 53% / 60% 43% 57% 40%",
           opacity: 0.9,
@@ -89,7 +89,7 @@ const Products = () => (
           width: "68%",
           height: "42%",
           background:
-            "radial-gradient(ellipse at 42% 44%, rgba(164, 76, 35, 0.18) 0%, rgba(164, 76, 35, 0.1) 34%, rgba(164, 76, 35, 0.05) 56%, rgba(164, 76, 35, 0) 80%)",
+            "radial-gradient(ellipse at 42% 44%, rgba(179, 75, 53, 0.18) 0%, rgba(179, 75, 53, 0.1) 34%, rgba(179, 75, 53, 0.05) 56%, rgba(179, 75, 53, 0) 80%)",
           filter: "blur(96px)",
           borderRadius: "54% 46% 60% 40% / 48% 56% 44% 52%",
           opacity: 0.88,

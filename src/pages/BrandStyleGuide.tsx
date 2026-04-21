@@ -1,5 +1,5 @@
 const colors = [
-  { name: "Primary / Burnt Orange", token: "--primary", hsl: "21 73% 38%", hex: "#A64B1A", usage: "Headings, buttons, hero background" },
+  { name: "Primary / Burnt Orange", token: "--primary", hsl: "10 54% 46%", hex: "#B34B35", usage: "Headings, buttons, hero background" },
   { name: "Burnt Orange Light", token: "--forest-light", hsl: "24 65% 48%", hex: "#C96A2B", usage: "Secondary text, hover states" },
   { name: "Gold / Accent", token: "--accent", hsl: "43 56% 51%", hex: "#C9A13A", usage: "Accent highlights, CTAs" },
   { name: "Gold Light", token: "--gold-light", hsl: "44 69% 69%", hex: "#E6C878", usage: "Subtle warm accents" },
@@ -24,8 +24,8 @@ const typography = [
 const BrandStyleGuide = () => (
   <div className="min-h-screen bg-white p-8 md:p-12 lg:p-16 max-w-4xl mx-auto print:p-6">
     {/* Header */}
-    <div className="mb-12 border-b-2 border-[#A64B1A] pb-8">
-      <h1 className="text-4xl md:text-5xl font-heading font-normal" style={{ color: "#A64B1A" }}>
+    <div className="mb-12 border-b-2 border-[#B34B35] pb-8">
+      <h1 className="text-4xl md:text-5xl font-heading font-normal" style={{ color: "#B34B35" }}>
         LEUNRE
       </h1>
       <p className="text-lg mt-2" style={{ color: "#C96A2B" }}>Brand Style Guide</p>
@@ -34,7 +34,7 @@ const BrandStyleGuide = () => (
 
     {/* Color Palette */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#A64B1A" }}>Color Palette</h2>
+      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#B34B35" }}>Color Palette</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {colors.map((c) => (
           <div key={c.token} className="border rounded-lg overflow-hidden" style={{ borderColor: "#E7E1DB" }}>
@@ -52,7 +52,7 @@ const BrandStyleGuide = () => (
 
     {/* Typography */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#A64B1A" }}>Typography</h2>
+      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#B34B35" }}>Typography</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {typography.map((t) => (
           <div key={t.name} className="border rounded-lg p-5" style={{ borderColor: "#E7E1DB" }}>
@@ -67,16 +67,16 @@ const BrandStyleGuide = () => (
 
     {/* Key Combinations */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#A64B1A" }}>Key Combinations</h2>
+      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#B34B35" }}>Key Combinations</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#A64B1A" }}>
+        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#B34B35" }}>
           <span className="font-heading font-normal text-lg" style={{ color: "#FFFFFF" }}>White on Primary</span>
         </div>
-        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#A64B1A" }}>
+        <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#B34B35" }}>
           <span className="font-heading font-normal text-lg" style={{ color: "#C9A13A" }}>Gold on Primary</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center" style={{ background: "#F7F5F2" }}>
-          <span className="font-heading font-normal text-lg" style={{ color: "#A64B1A" }}>Primary on Background</span>
+          <span className="font-heading font-normal text-lg" style={{ color: "#B34B35" }}>Primary on Background</span>
         </div>
         <div className="rounded-lg p-6 flex items-center justify-center border" style={{ background: "#E7E1DB", borderColor: "#E7E1DB" }}>
           <span className="font-heading font-normal text-lg" style={{ color: "#5C3A2E" }}>Heading on Muted</span>
@@ -86,7 +86,7 @@ const BrandStyleGuide = () => (
 
     {/* Design Notes */}
     <section className="mb-12">
-      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#A64B1A" }}>Design Notes</h2>
+      <h2 className="text-2xl font-heading font-normal mb-6" style={{ color: "#B34B35" }}>Design Notes</h2>
       <div className="border rounded-lg p-5 space-y-2" style={{ borderColor: "#E7E1DB" }}>
         <p className="text-sm" style={{ color: "#5C3A2E" }}>• No bold or heavy font weights are used anywhere on the website.</p>
         <p className="text-sm" style={{ color: "#5C3A2E" }}>• Typography relies on size, color, and spacing for hierarchy — not weight.</p>
