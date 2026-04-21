@@ -29,6 +29,8 @@ const testimonials = [
 const CARD_GAP = 24;
 const CARD_HEIGHT_MOBILE = 260;
 const CARD_HEIGHT_DESKTOP = 300;
+const DESKTOP_VIEWPORT_WIDTH = 1124;
+const DESKTOP_CARD_WIDTH = (DESKTOP_VIEWPORT_WIDTH - 2 * CARD_GAP) / 3;
 
 const SLIDE_DURATION_SEC = 1.5;
 /** Time to stay on a slide after it has finished moving, before advancing */
@@ -47,10 +49,10 @@ const TestimonialsSection = () => {
   const instantJumpRef = useRef(false);
   const dwellTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const cardWidth = isMobile ? 280 : 380;
+  const cardWidth = isMobile ? 280 : DESKTOP_CARD_WIDTH;
   const cardHeight = isMobile ? CARD_HEIGHT_MOBILE : CARD_HEIGHT_DESKTOP;
   const step = cardWidth + CARD_GAP;
-  const viewportWidth = isMobile ? cardWidth : 3 * cardWidth + 2 * CARD_GAP;
+  const viewportWidth = isMobile ? cardWidth : DESKTOP_VIEWPORT_WIDTH;
   const edgePad = viewportWidth / 2 - cardWidth / 2;
 
   const logicalActive = ((2 * n - slideIndex) % n + n) % n;

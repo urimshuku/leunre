@@ -91,14 +91,14 @@ const Navbar = () => {
             className="w-full mx-auto"
             style={{
               ...barVisuals(scrolled),
-              maxWidth: scrolled ? 1120 : "100%",
+              maxWidth: scrolled ? "var(--site-rail-width)" : "100%",
               height: scrolled ? 52 : 64,
             }}
           >
             <div
               className="grid grid-cols-[1fr_auto_1fr] items-center h-full w-full mx-auto"
               style={{
-                maxWidth: scrolled ? 1120 : 1280,
+                maxWidth: "var(--site-rail-width)",
                 padding: scrolled ? "0 12px" : "0 32px",
                 transition: `max-width ${DUR} ${EASE}, padding ${DUR} ${EASE}`,
               }}

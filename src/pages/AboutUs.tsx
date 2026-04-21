@@ -164,7 +164,7 @@ const AboutUs = () => {
           centered
           className="mb-12 md:mb-16 lg:mb-20"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-site-rail mx-auto">
           {values.map((value, i) => (
             <div key={value.title} className="group p-8 md:p-10 lg:p-12 card-elevated text-center flex flex-col">
               <motion.div
@@ -205,7 +205,7 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           viewport={{ once: true }}
-          className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden"
+          className="relative max-w-site-rail mx-auto rounded-3xl overflow-hidden"
           style={{
             border: "1px solid rgba(255,255,255,0.10)",
             boxShadow:

@@ -40,7 +40,7 @@ const BottomCTA = ({
         viewport={{ once: true }}
         className={`relative mx-auto rounded-3xl overflow-hidden ${
           backgroundImage
-            ? "max-w-5xl px-8 py-16 md:px-16 md:py-24 lg:px-20 lg:py-28"
+            ? "max-w-site-rail px-8 py-16 md:px-16 md:py-24 lg:px-20 lg:py-28"
             : "max-w-3xl px-8 py-14 md:px-14 md:py-20"
         }`}
         style={darkCardStyle}

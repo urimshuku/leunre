@@ -10,7 +10,7 @@ const CTASection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         viewport={{ once: true }}
-        className="relative max-w-5xl mx-auto rounded-3xl overflow-hidden"
+        className="relative max-w-site-rail mx-auto rounded-3xl overflow-hidden"
         style={{
           border: "1px solid rgba(255,255,255,0.10)",
           boxShadow:
