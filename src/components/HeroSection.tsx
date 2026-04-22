@@ -24,10 +24,14 @@ const HeroSection = () => {
   return (
     <section
       className="relative min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] flex items-center bg-[#f9f8f6] pt-[40px] pb-[40px] overflow-hidden"
+    >
+    <div
+      className="absolute inset-0 z-0 overflow-hidden pointer-events-none"
       style={{
         backgroundImage:
           "radial-gradient(ellipse at 52% 44%, rgba(164, 76, 35, 0.17) 0%, rgba(164, 76, 35, 0.1) 26%, rgba(164, 76, 35, 0.042) 50%, rgba(249, 248, 246, 0) 74%), linear-gradient(180deg, #f9f8f6 0%, #f3f2f1 100%)",
       }}
+      aria-hidden
     >
     <div
       className="absolute inset-0 pointer-events-none z-0"
@@ -156,8 +160,9 @@ const HeroSection = () => {
       }}
       aria-hidden
     />
+    </div>
 
-    <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8 py-16 md:py-28 lg:py-36">
+    <div className="relative z-10 mx-auto w-full max-w-site-rail px-4 md:px-6 lg:px-8 py-16 md:py-28 lg:py-36">
       <div className="max-w-3xl">
         <motion.h1
           initial="hidden"

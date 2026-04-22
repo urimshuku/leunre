@@ -55,7 +55,7 @@ const FooterLinkColumn = ({ title, links }: FooterLinkColumnProps) => {
 
 const Footer = () => (
   <footer className="pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10" style={{ backgroundColor: "#1d1d1f" }}>
-    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+    <div className="mx-auto w-full max-w-site-rail px-4 md:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-10 md:mb-14">
         {/* Brand */}
         <div className="col-span-1 md:col-span-3 lg:col-span-2">
