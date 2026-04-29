@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -42,6 +42,10 @@ const PUSH_STAGGER_SEC = 0.07;
 
 const TestimonialsSection = () => {
   const isMobile = useIsMobile();
+  const reduceMotion = useReducedMotion() === true;
+  const [isPageVisible, setIsPageVisible] = useState(() =>
+    typeof document === "undefined" ? true : document.visibilityState === "visible",
+  );
   const n = testimonials.length;
   const loopSlides = [...testimonials, ...testimonials, ...testimonials];
 
@@ -56,6 +60,14 @@ const TestimonialsSection = () => {
   const edgePad = viewportWidth / 2 - cardWidth / 2;
 
   const logicalActive = ((2 * n - slideIndex) % n + n) % n;
+  const autoplayEnabled = !reduceMotion && isPageVisible;
+
+  useEffect(() => {
+    const syncVisibility = () => setIsPageVisible(document.visibilityState === "visible");
+
+    document.addEventListener("visibilitychange", syncVisibility);
+    return () => document.removeEventListener("visibilitychange", syncVisibility);
+  }, []);
 
   const clearDwellTimer = useCallback(() => {
     if (dwellTimeoutRef.current !== null) {
@@ -76,19 +88,26 @@ const TestimonialsSection = () => {
 
   const scheduleNextAdvance = useCallback(() => {
     clearDwellTimer();
+    if (!autoplayEnabled) return;
+
     dwellTimeoutRef.current = window.setTimeout(() => {
       dwellTimeoutRef.current = null;
       advanceSlide();
     }, DWELL_MS);
-  }, [clearDwellTimer, advanceSlide]);
+  }, [clearDwellTimer, autoplayEnabled, advanceSlide]);
 
   useEffect(() => {
+    if (!autoplayEnabled) {
+      clearDwellTimer();
+      return;
+    }
+
     dwellTimeoutRef.current = window.setTimeout(() => {
       dwellTimeoutRef.current = null;
       advanceSlide();
     }, DWELL_MS);
     return () => clearDwellTimer();
-  }, [advanceSlide, clearDwellTimer]);
+  }, [advanceSlide, clearDwellTimer, autoplayEnabled]);
 
   const handleTrackAnimationComplete = useCallback(() => {
     if (instantJumpRef.current) {
@@ -110,7 +129,7 @@ const TestimonialsSection = () => {
     setSlideIndex(2 * n - logical);
   };
 
-  const slideTransition = instantJumpRef.current
+  const slideTransition = instantJumpRef.current || reduceMotion
     ? { duration: 0 }
     : { duration: SLIDE_DURATION_SEC, ease: SLIDE_EASE };
 
@@ -124,7 +143,7 @@ const TestimonialsSection = () => {
   };
 
   const cardMotionTransition = (i: number) => {
-    if (instantJumpRef.current) {
+    if (instantJumpRef.current || reduceMotion) {
       return { duration: 0 };
     }
     const slot = pushSlotForIndex(i);
@@ -137,7 +156,7 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-10 md:py-24 lg:py-28 pt-[72px] pb-[72px] md:pt-[112px] md:pb-[112px] bg-transparent">
+    <section className="content-visibility-auto py-10 md:py-24 lg:py-28 pt-[72px] pb-[72px] md:pt-[112px] md:pb-[112px] bg-transparent">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

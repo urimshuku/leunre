@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useNearViewport } from "@/hooks/useNearViewport";
 
-const CTASection = () => (
-  <section id="contact" className="py-10 md:py-24 lg:py-28 pt-[72px] md:pt-[112px] pb-[112px] bg-transparent border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0">
+const CTASection = () => {
+  const [cardRef, shouldLoadBackground] = useNearViewport<HTMLDivElement>();
+
+  return (
+  <section id="contact" className="content-visibility-auto py-10 md:py-24 lg:py-28 pt-[72px] md:pt-[112px] pb-[112px] bg-transparent border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
+        ref={cardRef}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
@@ -20,7 +25,8 @@ const CTASection = () => (
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `url(${import.meta.env.BASE_URL}cta-bg.png)`,
+            backgroundColor: "#1d1d1f",
+            backgroundImage: shouldLoadBackground ? `url(${import.meta.env.BASE_URL}cta-bg.png)` : undefined,
             backgroundSize: "cover",
             backgroundPosition: "65% center",
           }}
@@ -75,6 +81,7 @@ const CTASection = () => (
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default CTASection;

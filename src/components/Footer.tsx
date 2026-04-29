@@ -1,51 +1,57 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
-  Company: ["About", "Our Team", "Careers", "Press"],
-  Resources: ["Insights", "Case Studies", "Research", "FAQ"],
-  Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+  Company: [
+    { label: "About", href: "/about" },
+    { label: "Our Team" },
+    { label: "Careers" },
+    { label: "Press" },
+  ],
+  Resources: [
+    { label: "Insights", href: "/insights" },
+    { label: "Case Studies", href: "/insights" },
+    { label: "Research" },
+    { label: "FAQ", href: "/contact" },
+  ],
+  Legal: [
+    { label: "Privacy Policy" },
+    { label: "Terms of Service" },
+    { label: "Cookie Policy" },
+  ],
 };
 
 type FooterLinkColumnProps = {
   title: string;
-  links: string[];
+  links: { label: string; href?: string }[];
 };
 
 const FooterLinkColumn = ({ title, links }: FooterLinkColumnProps) => {
-  const [hovered, setHovered] = useState<number | null>(null);
-
   return (
     <div className="text-center md:text-right">
       <h4 className="font-heading text-xs uppercase tracking-wider mb-3 md:mb-4 md:pr-3" style={{ color: "#ffffff" }}>
         {title}
       </h4>
-      <ul className="space-y-2" onMouseLeave={() => setHovered(null)}>
-        {links.map((link, i) => (
-          <li key={link} className="flex justify-center md:justify-end">
-            <a
-              href="#"
-              className="relative inline-flex items-center pr-3 text-sm"
-              style={{ color: "#9a9a9a" }}
-              onMouseEnter={() => setHovered(i)}
-              onFocus={() => setHovered(i)}
-              onBlur={() => setHovered(null)}
-            >
-              {link}
-              {hovered === i && (
-                <motion.span
-                  layoutId={`footer-dot-${title}`}
-                  className="absolute right-0 h-1 w-1 rounded-full pointer-events-none"
+      <ul className="space-y-2">
+        {links.map((link) => (
+          <li key={link.label} className="flex justify-center md:justify-end">
+            {link.href ? (
+              <Link
+                to={link.href}
+                className="group relative inline-flex items-center pr-3 text-sm"
+                style={{ color: "#9a9a9a" }}
+              >
+                {link.label}
+                <span
+                  className="absolute right-0 h-1 w-1 rounded-full opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100 pointer-events-none"
                   style={{ top: "calc(50% - 2px)", backgroundColor: "#f5f5f7" }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 30,
-                  }}
                 />
-              )}
-            </a>
+              </Link>
+            ) : (
+              <span className="inline-flex items-center pr-3 text-sm opacity-60" style={{ color: "#9a9a9a" }} aria-disabled="true">
+                {link.label}
+              </span>
+            )}
           </li>
         ))}
       </ul>
@@ -69,14 +75,16 @@ const Footer = () => (
           <div className="flex gap-2">
             <div className="flex items-center gap-2 rounded-xl px-4 flex-1" style={{ backgroundColor: "rgba(255,255,255,0.08)" }}>
               <Mail size={14} style={{ color: "#9a9a9a" }} />
+              <label htmlFor="newsletter-email" className="sr-only">Email address for newsletter</label>
               <input
+                id="newsletter-email"
                 type="email"
                 placeholder="Your email"
                 className="bg-transparent border-none outline-none text-sm py-3 w-full placeholder:text-[#666]"
                 style={{ color: "#ffffff" }}
               />
             </div>
-            <button className="px-5 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-medium hover:opacity-90 transition-all whitespace-nowrap btn-bevel-solid">
+            <button type="button" className="px-5 py-3 bg-primary text-primary-foreground rounded-xl text-sm font-medium hover:opacity-90 transition-[opacity,background-color,box-shadow] duration-150 whitespace-nowrap btn-bevel-solid">
               Subscribe
             </button>
           </div>

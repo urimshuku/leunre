@@ -11,7 +11,7 @@ export const heroReveal: Variants = {
     y: 0,
     filter: "blur(0px)",
     transition: {
-      duration: 0.9,
+      duration: 0.56,
       delay,
       ease: [0.16, 1, 0.3, 1],
     },

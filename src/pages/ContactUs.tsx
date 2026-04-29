@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { z } from "zod";
@@ -39,9 +39,14 @@ const contactFaqs = [
   { q: "What makes LEUNRE different from other learning providers?", a: "Our approach centers on unlearning — helping you let go of outdated mental models before building new ones. This creates deeper, more lasting transformation." },
 ] as const;
 
-const ContactUs = () => {
+const initialForm: ContactForm = { name: "", email: "", inquiryType: "", message: "" };
+
+const fieldClass =
+  "w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-[border-color,box-shadow] duration-150 focus:ring-2 focus:ring-primary/20";
+
+const ContactFormCard = memo(() => {
   const { toast } = useToast();
-  const [form, setForm] = useState<ContactForm>({ name: "", email: "", inquiryType: "", message: "" });
+  const [form, setForm] = useState<ContactForm>(initialForm);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactForm, string>>>({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -70,6 +75,185 @@ const ContactUs = () => {
     toast({ title: "Message sent!", description: "We'll get back to you shortly." });
   };
 
+  const resetForm = () => {
+    setSubmitted(false);
+    setForm(initialForm);
+    setErrors({});
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="lg:col-span-3"
+    >
+      {submitted ? (
+        <div className="p-6 md:p-8 lg:p-10 text-center card-elevated">
+          <Mail className="w-7 h-7 text-primary mx-auto mb-5" strokeWidth={1.5} />
+          <h2 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Thank You!</h2>
+          <p className="mb-6 text-sm md:text-base max-w-sm mx-auto" style={{ color: "#86868b" }}>Your message has been received. We'll be in touch shortly.</p>
+          <button
+            type="button"
+            onClick={resetForm}
+            className="text-sm font-medium text-primary hover:opacity-70 transition-opacity"
+          >
+            Send another message
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
+              Full Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Your full name"
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? "name-error" : undefined}
+              className={`${fieldClass} ${errors.name ? "border border-destructive" : ""}`}
+              style={{ color: "#1d1d1f", border: errors.name ? undefined : "1px solid #ECEAE6" }}
+            />
+            {errors.name && <p id="name-error" className="text-xs text-destructive mt-1.5">{errors.name}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
+              Email Address
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="you@example.com"
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? "email-error" : undefined}
+              className={`${fieldClass} ${errors.email ? "border border-destructive" : ""}`}
+              style={{ color: "#1d1d1f", border: errors.email ? undefined : "1px solid #ECEAE6" }}
+            />
+            {errors.email && <p id="email-error" className="text-xs text-destructive mt-1.5">{errors.email}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="inquiryType" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
+              Inquiry Type
+            </label>
+            <select
+              id="inquiryType"
+              name="inquiryType"
+              value={form.inquiryType}
+              onChange={handleChange}
+              aria-invalid={Boolean(errors.inquiryType)}
+              aria-describedby={errors.inquiryType ? "inquiryType-error" : undefined}
+              className={`${fieldClass} ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border border-destructive" : ""}`}
+              style={{ color: form.inquiryType ? "#1d1d1f" : undefined, border: errors.inquiryType ? undefined : "1px solid #ECEAE6" }}
+            >
+              <option value="" disabled>Select an inquiry type</option>
+              {inquiryTypes.map((type) => (
+                <option key={type.value} value={type.value}>{type.label}</option>
+              ))}
+            </select>
+            {errors.inquiryType && <p id="inquiryType-error" className="text-xs text-destructive mt-1.5">{errors.inquiryType}</p>}
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              value={form.message}
+              onChange={handleChange}
+              placeholder="Tell us how we can help..."
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? "message-error" : undefined}
+              className={`${fieldClass} resize-none ${errors.message ? "border border-destructive" : ""}`}
+              style={{ color: "#1d1d1f", border: errors.message ? undefined : "1px solid #ECEAE6" }}
+            />
+            {errors.message && <p id="message-error" className="text-xs text-destructive mt-1.5">{errors.message}</p>}
+          </div>
+
+          <button
+            type="submit"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-[opacity,background-color,box-shadow] duration-150 btn-bevel-solid"
+          >
+            Send Message <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
+          </button>
+        </form>
+      )}
+    </motion.div>
+  );
+});
+
+ContactFormCard.displayName = "ContactFormCard";
+
+const ContactSidebar = memo(() => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.1 }}
+    className="lg:col-span-2 flex flex-col"
+  >
+    <div className="p-5 md:p-6 card-elevated flex-1 mt-[24px] pt-[24px] pb-0 mb-[15px]">
+      <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
+      <div className="space-y-4">
+        <div className="flex items-start gap-3">
+          <Mail size={16} className="text-primary mt-0.5 shrink-0" />
+          <div>
+            <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Email</p>
+            <p className="text-sm" style={{ color: "#86868b" }}>hello@leunre.com</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3">
+          <Phone size={16} className="text-primary mt-0.5 shrink-0" />
+          <div>
+            <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Phone</p>
+            <p className="text-sm" style={{ color: "#86868b" }}>+1 (555) 000-0000</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3">
+          <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
+          <div>
+            <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Location</p>
+            <p className="text-sm" style={{ color: "#86868b" }}>Available globally — remote & in-person</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="p-5 md:p-6 card-elevated mt-0 mb-[85px] pt-[20px] pb-[15px]">
+      <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Follow Us</h3>
+      <div>
+        {socials.map((s) => (
+          <a
+            key={s.label}
+            href={s.href}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl transition-[border-color,background-color,box-shadow] duration-150 text-sm font-medium"
+            style={{ color: "#1d1d1f", border: "1px solid #ECEAE6" }}
+          >
+            <s.icon size={16} className="text-primary" />
+            {s.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+));
+
+ContactSidebar.displayName = "ContactSidebar";
+
+const ContactUs = () => {
+
   return (
     <PageLayout>
       <UnifiedPageAtmosphere>
@@ -82,160 +266,8 @@ const ContactUs = () => {
 
       <ContentSection className="!bg-transparent">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 md:gap-10 lg:gap-14">
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-3"
-          >
-            {submitted ? (
-              <div className="p-6 md:p-8 lg:p-10 text-center card-elevated">
-                <Mail className="w-7 h-7 text-primary mx-auto mb-5" strokeWidth={1.5} />
-                <h2 className="text-xl md:text-2xl font-heading mb-3 md:mb-4" style={{ color: "#1d1d1f" }}>Thank You!</h2>
-                <p className="mb-6 text-sm md:text-base max-w-sm mx-auto" style={{ color: "#86868b" }}>Your message has been received. We'll be in touch shortly.</p>
-                <button
-                  onClick={() => { setSubmitted(false); setForm({ name: "", email: "", inquiryType: "", message: "" }); }}
-                  className="text-sm font-medium text-primary hover:opacity-70 transition-opacity"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
-                    Full Name
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Your full name"
-                    className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${errors.name ? "border border-destructive" : ""}`}
-                    style={{ color: "#1d1d1f", border: errors.name ? undefined : "1px solid #ECEAE6" }}
-                  />
-                  {errors.name && <p className="text-xs text-destructive mt-1.5">{errors.name}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="you@example.com"
-                    className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${errors.email ? "border border-destructive" : ""}`}
-                    style={{ color: "#1d1d1f", border: errors.email ? undefined : "1px solid #ECEAE6" }}
-                  />
-                  {errors.email && <p className="text-xs text-destructive mt-1.5">{errors.email}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
-                    Inquiry Type
-                  </label>
-                  <select
-                    id="inquiryType"
-                    name="inquiryType"
-                    value={form.inquiryType}
-                    onChange={handleChange}
-                    className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 ${!form.inquiryType ? "text-muted-foreground" : ""} ${errors.inquiryType ? "border border-destructive" : ""}`}
-                    style={{ color: form.inquiryType ? "#1d1d1f" : undefined, border: errors.inquiryType ? undefined : "1px solid #ECEAE6" }}
-                  >
-                    <option value="" disabled>Select an inquiry type</option>
-                    {inquiryTypes.map((type) => (
-                      <option key={type.value} value={type.value}>{type.label}</option>
-                    ))}
-                  </select>
-                  {errors.inquiryType && <p className="text-xs text-destructive mt-1.5">{errors.inquiryType}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2" style={{ color: "#1d1d1f" }}>
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Tell us how we can help..."
-                    className={`w-full px-4 py-3 rounded-xl bg-card text-sm outline-none transition-all focus:ring-2 focus:ring-primary/20 resize-none ${errors.message ? "border border-destructive" : ""}`}
-                    style={{ color: "#1d1d1f", border: errors.message ? undefined : "1px solid #ECEAE6" }}
-                  />
-                  {errors.message && <p className="text-xs text-destructive mt-1.5">{errors.message}</p>}
-                </div>
-
-                <button
-                  type="submit"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium text-sm md:text-base hover:opacity-90 transition-all btn-bevel-solid"
-                >
-                  Send Message <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
-                </button>
-              </form>
-            )}
-          </motion.div>
-
-          {/* Sidebar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="lg:col-span-2 flex flex-col"
-          >
-            <div className="p-5 md:p-6 card-elevated flex-1 mt-[24px] pt-[24px] pb-0 mb-[15px]">
-              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Get in Touch</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Mail size={16} className="text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Email</p>
-                    <p className="text-sm" style={{ color: "#86868b" }}>hello@leunre.com</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone size={16} className="text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Phone</p>
-                    <p className="text-sm" style={{ color: "#86868b" }}>+1 (555) 000-0000</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-sm font-medium" style={{ color: "#1d1d1f" }}>Location</p>
-                    <p className="text-sm" style={{ color: "#86868b" }}>Available globally — remote & in-person</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-5 md:p-6 card-elevated mt-0 mb-[85px] pt-[20px] pb-[15px]">
-              <h3 className="text-base md:text-lg font-heading mb-4 md:mb-5" style={{ color: "#1d1d1f" }}>Follow Us</h3>
-              <div>
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all text-sm font-medium"
-                    style={{ color: "#1d1d1f", border: "1px solid #ECEAE6" }}
-                  >
-                    <s.icon size={16} className="text-primary" />
-                    {s.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+          <ContactFormCard />
+          <ContactSidebar />
         </div>
       </ContentSection>
 

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { heroReveal } from "@/lib/motion";
+import { useAmbientMotionEnabled } from "@/hooks/useAmbientMotionEnabled";
 
 const EXTREME_NOISE_OVERLAY =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.85' numOctaves='6' seed='13' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")";
@@ -22,20 +22,7 @@ const PageHero = ({
   noShadow = false,
   transparentBackground = false,
 }: PageHeroProps) => {
-  const [animateBlobs, setAnimateBlobs] = useState(false);
-
-  useEffect(() => {
-    if (!withHomeAtmosphere) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const smallScreen = window.matchMedia("(max-width: 1024px)").matches;
-    const saveData = typeof navigator !== "undefined" && "connection" in navigator
-      ? Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData)
-      : false;
-    const lowCpu = typeof navigator !== "undefined" && navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 4;
-
-    setAnimateBlobs(!(reduceMotion || smallScreen || saveData || lowCpu));
-  }, [withHomeAtmosphere]);
+  const animateBlobs = useAmbientMotionEnabled(withHomeAtmosphere);
 
   return (
     <section

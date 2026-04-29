@@ -34,7 +34,7 @@ const courses = [
 ];
 
 const FeaturedCourses = () => (
-  <section id="programs" className="py-10 md:py-24 lg:py-28 border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-transparent">
+  <section id="programs" className="content-visibility-auto py-10 md:py-24 lg:py-28 border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0 pb-[72px] pt-[72px] md:pb-[112px] md:pt-[112px] bg-transparent">
     <div className="container mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

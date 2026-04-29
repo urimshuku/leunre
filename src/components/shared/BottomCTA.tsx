@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useNearViewport } from "@/hooks/useNearViewport";
 
 interface BottomCTAProps {
   title: string;
@@ -30,10 +31,14 @@ const BottomCTA = ({
   transparentBackground = false,
   backgroundImage,
   backgroundPosition = "center",
-}: BottomCTAProps) => (
-  <section className={`py-16 md:py-24 lg:py-28 ${transparentBackground ? "bg-transparent" : "bg-[#f3f2f1]"}`}>
+}: BottomCTAProps) => {
+  const [cardRef, shouldLoadBackground] = useNearViewport<HTMLDivElement>();
+
+  return (
+  <section className={`content-visibility-auto py-16 md:py-24 lg:py-28 ${transparentBackground ? "bg-transparent" : "bg-[#f3f2f1]"}`}>
     <div className="container mx-auto px-4 md:px-6 lg:px-8 text-center">
       <motion.div
+        ref={cardRef}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
@@ -50,7 +55,7 @@ const BottomCTA = ({
             <div
               className="absolute inset-0"
               style={{
-                backgroundImage: `url(${backgroundImage})`,
+                backgroundImage: shouldLoadBackground ? `url(${backgroundImage})` : undefined,
                 backgroundSize: "cover",
                 backgroundPosition,
               }}
@@ -94,6 +99,7 @@ const BottomCTA = ({
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default BottomCTA;

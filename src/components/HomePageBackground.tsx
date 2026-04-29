@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { type CSSProperties, type ReactNode, useEffect, useState } from "react";
+import { type CSSProperties, type ReactNode } from "react";
+import { useAmbientMotionEnabled } from "@/hooks/useAmbientMotionEnabled";
 
 const EXTREME_NOISE_OVERLAY =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.85' numOctaves='6' seed='13' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")";
@@ -23,28 +24,26 @@ type LiquidBlob = {
 };
 
 function LiquidBlobLayer({ blob, motionDisabled }: { blob: LiquidBlob; motionDisabled: boolean }) {
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    setReady(true);
-  }, []);
-
   const baseStyle = { ...blob.style, borderRadius: blob.animate.borderRadius[0] };
 
-  if (!ready || motionDisabled) {
+  if (motionDisabled) {
     return <div className="absolute pointer-events-none" style={baseStyle} aria-hidden />;
   }
 
   const yScale = blob.yDurationScale ?? 1.24;
   const sScale = blob.scaleDurationScale ?? 0.88;
   const rScale = blob.rotateDurationScale ?? 1.1;
-  const brScale = blob.borderRadiusDurationScale ?? 0.48;
 
   return (
     <motion.div
-      className="absolute pointer-events-none will-change-[transform,border-radius]"
+      className="absolute pointer-events-none will-change-[transform]"
       style={baseStyle}
-      animate={blob.animate}
+      animate={{
+        x: blob.animate.x,
+        y: blob.animate.y,
+        scale: blob.animate.scale,
+        rotate: blob.animate.rotate,
+      }}
       transition={{
         delay: blob.delay ?? 0,
         times: blob.times,
@@ -52,12 +51,6 @@ function LiquidBlobLayer({ blob, motionDisabled }: { blob: LiquidBlob; motionDis
         y: { duration: blob.duration * yScale, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
         scale: { duration: blob.duration * sScale, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
         rotate: { duration: blob.duration * rScale, repeat: Infinity, repeatType: "loop", ease: "easeInOut" },
-        borderRadius: {
-          duration: blob.duration * brScale,
-          repeat: Infinity,
-          repeatType: "loop",
-          ease: "easeInOut",
-        },
       }}
       aria-hidden
     />
@@ -322,15 +315,7 @@ const HomePageBackground = ({ children }: HomePageBackgroundProps) => (
 );
 
 function PerformanceAwareBackground({ children }: HomePageBackgroundProps) {
-  const [reduceMotion, setReduceMotion] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => setReduceMotion(mq.matches);
-    sync();
-    mq.addEventListener("change", sync);
-    return () => mq.removeEventListener("change", sync);
-  }, []);
+  const animateBlobs = useAmbientMotionEnabled();
 
   return (
     <div
@@ -365,7 +350,7 @@ function PerformanceAwareBackground({ children }: HomePageBackgroundProps) {
       />
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden>
         {liquidBlobs.map((blob, i) => (
-          <LiquidBlobLayer key={i} blob={blob} motionDisabled={reduceMotion} />
+          <LiquidBlobLayer key={i} blob={blob} motionDisabled={!animateBlobs} />
         ))}
       </div>
       <div

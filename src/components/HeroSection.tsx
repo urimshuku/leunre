@@ -1,25 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { heroReveal } from "@/lib/motion";
+import { useAmbientMotionEnabled } from "@/hooks/useAmbientMotionEnabled";
 
 const EXTREME_NOISE_OVERLAY =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.85' numOctaves='6' seed='13' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")";
 
 const HeroSection = () => {
-  const [animateBlobs, setAnimateBlobs] = useState(false);
-
-  useEffect(() => {
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const smallScreen = window.matchMedia("(max-width: 1024px)").matches;
-    const saveData = typeof navigator !== "undefined" && "connection" in navigator
-      ? Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData)
-      : false;
-    const lowCpu = typeof navigator !== "undefined" && navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 4;
-
-    setAnimateBlobs(!(reduceMotion || smallScreen || saveData || lowCpu));
-  }, []);
+  const animateBlobs = useAmbientMotionEnabled();
 
   return (
     <section
@@ -64,18 +53,6 @@ const HeroSection = () => {
         y: [0, -88, 22, 118, 54, -72, -28, 96, 14, 0],
         scale: [1, 1.26, 0.88, 1.14, 0.78, 1.2, 0.92, 1.08, 0.86, 1],
         rotate: [-12, 14, 22, -8, -18, 11, 19, -14, 6, -12],
-        borderRadius: [
-          "56% 44% 63% 37% / 46% 58% 42% 54%",
-          "74% 26% 28% 72% / 32% 68% 58% 42%",
-          "28% 72% 68% 32% / 64% 36% 38% 62%",
-          "46% 54% 62% 38% / 54% 46% 24% 76%",
-          "68% 32% 34% 66% / 36% 64% 52% 48%",
-          "34% 66% 72% 28% / 62% 38% 44% 56%",
-          "52% 48% 40% 60% / 48% 52% 70% 30%",
-          "62% 38% 58% 42% / 42% 58% 34% 66%",
-          "40% 60% 48% 52% / 58% 42% 62% 38%",
-          "56% 44% 63% 37% / 46% 58% 42% 54%",
-        ],
       }}
       transition={{
         repeat: Infinity,
@@ -85,7 +62,6 @@ const HeroSection = () => {
         y: { duration: 22, ease: "easeInOut" },
         scale: { duration: 14, ease: "easeInOut" },
         rotate: { duration: 19, ease: "easeInOut" },
-        borderRadius: { duration: 9, ease: "easeInOut" },
       }}
       style={{
         top: "-28%",
@@ -106,18 +82,6 @@ const HeroSection = () => {
         y: [0, 64, 132, 44, -48, -102, 28, 88, -36, 0],
         scale: [1, 0.8, 1.22, 0.9, 1.16, 1.04, 0.84, 1.12, 0.94, 1],
         rotate: [12, -16, -24, 8, 18, -11, -7, 15, -20, 12],
-        borderRadius: [
-          "41% 59% 47% 53% / 60% 43% 57% 40%",
-          "22% 78% 64% 36% / 58% 42% 28% 72%",
-          "70% 30% 32% 68% / 34% 66% 72% 28%",
-          "48% 52% 70% 30% / 52% 48% 40% 60%",
-          "36% 64% 44% 56% / 68% 32% 54% 46%",
-          "58% 42% 76% 24% / 40% 60% 46% 54%",
-          "30% 70% 52% 48% / 64% 36% 66% 34%",
-          "66% 34% 38% 62% / 46% 54% 58% 42%",
-          "44% 56% 60% 40% / 50% 50% 32% 68%",
-          "41% 59% 47% 53% / 60% 43% 57% 40%",
-        ],
       }}
       transition={{
         delay: 0.4,
@@ -128,7 +92,6 @@ const HeroSection = () => {
         y: { duration: 15, ease: "easeInOut" },
         scale: { duration: 18, ease: "easeInOut" },
         rotate: { duration: 16, ease: "easeInOut" },
-        borderRadius: { duration: 8.5, ease: "easeInOut" },
       }}
       style={{
         bottom: "-38%",

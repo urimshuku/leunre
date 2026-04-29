@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { preloadRoute } from "@/lib/route-preload";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -18,12 +19,10 @@ const SCROLL_ENTER_THRESHOLD = 72;
 const SCROLL_EXIT_THRESHOLD = 28;
 
 const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
-const DUR = "700ms";
+const DUR = "260ms";
 
 const morphTransition = [
-  "max-width", "height", "padding", "border-radius",
-  "background-color", "box-shadow", "border-color",
-  "backdrop-filter", "-webkit-backdrop-filter",
+  "background-color", "box-shadow", "border-color", "border-radius",
 ].map(p => `${p} ${DUR} ${EASE}`).join(", ");
 
 const wrapperTransition = `padding ${DUR} ${EASE}`;
@@ -63,6 +62,10 @@ const Navbar = () => {
   const mainLinks = navLinks.filter((l) => l.label !== "Contact");
   const linkClass = "text-sm whitespace-nowrap";
   const linkStyle = { color: "#1d1d1f" } as const;
+  const preloadHandlers = (href: string) => ({
+    onFocus: () => preloadRoute(href),
+    onTouchStart: () => preloadRoute(href),
+  });
 
   const barVisuals = (pill: boolean): React.CSSProperties => ({
     borderRadius: pill ? 9999 : 0,
@@ -100,17 +103,17 @@ const Navbar = () => {
               style={{
                 maxWidth: "var(--site-rail-width)",
                 padding: scrolled ? "0 12px" : "0 32px",
-                transition: `max-width ${DUR} ${EASE}, padding ${DUR} ${EASE}`,
+                transition: `padding ${DUR} ${EASE}`,
               }}
             >
               <div className="flex justify-start items-center min-w-0">
                 <Link
                   to="/"
                   className="font-heading text-lg md:text-xl tracking-tight font-semibold shrink-0"
+                  {...preloadHandlers("/")}
                   style={{
                     ...linkStyle,
                     marginLeft: scrolled ? 8 : 0,
-                    transition: `margin ${DUR} ${EASE}`,
                   }}
                 >
                   LEUNRE
@@ -123,7 +126,6 @@ const Navbar = () => {
                   onMouseLeave={() => setHovered(null)}
                   style={{
                     gap: scrolled ? 2 : 32,
-                    transition: `gap ${DUR} ${EASE}`,
                   }}
                 >
                   {mainLinks.map((link, i) => (
@@ -136,7 +138,16 @@ const Navbar = () => {
                         scrolled && "px-3 py-1.5 rounded-full",
                       )}
                       style={linkStyle}
-                      onMouseEnter={() => setHovered(i)}
+                      onPointerEnter={() => {
+                        setHovered(i);
+                        preloadRoute(link.href);
+                      }}
+                      onFocus={() => {
+                        setHovered(i);
+                        preloadRoute(link.href);
+                      }}
+                      onBlur={() => setHovered(null)}
+                      onTouchStart={() => preloadRoute(link.href)}
                     >
                       {link.label}
                       {hovered === i && (
@@ -160,6 +171,7 @@ const Navbar = () => {
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center shrink-0 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all btn-bevel-solid"
+                  {...preloadHandlers("/contact")}
                 >
                   Contact
                 </Link>
@@ -188,6 +200,7 @@ const Navbar = () => {
             <Link
               to="/"
               className="font-heading text-lg tracking-tight font-semibold min-w-0 truncate"
+              {...preloadHandlers("/")}
               style={linkStyle}
             >
               LEUNRE
@@ -196,6 +209,7 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all btn-bevel-solid"
+                {...preloadHandlers("/contact")}
               >
                 Contact
               </Link>
@@ -218,10 +232,10 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: [0, 0, 0.2, 1] }}
+            initial={{ opacity: 0, scaleY: 0.96, y: -6 }}
+            animate={{ opacity: 1, scaleY: 1, y: 0 }}
+            exit={{ opacity: 0, scaleY: 0.98, y: -4 }}
+            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
               "fixed z-40 lg:hidden overflow-hidden border border-[#ECEAE6]",
               scrolled
@@ -232,6 +246,8 @@ const Navbar = () => {
               top: scrolled ? "4.5rem" : "3.5rem",
               backgroundColor: "rgba(255,255,255,0.97)",
               backdropFilter: "blur(20px)",
+              transformOrigin: "top center",
+              willChange: "transform, opacity",
             }}
           >
             <div className="flex flex-col gap-0.5 p-4">
@@ -239,6 +255,9 @@ const Navbar = () => {
                 <Link
                   key={link.label}
                   to={link.href}
+                  onPointerEnter={() => preloadRoute(link.href)}
+                  onFocus={() => preloadRoute(link.href)}
+                  onTouchStart={() => preloadRoute(link.href)}
                   onClick={() => setOpen(false)}
                   className="px-4 py-3 rounded-xl text-sm transition-colors hover:bg-black/[0.04]"
                   style={linkStyle}
@@ -248,6 +267,9 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
+                onPointerEnter={() => preloadRoute("/contact")}
+                onFocus={() => preloadRoute("/contact")}
+                onTouchStart={() => preloadRoute("/contact")}
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium btn-bevel-solid"
               >
