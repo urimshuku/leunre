@@ -5,18 +5,18 @@ import PageLayout from "@/components/shared/PageLayout";
 import ContentSection from "@/components/shared/ContentSection";
 import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
 import { courses } from "@/data/courses";
-import { heroReveal } from "@/lib/motion";
+import { pageHeroReveal } from "@/lib/motion";
 
 const Courses = () => (
   <PageLayout>
     <UnifiedPageAtmosphere>
       <section className="relative pt-24 pb-12 md:pt-36 md:pb-20 lg:pt-44 lg:pb-28 bg-transparent">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <div className="mx-auto max-w-2xl text-center">
             <motion.h1
               initial="hidden"
               animate="visible"
-              variants={heroReveal}
+              variants={pageHeroReveal}
               custom={0.08}
               className="text-4xl md:text-5xl lg:text-[72px] font-heading mb-4 md:mb-8"
               style={{ color: "#1d1d1f" }}
@@ -26,9 +26,9 @@ const Courses = () => (
             <motion.p
               initial="hidden"
               animate="visible"
-              variants={heroReveal}
+              variants={pageHeroReveal}
               custom={0.08}
-              className="text-base md:text-xl leading-relaxed whitespace-pre-line max-w-xl"
+              className="mx-auto max-w-xl text-base md:text-xl leading-relaxed whitespace-pre-line"
               style={{ color: "#86868b" }}
             >
               {"Growth happens through experience.\nOur trainings and workshops invite active participation — blending knowledge, practice, and reflection."}

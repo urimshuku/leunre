@@ -146,7 +146,7 @@ const HeroSection = () => {
           initial="hidden"
           animate="visible"
           variants={heroReveal}
-          custom={0.72}
+          custom={0.58}
           className="text-lg md:text-2xl max-w-lg mb-4 md:mb-8 leading-relaxed"
           style={{ color: "#1d1d1f" }}
         >

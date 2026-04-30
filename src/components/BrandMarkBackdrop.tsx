@@ -14,6 +14,13 @@ const BrandMarkBackdrop = () => {
       style={{ backgroundColor: "#1d1d1f" }}
     >
       <div className="pointer-events-none relative mx-auto min-h-[clamp(10.5rem,28vh,20rem)] max-w-full min-w-0 select-none md:min-h-[clamp(12rem,32vh,24rem)]">
+        <div
+          className="absolute inset-x-0 bottom-0 h-[92%]"
+          style={{
+            background:
+              "linear-gradient(to top, hsl(var(--primary) / 0.36) 0%, hsl(var(--primary) / 0.24) 30%, hsl(var(--primary) / 0.11) 62%, rgba(29, 29, 31, 0) 100%)",
+          }}
+        />
         <motion.span
           className="font-heading absolute left-1/2 whitespace-nowrap font-bold"
           initial={reduceMotion ? { opacity: 1, x: "-50%", y: "4%" } : { opacity: 0, x: "-50%", y: "28%" }}
