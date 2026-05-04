@@ -6,6 +6,7 @@ import PageHero from "@/components/shared/PageHero";
 import ContentSection from "@/components/shared/ContentSection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
+import { useNearViewport } from "@/hooks/useNearViewport";
 
 const values = [
   { icon: Eye, title: "Clarity", description: "Seeing what truly matters." },
@@ -28,6 +29,7 @@ const orangeTokenIconStyle = {
 
 const AboutUs = () => {
   const reduceMotion = useReducedMotion() === true;
+  const [movementRef, shouldLoadMovementImage] = useNearViewport<HTMLElement>("900px");
 
   return (
   <PageLayout>
@@ -198,53 +200,61 @@ const AboutUs = () => {
     </section>
 
     {/* Movement Positioning */}
-    <section className="py-16 md:py-24 lg:py-28 bg-transparent pt-[112px] pb-[112px] border-b-0 border-x-0 border-t-0">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+    <section
+      ref={movementRef}
+      className="content-visibility-auto relative isolate min-h-[620px] overflow-hidden bg-transparent pt-[72px] md:min-h-[720px] md:pt-[112px] lg:min-h-[780px] lg:pt-[124px]"
+    >
+      <div
+        className="absolute inset-x-0 bottom-0 top-[210px] z-0 overflow-hidden md:top-[230px] lg:top-[250px]"
+        aria-hidden
+      >
+        {shouldLoadMovementImage ? (
+          <img
+            src={`${import.meta.env.BASE_URL}about-landscape.jpg`}
+            alt=""
+            className="h-full w-full origin-bottom scale-[1.22] object-cover object-bottom"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : null}
+      </div>
+      <div
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(180deg, #F9F8F6 0%, #F9F8F6 28%, rgba(249, 248, 246, 0.94) 38%, rgba(249, 248, 246, 0.68) 50%, rgba(249, 248, 246, 0.28) 64%, rgba(249, 248, 246, 0) 78%)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 top-[210px] z-[2] pointer-events-none md:top-[230px] lg:top-[250px]"
+        style={{
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
+          backgroundRepeat: "repeat",
+          backgroundSize: "120px 120px",
+          mixBlendMode: "soft-light",
+          opacity: 0.22,
+        }}
+        aria-hidden
+      />
+      <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           viewport={{ once: true }}
-          className="relative max-w-site-rail mx-auto rounded-3xl overflow-hidden"
-          style={{
-            border: "1px solid rgba(255,255,255,0.10)",
-            boxShadow:
-              "0 4px 30px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.4)",
-          }}
+          className="relative mx-auto max-w-3xl text-center"
         >
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url(${import.meta.env.BASE_URL}movement-bg.png)`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(160deg, rgba(20,18,16,0.20) 0%, rgba(12,12,12,0.20) 48%, rgba(18,16,14,0.20) 100%)" }}
-          />
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
-              backgroundRepeat: "repeat",
-              backgroundSize: "120px 120px",
-              mixBlendMode: "overlay",
-              opacity: 0.38,
-            }}
-          />
-          <div className="relative px-8 py-16 md:px-16 md:py-24 lg:px-20 lg:py-28 text-center">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-3 md:mb-5" style={{ color: "#f5f5f7" }}>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-3 md:mb-5" style={{ color: "#1d1d1f" }}>
               More Than a Company.{"\n"}A Movement.
             </h2>
-            <p className="text-sm md:text-base leading-relaxed mb-5 max-w-lg mx-auto" style={{ color: "#f5f5f7" }}>
+            <p className="text-sm md:text-base leading-relaxed mb-5 max-w-lg mx-auto" style={{ color: "#5f5f64" }}>
               LEUNRE invites you to be part of a global shift — where development means wholeness, and progress means balance.
             </p>
-            <p className="text-sm md:text-base leading-relaxed mb-5 max-w-lg mx-auto" style={{ color: "#f5f5f7" }}>
+            <p className="text-sm md:text-base leading-relaxed mb-5 max-w-lg mx-auto" style={{ color: "#5f5f64" }}>
               Whether you're an individual seeking clarity or an organization striving for purposeful impact, your growth contributes to something greater.
             </p>
-            <p className="text-sm md:text-base leading-relaxed mb-10 max-w-lg mx-auto" style={{ color: "#f5f5f7" }}>
+            <p className="text-sm md:text-base leading-relaxed mb-10 max-w-lg mx-auto" style={{ color: "#5f5f64" }}>
               Together, we can build a world where learning transforms lives, and alignment guides change.
             </p>
             <Link
@@ -253,7 +263,6 @@ const AboutUs = () => {
             >
               Join the Movement <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
             </Link>
-          </div>
         </motion.div>
       </div>
     </section>

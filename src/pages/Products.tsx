@@ -313,9 +313,12 @@ const Products = () => (
           subtitle="Get your Action Cards today and start your journey of transformation."
           buttonText="Purchase Now"
           buttonHref="#"
-          backgroundImage={`${import.meta.env.BASE_URL}ready-to-grow-bg.png`}
-          backgroundPosition="center"
+          backgroundImage={`${import.meta.env.BASE_URL}tools-landscape.jpg`}
+          backgroundPosition="44% bottom"
+          landscapeImageClassName="lg:translate-x-[7%]"
           transparentBackground
+          openLandscape
+          landscapeGradient="linear-gradient(180deg, #F9F8F6 0%, #F9F8F6 28%, rgba(249, 248, 246, 0.94) 38%, rgba(249, 248, 246, 0.68) 50%, rgba(249, 248, 246, 0.28) 64%, rgba(249, 248, 246, 0) 78%)"
         />
       </div>
     </div>

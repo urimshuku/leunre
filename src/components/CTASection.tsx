@@ -4,52 +4,59 @@ import { Link } from "react-router-dom";
 import { useNearViewport } from "@/hooks/useNearViewport";
 
 const CTASection = () => {
-  const [cardRef, shouldLoadBackground] = useNearViewport<HTMLDivElement>();
+  const [sectionRef, shouldLoadBackground] = useNearViewport<HTMLElement>("900px");
 
   return (
-  <section id="contact" className="content-visibility-auto py-10 md:py-24 lg:py-28 pt-[72px] md:pt-[112px] pb-[112px] bg-transparent border-b-0 border-b-[#eae8e6] border-t-0 border-r-0 border-l-0">
-    <div className="container mx-auto px-4 md:px-6 lg:px-8">
+  <section
+    id="contact"
+    ref={sectionRef}
+    className="content-visibility-auto relative isolate min-h-[620px] overflow-hidden bg-transparent pt-[72px] md:min-h-[720px] md:pt-[112px] lg:min-h-[780px] lg:pt-[124px]"
+  >
+    <div
+      className="absolute inset-x-0 bottom-0 top-[210px] z-0 overflow-hidden md:top-[230px] lg:top-[250px]"
+      aria-hidden
+    >
+      {shouldLoadBackground ? (
+        <img
+          src={`${import.meta.env.BASE_URL}homepage-landscape.jpg`}
+          alt=""
+          className="h-full w-full origin-bottom scale-[1.22] object-cover object-bottom"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : null}
+    </div>
+    <div
+      className="absolute inset-0 z-[1] pointer-events-none"
+      style={{
+        background:
+          "linear-gradient(180deg, #f3f2f1 0%, #f3f2f1 28%, rgba(243, 242, 241, 0.94) 38%, rgba(243, 242, 241, 0.68) 50%, rgba(243, 242, 241, 0.28) 64%, rgba(243, 242, 241, 0) 78%)",
+      }}
+      aria-hidden
+    />
+    <div
+      className="absolute inset-x-0 bottom-0 top-[210px] z-[2] pointer-events-none md:top-[230px] lg:top-[250px]"
+      style={{
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
+        backgroundRepeat: "repeat",
+        backgroundSize: "120px 120px",
+        mixBlendMode: "soft-light",
+        opacity: 0.22,
+      }}
+      aria-hidden
+    />
+    <div className="container relative z-10 mx-auto px-4 md:px-6 lg:px-8">
       <motion.div
-        ref={cardRef}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
         viewport={{ once: true }}
-        className="relative max-w-site-rail mx-auto rounded-3xl overflow-hidden"
-        style={{
-          border: "1px solid rgba(255,255,255,0.10)",
-          boxShadow:
-            "0 4px 30px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.4)",
-        }}
+        className="relative mx-auto max-w-3xl text-center"
       >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundColor: "#1d1d1f",
-            backgroundImage: shouldLoadBackground ? `url(${import.meta.env.BASE_URL}cta-bg.png)` : undefined,
-            backgroundSize: "cover",
-            backgroundPosition: "65% center",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(160deg, rgba(20,18,16,0.20) 0%, rgba(12,12,12,0.20) 48%, rgba(18,16,14,0.20) 100%)" }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")",
-            backgroundRepeat: "repeat",
-            backgroundSize: "120px 120px",
-            mixBlendMode: "overlay",
-            opacity: 0.38,
-          }}
-        />
-        <div className="relative px-8 py-16 md:px-16 md:py-24 lg:px-20 lg:py-28 text-center">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#f5f5f7" }}>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-5 md:mb-8" style={{ color: "#1d1d1f" }}>
             Partner with LEUNRE
           </h2>
-          <p className="text-sm md:text-base mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed" style={{ color: "#f5f5f7" }}>
+          <p className="text-sm md:text-base mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed" style={{ color: "#5f5f64" }}>
             Whether you're an individual seeking growth or an organization ready for transformation, we're here to guide the journey.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -63,21 +70,20 @@ const CTASection = () => {
             <Link
               to="/programs"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 md:px-10 md:py-4.5 rounded-xl font-medium text-sm md:text-base transition-all btn-bevel-outline"
-              style={{ backgroundColor: "rgba(255,255,255,0.10)", color: "#f5f5f7", border: "1px solid rgba(255,255,255,0.18)" }}
+              style={{ backgroundColor: "rgba(255,255,255,0.52)", color: "#1d1d1f", border: "1px solid rgba(29,29,31,0.16)" }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.18)";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.26)";
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.74)";
+                e.currentTarget.style.borderColor = "rgba(29,29,31,0.22)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.10)";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.52)";
+                e.currentTarget.style.borderColor = "rgba(29,29,31,0.16)";
               }}
             >
               Browse Programs
               <ArrowRight size={16} className="icon-arrow-nudge icon-arrow-nudge--right" />
             </Link>
           </div>
-        </div>
       </motion.div>
     </div>
   </section>

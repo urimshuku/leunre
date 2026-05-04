@@ -183,9 +183,11 @@ const ServiceDetail = () => {
         subtitle={`Let's discuss how ${service.title.toLowerCase()} can create lasting impact for your organization.`}
         buttonText="Book a Consultation"
         buttonHref="/contact"
-        backgroundImage={`${import.meta.env.BASE_URL}ready-to-get-started-bg.png`}
-        backgroundPosition="center"
+        backgroundImage={`${import.meta.env.BASE_URL}ready-to-get-started-landscape.jpg`}
+        backgroundPosition="center bottom"
         transparentBackground
+        openLandscape
+        landscapeGradient="linear-gradient(180deg, #F9F8F6 0%, #F9F8F6 28%, rgba(249, 248, 246, 0.94) 38%, rgba(249, 248, 246, 0.68) 50%, rgba(249, 248, 246, 0.28) 64%, rgba(249, 248, 246, 0) 78%)"
       />
       </UnifiedPageAtmosphere>
     </PageLayout>
