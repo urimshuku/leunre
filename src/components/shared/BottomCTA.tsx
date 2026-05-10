@@ -1,5 +1,11 @@
+import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import {
+  OPEN_LANDSCAPE_EDGE_SOFTENER_HOME,
+  OPEN_LANDSCAPE_EDGE_SOFTENER_UNIFIED,
+  OPEN_LANDSCAPE_REVEAL_MASK,
+} from "@/constants/openLandscapeReveal";
 import { useNearViewport } from "@/hooks/useNearViewport";
 
 interface BottomCTAProps {
@@ -14,10 +20,14 @@ interface BottomCTAProps {
   backgroundPosition?: string;
   landscapeImageClassName?: string;
   openLandscape?: boolean;
-  landscapeGradient?: string;
+  /**
+   * Scrim tint for Partner-style luminance reveal: `home` (#f3f2f1) matches homepage;
+   * `unified` (#F9F8F6) matches UnifiedPageAtmosphere inner pages (default).
+   */
+  landscapeRevealSurface?: "home" | "unified";
 }
 
-const darkCardStyle: React.CSSProperties = {
+const darkCardStyle: CSSProperties = {
   background: "linear-gradient(160deg, rgba(30,30,30,0.92) 0%, rgba(18,18,18,0.96) 48%, rgba(24,22,20,0.94) 100%)",
   border: "1px solid rgba(255,255,255,0.10)",
   boxShadow:
@@ -36,7 +46,7 @@ const BottomCTA = ({
   backgroundPosition = "center",
   landscapeImageClassName = "",
   openLandscape = false,
-  landscapeGradient = "linear-gradient(180deg, #f3f2f1 0%, #f3f2f1 28%, rgba(243, 242, 241, 0.94) 38%, rgba(243, 242, 241, 0.68) 50%, rgba(243, 242, 241, 0.28) 64%, rgba(243, 242, 241, 0) 78%)",
+  landscapeRevealSurface = "unified",
 }: BottomCTAProps) => {
   const [cardRef, shouldLoadBackground] = useNearViewport<HTMLDivElement>();
   const [sectionRef, shouldLoadLandscape] = useNearViewport<HTMLElement>("900px");
@@ -54,23 +64,36 @@ const BottomCTA = ({
           aria-hidden
         >
           {shouldLoadLandscape ? (
-            <img
-              src={backgroundImage}
-              alt=""
-              className={`h-full w-full origin-bottom scale-[1.22] object-cover object-bottom ${landscapeImageClassName}`}
-              style={{ objectPosition: backgroundPosition }}
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="relative h-full min-h-[1px] w-full">
+              <img
+                src={backgroundImage}
+                alt=""
+                className={`h-full w-full origin-bottom scale-[1.22] object-cover object-bottom ${landscapeImageClassName}`}
+                style={{
+                  objectPosition: backgroundPosition,
+                  maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+                  WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+                  maskSize: "100% 100%",
+                  WebkitMaskSize: "100% 100%",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskRepeat: "no-repeat",
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 z-[1]"
+                style={{
+                  background:
+                    landscapeRevealSurface === "home"
+                      ? OPEN_LANDSCAPE_EDGE_SOFTENER_HOME
+                      : OPEN_LANDSCAPE_EDGE_SOFTENER_UNIFIED,
+                }}
+                aria-hidden
+              />
+            </div>
           ) : null}
         </div>
-        <div
-          className="absolute inset-0 z-[1] pointer-events-none"
-          style={{
-            background: landscapeGradient,
-          }}
-          aria-hidden
-        />
         <div
           className="absolute inset-x-0 bottom-0 top-[210px] z-[2] pointer-events-none md:top-[230px] lg:top-[250px]"
           style={{
@@ -79,6 +102,12 @@ const BottomCTA = ({
             backgroundSize: "120px 120px",
             mixBlendMode: "soft-light",
             opacity: 0.22,
+            maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+            WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+            maskSize: "100% 100%",
+            WebkitMaskSize: "100% 100%",
+            maskRepeat: "no-repeat",
+            WebkitMaskRepeat: "no-repeat",
           }}
           aria-hidden
         />

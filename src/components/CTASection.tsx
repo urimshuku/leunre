@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  OPEN_LANDSCAPE_EDGE_SOFTENER_HOME,
+  OPEN_LANDSCAPE_REVEAL_MASK,
+} from "@/constants/openLandscapeReveal";
 import { useNearViewport } from "@/hooks/useNearViewport";
 
 const CTASection = () => {
@@ -17,23 +21,31 @@ const CTASection = () => {
       aria-hidden
     >
       {shouldLoadBackground ? (
-        <img
-          src={`${import.meta.env.BASE_URL}homepage-landscape.jpg`}
-          alt=""
-          className="h-full w-full origin-bottom scale-[1.22] object-cover object-bottom"
-          loading="lazy"
-          decoding="async"
-        />
+        <div className="relative h-full min-h-[1px] w-full">
+          <img
+            src={`${import.meta.env.BASE_URL}partner-with-leunre-landscape.png`}
+            alt=""
+            className="h-full w-full origin-bottom scale-[1.22] object-cover object-bottom"
+            style={{
+              objectPosition: "center 75%",
+              maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+              WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+              maskSize: "100% 100%",
+              WebkitMaskSize: "100% 100%",
+              maskRepeat: "no-repeat",
+              WebkitMaskRepeat: "no-repeat",
+            }}
+            loading="lazy"
+            decoding="async"
+          />
+          <div
+            className="pointer-events-none absolute inset-0 z-[1]"
+            style={{ background: OPEN_LANDSCAPE_EDGE_SOFTENER_HOME }}
+            aria-hidden
+          />
+        </div>
       ) : null}
     </div>
-    <div
-      className="absolute inset-0 z-[1] pointer-events-none"
-      style={{
-        background:
-          "linear-gradient(180deg, #f3f2f1 0%, #f3f2f1 28%, rgba(243, 242, 241, 0.94) 38%, rgba(243, 242, 241, 0.68) 50%, rgba(243, 242, 241, 0.28) 64%, rgba(243, 242, 241, 0) 78%)",
-      }}
-      aria-hidden
-    />
     <div
       className="absolute inset-x-0 bottom-0 top-[210px] z-[2] pointer-events-none md:top-[230px] lg:top-[250px]"
       style={{
@@ -42,6 +54,12 @@ const CTASection = () => {
         backgroundSize: "120px 120px",
         mixBlendMode: "soft-light",
         opacity: 0.22,
+        maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+        WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+        maskSize: "100% 100%",
+        WebkitMaskSize: "100% 100%",
+        maskRepeat: "no-repeat",
+        WebkitMaskRepeat: "no-repeat",
       }}
       aria-hidden
     />

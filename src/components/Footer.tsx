@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -59,9 +60,22 @@ const FooterLinkColumn = ({ title, links }: FooterLinkColumnProps) => {
   );
 };
 
+const footerGradientStyle: CSSProperties = {
+  background:
+    "linear-gradient(to top, hsl(var(--primary) / 0.36) 0%, hsl(var(--primary) / 0.24) 24%, hsl(var(--primary) / 0.11) 46%, rgba(29, 29, 31, 0) 65%)",
+};
+
 const Footer = () => (
-  <footer className="pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10" style={{ backgroundColor: "#1d1d1f" }}>
-    <div className="mx-auto w-full max-w-site-rail px-4 md:px-6 lg:px-8">
+  <footer
+    className="relative isolate overflow-hidden pt-12 md:pt-16 lg:pt-20 pb-8 md:pb-10"
+    style={{ backgroundColor: "#1d1d1f" }}
+  >
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-0 z-0"
+      style={footerGradientStyle}
+    />
+    <div className="relative z-10 mx-auto w-full max-w-site-rail px-4 md:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 lg:gap-10 mb-10 md:mb-14">
         {/* Brand */}
         <div className="col-span-1 md:col-span-3 lg:col-span-2">
