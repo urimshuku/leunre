@@ -1,11 +1,7 @@
 import type { CSSProperties } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import {
-  OPEN_LANDSCAPE_EDGE_SOFTENER_HOME,
-  OPEN_LANDSCAPE_EDGE_SOFTENER_UNIFIED,
-  OPEN_LANDSCAPE_REVEAL_MASK,
-} from "@/constants/openLandscapeReveal";
+import { OPEN_LANDSCAPE_REVEAL_MASK } from "@/constants/openLandscapeReveal";
 import { useNearViewport } from "@/hooks/useNearViewport";
 
 interface BottomCTAProps {
@@ -20,11 +16,6 @@ interface BottomCTAProps {
   backgroundPosition?: string;
   landscapeImageClassName?: string;
   openLandscape?: boolean;
-  /**
-   * Scrim tint for Partner-style luminance reveal: `home` (#f3f2f1) matches homepage;
-   * `unified` (#F9F8F6) matches UnifiedPageAtmosphere inner pages (default).
-   */
-  landscapeRevealSurface?: "home" | "unified";
 }
 
 const darkCardStyle: CSSProperties = {
@@ -46,7 +37,6 @@ const BottomCTA = ({
   backgroundPosition = "center",
   landscapeImageClassName = "",
   openLandscape = false,
-  landscapeRevealSurface = "unified",
 }: BottomCTAProps) => {
   const [cardRef, shouldLoadBackground] = useNearViewport<HTMLDivElement>();
   const [sectionRef, shouldLoadLandscape] = useNearViewport<HTMLElement>("900px");
@@ -81,16 +71,6 @@ const BottomCTA = ({
                 loading="lazy"
                 decoding="async"
               />
-              <div
-                className="pointer-events-none absolute inset-0 z-[1]"
-                style={{
-                  background:
-                    landscapeRevealSurface === "home"
-                      ? OPEN_LANDSCAPE_EDGE_SOFTENER_HOME
-                      : OPEN_LANDSCAPE_EDGE_SOFTENER_UNIFIED,
-                }}
-                aria-hidden
-              />
             </div>
           ) : null}
         </div>
@@ -101,7 +81,7 @@ const BottomCTA = ({
             backgroundRepeat: "repeat",
             backgroundSize: "120px 120px",
             mixBlendMode: "soft-light",
-            opacity: 0.22,
+            opacity: 0.1,
             maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
             WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
             maskSize: "100% 100%",

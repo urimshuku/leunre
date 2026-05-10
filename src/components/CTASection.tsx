@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  OPEN_LANDSCAPE_EDGE_SOFTENER_HOME,
-  OPEN_LANDSCAPE_REVEAL_MASK,
-} from "@/constants/openLandscapeReveal";
+import { OPEN_LANDSCAPE_REVEAL_MASK } from "@/constants/openLandscapeReveal";
 import { useNearViewport } from "@/hooks/useNearViewport";
 
 const CTASection = () => {
@@ -38,11 +35,6 @@ const CTASection = () => {
             loading="lazy"
             decoding="async"
           />
-          <div
-            className="pointer-events-none absolute inset-0 z-[1]"
-            style={{ background: OPEN_LANDSCAPE_EDGE_SOFTENER_HOME }}
-            aria-hidden
-          />
         </div>
       ) : null}
     </div>
@@ -53,7 +45,7 @@ const CTASection = () => {
         backgroundRepeat: "repeat",
         backgroundSize: "120px 120px",
         mixBlendMode: "soft-light",
-        opacity: 0.22,
+        opacity: 0.1,
         maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
         WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
         maskSize: "100% 100%",

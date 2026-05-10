@@ -6,6 +6,7 @@ import PageHero from "@/components/shared/PageHero";
 import ContentSection from "@/components/shared/ContentSection";
 import SectionHeader from "@/components/shared/SectionHeader";
 import UnifiedPageAtmosphere from "@/components/shared/UnifiedPageAtmosphere";
+import { OPEN_LANDSCAPE_REVEAL_MASK } from "@/constants/openLandscapeReveal";
 import { useNearViewport } from "@/hooks/useNearViewport";
 
 const values = [
@@ -209,23 +210,25 @@ const AboutUs = () => {
         aria-hidden
       >
         {shouldLoadMovementImage ? (
-          <img
-            src={`${import.meta.env.BASE_URL}about-landscape.jpg`}
-            alt=""
-            className="h-full w-full origin-bottom scale-[1.22] object-cover object-bottom"
-            loading="lazy"
-            decoding="async"
-          />
+          <div className="relative h-full min-h-[1px] w-full">
+            <img
+              src={`${import.meta.env.BASE_URL}about-landscape.png`}
+              alt=""
+              className="h-full w-full origin-bottom scale-[1.22] object-cover object-bottom"
+              style={{
+                maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+                WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+                maskSize: "100% 100%",
+                WebkitMaskSize: "100% 100%",
+                maskRepeat: "no-repeat",
+                WebkitMaskRepeat: "no-repeat",
+              }}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         ) : null}
       </div>
-      <div
-        className="absolute inset-0 z-[1] pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(180deg, #F9F8F6 0%, #F9F8F6 28%, rgba(249, 248, 246, 0.94) 38%, rgba(249, 248, 246, 0.68) 50%, rgba(249, 248, 246, 0.28) 64%, rgba(249, 248, 246, 0) 78%)",
-        }}
-        aria-hidden
-      />
       <div
         className="absolute inset-x-0 bottom-0 top-[210px] z-[2] pointer-events-none md:top-[230px] lg:top-[250px]"
         style={{
@@ -233,7 +236,13 @@ const AboutUs = () => {
           backgroundRepeat: "repeat",
           backgroundSize: "120px 120px",
           mixBlendMode: "soft-light",
-          opacity: 0.22,
+          opacity: 0.1,
+          maskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+          WebkitMaskImage: OPEN_LANDSCAPE_REVEAL_MASK,
+          maskSize: "100% 100%",
+          WebkitMaskSize: "100% 100%",
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
         }}
         aria-hidden
       />
